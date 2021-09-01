@@ -1,0 +1,812 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>piCOMEON!</title>
+
+    <link rel="icon" href="favicon/favicon.ico" type="image/x-icon" />
+
+    <link rel="stylesheet" href="css/normalize.css" />
+    <link rel="stylesheet" href="css/main.css" />
+  </head>
+
+  <body>
+    <header class="header body__container">
+      <div
+        class="
+          header__row
+          container
+          content__container
+          header__scrollAction header__scrollAction_transition
+        "
+      >
+        <a href="index.html" class="logo yk700 header__logo"
+          ><span class="yk400 accent">PI</span
+          ><span class="accent">COM</span>EON!</a
+        >
+
+        <!-- <div class="firstScreen__buttonBuy yk700 button_hover_fill">
+          КУПИТЬ КУРС
+        </div> -->
+
+        <div class="header__buttonBuy yk700"><span>КУПИТЬ КУРС</span></div>
+
+        <div class="header__contacts">
+          <div class="header__mail">info@picomeon.ru</div>
+          <div class="header__tel">+7(905)000-52-52</div>
+        </div>
+      </div>
+
+      <nav class="yk400">
+        <div class="container header__row">
+          <a href="about.html" class="header__nav header_hoverHard"
+            ><span>О НАС</span></a
+          >
+          <span class="header__nav header__arrow"
+            ><a href="#tracks" class="header_hoverHard header__arrowMain"
+              ><span>НАШИ КУРСЫ</span></a
+            >
+            <div class="header__arrowDown">
+              <div>
+                <a href="tracks.html" class="header_hoverHard">НАПРАВЛЕНИЯ</a>
+              </div>
+              <div>
+                <a href="teachers.html" class="header_hoverHard"
+                  >ПРЕПОДАВАТЕЛИ</a
+                >
+              </div>
+            </div>
+          </span>
+
+          <a href="price.html" class="header__nav header_hoverHard"
+            ><span>ПРАЙС</span></a
+          >
+
+          <span class="header__nav header__arrow"
+            ><a class="header_hoverHard header__arrowMain"
+              ><span>ВЫГОДНЫЕ ПРЕДЛОЖЕНИЯ</span></a
+            >
+            <div class="header__arrowDown">
+              <div>
+                <a href="offers.html" class="header_hoverHard">АКЦИИ</a>
+              </div>
+              <div>
+                <a href="bonus.html" class="header_hoverHard"
+                  >БОНУСНАЯ ПРОГРАММА</a
+                >
+              </div>
+            </div>
+          </span>
+          <a href="reviews.html" class="header__nav header_hoverHard"
+            ><span>ОТЗЫВЫ</span></a
+          >
+          <a href="contacts.html" class="header__nav header_hoverHard"
+            ><span>КОНТАКТЫ</span></a
+          >
+
+          <a href="register.html" class="header__login yk400 header_hoverHard"
+            >ВОЙТИ</a
+          >
+          <a href="#callback" class="header__callback accent yk700 header_hover"
+            >ОБРАТНЫЙ ЗВОНОК</a
+          >
+        </div>
+      </nav>
+    </header>
+
+    <main class="body__container" id="main">
+      <section class="modal" data-target="ivanov">
+        <div class="modal__container">
+          <div class="modal__close">
+            <img src="icons/modal_close.png" alt="Закрыть" />
+          </div>
+
+          <div class="flexed modalTeacher__info">
+            <div>
+              <div class="modalTeacher__name">ОЛЕГ ИВАНОВ</div>
+              <div class="modalTeacher__age">30 лет</div>
+              <div class="modalTeacher__course">HIP-HOP<br />HOUSE</div>
+            </div>
+            <div class="modalTeacher__education">
+              2008-2014гг. ИжГТУ<br />«Физическая культура»<br />2013-н.в<br />Преподаватель
+            </div>
+          </div>
+          <div class="modalTeacher__text">
+            Олег Иванов—тренер высшей категории. Именно он стоял у истоков
+            создания нашей школы. Начал карьеру в 1995 году с удачного
+            выступленияв детском саду на утреннике, где и решил, что его жизнь
+            прочно будет связана с танцами. Безмерно любит свою работу. Больше
+            всего гордится своими учениками и радуется их успехам. В будущем
+            планирует расширить школу и открыть офлайн-филиалы в каждом регионе
+            России.
+          </div>
+        </div>
+      </section>
+
+      <section class="modal" data-target="faziev">
+        <div class="modal__container">
+          <div class="modal__close">
+            <img src="icons/modal_close.png" alt="Закрыть" />
+          </div>
+
+          <div class="flexed modalTeacher__info">
+            <div>
+              <div class="modalTeacher__name">МАХИР ФАЗИЕВ</div>
+              <div class="modalTeacher__age">29 лет</div>
+              <div class="modalTeacher__course">HIP-HOP</div>
+            </div>
+            <div class="modalTeacher__education">
+              Двукратный<br />победитель United<br />States Dance<br />Championships.<br />Победитель
+              Hip-Hop<br />батлов в США и Европе.<br />Один из основателей<br />piCOMEON!
+            </div>
+          </div>
+          <div class="modalTeacher__text">
+            Его родители — профессиональные танцоры спортивных бальных танцев.
+            Махир решил пойти по стопам родителей ещё в совсем юном возрасте. До
+            10 лет занимался бальными танцами, но понял, что ему по душе уличные
+            танцы. Так он поменял направление, в 14 лет уже входил в группу
+            профессиональных танцоров, ездил на чемпионаты сначала по США, а
+            потом по всему миру. А теперь является звездой нашей школы!
+          </div>
+        </div>
+      </section>
+
+      <section class="modal" data-target="ramm">
+        <div class="modal__container">
+          <div class="modal__close">
+            <img src="icons/modal_close.png" alt="Закрыть" />
+          </div>
+
+          <div class="flexed modalTeacher__info">
+            <div>
+              <div class="modalTeacher__name">ДАЯНА РАММ</div>
+              <div class="modalTeacher__age">25 лет</div>
+              <div class="modalTeacher__course">DANCEHALL</div>
+            </div>
+            <div class="modalTeacher__education">
+              Пятикратный победитель DANCEHALL INTERNATIONAL, победительница
+              SWEDENS OFFICIAL DANCEHALL QUEENS, призер DANCEHALL QUEEN PROJECT
+            </div>
+          </div>
+          <div class="modalTeacher__text">
+            Даяна никогда не думала, что её жизнь будет связана с танцами.
+            Родители в детстве отдали ребенка на спортивную гимнастику. И Даяна
+            была почти на олимпиаде, если бы не травма кисти. Мы не можем
+            сказать, как сложилась бы её судьба, но девушка не отчаялась нашла
+            себя в Dancehall. В короткие сроки ей удалось достичь
+            профессионального уровня, стать победителем множества чемпионатов по
+            всему миру и завоевать титул Королевы дэнсхола в России и США!
+          </div>
+        </div>
+      </section>
+
+      <section class="modal" data-target="starchikova">
+        <div class="modal__container">
+          <div class="modal__close">
+            <img src="icons/modal_close.png" alt="Закрыть" />
+          </div>
+
+          <div class="flexed modalTeacher__info">
+            <div>
+              <div class="modalTeacher__name">КАРИНА СТАРЧИКОВА</div>
+              <div class="modalTeacher__age">27 лет</div>
+              <div class="modalTeacher__course">AEROBICS</div>
+            </div>
+            <div class="modalTeacher__education">
+              Квалифицированный фитнес-тренер, член Всероссийской федерации
+              спортивной аэробики, танцор с опытом более 20 лет.
+            </div>
+          </div>
+          <div class="modalTeacher__text">
+            Карина в прошлом мастер спорта спортивным бальным танцам. В 20 лет
+            она поняла, что ей ближе фитнес, но и танцы бросать не хочет. Тогда
+            Карина пошла учиться на фитнес-тренера, повысила квалификацию до
+            тренера танцевальной аэробикии начала заниматься действительно
+            любимым делом! Родители всегда были поддержкой для неё, и это
+            отразилось на её подходе к работе. Каждый ученик получал заряд
+            энергии после занятий с позитивным и душевным фитнес-тренером!
+          </div>
+        </div>
+      </section>
+
+      <section class="modal" data-target="esipova">
+        <div class="modal__container">
+          <div class="modal__close">
+            <img src="icons/modal_close.png" alt="Закрыть" />
+          </div>
+
+          <div class="flexed modalTeacher__info">
+            <div>
+              <div class="modalTeacher__name">ВЕРОНИКА ЕСИПОВА</div>
+              <div class="modalTeacher__age">26 лет</div>
+              <div class="modalTeacher__course">VOGUE</div>
+            </div>
+            <div class="modalTeacher__education">
+              МСМК по худ.гимнастике. Соорганизатор самого крупного Vogue Ball в
+              России - Virgin Vogue Ball. Statment of the Year 2018.
+            </div>
+          </div>
+          <div class="modalTeacher__text">
+            Гуляя по городу в шестилетнем возрасте, Вероника увидела танцоров,
+            которые были невероятно грациозны и харизматичны. Поэтому она начала
+            заниматься Vogue. Родители не относились серьезно к танцам, поэтому
+            отдали ребенка в художественную гимнастику. В будущем желание
+            танцевать вог не пропало,а прошлое гимнастки немаловажно сказалось
+            на успехах Вероники. Cейчас она является ярчайшей представительницей
+            Американского Vogue дома - The Iconic House of Ninja.
+          </div>
+        </div>
+      </section>
+
+      <section class="modal" data-target="mavlanova">
+        <div class="modal__container">
+          <div class="modal__close">
+            <img src="icons/modal_close.png" alt="Закрыть" />
+          </div>
+
+          <div class="flexed modalTeacher__info">
+            <div>
+              <div class="modalTeacher__name">РЕГИНА МАВЛАНОВА</div>
+              <div class="modalTeacher__age">27 лет</div>
+              <div class="modalTeacher__course">JAZZ-FUNK</div>
+            </div>
+            <div class="modalTeacher__education">
+              Победитель, а потом организатор чемпионата Fame your Choreo
+            </div>
+          </div>
+          <div class="modalTeacher__text">
+            Регина всегда знала, что станет профессиональным хореографом и
+            преподавателем. Поэтому она ещё в детстве пошла заниматься танцами к
+            лучшим танцорам. В 16 лет она в совершенстве овладела хип-хопом,
+            вакингом, хаусом, go-go, вогом и джаз-фанком. А в 23 уже была
+            финалисткой шоу “Танцы на ТНТ”, соорганизатором мастер-классов с
+            мировыми хореографами по всей Европе и Азии, участник и призер
+            многих фестивалей. И сейчас она третий основатель piCOMEON!
+          </div>
+        </div>
+      </section>
+
+      <section class="modal" data-target="kozlova">
+        <div class="modal__container">
+          <div class="modal__close">
+            <img src="icons/modal_close.png" alt="Закрыть" />
+          </div>
+
+          <div class="flexed modalTeacher__info">
+            <div>
+              <div class="modalTeacher__name">МАРИЯ КОЗЛОВА</div>
+              <div class="modalTeacher__age">28 лет</div>
+              <div class="modalTeacher__course">DANCE HOUSE</div>
+            </div>
+            <div class="modalTeacher__education">
+              Двукратный чемпион House dance International в Чикаго
+              Победительница первого сезона «Танцы без правил»
+            </div>
+          </div>
+          <div class="modalTeacher__text">
+            В детстве родители Маши переехали в США, где маленький ребенок
+            познакомился с культурой House Dance. Мария начала осваивать стиль
+            на улице вместе со своими друзьями и знакомыми. Когда родители
+            осознали серьезность и важность танцев в жизни Маши, то отдали её
+            учиться в профильную частную школу, в которой растили танцоров
+            мирового уровня. Все титулы Марии здесь не уместятся, поэтому
+            предлагаем начать занятия и убедиться самим в ее профессионализме!
+          </div>
+        </div>
+      </section>
+
+      <section class="modal" data-target="stech">
+        <div class="modal__container">
+          <div class="modal__close">
+            <img src="icons/modal_close.png" alt="Закрыть" />
+          </div>
+
+          <div class="flexed modalTeacher__info">
+            <div>
+              <div class="modalTeacher__name">МАРИЯ СТЕХ</div>
+              <div class="modalTeacher__age">27 лет</div>
+              <div class="modalTeacher__course">AEROBICS</div>
+            </div>
+            <div class="modalTeacher__education">
+              2008-2014гг.МГИМО «Международные отношения»2014-н.в Преподаватель
+            </div>
+          </div>
+          <div class="modalTeacher__text">
+            Мария Стех — первоклассный дипломат и не менее первоклассный танцор
+            и преподаватель. Родители Марии всегда хотели, чтобы их дочь
+            продолжила семейное дело и стала послом в какой-нибудь африканской
+            стране. Но наша Маша всегда шла своим путём, пускай тернистым, но
+            своим. Еще учась в школе начала заниматься танцами, а к моменту
+            поступления в Университет уже была профессиональным танцором, на
+            счету которого десятки выйгранных соревнований!
+          </div>
+        </div>
+      </section>
+
+      <section class="modal" data-target="kabrin">
+        <div class="modal__container">
+          <div class="modal__close">
+            <img src="icons/modal_close.png" alt="Закрыть" />
+          </div>
+
+          <div class="flexed modalTeacher__info">
+            <div>
+              <div class="modalTeacher__name">АНДЕЙ КАБРИН</div>
+              <div class="modalTeacher__age">32 года</div>
+              <div class="modalTeacher__course">HIP-HOP</div>
+            </div>
+            <div class="modalTeacher__education">
+              2007-2014гг. МГУ «Психология и социология»2014-н.в Преподаватель
+            </div>
+          </div>
+          <div class="modalTeacher__text">
+            Андрей — наша гордость! Человек, сочетающий в себе блестящие навыки
+            преподавателя, психолога и, конечно, танцора. Харизма и огонь —
+            такие слова чаще всего встречаются в отзывах после обучения у
+            Андрея. Удивительно, но хип-хоп пришел в его жизнь лишь в 2013 году.
+            До этого момента Андрей профессионально занимался фристайлом, но
+            травма околовензельной лопатки не дала выступать на прежнем уровне.
+            Тогда лучший друг привел его в танцы. И увести Андрея уже не
+            получается:)
+          </div>
+        </div>
+      </section>
+
+      <section class="modal" data-target="kogan">
+        <div class="modal__container">
+          <div class="modal__close">
+            <img src="icons/modal_close.png" alt="Закрыть" />
+          </div>
+
+          <div class="flexed modalTeacher__info">
+            <div>
+              <div class="modalTeacher__name">ТАТЬЯНА КОГАН</div>
+              <div class="modalTeacher__age">29 года</div>
+              <div class="modalTeacher__course">HOUSE DANCE</div>
+            </div>
+            <div class="modalTeacher__education">
+              2006-2012гг. ЮРПА РФ «Уголовное право»2012-2017 Помощник судьи МО
+              2017-н.в. Педагог
+            </div>
+          </div>
+          <div class="modalTeacher__text">
+            Нет, вы не ослышались: наша Татьяна — бывший помощник судьи в
+            г.Истра. Невероятно, но ради карьеры танцора и участия в шоу «Танцы
+            на ТНТ» она отказалась от повышения на судейском поприще. Однако
+            взамен Татьяна исполнила мечтуи стала всецело заниматься любимым
+            делом! Тот случай, когда человек нашел именно то, что у него
+            получается лучше всего и мы безмерно этому рады. Число восторженных
+            отзывов и счастливых учеников с 2017 года неумолимо растет.
+          </div>
+        </div>
+      </section>
+
+      <section class="modal" data-target="kuryatnikov">
+        <div class="modal__container">
+          <div class="modal__close">
+            <img src="icons/modal_close.png" alt="Закрыть" />
+          </div>
+
+          <div class="flexed modalTeacher__info">
+            <div>
+              <div class="modalTeacher__name">АРТЕМ КУРЯТНИКОВ</div>
+              <div class="modalTeacher__age">30 лет</div>
+              <div class="modalTeacher__course">VOGUE</div>
+            </div>
+            <div class="modalTeacher__education">
+              2010-2014 гг.МГХУ «Классический балет»2014-2018 Большой театр.
+              2018-н.в. Преподаватель
+            </div>
+          </div>
+          <div class="modalTeacher__text">
+            Артем — один из тех преподавателей, у которых высшее хореогафическое
+            образование. Почти 5 лет он являлся одним из ведущих артистов
+            Большого театра. Однако разногласия с руководством театра привели к
+            тому, что сотрудничество было прекращено. Это и стало отправной
+            точкой к взлету карьеры Артема в новом для него направлении танца —
+            vogue. Коллеги неодобрительно косились, а родные и друзья
+            поддержали. И теперь Артем наш педагог! Ура!
+          </div>
+        </div>
+      </section>
+
+      <section class="modal" data-target="buskin">
+        <div class="modal__container">
+          <div class="modal__close">
+            <img src="icons/modal_close.png" alt="Закрыть" />
+          </div>
+
+          <div class="flexed modalTeacher__info">
+            <div>
+              <div class="modalTeacher__name">МИХАИЛ БУСКИН</div>
+              <div class="modalTeacher__age">37 лет</div>
+              <div class="modalTeacher__course">JAZZ-FUNK</div>
+            </div>
+            <div class="modalTeacher__education">
+              1996-2002 гг. РХУ 2002-2012 — артист Государственного
+              академического Мариинского театра2012-н.в — Педагог
+            </div>
+          </div>
+          <div class="modalTeacher__text">
+            Профессиональный танцор, выступающий и сейчас на мировых
+            танцевальных площадках: от Москвы до Нью-Йорка и ныне переехавший на
+            пмж в «Большое яблоко». Имеет огромное количество наград и
+            номинаций, самый титулованный педагог в «piCOMEON!». Но как один из
+            основателей нашей онлайн-школы, Артём находит время и на наших
+            любимых учеников, несмотря на огромную очередь из желающих
+            заниматься у мэтра оффлайн.
+          </div>
+        </div>
+      </section>
+
+      <section class="modal" data-target="lekomtsev">
+        <div class="modal__container">
+          <div class="modal__close">
+            <img src="icons/modal_close.png" alt="Закрыть" />
+          </div>
+
+          <div class="flexed modalTeacher__info">
+            <div>
+              <div class="modalTeacher__name">МИХАИЛ ЛЕКОМЦЕВ</div>
+              <div class="modalTeacher__age">34 года</div>
+              <div class="modalTeacher__course">DANCEHALL</div>
+            </div>
+            <div class="modalTeacher__education">
+              1889-1903 —Возничий при царском дворе 1903-н.в — Педагог
+            </div>
+          </div>
+          <div class="modalTeacher__text">
+            «Сколько себя помню, я всегда танцевал!» — рассказывает Михаил. И
+            правда, с 3-х лет родители отдали его в школу спортивных танцев.
+            Паралелльно юноша занимался современными танцами, достигая успеха в
+            кажлом из видов. Можно сказать, Михаил—универсальный преподаватель,
+            но больше всего ему по душе Dancehall. Именно его невероятные уроки
+            этого направления собраны на соответствующем курсе нашей школы.
+          </div>
+        </div>
+      </section>
+
+      <div class="container teachersPage__container">
+        <div class="Page__navigation">
+          <span class="Page__navigation_unactive">Главная</span>
+          <img
+            src="icons/navigation_arrow.png"
+            alt=""
+            class="Page__navigation_arrow"
+          />
+          <span class="Page__navigation_unactive">Наши курсы</span>
+          <img
+            src="icons/navigation_arrow.png"
+            alt=""
+            class="Page__navigation_arrow"
+          />
+
+          Преподаватели
+        </div>
+
+        <div class="teachersPage__header flexed w100">
+          <div>
+            <div class="teachersPage__headerName">ПРЕПОДАВАТЕЛИ</div>
+            <div class="teachersPage__headerText">
+              <span class="tracksPage__accent"
+                ><span class="tracksPage__small">PI</span>COME</span
+              >ON! СОБРАЛИ<br />12 НАСТОЯЩИХ<br />ПРОФФЕССИОНАЛОВ
+            </div>
+          </div>
+          <div class="teachersPage__headerInfo">
+            Посмотрите, какие люди! Только<br />лучшие, только признанные,
+            только<br />самые-самые!
+          </div>
+        </div>
+
+        <div class="teachersPage__teachers flexed w100">
+          <div class="teachersPage__teacher">
+            <div class="teachersPage__teacherPhoto">
+              <img src="img/teachers__faziev.jpg" alt="Мирхан Фазиев" />
+            </div>
+            <div class="teachersPage__teacherDescryption flexed w100">
+              <div class="teachersPage__teacherName">МИРХАН ФАЗИЕВ</div>
+              <div
+                class="teachersPage__teacherMore more_arrow"
+                data-aimModal="faziev"
+              >
+                ПОДРОБНЕЕ
+              </div>
+            </div>
+          </div>
+
+          <div class="teachersPage__teacher">
+            <div class="teachersPage__teacherPhoto">
+              <img src="img/teachers__ramm.jpg" alt="Даяна Рамм" />
+            </div>
+            <div class="teachersPage__teacherDescryption flexed w100">
+              <div class="teachersPage__teacherName">Даяна Рамм</div>
+              <div
+                class="teachersPage__teacherMore more_arrow"
+                data-aimModal="ramm"
+              >
+                ПОДРОБНЕЕ
+              </div>
+            </div>
+          </div>
+
+          <div class="teachersPage__teacher">
+            <div class="teachersPage__teacherPhoto">
+              <img
+                src="img/teachers__starchickova.jpg"
+                alt="Карина Старчикова"
+              />
+            </div>
+            <div class="teachersPage__teacherDescryption flexed w100">
+              <div class="teachersPage__teacherName">Карина Старчикова</div>
+              <div
+                class="teachersPage__teacherMore more_arrow"
+                data-aimModal="starchikova"
+              >
+                ПОДРОБНЕЕ
+              </div>
+            </div>
+          </div>
+
+          <div class="teachersPage__teacher">
+            <div class="teachersPage__teacherPhoto">
+              <img src="img/teachers__esipova.jpg" alt="Вероника Есипова" />
+            </div>
+            <div class="teachersPage__teacherDescryption flexed w100">
+              <div class="teachersPage__teacherName">Вероника Есипова</div>
+              <div
+                class="teachersPage__teacherMore more_arrow"
+                data-aimModal="esipova"
+              >
+                ПОДРОБНЕЕ
+              </div>
+            </div>
+          </div>
+
+          <div class="teachersPage__teacher">
+            <div class="teachersPage__teacherPhoto">
+              <img src="img/teachers__mavlanova.jpg" alt="Регина Мавланова" />
+            </div>
+            <div class="teachersPage__teacherDescryption flexed w100">
+              <div class="teachersPage__teacherName">Регина Мавланова</div>
+              <div
+                class="teachersPage__teacherMore more_arrow"
+                data-aimModal="mavlanova"
+              >
+                ПОДРОБНЕЕ
+              </div>
+            </div>
+          </div>
+          <div class="teachersPage__teacher">
+            <div class="teachersPage__teacherPhoto">
+              <img src="img/teachers__kozlova.jpg" alt="Мария Козлова" />
+            </div>
+            <div class="teachersPage__teacherDescryption flexed w100">
+              <div class="teachersPage__teacherName">Мария Козлова</div>
+              <div
+                class="teachersPage__teacherMore more_arrow"
+                data-aimModal="kozlova"
+              >
+                ПОДРОБНЕЕ
+              </div>
+            </div>
+          </div>
+
+          <div class="teachersPage__teacher">
+            <div class="teachersPage__teacherPhoto">
+              <img src="img/teachers__stech.jpg" alt="Мария Стех" />
+            </div>
+            <div class="teachersPage__teacherDescryption flexed w100">
+              <div class="teachersPage__teacherName">Мария Стех</div>
+              <div
+                class="teachersPage__teacherMore more_arrow"
+                data-aimModal="stech"
+              >
+                ПОДРОБНЕЕ
+              </div>
+            </div>
+          </div>
+
+          <div class="teachersPage__teacher">
+            <div class="teachersPage__teacherPhoto">
+              <img src="img/teachers__kabrin.jpg" alt="Андрей Кабрин" />
+            </div>
+            <div class="teachersPage__teacherDescryption flexed w100">
+              <div class="teachersPage__teacherName">Андрей Кабрин</div>
+              <div
+                class="teachersPage__teacherMore more_arrow"
+                data-aimModal="kabrin"
+              >
+                ПОДРОБНЕЕ
+              </div>
+            </div>
+          </div>
+
+          <div class="teachersPage__teacher">
+            <div class="teachersPage__teacherPhoto">
+              <img src="img/teachers__kogan.jpg" alt="Татьяна Коган" />
+            </div>
+            <div class="teachersPage__teacherDescryption flexed w100">
+              <div class="teachersPage__teacherName">Татьяна Коган</div>
+              <div
+                class="teachersPage__teacherMore more_arrow"
+                data-aimModal="kogan"
+              >
+                ПОДРОБНЕЕ
+              </div>
+            </div>
+          </div>
+
+          <div class="teachersPage__teacher">
+            <div class="teachersPage__teacherPhoto">
+              <img src="img/teachers__kuryatnikov.jpg" alt="Артем Курятников" />
+            </div>
+            <div class="teachersPage__teacherDescryption flexed w100">
+              <div class="teachersPage__teacherName">Артем Курятников</div>
+              <div
+                class="teachersPage__teacherMore more_arrow"
+                data-aimModal="kuryatnikov"
+              >
+                ПОДРОБНЕЕ
+              </div>
+            </div>
+          </div>
+
+          <div class="teachersPage__teacher">
+            <div class="teachersPage__teacherPhoto">
+              <img src="img/teachers__buskin.jpg" alt="Михаил Бускин" />
+            </div>
+            <div class="teachersPage__teacherDescryption flexed w100">
+              <div class="teachersPage__teacherName">Михаил Бускин</div>
+              <div
+                class="teachersPage__teacherMore more_arrow"
+                data-aimModal="buskin"
+              >
+                ПОДРОБНЕЕ
+              </div>
+            </div>
+          </div>
+
+          <div class="teachersPage__teacher">
+            <div class="teachersPage__teacherPhoto">
+              <img src="img/teachers__lekomtsev.jpg" alt="Михаил Лекомцев" />
+            </div>
+            <div class="teachersPage__teacherDescryption flexed w100">
+              <div class="teachersPage__teacherName">Михаил Лекомцев</div>
+              <div
+                class="teachersPage__teacherMore more_arrow"
+                data-aimModal="lekomtsev"
+              >
+                ПОДРОБНЕЕ
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="teachersPage__button yk700 button_hover_fill">
+          ПОЛУЧИТЬ ПРОБНЫЙ ПЕРИОД
+        </div>
+      </div>
+    </main>
+
+    <footer class="footer" id="footer">
+      <div class="container footer__container yk400">
+        <div class="flexed w100">
+          <div class="footer__contacts">
+            <a href="#" class="logo yk700 footer__logo"
+              ><span class="yk400 accent">PI</span
+              ><span class="accent">COM</span>EON</a
+            >
+
+            <div class="footer__phonesContainer">
+              <a href="#">+7(909)061-98-55</a>
+              <a href="#">+7(905)000-52-52</a>
+              <a href="#">info@picomeon.ru</a>
+            </div>
+
+            <div class="footer__socialContainer">
+              <a href="#" class="footer__socialLinks"
+                ><img src="icons/ri_instagram-fill.png" alt="Instagram"
+              /></a>
+              <a href="#" class="footer__socialLinks"
+                ><img src="icons/akar-icons_telegram-fill.png" alt="Telegram"
+              /></a>
+            </div>
+          </div>
+
+          <ul class="footer__info">
+            <li class="footer__infoColumnContainer">
+              <ul class="footer__infoColumn">
+                <li class="footer__infoHeader">НАПРАВЛЕНИЯ</li>
+                <li class="footer__infoItem">HIP-HOP</li>
+                <li class="footer__infoItem">DANCEHALL</li>
+                <li class="footer__infoItem">AEROBICS</li>
+                <li class="footer__infoItem">WEDDING DANCE</li>
+                <li class="footer__infoItem">JAZZ-FUNK</li>
+                <li class="footer__infoItem">HOUSE DANCE</li>
+              </ul>
+            </li>
+            <li class="footer__infoColumnContainer">
+              <ul class="footer__infoColumn">
+                <li class="footer__infoHeader">О ШКОЛЕ</li>
+                <li class="footer__infoItem">О НАС</li>
+                <li class="footer__infoItem">ПРЕПОДАВАТЕЛИ</li>
+                <li class="footer__infoItem">ОТЗЫВЫ</li>
+                <li class="footer__infoItem">ПРАЙС</li>
+                <li class="footer__infoItem">КОНТАКТЫ</li>
+              </ul>
+            </li>
+            <li class="footer__infoColumnContainer">
+              <ul class="footer__infoColumn">
+                <li class="footer__infoHeader">ЛИЧНЫЙ КАБИНЕТ</li>
+                <li class="footer__infoItem">ЗАДАТЬ ВОПРОС</li>
+                <li class="footer__infoItem">АКЦИИ</li>
+                <li class="footer__infoItem">БОНУСНАЯ ПРОГРАММА</li>
+                <li class="footer__infoItem">ДОКУМЕНТЫ</li>
+              </ul>
+            </li>
+          </ul>
+
+          <form action="#" class="footer__form yk700" id="callback">
+            <div class="footer__formHeader">
+              ОСТАВЬТЕ ЗАЯВКУ НА ОБРАТНЫЙ ЗВОНОК
+            </div>
+            <div class="footer__formRow">
+              <div class="footer__formName footer__input">
+                <input type="text" name="footerName" id="footerName" />
+                <label for="footerName">Имя</label>
+              </div>
+
+              <div class="footer__formPhone footer__input">
+                <input
+                  type="text"
+                  name="footerPhone"
+                  id="footerPhone"
+                  class="checkTel"
+                />
+                <label
+                  for="footerPhone"
+                  onmousedown="return false"
+                  onselectstart="return false"
+                  >8(912) 456 78 90</label
+                >
+              </div>
+            </div>
+            <div class="footer__button">ПЕРЕЗВОНИТЕ МНЕ</div>
+
+            <div class="footer__formRow footer__isAgree exo400">
+              <input
+                class="checkbox"
+                type="checkbox"
+                name="isAgree"
+                id="isFooterAgree"
+                onchange="changeAgreement(this)"
+              />
+              <label
+                for="isFooterAgree"
+                class="exo400"
+                onmousedown="return false"
+                onselectstart="return false"
+              >
+                Согласен на обработку персональных данных
+              </label>
+            </div>
+          </form>
+        </div>
+
+        <div class="footer__base exo400 space_between w100">
+          <div class="footer__rights">&copy;2021 ВСЕ ПРАВА ЗАЩИЩЕНЫ</div>
+          <div>
+            <img src="icons/pay_system.png" alt="" />
+          </div>
+          <div class="footer__politics">ПОЛИТИКА КОНФЕДЕНЦИАЛЬНОСТИ</div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,1784 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>piCOMEON!</title>
+
+    <link rel="icon" href="favicon/favicon.ico" type="image/x-icon" />
+
+    <link rel="stylesheet" href="css/normalize.css" />
+    <link rel="stylesheet" href="css/main.css" />
+  </head>
+
+  <body>
+    <header class="header body__container">
+      <div
+        class="
+          header__row
+          container
+          content__container
+          header__scrollAction header__scrollAction_transition
+        "
+      >
+        <a href="index.html" class="logo yk700 header__logo"
+          ><span class="yk400 accent">PI</span
+          ><span class="accent">COM</span>EON!</a
+        >
+
+        <!-- <div class="firstScreen__buttonBuy yk700 button_hover_fill">
+          КУПИТЬ КУРС
+        </div> -->
+
+        <div class="header__buttonBuy yk700"><span>КУПИТЬ КУРС</span></div>
+
+        <div class="header__contacts">
+          <div class="header__mail">info@picomeon.ru</div>
+          <div class="header__tel">+7(905)000-52-52</div>
+        </div>
+      </div>
+
+      <nav class="yk400">
+        <div class="container header__row">
+          <a href="about.html" class="header__nav header_hoverHard"
+            ><span>О НАС</span></a
+          >
+          <span class="header__nav header__arrow"
+            ><a href="#tracks" class="header_hoverHard header__arrowMain"
+              ><span>НАШИ КУРСЫ</span></a
+            >
+            <div class="header__arrowDown">
+              <div>
+                <a href="tracks.html" class="header_hoverHard">НАПРАВЛЕНИЯ</a>
+              </div>
+              <div>
+                <a href="teachers.html" class="header_hoverHard"
+                  >ПРЕПОДАВАТЕЛИ</a
+                >
+              </div>
+            </div>
+          </span>
+
+          <a href="price.html" class="header__nav header_hoverHard"
+            ><span>ПРАЙС</span></a
+          >
+
+          <span class="header__nav header__arrow"
+            ><a class="header_hoverHard header__arrowMain"
+              ><span>ВЫГОДНЫЕ ПРЕДЛОЖЕНИЯ</span></a
+            >
+            <div class="header__arrowDown">
+              <div>
+                <a href="offers.html" class="header_hoverHard">АКЦИИ</a>
+              </div>
+              <div>
+                <a href="bonus.html" class="header_hoverHard"
+                  >БОНУСНАЯ ПРОГРАММА</a
+                >
+              </div>
+            </div>
+          </span>
+          <a href="reviews.html" class="header__nav header_hoverHard"
+            ><span>ОТЗЫВЫ</span></a
+          >
+          <a href="contacts.html" class="header__nav header_hoverHard"
+            ><span>КОНТАКТЫ</span></a
+          >
+
+          <a href="register.html" class="header__login yk400 header_hoverHard"
+            >ВОЙТИ</a
+          >
+          <a href="#callback" class="header__callback accent yk700 header_hover"
+            >ОБРАТНЫЙ ЗВОНОК</a
+          >
+        </div>
+      </nav>
+    </header>
+
+    <main class="body__container main" id="main">
+      <!-- <div class="firstScreen">
+        <div class="container firstScreen">
+          <div class="firstScreen__side">
+            <div>
+              <div class="firstScreen__info exo400">
+                Выбирай одно из шести направлений нашей танцевальной
+                онлайн-школы и пройди трехмесячный курс за
+                <span class="exo700 accent">4599₽</span>
+              </div>
+              <div class="firstScreen__actionButton yk700">
+                ПОЛУЧИТЬ ПРОБНЫЙ ПЕРИОД
+              </div>
+            </div>
+          </div>
+          <div class="firstScreen__side">
+            <img src="img/firstScreen_back.jpg" alt="..." />
+            <div class="firstScreen__danceText yk700">
+              ШКОЛА <span class="accent">СОВРЕМЕННОГО</span>&nbsp;ТАНЦА
+              У&nbsp;ВАС&nbsp;ДОМА!
+            </div>
+          </div>
+        </div>
+      </div> -->
+
+      <section class="firstScreen">
+        <div class="container firstScreen__row">
+          <div class="firstScreen__text">
+            <div class="firstScreen__header yk700">
+              <span class="offset firstScreen__online">ОНЛАЙН</span><br /><span
+                class="boldBig"
+                >ШКОЛА<br />
+                <span class="offset">ТАНЦА</span></span
+              ><br /><span class="firstscreen__textAccent">У ВАС ДОМА!</span>
+            </div>
+
+            <div class="firstScreen__centeredText">
+              <!-- <div class="firstScreen__info exo500">
+                Выбирай одно из шести направлений нашей танцевальной
+                онлайн-школы и пройди трехмесячный курс за
+                <span class="accent exo700">4599₽</span>
+              </div> -->
+
+              <div class="firstScreen__buttonContainer">
+                <a href="getTrial.html"
+                  ><div class="firstScreen__button yk700 button_hover_fill">
+                    ПОЛУЧИТЬ ПРОБНЫЙ ПЕРИОД
+                  </div></a
+                >
+
+                <div class="firstScreen__info exo500">
+                  Попробуй каждое направление<br />в рамках пробного периода, а
+                  затем<br />
+                  выбери понравившееся!
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="firstScreen__slider">
+            <div class="firstScreen__backImage">
+              <img src="img/firstScreen_back.jpg" alt="" width="766" />
+            </div>
+
+            <div class="firstScreen__cart">
+              <div class="firstScreen__page"></div>
+              <div class="firstscreen__array" data-direction="Left"></div>
+              <div
+                class="firstscreen__array firstscreen__array_right"
+                data-direction="Right"
+              ></div>
+
+              <div class="firstScreen__cartRow">
+                <div></div>
+                <div class="firstscreen__selectContainer">
+                  <input
+                    type="radio"
+                    name="firstscreen__type"
+                    id="firstscreen_type_0"
+                    checked
+                  />
+                  <label for="firstscreen_type_0"></label>
+                  <input
+                    type="radio"
+                    name="firstscreen__type"
+                    id="firstscreen_type_1"
+                  />
+                  <label for="firstscreen_type_1"></label>
+                  <input
+                    type="radio"
+                    name="firstscreen__type"
+                    id="firstscreen_type_2"
+                  />
+                  <label for="firstscreen_type_2"></label>
+                  <input
+                    type="radio"
+                    name="firstscreen__type"
+                    id="firstscreen_type_3"
+                  />
+                  <label for="firstscreen_type_3"></label>
+                  <input
+                    type="radio"
+                    name="firstscreen__type"
+                    id="firstscreen_type_4"
+                  />
+                  <label for="firstscreen_type_4"></label>
+                  <input
+                    type="radio"
+                    name="firstscreen__type"
+                    id="firstscreen_type_5"
+                  />
+                  <label for="firstscreen_type_5"></label>
+                </div>
+                <div></div>
+              </div>
+
+              <div class="firstScreen__cartRow firstScreen__cartPhoto">
+                <video
+                  src="forMainSlidebar/hip.mp4"
+                  id="firsScreen__cartPhoto"
+                  muted
+                ></video>
+                <!-- <img
+                  src="gifs/hip-hop.gif"
+                  alt=""
+                  width="311"
+                  id="firsScreen__cartPhoto"
+                /> -->
+              </div>
+
+              <!-- <div class="firstScreen__cartRow firstScreen__cartPhotoContainer">
+                <div class="firstscreen__array" data-direction="Left">
+                  <img src="icons/firstScreen_arrowRight.png" alt="Влево" />
+                </div>
+
+                <div class="firstScreen__cartPhoto">
+                  <img
+                    src="img/tracks__hipHop.jpg"
+                    alt=""
+                    width="275"
+                    id="firsScreen__cartPhoto"
+                  />
+                </div>
+
+                <div class="firstscreen__array" data-direction="Right">
+                  <img src="icons/firstScreen_arrowRight.png" alt="Вправо" />
+                </div>
+              </div> -->
+              <div class="firstScreen__cartRow">
+                <div
+                  class="firstScreen__typeName yk700"
+                  id="firstScreen__typeName"
+                >
+                  HIP-HOP
+                </div>
+                <a href="track_hip-hop.html" id="track__link"
+                  ><div
+                    class="
+                      firstScreen__cartMore
+                      accent
+                      yk700
+                      hover_text
+                      more_arrow
+                    "
+                  >
+                    ПОДРОБНЕЕ
+                  </div></a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="advert" id="about">
+        <div class="advert__item">О НАС</div>
+        <div class="advert__item">О НАС</div>
+        <div class="advert__item">О НАС</div>
+        <div class="advert__item">О НАС</div>
+        <div class="advert__item">О НАС</div>
+        <div class="advert__item">О НАС</div>
+        <div class="advert__item">О НАС</div>
+        <div class="advert__item">О НАС</div>
+        <div class="advert__item">О НАС</div>
+        <div class="advert__item">О НАС</div>
+        <div class="advert__item">О НАС</div>
+        <div class="advert__item">О НАС</div>
+        <div class="advert__item">О НАС</div>
+        <div class="advert__item">О НАС</div>
+        <div class="advert__item">О НАС</div>
+        <div class="advert__item">О НАС</div>
+        <div class="advert__item">О НАС</div>
+        <div class="advert__item">О НАС</div>
+        <div class="advert__item">О НАС</div>
+        <div class="advert__item">О НАС</div>
+        <div class="advert__item">О НАС</div>
+        <div class="advert__item">О НАС</div>
+        <div class="advert__item">О НАС</div>
+        <div class="advert__item">О НАС</div>
+        <div class="advert__item">О НАС</div>
+        <div class="advert__item">О НАС</div>
+        <div class="advert__item">О НАС</div>
+        <div class="advert__item">О НАС</div>
+        <div class="advert__item">О НАС</div>
+        <div class="advert__item">О НАС</div>
+        <div class="advert__item">О НАС</div>
+        <div class="advert__item">О НАС</div>
+        <div class="advert__item">О НАС</div>
+        <div class="advert__item">О НАС</div>
+        <div class="advert__item">О НАС</div>
+        <div class="advert__item">О НАС</div>
+        <div class="advert__item">О НАС</div>
+        <div class="advert__item">О НАС</div>
+        <div class="advert__item">О НАС</div>
+        <div class="advert__item">О НАС</div>
+        <div class="advert__item">О НАС</div>
+        <div class="advert__item">О НАС</div>
+        <div class="advert__item">О НАС</div>
+        <div class="advert__item">О НАС</div>
+        <div class="advert__item">О НАС</div>
+        <div class="advert__item">О НАС</div>
+        <div class="advert__item">О НАС</div>
+        <div class="advert__item">О НАС</div>
+        <div class="advert__item">О НАС</div>
+        <div class="advert__item">О НАС</div>
+        <div class="advert__item">О НАС</div>
+        <div class="advert__item">О НАС</div>
+        <div class="advert__item">О НАС</div>
+        <div class="advert__item">О НАС</div>
+        <div class="advert__item">О НАС</div>
+        <div class="advert__item">О НАС</div>
+        <div class="advert__item">О НАС</div>
+        <div class="advert__item">О НАС</div>
+        <div class="advert__item">О НАС</div>
+        <div class="advert__item">О НАС</div>
+        <div class="advert__item">О НАС</div>
+        <div class="advert__item">О НАС</div>
+        <div class="advert__item">О НАС</div>
+        <div class="advert__item">О НАС</div>
+        <div class="advert__item">О НАС</div>
+        <div class="advert__item">О НАС</div>
+        <div class="advert__item">О НАС</div>
+        <div class="advert__item">О НАС</div>
+        <div class="advert__item">О НАС</div>
+        <div class="advert__item">О НАС</div>
+        <div class="advert__item">О НАС</div>
+        <div class="advert__item">О НАС</div>
+        <div class="advert__item">О НАС</div>
+        <div class="advert__item">О НАС</div>
+        <div class="advert__item">О НАС</div>
+        <div class="advert__item">О НАС</div>
+        <div class="advert__item">О НАС</div>
+        <div class="advert__item">О НАС</div>
+        <div class="advert__item">О НАС</div>
+        <div class="advert__item">О НАС</div>
+        <div class="advert__item">О НАС</div>
+        <div class="advert__item">О НАС</div>
+        <div class="advert__item">О НАС</div>
+        <div class="advert__item">О НАС</div>
+      </div>
+
+      <section class="about">
+        <div class="container about__container">
+          <div class="about__photo">
+            <div class="about__photo__container">
+              <div class="about__stick">
+                <img src="img/about_stick.png" alt="" />
+              </div>
+              <img src="img/about_photo.png" alt="" />
+              <div class="comeOn">
+                <!-- <img src="img/about_mark.png" alt="" /> -->
+                <div class="comeOn__text pm400 accent">COME ON!</div>
+              </div>
+            </div>
+
+            <!-- <div class="about__paint about__paint3">
+              <img src="img/about_paint3.png" alt="" />
+            </div>
+            <div class="about__paint about__paint31">
+              <img src="img/about_paint3.png" alt="" />
+            </div>
+            <div class="about__paint about__paint2">
+              <img src="img/about_paint2.png" alt="" />
+            </div>
+            <div class="about__paint about__paint1">
+              <img src="img/about_paint2.png" alt="" />
+            </div>
+            <div class="about__paint about__paint21">
+              <img src="img/about_paint2.png" alt="" />
+            </div>
+            <div class="about__paint about__paint22">
+              <img src="img/about_paint2.png" alt="" />
+            </div> -->
+            <div class="about__page">
+              <img src="icons/about_page.png" alt="" />
+            </div>
+          </div>
+
+          <div class="about__text">
+            <div class="about__header yk700">
+              <div class="flexed">
+                <div>ДЛЯ НАС<br />ТАНЕЦ &mdash;</div>
+                <div class="about__headerBig">ЖИЗНЬ</div>
+              </div>
+
+              <div class="greatBox"></div>
+            </div>
+
+            <!-- <div class="about__info exo400">
+              Еще Траут показал, что продукт основан на опыте повседневного
+              применения. Воздействие на потребителя, безусловно, повсеместно
+              специфицирует комплексный целевой сегмент рынка, учитывая
+              современные тенденции.
+            </div> -->
+
+            <div class="about__info exo400">
+              Танцы - это про движение к свободе. Начни заниматься<br />
+              с командой
+              <span class="about__logo"
+                ><span class="accent">piCOME</span>ON!</span
+              >
+              прямо сейчас из любой точки мира,<br />продолжай в удобное время,
+              прокачивай навыки и покоряй<br />вершины своей энергичностью и
+              легкостью!
+            </div>
+
+            <a href="about.html"
+              ><div
+                class="
+                  about__button
+                  yk700
+                  button_hover_fill button_hover_fill_simple
+                "
+              >
+                УЗНАТЬ ПОДРОБНЕЕ
+              </div></a
+            >
+          </div>
+        </div>
+      </section>
+
+      <div class="advert" id="pros">
+        <div class="advert__item">ПРЕИМУЩЕСТВА</div>
+        <div class="advert__item">ПРЕИМУЩЕСТВА</div>
+        <div class="advert__item">ПРЕИМУЩЕСТВА</div>
+        <div class="advert__item">ПРЕИМУЩЕСТВА</div>
+        <div class="advert__item">ПРЕИМУЩЕСТВА</div>
+        <div class="advert__item">ПРЕИМУЩЕСТВА</div>
+        <div class="advert__item">ПРЕИМУЩЕСТВА</div>
+        <div class="advert__item">ПРЕИМУЩЕСТВА</div>
+        <div class="advert__item">ПРЕИМУЩЕСТВА</div>
+        <div class="advert__item">ПРЕИМУЩЕСТВА</div>
+        <div class="advert__item">ПРЕИМУЩЕСТВА</div>
+        <div class="advert__item">ПРЕИМУЩЕСТВА</div>
+        <div class="advert__item">ПРЕИМУЩЕСТВА</div>
+        <div class="advert__item">ПРЕИМУЩЕСТВА</div>
+        <div class="advert__item">ПРЕИМУЩЕСТВА</div>
+        <div class="advert__item">ПРЕИМУЩЕСТВА</div>
+        <div class="advert__item">ПРЕИМУЩЕСТВА</div>
+        <div class="advert__item">ПРЕИМУЩЕСТВА</div>
+        <div class="advert__item">ПРЕИМУЩЕСТВА</div>
+        <div class="advert__item">ПРЕИМУЩЕСТВА</div>
+        <div class="advert__item">ПРЕИМУЩЕСТВА</div>
+        <div class="advert__item">ПРЕИМУЩЕСТВА</div>
+        <div class="advert__item">ПРЕИМУЩЕСТВА</div>
+        <div class="advert__item">ПРЕИМУЩЕСТВА</div>
+        <div class="advert__item">ПРЕИМУЩЕСТВА</div>
+        <div class="advert__item">ПРЕИМУЩЕСТВА</div>
+        <div class="advert__item">ПРЕИМУЩЕСТВА</div>
+        <div class="advert__item">ПРЕИМУЩЕСТВА</div>
+        <div class="advert__item">ПРЕИМУЩЕСТВА</div>
+        <div class="advert__item">ПРЕИМУЩЕСТВА</div>
+        <div class="advert__item">ПРЕИМУЩЕСТВА</div>
+        <div class="advert__item">ПРЕИМУЩЕСТВА</div>
+        <div class="advert__item">ПРЕИМУЩЕСТВА</div>
+        <div class="advert__item">ПРЕИМУЩЕСТВА</div>
+        <div class="advert__item">ПРЕИМУЩЕСТВА</div>
+        <div class="advert__item">ПРЕИМУЩЕСТВА</div>
+        <div class="advert__item">ПРЕИМУЩЕСТВА</div>
+        <div class="advert__item">ПРЕИМУЩЕСТВА</div>
+        <div class="advert__item">ПРЕИМУЩЕСТВА</div>
+        <div class="advert__item">ПРЕИМУЩЕСТВА</div>
+        <div class="advert__item">ПРЕИМУЩЕСТВА</div>
+        <div class="advert__item">ПРЕИМУЩЕСТВА</div>
+        <div class="advert__item">ПРЕИМУЩЕСТВА</div>
+        <div class="advert__item">ПРЕИМУЩЕСТВА</div>
+        <div class="advert__item">ПРЕИМУЩЕСТВА</div>
+        <div class="advert__item">ПРЕИМУЩЕСТВА</div>
+        <div class="advert__item">ПРЕИМУЩЕСТВА</div>
+        <div class="advert__item">ПРЕИМУЩЕСТВА</div>
+        <div class="advert__item">ПРЕИМУЩЕСТВА</div>
+        <div class="advert__item">ПРЕИМУЩЕСТВА</div>
+        <div class="advert__item">ПРЕИМУЩЕСТВА</div>
+        <div class="advert__item">ПРЕИМУЩЕСТВА</div>
+        <div class="advert__item">ПРЕИМУЩЕСТВА</div>
+        <div class="advert__item">ПРЕИМУЩЕСТВА</div>
+        <div class="advert__item">ПРЕИМУЩЕСТВА</div>
+        <div class="advert__item">ПРЕИМУЩЕСТВА</div>
+      </div>
+
+      <section class="pros">
+        <div class="container pros__container">
+          <div class="pros__numbers exo500">
+            <div class="pros__numContainer">
+              <div class="pros__number pros__more increasingNumber">250</div>
+              <div class="pros__text">
+                уроков,<br />записанных<br />в&nbsp;<span
+                  style="text-transform: uppercase"
+                  >HD</span
+                >-качестве
+              </div>
+            </div>
+            <div class="pros__numContainer">
+              <div class="pros__number increasingNumber">6</div>
+              <div class="pros__text">
+                популярных<br />направлений<br />танца
+              </div>
+            </div>
+            <div class="pros__numContainer">
+              <div class="pros__number pros__more exo500 increasingNumber">
+                3200
+              </div>
+              <div class="pros__text">счастливых<br />выпускников</div>
+            </div>
+            <div class="pros__numContainer">
+              <div class="pros__number increasingNumber">12</div>
+              <div class="pros__text">именитых<br />педагогов</div>
+            </div>
+          </div>
+
+          <div class="pros__action">
+            <div class="pros__header yk700">
+              БОЛЬШЕ<br /><span>ФАКТОВ!</span> МЕНЬШЕ СЛОВ
+            </div>
+            <a href="getTrial.html"
+              ><div class="pros__button yk700 button_hover_fill">
+                ПОЛУЧИТЬ ПРОБНЫЙ ПЕРИОД
+              </div></a
+            >
+          </div>
+        </div>
+      </section>
+
+      <div class="advert" id="tracks">
+        <div class="advert__item">НАПРАВЛЕНИЯ</div>
+        <div class="advert__item">НАПРАВЛЕНИЯ</div>
+        <div class="advert__item">НАПРАВЛЕНИЯ</div>
+        <div class="advert__item">НАПРАВЛЕНИЯ</div>
+        <div class="advert__item">НАПРАВЛЕНИЯ</div>
+        <div class="advert__item">НАПРАВЛЕНИЯ</div>
+        <div class="advert__item">НАПРАВЛЕНИЯ</div>
+        <div class="advert__item">НАПРАВЛЕНИЯ</div>
+        <div class="advert__item">НАПРАВЛЕНИЯ</div>
+        <div class="advert__item">НАПРАВЛЕНИЯ</div>
+        <div class="advert__item">НАПРАВЛЕНИЯ</div>
+        <div class="advert__item">НАПРАВЛЕНИЯ</div>
+        <div class="advert__item">НАПРАВЛЕНИЯ</div>
+        <div class="advert__item">НАПРАВЛЕНИЯ</div>
+        <div class="advert__item">НАПРАВЛЕНИЯ</div>
+        <div class="advert__item">НАПРАВЛЕНИЯ</div>
+        <div class="advert__item">НАПРАВЛЕНИЯ</div>
+        <div class="advert__item">НАПРАВЛЕНИЯ</div>
+        <div class="advert__item">НАПРАВЛЕНИЯ</div>
+        <div class="advert__item">НАПРАВЛЕНИЯ</div>
+        <div class="advert__item">НАПРАВЛЕНИЯ</div>
+        <div class="advert__item">НАПРАВЛЕНИЯ</div>
+        <div class="advert__item">НАПРАВЛЕНИЯ</div>
+        <div class="advert__item">НАПРАВЛЕНИЯ</div>
+        <div class="advert__item">НАПРАВЛЕНИЯ</div>
+        <div class="advert__item">НАПРАВЛЕНИЯ</div>
+        <div class="advert__item">НАПРАВЛЕНИЯ</div>
+        <div class="advert__item">НАПРАВЛЕНИЯ</div>
+        <div class="advert__item">НАПРАВЛЕНИЯ</div>
+        <div class="advert__item">НАПРАВЛЕНИЯ</div>
+        <div class="advert__item">НАПРАВЛЕНИЯ</div>
+        <div class="advert__item">НАПРАВЛЕНИЯ</div>
+        <div class="advert__item">НАПРАВЛЕНИЯ</div>
+        <div class="advert__item">НАПРАВЛЕНИЯ</div>
+        <div class="advert__item">НАПРАВЛЕНИЯ</div>
+        <div class="advert__item">НАПРАВЛЕНИЯ</div>
+        <div class="advert__item">НАПРАВЛЕНИЯ</div>
+        <div class="advert__item">НАПРАВЛЕНИЯ</div>
+        <div class="advert__item">НАПРАВЛЕНИЯ</div>
+        <div class="advert__item">НАПРАВЛЕНИЯ</div>
+        <div class="advert__item">НАПРАВЛЕНИЯ</div>
+        <div class="advert__item">НАПРАВЛЕНИЯ</div>
+        <div class="advert__item">НАПРАВЛЕНИЯ</div>
+        <div class="advert__item">НАПРАВЛЕНИЯ</div>
+        <div class="advert__item">НАПРАВЛЕНИЯ</div>
+        <div class="advert__item">НАПРАВЛЕНИЯ</div>
+        <div class="advert__item">НАПРАВЛЕНИЯ</div>
+        <div class="advert__item">НАПРАВЛЕНИЯ</div>
+        <div class="advert__item">НАПРАВЛЕНИЯ</div>
+        <div class="advert__item">НАПРАВЛЕНИЯ</div>
+        <div class="advert__item">НАПРАВЛЕНИЯ</div>
+        <div class="advert__item">НАПРАВЛЕНИЯ</div>
+        <div class="advert__item">НАПРАВЛЕНИЯ</div>
+        <div class="advert__item">НАПРАВЛЕНИЯ</div>
+        <div class="advert__item">НАПРАВЛЕНИЯ</div>
+        <div class="advert__item">НАПРАВЛЕНИЯ</div>
+      </div>
+
+      <section class="tracks">
+        <div class="container tracks__container yk700">
+          <div class="tracks__blured"></div>
+          <!-- <div class="tracks__blured_2"></div> -->
+          <div class="tracks__text">
+            <!-- <div class="tracks__shortText exo600">
+              Тут можно что-то кратенькое написать ляляля трат та
+            </div> -->
+
+            <div class="tracks__shortText exo600">
+              Попробуй каждое на пробном периоде.<br />Начни танцевать прямо
+              сейчас!
+            </div>
+
+            <div class="tracks__header"><span>НАПРАВЛЕНИЯ</span></div>
+          </div>
+
+          <div class="tracks__items">
+            <div class="tracks__item">
+              <img
+                src="img/tracks__hipHop.jpg"
+                alt="HIP-HOP"
+                width="244"
+                height="166"
+              />
+              <div class="track__row">
+                <div class="track__name">HIP-HOP</div>
+                <a
+                  href="track_hip-hop.html"
+                  class="track__more accent hover_text"
+                  ><div class="track__more accent hover_text more_arrow">
+                    ПОДРОБНЕЕ
+                  </div></a
+                >
+              </div>
+            </div>
+
+            <div class="tracks__item">
+              <img
+                src="img/tracks__dancehall.jpg"
+                alt="DANCEHALL"
+                width="244"
+                height="166"
+              />
+              <div class="track__row">
+                <div class="track__name">DANCEHALL</div>
+                <a
+                  href="track_dancehall.html"
+                  class="track__more accent hover_text"
+                  ><div class="track__more accent hover_text more_arrow">
+                    ПОДРОБНЕЕ
+                  </div></a
+                >
+              </div>
+            </div>
+
+            <div class="tracks__item">
+              <img
+                src="img/tracks__aerobics.jpg"
+                alt="AEROBICS"
+                width="244"
+                height="166"
+              />
+              <div class="track__row">
+                <div class="track__name">AEROBICS</div>
+                <a
+                  href="track_aerobics.html"
+                  class="track__more accent hover_text"
+                  ><div class="track__more accent hover_text more_arrow">
+                    ПОДРОБНЕЕ
+                  </div></a
+                >
+              </div>
+            </div>
+
+            <div class="tracks__item">
+              <img
+                src="img/tracks__vogue.jpg"
+                alt="VOGUE"
+                width="244"
+                height="166"
+              />
+              <div class="track__row">
+                <div class="track__name">VOGUE</div>
+                <a href="track_vogue.html" class="track__more accent hover_text"
+                  ><div class="track__more accent hover_text more_arrow">
+                    ПОДРОБНЕЕ
+                  </div></a
+                >
+              </div>
+            </div>
+
+            <div class="tracks__item">
+              <img
+                src="img/tracks__jazzFunk.jpg"
+                alt="JAZZ-FUNK"
+                width="244"
+                height="166"
+              />
+              <div class="track__row">
+                <div class="track__name">JAZZ-FUNK</div>
+                <a
+                  href="track_jazz-funk.html"
+                  class="track__more accent hover_text"
+                  ><div class="track__more accent hover_text more_arrow">
+                    ПОДРОБНЕЕ
+                  </div></a
+                >
+              </div>
+            </div>
+
+            <div class="tracks__item">
+              <img
+                src="img/tracks__houseDance.jpg"
+                alt="HOUSE DANCE"
+                width="244"
+                height="166"
+              />
+              <div class="track__row">
+                <div class="track__name">HOUSE DANCE</div>
+                <a
+                  href="track_house-dance.html"
+                  class="track__more accent hover_text"
+                  ><div class="track__more accent hover_text more_arrow">
+                    ПОДРОБНЕЕ
+                  </div></a
+                >
+              </div>
+            </div>
+          </div>
+
+          <div class="tracks__buttonContainer">
+            <a href="tracks.html"
+              ><div
+                class="
+                  tracks__button
+                  yk400
+                  button_hover_fill_accent button_hover_fill_accent_simple
+                "
+              >
+                УЗНАТЬ БОЛЬШЕ
+              </div></a
+            >
+          </div>
+        </div>
+      </section>
+
+      <div class="advert" id="steps">
+        <div class="advert__item">ЭТАПЫ ОБУЧЕНИЯ</div>
+        <div class="advert__item">ЭТАПЫ ОБУЧЕНИЯ</div>
+        <div class="advert__item">ЭТАПЫ ОБУЧЕНИЯ</div>
+        <div class="advert__item">ЭТАПЫ ОБУЧЕНИЯ</div>
+        <div class="advert__item">ЭТАПЫ ОБУЧЕНИЯ</div>
+        <div class="advert__item">ЭТАПЫ ОБУЧЕНИЯ</div>
+        <div class="advert__item">ЭТАПЫ ОБУЧЕНИЯ</div>
+        <div class="advert__item">ЭТАПЫ ОБУЧЕНИЯ</div>
+        <div class="advert__item">ЭТАПЫ ОБУЧЕНИЯ</div>
+        <div class="advert__item">ЭТАПЫ ОБУЧЕНИЯ</div>
+        <div class="advert__item">ЭТАПЫ ОБУЧЕНИЯ</div>
+        <div class="advert__item">ЭТАПЫ ОБУЧЕНИЯ</div>
+        <div class="advert__item">ЭТАПЫ ОБУЧЕНИЯ</div>
+        <div class="advert__item">ЭТАПЫ ОБУЧЕНИЯ</div>
+        <div class="advert__item">ЭТАПЫ ОБУЧЕНИЯ</div>
+        <div class="advert__item">ЭТАПЫ ОБУЧЕНИЯ</div>
+        <div class="advert__item">ЭТАПЫ ОБУЧЕНИЯ</div>
+        <div class="advert__item">ЭТАПЫ ОБУЧЕНИЯ</div>
+        <div class="advert__item">ЭТАПЫ ОБУЧЕНИЯ</div>
+        <div class="advert__item">ЭТАПЫ ОБУЧЕНИЯ</div>
+        <div class="advert__item">ЭТАПЫ ОБУЧЕНИЯ</div>
+        <div class="advert__item">ЭТАПЫ ОБУЧЕНИЯ</div>
+        <div class="advert__item">ЭТАПЫ ОБУЧЕНИЯ</div>
+        <div class="advert__item">ЭТАПЫ ОБУЧЕНИЯ</div>
+        <div class="advert__item">ЭТАПЫ ОБУЧЕНИЯ</div>
+        <div class="advert__item">ЭТАПЫ ОБУЧЕНИЯ</div>
+        <div class="advert__item">ЭТАПЫ ОБУЧЕНИЯ</div>
+        <div class="advert__item">ЭТАПЫ ОБУЧЕНИЯ</div>
+        <div class="advert__item">ЭТАПЫ ОБУЧЕНИЯ</div>
+        <div class="advert__item">ЭТАПЫ ОБУЧЕНИЯ</div>
+        <div class="advert__item">ЭТАПЫ ОБУЧЕНИЯ</div>
+        <div class="advert__item">ЭТАПЫ ОБУЧЕНИЯ</div>
+        <div class="advert__item">ЭТАПЫ ОБУЧЕНИЯ</div>
+        <div class="advert__item">ЭТАПЫ ОБУЧЕНИЯ</div>
+        <div class="advert__item">ЭТАПЫ ОБУЧЕНИЯ</div>
+        <div class="advert__item">ЭТАПЫ ОБУЧЕНИЯ</div>
+        <div class="advert__item">ЭТАПЫ ОБУЧЕНИЯ</div>
+        <div class="advert__item">ЭТАПЫ ОБУЧЕНИЯ</div>
+        <div class="advert__item">ЭТАПЫ ОБУЧЕНИЯ</div>
+        <div class="advert__item">ЭТАПЫ ОБУЧЕНИЯ</div>
+        <div class="advert__item">ЭТАПЫ ОБУЧЕНИЯ</div>
+        <div class="advert__item">ЭТАПЫ ОБУЧЕНИЯ</div>
+        <div class="advert__item">ЭТАПЫ ОБУЧЕНИЯ</div>
+        <div class="advert__item">ЭТАПЫ ОБУЧЕНИЯ</div>
+        <div class="advert__item">ЭТАПЫ ОБУЧЕНИЯ</div>
+        <div class="advert__item">ЭТАПЫ ОБУЧЕНИЯ</div>
+        <div class="advert__item">ЭТАПЫ ОБУЧЕНИЯ</div>
+        <div class="advert__item">ЭТАПЫ ОБУЧЕНИЯ</div>
+        <div class="advert__item">ЭТАПЫ ОБУЧЕНИЯ</div>
+        <div class="advert__item">ЭТАПЫ ОБУЧЕНИЯ</div>
+        <div class="advert__item">ЭТАПЫ ОБУЧЕНИЯ</div>
+        <div class="advert__item">ЭТАПЫ ОБУЧЕНИЯ</div>
+        <div class="advert__item">ЭТАПЫ ОБУЧЕНИЯ</div>
+        <div class="advert__item">ЭТАПЫ ОБУЧЕНИЯ</div>
+        <div class="advert__item">ЭТАПЫ ОБУЧЕНИЯ</div>
+        <div class="advert__item">ЭТАПЫ ОБУЧЕНИЯ</div>
+      </div>
+
+      <section class="steps">
+        <div class="container">
+          <div class="steps__header yk700">
+            <div class="flexed">
+              <div>КАК БУДЕТ<br />ПРОХОДИТЬ</div>
+              <div class="steps__headerBig">
+                <span class="accent">ОБУЧЕНИЕ?</span>
+              </div>
+            </div>
+          </div>
+          <div class="steps__row">
+            <!-- <div class="steps__info exo600">
+              Каждый урок включает в себя разминку, основную часть, а также
+              растяжку. Наши преподаватели подходят к процессу обучения с
+              высокой степенью чуткости и ответственности. Каждый наш ученик: от
+              новичка до профессионала — что-то тут написано интересненькое, а
+              не вотэтовотвсё.
+            </div> -->
+
+            <div class="steps__info exo600">
+              Каждый урок включает в себя разминку, основную часть<br />и
+              растяжку. Наши преподаватели подходят к процессу обучения<br />с
+              высокой степенью чуткости и ответственности. Поэтому каждый<br />наш
+              ученик: от новичка до профессионала - не останется<br />незамеченным!
+            </div>
+
+            <div class="steps__shortInfoContainer exo600">
+              <div class="steps__shortInfo accent">*Подробнее в прайсе</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="steps__items">
+          <div class="steps__item yk400">
+            <div class="container step__container">
+              <div class="flexed w100">
+                <div class="step__number">01</div>
+                <div class="step__description">
+                  выбирай направление<br />и начинай танцевать
+                </div>
+                <!-- <div class="step__textDescription exo400">
+                  У нас есть уроки для наинающих, продолжающих и
+                  профессиональных танцоров. Выбирай свой уровень и дерзай!
+                </div> -->
+
+                <div class="step__textDescription exo400">
+                  Единый пробный период на все направления - попробуй всё<br />и
+                  танцуй в удовольствие!
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="steps__item yk400">
+            <div class="container step__container">
+              <div class="flexed w100">
+                <div class="step__number">02</div>
+                <div class="step__description">
+                  Каждую неделю<br />открываются три урока
+                </div>
+                <div class="step__textDescription exo400">
+                  Регулярные занятия в размеренном темпе позволят<br />приблизиться
+                  к результатам в 2 раза быстрее!
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="steps__item yk400">
+            <div class="container step__container">
+              <div class="flexed w100">
+                <div class="step__number">03</div>
+                <div class="step__description">
+                  каждые две недели—<br />видеосвязь с педагогом
+                </div>
+                <div class="step__textDescription exo400">
+                  У всех учеников есть возможность лично пообщаться<br />с
+                  преподавателм 1 раз в 2 недели, обсудить сложные<br />связки и
+                  элементы.*
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="steps__item yk400">
+            <div class="container step__container">
+              <div class="flexed w100">
+                <div class="step__number">04</div>
+                <div class="step__description">
+                  набирай и обменивай<br />баллы
+                </div>
+                <div class="step__textDescription exo400">
+                  Приобретай на баллы скидки, акции и бонусы. Уникальная<br />бальная
+                  система разработана с выгодой для каждого ученика :)
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="steps__item yk400">
+            <div class="container step__container">
+              <div class="flexed w100">
+                <div class="step__number">05</div>
+                <div class="step__description">
+                  Общайся в чате<br />единомышленников
+                </div>
+                <div class="step__textDescription exo400">
+                  Поддержка преподавателей и психологов: делись<br />переживаниями,
+                  спрашивай советы, отправляй танцевальные<br />связки и
+                  влюбляйся в танец ещё больше!
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="steps__item yk400">
+            <div class="container step__container">
+              <div class="flexed w100">
+                <div class="step__number">06</div>
+                <div class="step__description">
+                  получи сертификат<br />о прохождении курса
+                </div>
+                <div class="step__textDescription exo400">
+                  Мы обязуемся выдать тебе сертификат о прохождении нашего<br />курса
+                  при выборе тарифа “Профессиональный”.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="container">
+          <div class="step__container">
+            <div class="steps__buttonContainer flexed">
+              <a href="getTrial.html"
+                ><div class="steps__button yk700 button_hover_fill">
+                  ПОЛУЧИТЬ ПРОБНЫЙ ПЕРИОД
+                </div></a
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="advert" id="teachers">
+        <div class="advert__item">ПРЕПОДАВАТЕЛИ</div>
+        <div class="advert__item">ПРЕПОДАВАТЕЛИ</div>
+        <div class="advert__item">ПРЕПОДАВАТЕЛИ</div>
+        <div class="advert__item">ПРЕПОДАВАТЕЛИ</div>
+        <div class="advert__item">ПРЕПОДАВАТЕЛИ</div>
+        <div class="advert__item">ПРЕПОДАВАТЕЛИ</div>
+        <div class="advert__item">ПРЕПОДАВАТЕЛИ</div>
+        <div class="advert__item">ПРЕПОДАВАТЕЛИ</div>
+        <div class="advert__item">ПРЕПОДАВАТЕЛИ</div>
+        <div class="advert__item">ПРЕПОДАВАТЕЛИ</div>
+        <div class="advert__item">ПРЕПОДАВАТЕЛИ</div>
+        <div class="advert__item">ПРЕПОДАВАТЕЛИ</div>
+        <div class="advert__item">ПРЕПОДАВАТЕЛИ</div>
+        <div class="advert__item">ПРЕПОДАВАТЕЛИ</div>
+        <div class="advert__item">ПРЕПОДАВАТЕЛИ</div>
+        <div class="advert__item">ПРЕПОДАВАТЕЛИ</div>
+        <div class="advert__item">ПРЕПОДАВАТЕЛИ</div>
+        <div class="advert__item">ПРЕПОДАВАТЕЛИ</div>
+        <div class="advert__item">ПРЕПОДАВАТЕЛИ</div>
+        <div class="advert__item">ПРЕПОДАВАТЕЛИ</div>
+        <div class="advert__item">ПРЕПОДАВАТЕЛИ</div>
+        <div class="advert__item">ПРЕПОДАВАТЕЛИ</div>
+        <div class="advert__item">ПРЕПОДАВАТЕЛИ</div>
+        <div class="advert__item">ПРЕПОДАВАТЕЛИ</div>
+        <div class="advert__item">ПРЕПОДАВАТЕЛИ</div>
+        <div class="advert__item">ПРЕПОДАВАТЕЛИ</div>
+        <div class="advert__item">ПРЕПОДАВАТЕЛИ</div>
+        <div class="advert__item">ПРЕПОДАВАТЕЛИ</div>
+        <div class="advert__item">ПРЕПОДАВАТЕЛИ</div>
+        <div class="advert__item">ПРЕПОДАВАТЕЛИ</div>
+        <div class="advert__item">ПРЕПОДАВАТЕЛИ</div>
+        <div class="advert__item">ПРЕПОДАВАТЕЛИ</div>
+        <div class="advert__item">ПРЕПОДАВАТЕЛИ</div>
+        <div class="advert__item">ПРЕПОДАВАТЕЛИ</div>
+        <div class="advert__item">ПРЕПОДАВАТЕЛИ</div>
+        <div class="advert__item">ПРЕПОДАВАТЕЛИ</div>
+        <div class="advert__item">ПРЕПОДАВАТЕЛИ</div>
+        <div class="advert__item">ПРЕПОДАВАТЕЛИ</div>
+        <div class="advert__item">ПРЕПОДАВАТЕЛИ</div>
+        <div class="advert__item">ПРЕПОДАВАТЕЛИ</div>
+        <div class="advert__item">ПРЕПОДАВАТЕЛИ</div>
+        <div class="advert__item">ПРЕПОДАВАТЕЛИ</div>
+        <div class="advert__item">ПРЕПОДАВАТЕЛИ</div>
+        <div class="advert__item">ПРЕПОДАВАТЕЛИ</div>
+        <div class="advert__item">ПРЕПОДАВАТЕЛИ</div>
+        <div class="advert__item">ПРЕПОДАВАТЕЛИ</div>
+        <div class="advert__item">ПРЕПОДАВАТЕЛИ</div>
+        <div class="advert__item">ПРЕПОДАВАТЕЛИ</div>
+        <div class="advert__item">ПРЕПОДАВАТЕЛИ</div>
+        <div class="advert__item">ПРЕПОДАВАТЕЛИ</div>
+        <div class="advert__item">ПРЕПОДАВАТЕЛИ</div>
+        <div class="advert__item">ПРЕПОДАВАТЕЛИ</div>
+        <div class="advert__item">ПРЕПОДАВАТЕЛИ</div>
+        <div class="advert__item">ПРЕПОДАВАТЕЛИ</div>
+        <div class="advert__item">ПРЕПОДАВАТЕЛИ</div>
+        <div class="advert__item">ПРЕПОДАВАТЕЛИ</div>
+      </div>
+
+      <section class="teachers">
+        <div class="container teachers__container yk700">
+          <!-- <div class="teachers__blured"></div> -->
+          <!-- <div class="tracks__blured_2"></div> -->
+          <div class="teachers__text">
+            <!-- <div class="tracks__shortText exo600">
+              Тут можно что-то кратенькое написать ляляля трат та
+            </div> -->
+
+            <div class="teachers__shortText exo600">
+              В нашей команде самые-самые<br />танцоры и просто замечательные
+              люди!
+            </div>
+
+            <div class="teachers__header more_arrow">ПРЕПОДАВАТЕЛИ</div>
+          </div>
+
+          <div class="teachers__items">
+            <div class="teachers__item">
+              <img
+                src="img/teachers__faziev.jpg"
+                alt="Фото Мирхана Фазиева"
+                width="244"
+                height="166"
+              />
+              <div class="teachers__row">
+                <div class="teachers__name">МИРХАН ФАЗИЕВ</div>
+                <div
+                  class="teachers__more accent hover_text more_arrow"
+                  data-aimModal="faziev"
+                >
+                  ПОДРОБНЕЕ
+                </div>
+              </div>
+            </div>
+
+            <div class="teachers__item">
+              <img
+                src="img/teachers__ramm.jpg"
+                alt="Фото Даяны Рамм"
+                width="244"
+                height="166"
+              />
+              <div class="teachers__row">
+                <div class="teachers__name">ДАЯНА РАММ</div>
+                <div
+                  class="teachers__more accent hover_text more_arrow"
+                  data-aimModal="ramm"
+                >
+                  ПОДРОБНЕЕ
+                </div>
+              </div>
+            </div>
+
+            <div class="teachers__item">
+              <img
+                src="img/teachers__starchickova.jpg"
+                alt="Фото Карины Старчиковой"
+                width="244"
+                height="166"
+              />
+              <div class="teachers__row">
+                <div class="teachers__name">Карина Старчикова</div>
+                <div
+                  class="teachers__more accent hover_text more_arrow"
+                  data-aimModal="starchickova"
+                >
+                  ПОДРОБНЕЕ
+                </div>
+              </div>
+            </div>
+
+            <div class="teachers__item">
+              <img
+                src="img/teachers__esipova.jpg"
+                alt="Фото Вероники Есиповой"
+                width="244"
+                height="166"
+              />
+              <div class="teachers__row">
+                <div class="teachers__name">ВЕРОНИКА ЕСИПОВА</div>
+                <div
+                  class="teachers__more accent hover_text more_arrow"
+                  data-aimModal="esipova"
+                >
+                  ПОДРОБНЕЕ
+                </div>
+              </div>
+            </div>
+
+            <div class="teachers__item">
+              <img
+                src="img/teachers__mavlanova.jpg"
+                alt="Фото Регины Мавлоновой"
+                width="244"
+                height="166"
+              />
+              <div class="teachers__row">
+                <div class="teachers__name">РЕГИНА МАВЛАНОВА</div>
+                <div
+                  class="teachers__more accent hover_text more_arrow"
+                  data-aimModal="mavlanova"
+                >
+                  ПОДРОБНЕЕ
+                </div>
+              </div>
+            </div>
+
+            <div class="teachers__item">
+              <img
+                src="img/teachers__kozlova.jpg"
+                alt="Фото Марии Козловой"
+                width="244"
+                height="166"
+              />
+              <div class="teachers__row">
+                <div class="teachers__name">МАРИЯ КОЗЛОВА</div>
+                <div
+                  class="teachers__more accent hover_text more_arrow"
+                  data-aimModal="kozlova"
+                >
+                  ПОДРОБНЕЕ
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="teachers__buttonContainer flexed">
+            <a href="teachers.html"
+              ><div
+                class="
+                  teachers__button
+                  yk400
+                  button_hover_fill button_hover_fill_simple
+                "
+              >
+                А МОЖНО ВСЕХ ПОСМОТРЕТЬ?
+              </div></a
+            >
+          </div>
+        </div>
+      </section>
+
+      <section class="modal" data-target="averin">
+        <div class="modal__container">
+          <div class="modal__close">
+            <img src="icons/modal_close.png" alt="Закрыть" />
+          </div>
+
+          <div class="flexed modalTeacher__info">
+            <div>
+              <div class="modalTeacher__name">ОЛЕГ ИВАНОВ</div>
+              <div class="modalTeacher__age">30 лет</div>
+              <div class="modalTeacher__course">HIP-HOP<br />HOUSE</div>
+            </div>
+            <div class="modalTeacher__education">
+              2008-2014гг. ИжГТУ<br />«Физическая культура»<br />2013-н.в<br />Преподаватель
+            </div>
+          </div>
+          <div class="modalTeacher__text">
+            Олег Иванов—тренер высшей категории. Именно он стоял у истоков
+            создания нашей школы. Начал карьеру в 1995 году с удачного
+            выступленияв детском саду на утреннике, где и решил, что его жизнь
+            прочно будет связана с танцами. Безмерно любит свою работу. Больше
+            всего гордится своими учениками и радуется их успехам. В будущем
+            планирует расширить школу и открыть офлайн-филиалы в каждом регионе
+            России.
+          </div>
+        </div>
+      </section>
+
+      <!-- <section class="teachers">
+        <div class="container teachers__container">
+          <div class="teachers__header yk700">
+            <span class="teachers__headerText">ПРЕПОДАВАТЕЛИ</span>
+          </div>
+          <div class="teachers__row">
+            <div class="teachers__toLeft teachers__buttonChange">
+              <img src="icons/teachers_arrowLeft.png" alt="" />
+            </div>
+            <div class="teachers__toRight teachers__buttonChange">
+              <img src="icons/teachers_arrowLeft.png" alt="" />
+            </div>
+            <div class="teachers__list yk400" id="teachers__list">
+              <div class="teacher__cart">
+                <img src="img/teachers__averin.jpg" alt="" />
+                <div class="teacher__name">ГЕОРГИЙ АВЕРИН</div>
+              </div>
+
+              <div class="teacher__cart">
+                <img src="img/teachers__vidnuy.jpg" alt="" />
+                <div class="teacher__name">КОНСТАНТИН ВИДНЫЙ</div>
+              </div>
+
+              <div class="teacher__cart">
+                <img src="img/teachers__basilevcky.jpg" alt="" />
+                <div class="teacher__name">ЯНА БАЗИЛЕВСКИХ</div>
+              </div>
+
+              <div class="teacher__cart">
+                <img src="img/teachers__kuznetsov.jpg" alt="" />
+                <div class="teacher__name">ВАДИМ КУЗНЕЦОВ</div>
+              </div>
+
+              <div class="teacher__cart">
+                <img src="img/teachers__averin.jpg" alt="" />
+                <div class="teacher__name">ГЕОРГИЙ АВЕРИН</div>
+              </div>
+
+              <div class="teacher__cart">
+                <img src="img/teachers__vidnuy.jpg" alt="" />
+                <div class="teacher__name">КОНСТАНТИН ВИДНЫЙ</div>
+              </div>
+
+              <div class="teacher__cart">
+                <img src="img/teachers__basilevcky.jpg" alt="" />
+                <div class="teacher__name">ЯНА БАЗИЛЕВСКИХ</div>
+              </div>
+
+              <div class="teacher__cart">
+                <img src="img/teachers__kuznetsov.jpg" alt="" /> 
+                <div class="teacher__name">ВАДИМ КУЗНЕЦОВ</div>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="
+              teachers__button
+              yk700
+              button_hover_fill button_hover_fill_simple
+            "
+          >
+            А МОЖНО ВСЕХ ПОСМОТРЕТЬ?
+          </div>
+        </div>
+      </section> -->
+
+      <div class="advert" id="reviews">
+        <div class="advert__item">ОТЗЫВЫ</div>
+        <div class="advert__item">ОТЗЫВЫ</div>
+        <div class="advert__item">ОТЗЫВЫ</div>
+        <div class="advert__item">ОТЗЫВЫ</div>
+        <div class="advert__item">ОТЗЫВЫ</div>
+        <div class="advert__item">ОТЗЫВЫ</div>
+        <div class="advert__item">ОТЗЫВЫ</div>
+        <div class="advert__item">ОТЗЫВЫ</div>
+        <div class="advert__item">ОТЗЫВЫ</div>
+        <div class="advert__item">ОТЗЫВЫ</div>
+        <div class="advert__item">ОТЗЫВЫ</div>
+        <div class="advert__item">ОТЗЫВЫ</div>
+        <div class="advert__item">ОТЗЫВЫ</div>
+        <div class="advert__item">ОТЗЫВЫ</div>
+        <div class="advert__item">ОТЗЫВЫ</div>
+        <div class="advert__item">ОТЗЫВЫ</div>
+        <div class="advert__item">ОТЗЫВЫ</div>
+        <div class="advert__item">ОТЗЫВЫ</div>
+        <div class="advert__item">ОТЗЫВЫ</div>
+        <div class="advert__item">ОТЗЫВЫ</div>
+        <div class="advert__item">ОТЗЫВЫ</div>
+        <div class="advert__item">ОТЗЫВЫ</div>
+        <div class="advert__item">ОТЗЫВЫ</div>
+        <div class="advert__item">ОТЗЫВЫ</div>
+        <div class="advert__item">ОТЗЫВЫ</div>
+        <div class="advert__item">ОТЗЫВЫ</div>
+        <div class="advert__item">ОТЗЫВЫ</div>
+        <div class="advert__item">ОТЗЫВЫ</div>
+        <div class="advert__item">ОТЗЫВЫ</div>
+        <div class="advert__item">ОТЗЫВЫ</div>
+        <div class="advert__item">ОТЗЫВЫ</div>
+        <div class="advert__item">ОТЗЫВЫ</div>
+        <div class="advert__item">ОТЗЫВЫ</div>
+        <div class="advert__item">ОТЗЫВЫ</div>
+        <div class="advert__item">ОТЗЫВЫ</div>
+        <div class="advert__item">ОТЗЫВЫ</div>
+        <div class="advert__item">ОТЗЫВЫ</div>
+        <div class="advert__item">ОТЗЫВЫ</div>
+        <div class="advert__item">ОТЗЫВЫ</div>
+        <div class="advert__item">ОТЗЫВЫ</div>
+        <div class="advert__item">ОТЗЫВЫ</div>
+        <div class="advert__item">ОТЗЫВЫ</div>
+        <div class="advert__item">ОТЗЫВЫ</div>
+        <div class="advert__item">ОТЗЫВЫ</div>
+        <div class="advert__item">ОТЗЫВЫ</div>
+        <div class="advert__item">ОТЗЫВЫ</div>
+        <div class="advert__item">ОТЗЫВЫ</div>
+        <div class="advert__item">ОТЗЫВЫ</div>
+        <div class="advert__item">ОТЗЫВЫ</div>
+        <div class="advert__item">ОТЗЫВЫ</div>
+        <div class="advert__item">ОТЗЫВЫ</div>
+        <div class="advert__item">ОТЗЫВЫ</div>
+        <div class="advert__item">ОТЗЫВЫ</div>
+        <div class="advert__item">ОТЗЫВЫ</div>
+        <div class="advert__item">ОТЗЫВЫ</div>
+        <div class="advert__item">ОТЗЫВЫ</div>
+        <div class="advert__item">ОТЗЫВЫ</div>
+        <div class="advert__item">ОТЗЫВЫ</div>
+        <div class="advert__item">ОТЗЫВЫ</div>
+        <div class="advert__item">ОТЗЫВЫ</div>
+        <div class="advert__item">ОТЗЫВЫ</div>
+        <div class="advert__item">ОТЗЫВЫ</div>
+        <div class="advert__item">ОТЗЫВЫ</div>
+        <div class="advert__item">ОТЗЫВЫ</div>
+        <div class="advert__item">ОТЗЫВЫ</div>
+        <div class="advert__item">ОТЗЫВЫ</div>
+      </div>
+
+      <section class="reviews">
+        <div class="reviews__header container yk700">
+          <div class="flexed">
+            <div class="reviews__headerBig">8<small>2%</small></div>
+            <div>
+              ВЫПУСКНИКОВ<br />ТАНЦУЮТ
+              <span class="accent reviews__excl">ФЕЕРИЧНО</span><br />
+              <span class="reviews__underHeader accent"
+                >ОСТАЛЬНЫЕ 18% - ГЕНИАЛЬНО</span
+              >
+            </div>
+          </div>
+        </div>
+
+        <div class="reviews__items">
+          <div class="reviews__item yk400">
+            <div class="container reviews__container">
+              <div class="flexed w100">
+                <div class="reviews__number">01</div>
+                <div class="reviews__description">АЛЛА ЛЯМИНА</div>
+                <div class="reviews__textDescription exo400">
+                  В декрете я по-настоящему почувствовала, что такое "день
+                  сурка". Помните серию из сериала "Друзья", в которой Моника
+                  решает что-то менять в своей жизни и<span class="accent"
+                    ><span style="color: var(--main-color)">...</span>Читать
+                    полностью</span
+                  >
+                  <span class="reviews__text_more" style="display: none"
+                    >приходит на танцы? Я тоже решила сделать этот шаг, но
+                    только онлайн. И не пожалела! Танцевальная аэробика -
+                    находка для мам в декрете. Быстро, эффективно и очень
+                    интересно!
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="reviews__item yk400">
+            <div class="container reviews__container">
+              <div class="flexed w100">
+                <div class="reviews__number">02</div>
+                <div class="reviews__description">ВИКТОРИЯ ТИХОНОВА</div>
+                <div class="reviews__textDescription exo400">
+                  Я всегда комплексовала из-за косолапой походки и своей
+                  неуклюжести. Но я так хотела танцевать, но стеснялась
+                  записаться в местные школы танцев.<span class="accent"
+                    ><span style="color: var(--main-color)">...</span>Читать
+                    полностью</span
+                  >
+                  <span class="reviews__text_more" style="display: none"
+                    >Марина Моисеева изменила мою жизнь! Я случайно увидела
+                    рекламу piCOMEON в инстаграме, и подумала, что вот он знак
+                    судьбы! Узнала о направлениях и решила выбрать Jazz funk и
+                    не ошиблась! За месяц занятий у меня изменилась походка,
+                    стала плавнее, да и я стала увереннее в себе! Советую своим
+                    друзьям!
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="reviews__item yk400">
+            <div class="container reviews__container">
+              <div class="flexed w100">
+                <div class="reviews__number">03</div>
+                <div class="reviews__description">ВИЛЬГЕЛЬМ ПЕТРОВ</div>
+                <div class="reviews__textDescription exo400">
+                  Несмотря на то, что я уже имею некий опыт и занимался разными
+                  направлениями, я повысил свой уровень и теперь хочу в шоу
+                  «Танцы»!
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="container reviews__container">
+          <div class="w100">
+            <div class="reviews__buttonContainer flexed">
+              <a href="reviews.html"
+                ><div
+                  class="
+                    reviews__button
+                    yk700
+                    button_hover_fill button_hover_fill_simple
+                  "
+                >
+                  ЧИТАТЬ ВСЕ ОТЗЫВЫ
+                </div></a
+              >
+            </div>
+          </div>
+        </div>
+        <div class="reviews__blured"></div>
+      </section>
+
+      <div class="advert" id="ask">
+        <div class="advert__item">ВОПРОС</div>
+        <div class="advert__item">ВОПРОС</div>
+        <div class="advert__item">ВОПРОС</div>
+        <div class="advert__item">ВОПРОС</div>
+        <div class="advert__item">ВОПРОС</div>
+        <div class="advert__item">ВОПРОС</div>
+        <div class="advert__item">ВОПРОС</div>
+        <div class="advert__item">ВОПРОС</div>
+        <div class="advert__item">ВОПРОС</div>
+        <div class="advert__item">ВОПРОС</div>
+        <div class="advert__item">ВОПРОС</div>
+        <div class="advert__item">ВОПРОС</div>
+        <div class="advert__item">ВОПРОС</div>
+        <div class="advert__item">ВОПРОС</div>
+        <div class="advert__item">ВОПРОС</div>
+        <div class="advert__item">ВОПРОС</div>
+        <div class="advert__item">ВОПРОС</div>
+        <div class="advert__item">ВОПРОС</div>
+        <div class="advert__item">ВОПРОС</div>
+        <div class="advert__item">ВОПРОС</div>
+        <div class="advert__item">ВОПРОС</div>
+        <div class="advert__item">ВОПРОС</div>
+        <div class="advert__item">ВОПРОС</div>
+        <div class="advert__item">ВОПРОС</div>
+        <div class="advert__item">ВОПРОС</div>
+        <div class="advert__item">ВОПРОС</div>
+        <div class="advert__item">ВОПРОС</div>
+        <div class="advert__item">ВОПРОС</div>
+        <div class="advert__item">ВОПРОС</div>
+        <div class="advert__item">ВОПРОС</div>
+        <div class="advert__item">ВОПРОС</div>
+        <div class="advert__item">ВОПРОС</div>
+        <div class="advert__item">ВОПРОС</div>
+        <div class="advert__item">ВОПРОС</div>
+        <div class="advert__item">ВОПРОС</div>
+        <div class="advert__item">ВОПРОС</div>
+        <div class="advert__item">ВОПРОС</div>
+        <div class="advert__item">ВОПРОС</div>
+        <div class="advert__item">ВОПРОС</div>
+        <div class="advert__item">ВОПРОС</div>
+        <div class="advert__item">ВОПРОС</div>
+        <div class="advert__item">ВОПРОС</div>
+        <div class="advert__item">ВОПРОС</div>
+        <div class="advert__item">ВОПРОС</div>
+        <div class="advert__item">ВОПРОС</div>
+        <div class="advert__item">ВОПРОС</div>
+        <div class="advert__item">ВОПРОС</div>
+        <div class="advert__item">ВОПРОС</div>
+        <div class="advert__item">ВОПРОС</div>
+        <div class="advert__item">ВОПРОС</div>
+        <div class="advert__item">ВОПРОС</div>
+        <div class="advert__item">ВОПРОС</div>
+        <div class="advert__item">ВОПРОС</div>
+        <div class="advert__item">ВОПРОС</div>
+        <div class="advert__item">ВОПРОС</div>
+        <div class="advert__item">ВОПРОС</div>
+        <div class="advert__item">ВОПРОС</div>
+        <div class="advert__item">ВОПРОС</div>
+        <div class="advert__item">ВОПРОС</div>
+        <div class="advert__item">ВОПРОС</div>
+        <div class="advert__item">ВОПРОС</div>
+        <div class="advert__item">ВОПРОС</div>
+        <div class="advert__item">ВОПРОС</div>
+        <div class="advert__item">ВОПРОС</div>
+        <div class="advert__item">ВОПРОС</div>
+        <div class="advert__item">ВОПРОС</div>
+      </div>
+
+      <section class="ask">
+        <div class="container ask__container">
+          <div class="ask__form">
+            <div class="ask__page">
+              <img src="img/ask_page.png" alt="" />
+            </div>
+
+            <div class="ask__stick">
+              <img src="img/ask_stick.png" alt="" />
+            </div>
+
+            <form action="#">
+              <div class="input ask__input_name exo400">
+                <input type="text" name="name" id="name" />
+                <label
+                  for="name"
+                  onmousedown="return false"
+                  onselectstart="return false"
+                  >Имя</label
+                >
+              </div>
+
+              <div class="input ask__input_connection exo400">
+                <input
+                  type="text"
+                  name="connection"
+                  id="connection"
+                  class="checkTel checkEmail"
+                />
+                <label
+                  for="connection"
+                  onmousedown="return false"
+                  onselectstart="return false"
+                  >Телефон/e-mail</label
+                >
+              </div>
+
+              <div class="input input__textarea exo400">
+                <textarea name="message" id="message"></textarea>
+                <label
+                  for="message"
+                  onmousedown="return false"
+                  onselectstart="return false"
+                  >Сообщение</label
+                >
+              </div>
+
+              <div class="ask__checkbox ask__white exo400">
+                <input
+                  class="checkbox"
+                  type="checkbox"
+                  name="isAgree"
+                  id="isAgree"
+                  onchange="changeAgreement(this)"
+                />
+                <label
+                  for="isAgree"
+                  onmousedown="return false"
+                  onselectstart="return false"
+                  class="exo400"
+                  >Согласен на обработку персональных данных</label
+                >
+              </div>
+
+              <div class="ask__submitContainer">
+                <div class="ask__button yk700">
+                  <button class="button yk700" type="submit">
+                    ЗАДАТЬ ВОПРОС
+                  </button>
+                </div>
+
+                <div class="ask__comeOn accent_2 pm400">cOME ON!</div>
+              </div>
+            </form>
+          </div>
+
+          <div class="ask__text">
+            <div class="ask__header yk700">
+              Мы могли что-то<br />забыть<br />рассказать...<br />тогда
+              <span class="ask__setQuestion">задай<br />вопрос!</span>
+            </div>
+            <div class="ask__alternate exo400">
+              Или оставь заявку<br />на обратный звонок
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="advert advert_up">
+        <div class="advert__item">ВОПРОС</div>
+        <div class="advert__item">ВОПРОС</div>
+        <div class="advert__item">ВОПРОС</div>
+        <div class="advert__item">ВОПРОС</div>
+        <div class="advert__item">ВОПРОС</div>
+        <div class="advert__item">ВОПРОС</div>
+        <div class="advert__item">ВОПРОС</div>
+        <div class="advert__item">ВОПРОС</div>
+        <div class="advert__item">ВОПРОС</div>
+        <div class="advert__item">ВОПРОС</div>
+        <div class="advert__item">ВОПРОС</div>
+        <div class="advert__item">ВОПРОС</div>
+        <div class="advert__item">ВОПРОС</div>
+        <div class="advert__item">ВОПРОС</div>
+        <div class="advert__item">ВОПРОС</div>
+        <div class="advert__item">ВОПРОС</div>
+        <div class="advert__item">ВОПРОС</div>
+        <div class="advert__item">ВОПРОС</div>
+        <div class="advert__item">ВОПРОС</div>
+        <div class="advert__item">ВОПРОС</div>
+        <div class="advert__item">ВОПРОС</div>
+        <div class="advert__item">ВОПРОС</div>
+        <div class="advert__item">ВОПРОС</div>
+        <div class="advert__item">ВОПРОС</div>
+        <div class="advert__item">ВОПРОС</div>
+        <div class="advert__item">ВОПРОС</div>
+        <div class="advert__item">ВОПРОС</div>
+        <div class="advert__item">ВОПРОС</div>
+        <div class="advert__item">ВОПРОС</div>
+        <div class="advert__item">ВОПРОС</div>
+        <div class="advert__item">ВОПРОС</div>
+        <div class="advert__item">ВОПРОС</div>
+        <div class="advert__item">ВОПРОС</div>
+        <div class="advert__item">ВОПРОС</div>
+        <div class="advert__item">ВОПРОС</div>
+        <div class="advert__item">ВОПРОС</div>
+        <div class="advert__item">ВОПРОС</div>
+        <div class="advert__item">ВОПРОС</div>
+        <div class="advert__item">ВОПРОС</div>
+        <div class="advert__item">ВОПРОС</div>
+        <div class="advert__item">ВОПРОС</div>
+        <div class="advert__item">ВОПРОС</div>
+        <div class="advert__item">ВОПРОС</div>
+        <div class="advert__item">ВОПРОС</div>
+        <div class="advert__item">ВОПРОС</div>
+        <div class="advert__item">ВОПРОС</div>
+        <div class="advert__item">ВОПРОС</div>
+        <div class="advert__item">ВОПРОС</div>
+        <div class="advert__item">ВОПРОС</div>
+        <div class="advert__item">ВОПРОС</div>
+        <div class="advert__item">ВОПРОС</div>
+        <div class="advert__item">ВОПРОС</div>
+        <div class="advert__item">ВОПРОС</div>
+        <div class="advert__item">ВОПРОС</div>
+        <div class="advert__item">ВОПРОС</div>
+        <div class="advert__item">ВОПРОС</div>
+        <div class="advert__item">ВОПРОС</div>
+        <div class="advert__item">ВОПРОС</div>
+        <div class="advert__item">ВОПРОС</div>
+        <div class="advert__item">ВОПРОС</div>
+        <div class="advert__item">ВОПРОС</div>
+        <div class="advert__item">ВОПРОС</div>
+        <div class="advert__item">ВОПРОС</div>
+        <div class="advert__item">ВОПРОС</div>
+        <div class="advert__item">ВОПРОС</div>
+        <div class="advert__item">ВОПРОС</div>
+      </div>
+    </main>
+
+    <footer class="footer" id="footer">
+      <div class="container footer__container yk400">
+        <div class="flexed w100">
+          <div class="footer__contacts">
+            <a href="index.html" class="logo yk700 footer__logo"
+              ><span class="yk400 accent">PI</span
+              ><span class="accent">COM</span>EON</a
+            >
+
+            <div class="footer__phonesContainer">
+              <a href="tel:89090619855">+7(909)061-98-55</a>
+              <a href="tel:89050005252">+7(905)000-52-52</a>
+              <a href="mailto:info@picomeon.ru">info@picomeon.ru</a>
+            </div>
+
+            <div class="footer__socialContainer">
+              <a href="#" class="footer__socialLinks"
+                ><img src="icons/ri_instagram-fill.png" alt="Instagram"
+              /></a>
+              <a href="#" class="footer__socialLinks"
+                ><img src="icons/akar-icons_telegram-fill.png" alt="Telegram"
+              /></a>
+            </div>
+          </div>
+
+          <ul class="footer__info">
+            <li class="footer__infoColumnContainer">
+              <ul class="footer__infoColumn">
+                <li class="footer__infoHeader">НАПРАВЛЕНИЯ</li>
+                <li class="footer__infoItem">
+                  <a href="track_hip-hop.html">HIP-HOP</a>
+                </li>
+                <li class="footer__infoItem">
+                  <a href="track_hip-hop.html">DANCEHALL</a>
+                </li>
+                <li class="footer__infoItem">
+                  <a href="track_aerobics.html">AEROBICS</a>
+                </li>
+                <li class="footer__infoItem">
+                  <a href="track_vogue.html">VOGUE</a>
+                </li>
+                <li class="footer__infoItem">
+                  <a href="track_jazz-funk.html">JAZZ-FUNK</a>
+                </li>
+                <li class="footer__infoItem">
+                  <a href="track_house-dance.html">HOUSE DANCE</a>
+                </li>
+              </ul>
+            </li>
+            <li class="footer__infoColumnContainer">
+              <ul class="footer__infoColumn">
+                <li class="footer__infoHeader">О ШКОЛЕ</li>
+                <li class="footer__infoItem"><a href="about.html">О НАС</a></li>
+                <li class="footer__infoItem">
+                  <a href="teachers.html">ПРЕПОДАВАТЕЛИ</a>
+                </li>
+                <li class="footer__infoItem">
+                  <a href="reviews.html">ОТЗЫВЫ</a>
+                </li>
+                <li class="footer__infoItem"><a href="price.html">ПРАЙС</a></li>
+                <li class="footer__infoItem">
+                  <a href="contacts.html">КОНТАКТЫ</a>
+                </li>
+              </ul>
+            </li>
+            <li class="footer__infoColumnContainer">
+              <ul class="footer__infoColumn">
+                <li class="footer__infoHeader">ЛИЧНЫЙ КАБИНЕТ</li>
+                <li class="footer__infoItem">ЗАДАТЬ ВОПРОС</li>
+                <li class="footer__infoItem">
+                  <a href="offers.html">АКЦИИ</a>
+                </li>
+                <li class="footer__infoItem">
+                  <a href="bonus.html">БОНУСНАЯ ПРОГРАММА</a>
+                </li>
+                <li class="footer__infoItem">ДОКУМЕНТЫ</li>
+              </ul>
+            </li>
+          </ul>
+
+          <form action="#" class="footer__form yk700" id="callback">
+            <div class="footer__formHeader">
+              ОСТАВЬТЕ ЗАЯВКУ НА ОБРАТНЫЙ ЗВОНОК
+            </div>
+            <div class="footer__formRow">
+              <div class="footer__formName footer__input">
+                <input type="text" name="footerName" id="footerName" />
+                <label for="footerName">Имя</label>
+              </div>
+
+              <div class="footer__formPhone footer__input">
+                <input
+                  type="text"
+                  name="footerPhone"
+                  id="footerPhone"
+                  class="checkTel"
+                />
+                <label
+                  for="footerPhone"
+                  onmousedown="return false"
+                  onselectstart="return false"
+                  >8(912) 456 78 90</label
+                >
+              </div>
+            </div>
+            <button class="footer__button" type="submit">
+              ПЕРЕЗВОНИТЕ МНЕ
+            </button>
+
+            <div class="footer__formRow footer__isAgree exo400">
+              <input
+                class="checkbox"
+                type="checkbox"
+                name="isAgree"
+                id="isFooterAgree"
+                onchange="changeAgreement(this)"
+              />
+              <label
+                for="isFooterAgree"
+                class="exo400"
+                onmousedown="return false"
+                onselectstart="return false"
+              >
+                Согласен на обработку персональных данных
+              </label>
+            </div>
+          </form>
+        </div>
+
+        <div class="footer__base exo400 space_between w100">
+          <div class="footer__rights">&copy;2021 ВСЕ ПРАВА ЗАЩИЩЕНЫ</div>
+          <div>
+            <img src="icons/pay_system.png" alt="" />
+          </div>
+          <div class="footer__politics">ПОЛИТИКА КОНФЕДЕНЦИАЛЬНОСТИ</div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>
