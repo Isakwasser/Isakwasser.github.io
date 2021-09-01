@@ -1,0 +1,138 @@
+:focus {
+  background: 1px solid #2078fd;
+}
+
+.main__links > a > div:hover,
+.main__links > a > div:active {
+  background-color: transparent;
+}
+.main__links > a > div:hover::before,
+.main__links > a > div:active::before {
+  content: url("../img/tel-orange.png");
+}
+.main__links > a:last-of-type > div:hover::before,
+.main__links > a:last-of-type > div:active::before {
+  content: url("../img/mail-orange.png");
+}
+.left_right_buttons > div:hover,
+.left_right_buttons > div:active {
+  background: #191919;
+  cursor: pointer;
+}
+
+.link-light:hover,
+.link-light:active {
+  color: #ff5f01;
+  text-decoration: underline;
+}
+.link-light:focus {
+  color: #191919;
+  text-decoration: underline;
+  text-decoration-color: #ff5f01;
+}
+.link-color:hover,
+.link-color:active {
+  color: #ffffff;
+  text-decoration: underline;
+}
+.link-color:focus {
+  color: #191919;
+  text-decoration: underline;
+  text-decoration-color: #ffffff;
+}
+.products-relative:hover {
+  transform: scale(1.1);
+  z-index: 10;
+}
+.products-relative:hover .products-back {
+  opacity: 0.3;
+}
+#feedback form input[type="submit"]:hover:not(:active):not(.disabled) {
+  background: repeating-linear-gradient(
+    to right,
+    #191919,
+    #191919 30px,
+    #ff5f01 30px,
+    #ff5f01 220px
+  );
+}
+
+#feedback form input[type="submit"]:active:not(.disabled) {
+  background-color: #191919;
+  border: none;
+}
+#feedback form input.disabled {
+  background-color: #dbdbdb;
+  border: none;
+}
+#feedback form > div:nth-child(-n + 5) {
+  color: #7e8385;
+}
+#feedback form > div:nth-child(-n + 5):hover,
+#feedback form > div:nth-child(-n + 5):hover > input,
+textarea:hover {
+  color: #363131;
+}
+#feedback form > .inputs > input:active + div,
+#feedback form > .inputs > input:focus + div,
+#feedback form > .inputs > input:not(:placeholder-shown) + div,
+#feedback form > .inputs > textarea:focus + div,
+#feedback form > .inputs > textarea:not(:placeholder-shown) + div {
+  font-size: 0.6em;
+  top: 10px;
+}
+#feedback form > .inputs > input:active + div > label:last-of-type,
+#feedback form > .inputs > input:focus + div > label:last-of-type,
+#feedback
+  form
+  > .inputs
+  > input:not(:placeholder-shown)
+  + div
+  > label:last-of-type,
+#feedback form > .inputs > textarea:focus + div,
+#feedback
+  form
+  > .inputs
+  > textarea:not(:placeholder-shown)
+  + div
+  > label:last-of-type {
+  display: none;
+}
+section#current_position.container a:hover {
+  color: #7e8385;
+}
+.slidebar > div:hover {
+  border: none;
+}
+.slidebar > div:active {
+  color: #ff5f01;
+}
+
+@keyframes shake {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  10%,
+  30%,
+  50%,
+  70%,
+  90% {
+    transform: translateX(-10px);
+  }
+  20%,
+  40%,
+  60%,
+  80% {
+    transform: translateX(10px);
+  }
+}
+.modal-error {
+  display: block;
+  animation-name: shake;
+  animation-duration: 600ms;
+}
+
+.showed {
+  display: block !important;
+}

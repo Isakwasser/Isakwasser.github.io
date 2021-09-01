@@ -1,0 +1,64 @@
+@media (min-width: 721px) and (max-width: 1220px) {
+  .container {
+    width: 700px;
+    text-align: left;
+  }
+  header .container {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: center;
+  }
+  header ul {
+    height: inherit;
+    display: flex;
+    flex-flow: row nowrap;
+    width: 700px;
+    justify-content: space-between;
+    order: 3;
+    padding-top: 10px;
+  }
+  main {
+    background-position: center;
+    background-size: auto 100%;
+    padding-top: 80px;
+  }
+  main p {
+    padding-left: 20px;
+  }
+  .main__links {
+    bottom: 100px;
+    right: 20px;
+  }
+  .main__links > a > div {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background: #191919;
+    padding: 20px;
+  }
+  .main__links > a > div:before {
+    content: url("../img/mail-big.svg");
+  }
+  .main__links > a:first-child > div::before {
+    content: url("../img/phone.svg");
+  }
+  .left_right_buttons > div {
+    width: 64px;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 2px;
+  }
+  #products > div:last-of-type {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+  }
+  #feedback .right-side {
+    text-align: center;
+    max-width: none;
+    width: 100%;
+  }
+}

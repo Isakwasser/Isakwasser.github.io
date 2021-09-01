@@ -1,0 +1,341 @@
+@import url("https://fonts.googleapis.com/css2?family=Arimo&family=Noto+Sans&family=Roboto&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+}
+h2 {
+  font-size: 2rem;
+}
+h2 + a::after {
+  content: url("../img/arrowRight.svg");
+}
+h3 {
+  font-size: 1.2rem;
+}
+textarea {
+  resize: none;
+  width: 100%;
+  height: 160px;
+  color: #7e8385;
+  border: 1px solid #7e8385;
+  padding: 25px;
+}
+.container {
+  text-align: center;
+  width: 300px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+.container.buttons {
+  overflow: visible;
+  position: relative;
+}
+a {
+  color: #000;
+  text-decoration: none;
+}
+header a[href^="tel:"]::before {
+  content: url("../img/calling.svg");
+}
+a[href^="tel:"]::before {
+  content: url("../img/tel.svg");
+}
+a[href^="mailto:"]::before {
+  content: url("../img/mail.svg");
+}
+.left_right_buttons > div {
+  width: 32px;
+  height: 32px;
+  padding: 8px;
+  margin: 0 1px;
+  border-radius: 5px;
+  background-color: #ff5f01;
+  float: left;
+}
+.left_right_buttons > div:first-of-type::before {
+  content: url("../img/button-left.svg");
+}
+.left_right_buttons > div:last-of-type::before {
+  content: url("../img/button-right.svg");
+}
+.main__links {
+  position: absolute;
+  right: 0;
+  bottom: 140px;
+}
+main .main__links > a::before {
+  content: "";
+}
+.main__links > a > div {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: #191919;
+  padding: 8px;
+  margin: 3px;
+}
+.main__links > a > div:before {
+  content: url("../img/mail.svg");
+}
+.main__links > a:first-child > div {
+  background: #ff5f01;
+}
+.main__links > div:first-child::before {
+  content: url("../img/tel.svg");
+}
+header {
+  font-family: "Noto Sans", sans-serif;
+  margin-bottom: 20px;
+}
+ul {
+  height: 0;
+  overflow: hidden;
+  list-style: none;
+}
+main {
+  margin-bottom: 40px;
+  padding: 150px 0 100px;
+  background-color: #eeeeee;
+  background-image: url("../img/main.jpg");
+  background-position: center;
+  background-size: auto 100%;
+  background-repeat: no-repeat;
+  color: #333333;
+  min-width: 300px;
+  position: relative;
+}
+main h2 {
+  margin-bottom: 35px;
+  font-size: 3rem;
+}
+main p {
+  padding: 0 40px 0 20px 0;
+  border-left: 2px solid #ff5f01;
+  color: #fff;
+  max-width: 520px;
+}
+.slidebar {
+  visibility: hidden;
+}
+#current_position {
+  margin-bottom: 20px;
+  font-size: 0.9rem;
+  font-style: italic;
+  text-align: left;
+}
+#current_position a {
+  white-space: nowrap;
+}
+#clothes {
+  margin-bottom: 80px;
+}
+#clothes h2 {
+  margin-bottom: 35px;
+}
+#clothes p {
+  text-align: justify;
+  max-width: 860px;
+}
+#clothes a::after {
+  content: "https://www.relook.ru/vocabulary/...";
+}
+
+#products {
+  margin-bottom: 120px;
+}
+#products > div,
+#projects > div {
+  margin-bottom: 60px;
+  position: relative;
+  text-align: left;
+}
+#products h2 + a,
+#projects h2 + a {
+  position: absolute;
+  right: 0;
+  bottom: 0px;
+}
+.products-relative {
+  position: relative;
+  transition: 0.3s;
+}
+.products-back {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #ff5f01;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: 0.3s;
+}
+#projects {
+  margin-bottom: 45px;
+}
+#projects h2 + a {
+  bottom: -15px;
+}
+#projects h3 {
+  margin-bottom: 45px;
+}
+#projects p {
+  margin-bottom: 70px;
+  text-align: justify;
+}
+#projects img {
+  width: 100%;
+}
+#feedback {
+  margin-bottom: 120px;
+  background: #ff5f01;
+  padding: 75px 0 85px;
+}
+#feedback h3 {
+  margin-bottom: 60px;
+}
+#feedback input {
+  width: 100%;
+  height: 80px;
+  color: #7e8385;
+  border: 1px solid #7e8385;
+  padding: 25px;
+}
+#feedback form *:not(input[type="submit"]) {
+  font-family: "Arimo", sans-serif;
+}
+form a {
+  color: #ffffff;
+  white-space: nowrap;
+}
+#feedback form > div.senddiv {
+  margin: 30px 0;
+  max-width: 600px;
+}
+#feedback form > div {
+  position: relative;
+  margin: 0;
+}
+#feedback form > div > div {
+  position: absolute;
+  z-index: 10;
+  left: 28px;
+  top: 30px;
+  width: 90%;
+  text-align: left;
+}
+#feedback form > div > div > label:last-of-type {
+  position: absolute;
+  z-index: 10;
+  right: 0;
+  top: 0;
+  color: #ff0101;
+  display: none;
+}
+#feedback form input[required] + div::after {
+  content: "*";
+  color: #ff0101;
+}
+
+#feedback form input[type="submit"] {
+  border-radius: 5px;
+  border: none;
+  margin-bottom: 30px;
+  max-width: 220px;
+  background-color: #ff5f01;
+  font-weight: bold;
+  color: #ffffff;
+  transition: 300ms;
+  border: 2px solid #191919;
+}
+#feedback .right-side {
+  max-width: 475px;
+  background: #ffffff;
+  padding: 35px 0 50px;
+}
+.social > a:hover {
+  opacity: 0.9;
+}
+.social > a:active {
+  opacity: 0.8;
+}
+a[title="Вконтакте"]::before {
+  content: url("../img/vkontakte.svg");
+}
+a[title="Фейсбук"]::before {
+  content: url("../img/facebook.svg");
+}
+a[title="Ютуб"]::before {
+  content: url("../img/youtube.svg");
+}
+a[title="Линкед Ин"]::before {
+  content: url("../img/linkedin.svg");
+}
+footer > .container:first-child {
+  margin-bottom: 40px;
+}
+footer > .container:nth-child(2) {
+  margin-bottom: 100px;
+}
+footer > .container:nth-child(2) > div {
+  margin-bottom: 35px;
+  line-height: 38px;
+}
+footer > .container:nth-child(2) > div > span {
+  font-weight: bold;
+}
+#footer-line {
+  width: 100%;
+  border-top: 1px solid #363131;
+}
+footer > .container:last-child {
+  padding: 35px 0 110px;
+}
+
+header a {
+  font-weight: bold;
+}
+
+h2 + a,
+#projects h3,
+a[download],
+a[href*="picom"] {
+  color: #ff5f01;
+}
+a[download]::before {
+  content: url("../img/download.svg");
+}
+.right-side div:nth-child(1) {
+  font-size: 1.13rem;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+.right-side div:nth-child(2) {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+.right-side div:nth-child(3) {
+  font-size: 1.5rem;
+  text-decoration: underline;
+  margin-bottom: 35px;
+}
+.right-side a[href^="mailto"] {
+  color: #ff5f01;
+}
+.right-side a[href^="mailto"]::before,
+.right-side a[href^="tel"]::before {
+  content: "";
+}
+.right-side div:nth-last-child(2) {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin: 25px 0 5px;
+}

@@ -1,0 +1,181 @@
+@media (min-width: 1521px) {
+  .container {
+    width: 1500px;
+    text-align: left;
+  }
+  h2 {
+    font-size: 3rem;
+    max-width: 860px;
+  }
+  h3 {
+    font-size: 2rem;
+  }
+  header .container {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: space-between;
+  }
+  header .container > :nth-child(2) {
+    width: 700px;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: space-around;
+    height: inherit;
+  }
+  main {
+    background-position: center;
+    background-size: auto 100%;
+  }
+  .main__links {
+    bottom: 250px;
+    right: 20px;
+  }
+  .main__links > a > div {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background: #191919;
+    padding: 20px;
+  }
+  .main__links > a > div:before {
+    content: url("../img/mail-big.svg");
+  }
+  .main__links > a:first-child > div::before {
+    content: url("../img/phone.svg");
+  }
+  main p {
+    padding-left: 20px;
+    margin-bottom: 180px;
+    color: #333333;
+  }
+  .slidebar {
+    visibility: visible;
+    display: flex;
+    flex-flow: row wrap;
+  }
+  .slidebar > div {
+    width: 64px;
+    height: 64px;
+    border-radius: 32px;
+    border: 2px solid #7e8385;
+    margin: 0 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    transform: rotate(45deg);
+  }
+  .slidebar > div > span {
+    transform: rotate(-45deg);
+  }
+  .slidebar > div.slidebar25 {
+    border-left: 2px solid #ff5f01;
+  }
+  .slidebar > div.slidebar50 {
+    border-left: 2px solid #ff5f01;
+    border-bottom: 2px solid #ff5f01;
+  }
+  .slidebar > div.slidebar75 {
+    border-left: 2px solid #ff5f01;
+    border-bottom: 2px solid #ff5f01;
+    border-right: 2px solid #ff5f01;
+  }
+  .slidebar > div.slidebar100 {
+    border: 2px solid #ff5f01;
+  }
+  .container.buttons {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    position: static;
+  }
+  .left_right_buttons > div {
+    width: 64px;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 2px;
+  }
+  .left_right_buttons > div:first-of-type::before {
+    content: url("../img/button-left.svg");
+  }
+  .left_right_buttons > div:last-of-type::before {
+    content: url("../img/button-right.svg");
+  }
+  #clothes p {
+    text-align: left;
+    line-height: 32px;
+  }
+  #clothes a::after {
+    content: "https://www.relook.ru/vocabulary/view/outfit.html";
+  }
+  #products > div:last-of-type {
+    display: flex;
+    justify-content: space-between;
+  }
+  .products-relative > img {
+    width: 346px;
+  }
+  #projects > section {
+    display: flex;
+    justify-content: space-between;
+  }
+  #projects p {
+    line-height: 32px;
+    width: 475px;
+    text-align: left;
+  }
+  #projects img {
+    width: 861px;
+    float: right;
+  }
+  .left-side {
+    width: 860px;
+  }
+  #feedback form > div:nth-child(-n + 5),
+  #feedback form input,
+  #feedback form textarea {
+    width: 430px;
+  }
+  form {
+    position: relative;
+  }
+  #feedback .container {
+    display: flex;
+    justify-content: space-between;
+  }
+  #feedback form > div:nth-child(4),
+  #feedback form > div:nth-child(5) {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+  #feedback form div:nth-child(5) {
+    top: 80px;
+  }
+  #feedback form div:nth-child(6) {
+    margin: 40px 0 -115px;
+    padding: 0 0 50px 0;
+    line-height: 32px;
+  }
+  #feedback form input[type="submit"] {
+    float: right;
+    height: 65px;
+    padding: 0;
+  }
+  .right-side {
+    clear: both;
+    text-align: center;
+    width: 475px;
+  }
+  footer .container {
+    display: flex;
+    justify-content: space-between;
+  }
+  .social {
+    padding-right: 70px;
+  }
+}
