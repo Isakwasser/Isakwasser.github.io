@@ -1,0 +1,7061 @@
+@import "fonts.css";
+/* КОНСТАНТЫ */
+:root {
+  --main-color: #1e1d1d;
+  --accent-color: #f61b77;
+  --accent2-color: #ccec0a;
+  --borders-color: rgba(36, 36, 36, 0.35);
+  --headerBorders-color: rgba(30, 29, 29, 0.35);
+  --warnind-color: #fe1d1d;
+  --navigation-color: #4d4d4d;
+}
+/* НАСТРОЙКА КЛАССОВ ДЛЯ ШРИФТОВ */
+.yk300 {
+  font-family: "Yanone Kaffeesatz", sans-serif;
+  font-weight: 300;
+}
+.yk400 {
+  font-family: "Yanone Kaffeesatz", sans-serif;
+  font-weight: 400;
+}
+.yk700 {
+  font-family: "Yanone Kaffeesatz", sans-serif;
+  font-weight: 700;
+}
+
+.exo400 {
+  font-family: "Exo 2", sans-serif;
+  font-weight: 400;
+}
+.exo500 {
+  font-family: "Exo 2", sans-serif;
+  font-weight: 500;
+}
+.exo600 {
+  font-family: "Exo 2", sans-serif;
+  font-weight: 600;
+}
+.exo700 {
+  font-family: "Exo 2", sans-serif;
+  font-weight: 700;
+}
+
+.pm400 {
+  font-family: "Permanent Marker", cursive;
+  font-weight: 400;
+}
+/* НАСТРОЙКА ОКРУЖЕНИЯ */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  min-width: 1225px;
+  font-size: 16px;
+  font-family: "Exo 2", sans-serif;
+  color: #242424;
+  letter-spacing: 0.05em;
+  transform-origin: left top;
+  /* overflow-x: hidden; */
+  padding-top: 115px;
+}
+main {
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* НАСТРОЙКА ОБЩИХ КЛАССОВ  */
+.body__container {
+  width: 100%;
+  margin: 0 auto;
+}
+.content__container {
+  max-width: 1440px;
+  width: 100%;
+  margin: 0 auto;
+}
+.d_none {
+  display: none !important;
+}
+.ml_auto {
+  margin-left: auto !important;
+}
+/* @media (max-width: 1460px) {
+  body {
+    transform: scale(0.9);
+  }
+}
+@media (max-width: 1385px) {
+  body {
+    transform: scale(0.8);
+  }
+}
+@media (max-width: 1300px) {
+  body {
+    transform: scale(0.7);
+  }
+} */
+.container {
+  width: 85%;
+  margin: 0 auto;
+  max-width: 1440px;
+}
+.flexed {
+  display: flex;
+}
+.space_between {
+  justify-content: space-between;
+}
+.w100 {
+  width: 100%;
+}
+@media (max-width: 1400px) {
+  .container {
+    width: 90%;
+  }
+}
+.accent {
+  color: var(--accent-color);
+}
+.accent_2 {
+  color: var(--accent2-color);
+}
+.advert {
+  width: 100%;
+  height: 36px;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  padding-left: 39px;
+  /* border-top: 1px solid #242424;
+  border-bottom: 1px solid #242424; */
+  border-top: 1px solid var(--borders-color);
+  border-bottom: 1px solid var(--borders-color);
+  background-color: #ffffff;
+
+  font-family: "Exo 2", sans-serif;
+  font-weight: 900;
+  font-size: 16px;
+  line-height: 19px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #ffffff;
+  text-shadow: 1px 1px 1px #242424, 1px -1px 1px #242424, -1px 1px 1px #242424,
+    -1px -1px 1px #242424;
+  white-space: nowrap;
+  overflow: hidden;
+  position: relative;
+  z-index: 20;
+}
+
+.advert_up .advert__item::after {
+  content: url("../icons/advert_arrowUp.png");
+}
+.advert.colored {
+  background-color: var(--accent2-color);
+  color: var(--accent2-color);
+}
+.advert__item {
+  transition: all 3s;
+}
+.advert__item + .advert__item {
+  margin-left: 55px;
+}
+.advert__item::after {
+  content: url("../icons/advert_arrow.png");
+  margin-left: 15px;
+}
+.png_shadow::after {
+  -webkit-filter: drop-shadow(2px 3px 5px #242424);
+  filter: drop-shadow(2px 3px 5px #242424);
+}
+.Page__navigation {
+  font-family: "Exo 2", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 125%;
+  letter-spacing: 0;
+
+  display: flex;
+  align-items: center;
+
+  color: var(--navigation-color);
+
+  margin-bottom: 22px;
+}
+.Page__navigation_arrow {
+  margin: 0 15px;
+}
+
+aside {
+  font-family: "Yanone Kaffeesatz";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 110%;
+  /* or 20px */
+
+  display: flex;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+
+  /* Основной текст */
+
+  color: var(--main-color);
+}
+
+.aside_header {
+  font-weight: 500;
+}
+.aside__menuItem {
+  opacity: 0.75;
+  cursor: pointer;
+}
+.aside__menuItem:hover {
+  opacity: 0.65;
+}
+.aside__menuItem:active {
+  opacity: 0.85;
+}
+.aside__menuItem.aside__menuItem_active {
+  opacity: 1;
+}
+.aside__menuItem.aside__menuWeek {
+  text-transform: none;
+}
+.aside__list {
+  width: 215px;
+  border-right: 1px solid var(--headerBorders-color);
+  list-style-type: none;
+}
+.aside__list > li {
+  padding: 20px;
+  padding-left: 10000px;
+  margin-left: -10000px;
+  border-bottom: 1px solid var(--headerBorders-color);
+}
+.aside_popup::after {
+  content: url("../icons/aside_popupArrow.png");
+  margin-left: 16px;
+  display: inline-block;
+  transition: all 0.3s;
+}
+.aside_popup.aside_popup_up::after {
+  transform: rotate(180deg);
+}
+.aside_popup + ul {
+  height: 0;
+  transition: all 0.3s;
+  overflow: hidden;
+}
+.aside_popup.aside_popup_up + ul {
+  height: max-content;
+}
+
+.aside_popup_up + ul {
+  list-style-type: none;
+  padding-left: 15px;
+  padding-top: 11px;
+
+  font-family: "Yanone Kaffeesatz", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 19px;
+
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+
+  color: var(--main-color);
+}
+.aside_popup + ul > li {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.info {
+  background-color: var(--main-color);
+  color: #ffffff;
+  padding: 45px 0 40px 128px;
+
+  width: 600%;
+  margin-right: -500%;
+}
+.info__name {
+  font-family: "Yanone Kaffeesatz", sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 35px;
+  line-height: 110%;
+
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+
+  margin-bottom: 15px;
+
+  position: relative;
+}
+.info__name::after {
+  content: url("../icons/info_pointer.png");
+
+  position: absolute;
+  top: 40%;
+  left: 105%;
+}
+.info__text {
+  font-family: "Exo 2", sans-serif;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 125%;
+
+  margin-bottom: 30px;
+}
+.info_photo {
+  padding-top: 33px;
+  min-width: 184px;
+  height: 202px;
+  position: relative;
+  text-align: center;
+}
+.photo_shadow {
+  position: absolute;
+  z-index: 20;
+
+  width: 99%;
+  height: 99%;
+  top: 33px;
+  left: 0;
+
+  transform-origin: left bottom;
+  transform: rotate(-3deg) translate(1px, -1px);
+
+  box-shadow: 0 0 1px var(--accent2-color);
+
+  background-color: var(--accent2-color);
+}
+.info__photoText {
+  font-family: "Exo 2";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 125%;
+
+  opacity: 0.4;
+  margin-top: 10px;
+}
+.info__photoContainer {
+  width: 100%;
+  height: 202px;
+  position: relative;
+  z-index: 21;
+  background-color: #3e3e3e;
+}
+.info__photoContainer::after {
+  content: url("../icons/info_smile.png");
+
+  transform-origin: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  transform: translate(-50%, -50%);
+}
+.info_photo:hover .info__photoContainer {
+  background-color: #4d4d4d;
+}
+.info_photo:hover:not(:active) .info__photoText {
+  opacity: 0.75;
+}
+.info_photo:active .info__photoContainer::after {
+  content: url("../icons/info_smileActive.png");
+}
+
+.info__column {
+  margin-left: 25px;
+  width: 288px;
+}
+.info_area {
+  font-family: "Yanone Kaffeesatz";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 22px;
+  line-height: 110%;
+
+  letter-spacing: 0.05em;
+  /* text-transform: uppercase; */
+
+  margin-bottom: 9px;
+  color: #6f6f6f;
+}
+
+input.info__input,
+select.info__input {
+  height: 45px;
+  padding-left: 20px;
+  width: 100%;
+  border: none;
+  margin-bottom: 25px;
+
+  font-family: "Exo 2";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 125%;
+
+  background: rgba(122, 122, 122, 0.3);
+
+  color: #ffffff;
+}
+input.info__input:focus {
+  outline: 1px solid #6f6f6f;
+}
+.info__input option {
+  text-align: right;
+  background: rgba(58, 57, 57, 1);
+}
+
+/* W3C standard
+   сейчас только для Firefox */
+.info__input select.info__input {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 0.5) transparent;
+
+  -webkit-appearance: none;
+
+  background-image: url("../icons/profile_select_array.png");
+  background-repeat: no-repeat;
+  background-position: 80% 19px;
+}
+
+/* для Chrome/Edge/Safari */
+.info__input select::-webkit-scrollbar {
+  height: 12px;
+  width: 3px;
+}
+.info__input select::-webkit-scrollbar-track {
+  background: #999999;
+}
+.info__input select::-webkit-scrollbar-thumb {
+  background-color: #ffffff;
+  border-radius: 5px;
+}
+
+.info__input_city {
+  width: 184px;
+}
+.info__input_sex {
+  width: 80px;
+}
+.info__input_day {
+  width: 65px;
+}
+.info__input_month {
+  width: 128px;
+}
+.info__input_year {
+  width: 65px;
+}
+.info__save {
+  width: 207px;
+  height: 50px;
+
+  font-family: "Yanone Kaffeesatz";
+  font-style: normal;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 50px;
+  text-align: center;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+
+  border: 1px solid #ffffff;
+
+  cursor: pointer;
+}
+
+.info__save:hover {
+  color: var(--accent2-color);
+  border-color: var(--accent2-color);
+}
+
+.info__save:active {
+  color: #c2de13;
+  border-color: #c2de13;
+}
+
+.info__buttonBuy {
+  width: 154px;
+  height: 44px;
+
+  text-align: center;
+  font-size: 17px;
+
+  margin-top: 32px;
+  margin-bottom: -23px;
+
+  border: 2px solid var(--accent2-color);
+  background-color: var(--accent2-color);
+
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 4px;
+}
+
+.info__buttonBuy:active {
+  background-color: #c2de13;
+}
+
+.courses {
+  padding: 75px 0 60px 129px;
+  background: url("../img/courses_paint_back.png");
+
+  background-size: 1050px 1150px;
+  background-repeat: no-repeat;
+
+  background-position: 85px -750px;
+  margin-right: -1000px;
+}
+.courses__header {
+  font-family: "Yanone Kaffeesatz";
+  font-style: normal;
+  font-weight: bold;
+  font-size: 35px;
+  line-height: 110%;
+
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+
+  color: var(--main-color);
+
+  margin-bottom: 30px;
+}
+
+.courses__row {
+  font-family: "Yanone Kaffeesatz";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 22px;
+  line-height: 110%;
+
+  letter-spacing: 0.05em;
+  /* text-transform: uppercase; */
+
+  color: var(--main-color);
+
+  margin-bottom: 20px;
+}
+.courses__tracks + .courses__tracks {
+  margin-left: 29px;
+}
+.courses__tracks_button {
+  width: 184px;
+
+  font-family: "Exo 2";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 45px;
+
+  color: #ffffff;
+  background-color: var(--main-color);
+
+  padding-left: 20px;
+
+  margin-top: 9px;
+}
+.courses__text {
+  font-family: "Exo 2";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 125%;
+
+  /* Акцентный */
+
+  color: var(--accent-color);
+}
+.courses__text_full {
+  color: var(--main-color);
+
+  min-width: 640px;
+  margin-bottom: 45px;
+}
+.courses__additional {
+  font-family: "Exo 2", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 125%;
+  letter-spacing: 0;
+
+  color: #4d4d4d;
+}
+.coursesFull__statisticsName {
+  min-width: 210px;
+
+  font-family: "Yanone Kaffeesatz", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 22px;
+  line-height: 136.69%;
+
+  letter-spacing: 0.05em;
+
+  color: var(--main-color);
+}
+.coursesFull__statisticsName .number {
+  font-family: "Exo 2", sans-serif;
+}
+.coursesFull__statisticsName > .number > span {
+  font-family: "Roboto", sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 22px;
+  line-height: 136.69%;
+
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+
+  color: var(--accent-color);
+}
+.coursesFull__statisticsName > .number {
+  font-size: 17px;
+}
+.coursesFull_statisticsRow {
+  align-items: flex-end;
+  margin-bottom: 30px;
+}
+.coursesFull__statisticsProgress {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 700px;
+  margin-bottom: 10px;
+}
+.coursesFull__statisticsProgress > div {
+  height: 5px;
+  min-width: 10px;
+  width: 100%;
+
+  background-color: var(--borders-color);
+}
+.coursesFull__statisticsProgress > div:not(.accented) {
+  opacity: 0.3;
+}
+.coursesFull__statisticsProgress > div.accented {
+  background-color: var(--accent-color);
+}
+.coursesFull__statisticsProgress > div + div {
+  margin-left: 3px;
+}
+
+.myCoursesFull__headerContainer {
+  padding-right: 10000px;
+  margin-right: -10000px;
+
+  background: var(--main-color);
+
+  align-items: flex-start;
+  box-sizing: content-box;
+}
+.myCoursesFull__header {
+  font-family: "Yanone Kaffeesatz", sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 117.857px;
+  line-height: 110%;
+
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+
+  color: #ffffff;
+  margin-top: -14px;
+  margin-left: -5px;
+
+  min-width: 400px;
+}
+/* .myCoursesFull__headerRight {
+  margin-left: auto;
+} */
+.myCoursesFull__headerText {
+  font-family: "Exo 2", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 125%;
+  letter-spacing: 0;
+
+  color: #ffffff;
+  margin-top: 19px;
+  margin-bottom: 35px;
+}
+.myCoursesFull__headerWatchCourse {
+  font-family: "Yanone Kaffeesatz", sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 45px;
+
+  text-align: center;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+
+  color: var(--main-color);
+
+  padding-top: 5px;
+
+  background-color: var(--accent2-color);
+  margin-bottom: 58px;
+  cursor: pointer;
+  width: 241px;
+}
+.myCoursesFull__headerWatchCourse:hover {
+  background-color: #d6f418;
+}
+.myCoursesFull__headerWatchCourse:active {
+  background-color: #c2de13;
+}
+.myCoursesFull__underHeaderText {
+  font-family: "Exo 2", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 150%;
+
+  color: var(--accent-color);
+  margin-left: 5px;
+  margin-top: 22px;
+  margin-bottom: 35px;
+}
+.myCoursesFull__headerWatchAllCourse {
+  width: 241px;
+
+  font-family: "Yanone Kaffeesatz", sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 17px;
+  line-height: 45px;
+
+  text-align: center;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+
+  color: var(--main-color);
+
+  padding-top: 5px;
+  border: 2px solid var(--accent2-color);
+
+  cursor: pointer;
+}
+.myCoursesFull__headerWatchAllCourse:hover {
+  border: 2px solid #d6f418;
+}
+.myCoursesFull__headerWatchAllCourse:active {
+  border: 2px solid #c2de13;
+}
+.week__card {
+  padding-top: 10px;
+  padding-bottom: 30px;
+  padding-right: 10000px;
+  margin-right: -10000px;
+  border-top: 1px solid var(--borders-color);
+}
+.lesson__card {
+  margin-bottom: 30px;
+}
+.week__name {
+  font-family: "Yanone Kaffeesatz", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 110%;
+
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+
+  color: var(--accent-color);
+  margin-bottom: 30px;
+}
+.lesson__number {
+  font-family: "Yanone Kaffeesatz", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 136.69%;
+
+  letter-spacing: 0.05em;
+
+  color: var(--main-color);
+
+  opacity: 0.75;
+
+  margin-bottom: 10px;
+}
+.lesson__video {
+  width: 392px;
+  height: 244px;
+  overflow: hidden;
+
+  margin-right: 24px;
+}
+.lesson__video > * {
+  width: 100%;
+  height: 100%;
+}
+.lesson__name {
+  font-family: "Exo 2", sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 100%;
+
+  letter-spacing: 0.05em;
+
+  color: var(--main-color);
+
+  margin-bottom: 14px;
+}
+.lesson__miniInfo {
+  font-family: "Exo 2", sans-serif;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 11px;
+  line-height: 136.69%;
+
+  letter-spacing: 0.05em;
+
+  color: var(--main-color);
+
+  opacity: 0.5;
+
+  margin-bottom: 25px;
+}
+.lesson__miniInfo td {
+  padding-right: 10px;
+}
+.lesson__info {
+  width: 449px;
+
+  font-family: "Exo 2", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 150%;
+  letter-spacing: 0;
+
+  color: var(--main-color);
+}
+.lesson__check__name {
+  font-family: "Yanone Kaffeesatz", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 22px;
+  line-height: 110%;
+
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+
+  color: var(--main-color);
+  margin-bottom: 6px;
+}
+.myCourses__course {
+  padding: 45px 0 0px 129px;
+  color: var(--main-color);
+}
+.lesson__check__noteContainer {
+  font-family: "Roboto", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 11px;
+  line-height: 150%;
+  letter-spacing: 0;
+
+  color: rgba(30, 30, 30, 0.55);
+
+  display: flex;
+  align-items: center;
+
+  margin-bottom: 21px;
+}
+.lesson__check__note {
+  width: 80px;
+
+  background: var(--accent-color);
+
+  font-family: "Exo 2", sans-serif;
+  font-style: normal;
+  font-weight: 800;
+  font-size: 18px;
+  line-height: 40px;
+
+  text-align: center;
+
+  color: #ffffff;
+
+  padding-top: 3px;
+
+  margin-right: 26px;
+  /* margin-bottom: 21px; */
+  min-height: 45px;
+}
+.lesson__check__comment {
+  width: 375px;
+  height: 122px;
+
+  font-family: "Exo 2", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 150%;
+  letter-spacing: 0;
+
+  color: var(--main-color);
+  padding: 30px 19px;
+
+  border: 1px solid var(--borders-color);
+  opacity: 0.9;
+}
+
+.myCourses {
+  padding: 45px 0 346px 129px;
+  color: var(--main-color);
+}
+.myCourses__header {
+  font-family: "Yanone Kaffeesatz";
+  font-style: normal;
+  font-weight: bold;
+  font-size: 35px;
+  line-height: 110%;
+
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+
+  margin-bottom: 37px;
+}
+.emptyBlock__text {
+  font-family: "Exo 2";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 150%;
+  letter-spacing: 0;
+
+  position: relative;
+}
+.emptyBlock__text::after {
+  content: url("../icons/myCourses_pointer.png");
+
+  position: absolute;
+  top: 80%;
+  right: 10%;
+}
+.myCourses__buttonBuy {
+  width: 154px;
+  height: 44px;
+
+  text-align: center;
+  font-size: 17px;
+
+  margin-top: 31px;
+  margin-bottom: -23px;
+
+  border: 2px solid var(--accent2-color);
+  background-color: var(--accent2-color);
+
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 4px;
+}
+
+.myCourses__buttonBuy:active {
+  background-color: #c2de13;
+}
+
+.settings {
+  padding: 45px 0 281px 128px;
+}
+.settings_header {
+  font-family: "Yanone Kaffeesatz", sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 35px;
+  line-height: 110%;
+
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+
+  margin-bottom: 36px;
+}
+.settings__text {
+  font-family: "Yanone Kaffeesatz", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 22px;
+  line-height: 110%;
+
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+
+  color: var(--main-color);
+
+  margin-top: 21px;
+}
+
+.settings__input input {
+  width: 288px;
+  line-height: 45px;
+  padding-left: 17px;
+  font-size: 20px;
+  letter-spacing: 7px;
+  color: var(--main-color);
+  opacity: 0.75;
+}
+.settings__input input:focus {
+  /* outline: none; */
+  outline: 2px solid #6f6f6f;
+}
+.settings__input input[type="text"] {
+  letter-spacing: 4px;
+}
+
+.settings__input {
+  position: relative;
+}
+.settings__input:hover > * {
+  opacity: 0.8;
+}
+.password_eye {
+  position: inherit;
+  cursor: pointer;
+}
+.password_eye::after {
+  content: url("../icons/settings_eye-slash.png");
+
+  position: absolute;
+  right: 20px;
+  top: 50%;
+
+  transform: translateY(-50%);
+}
+.settings__input input[type="text"] + .password_eye::after {
+  content: url("../icons/settings_eye-opened.png");
+}
+.settings__hint {
+  font-family: "Exo 2", sans-serif;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 110%;
+
+  margin-top: 10px;
+  color: #6f6f6f;
+}
+
+.settings__save {
+  width: 242px;
+
+  font-family: "Yanone Kaffeesatz", sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 17px;
+  line-height: 45px;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+
+  text-align: center;
+
+  margin-top: 35px;
+  padding-top: 5px;
+
+  border: 2px solid #ccec0a;
+
+  cursor: pointer;
+}
+.settings__save:hover {
+  color: #ccec0a;
+}
+.settings__save:active {
+  color: #c2de13;
+  border-color: #c2de13;
+}
+.direction {
+  padding: 45px 0 60px 129px;
+  background-repeat: no-repeat;
+  background-image: url("../img/courses_paint_back.png");
+  background-position: 410px 154px;
+  background-size: 500px 500px;
+}
+.direction__header {
+  font-family: "Yanone Kaffeesatz", sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 35px;
+  line-height: 110%;
+
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+
+  margin-bottom: 30px;
+}
+
+.direction__level {
+  padding-top: 10px;
+  width: 100%;
+  margin-right: -10000px;
+  padding-right: 10000px;
+  border-top: 1px solid var(--borders-color);
+
+  margin-bottom: 36px;
+}
+.direction__level_item {
+  display: inline-block;
+
+  font-family: "Yanone Kaffeesatz", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 110%;
+
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+
+  opacity: 0.75;
+
+  padding-top: 10px;
+}
+.direction__level_item.accent {
+  opacity: 1;
+}
+.direction__level_item + .direction__level_item {
+  margin-left: 63px;
+}
+.direction__lessonName {
+  font-family: "Yanone Kaffeesatz", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 136.69%;
+
+  letter-spacing: 0.05em;
+
+  /* Основной текст */
+
+  color: var(--main-color);
+
+  opacity: 0.75;
+
+  margin-bottom: 10px;
+}
+.direction__video {
+  min-width: 392px;
+  max-width: 393px;
+  height: 244px;
+}
+.direction__video > * {
+  width: 100%;
+  height: 100%;
+}
+.direction__info {
+  background: #ffffff;
+  margin-bottom: 45px;
+}
+.direction__info_text {
+  margin-left: 24px;
+}
+.direction__info_header {
+  font-family: "Exo 2", sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 100%;
+
+  letter-spacing: 0.05em;
+
+  margin-bottom: 14px;
+}
+.direction__info_miniInfo {
+  font-family: "Exo 2", sans-serif;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 11px;
+  line-height: 136.69%;
+
+  letter-spacing: 0.05em;
+
+  opacity: 0.5;
+
+  margin-bottom: 25px;
+}
+.direction__info_miniInfo div + div {
+  margin-left: 15px;
+}
+.direction__info_fill {
+  font-family: "Exo 2", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 150%;
+
+  letter-spacing: 0;
+
+  /* margin-bottom: 35px; */
+}
+.direction__sureText {
+  font-family: "Exo 2", sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 150%;
+
+  letter-spacing: 0;
+}
+.direction__buttonBuy {
+  width: 154px;
+  height: 44px;
+
+  text-align: center;
+  font-size: 17px;
+
+  margin-top: 31px;
+  margin-bottom: -23px;
+
+  background-color: var(--accent2-color);
+
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 4px;
+}
+.direction__buttonBuy:hover {
+  background-color: #d6f418;
+}
+.direction__buttonBuy:active {
+  background-color: #c2de13;
+}
+
+/* вкладка НАПРАВЛЕНИЯ */
+.tracksPage__container {
+  padding: 20px 0 60px 0;
+}
+.tracksPage__firstRow {
+  margin-bottom: 40px;
+  align-items: flex-end;
+}
+.tracksPage__tracksName {
+  font-family: "Yanone Kaffeesatz", sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 55px;
+  line-height: 100%;
+
+  text-transform: uppercase;
+
+  color: var(--main-color);
+}
+.tracksPage__tracks {
+  min-height: 880px;
+}
+.tracksPage__headerText {
+  font-family: "Yanone Kaffeesatz", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 40px;
+  line-height: 100%;
+
+  text-transform: uppercase;
+
+  color: var(--accent-color);
+
+  margin-left: 104px;
+}
+.tracksPage__accent {
+  color: var(--main-color);
+}
+.tracksPage__small {
+  font-size: 25px;
+
+  color: #1e1d1d;
+}
+
+.tracksPage__text {
+  width: 495px;
+
+  font-family: "Roboto", sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 150%;
+
+  color: var(--main-color);
+
+  margin-left: auto;
+}
+
+.tracksPage__track {
+  padding: 25px 10000px 29px 0;
+  margin-right: -10000px;
+
+  border-top: 1px solid var(--borders-color);
+
+  font-family: "Yanone Kaffeesatz", sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 28px;
+  line-height: 150%;
+
+  color: var(--main-color);
+}
+.tracksPage__track:last-of-type {
+  border-bottom: 1px solid var(--borders-color);
+}
+.tracksPage__track > .flexed {
+  justify-content: space-between;
+}
+.tracksPage_number {
+  min-width: 104px;
+  width: 104px;
+}
+.tracksPage__name {
+  white-space: nowrap;
+  width: 100px;
+  max-width: 100px;
+  min-width: 100px;
+
+  line-height: 100%;
+}
+.trackPage__video {
+  min-width: 288px;
+
+  overflow: hidden;
+
+  height: 0;
+  transition: all 0.1s;
+}
+.tracksPage__track:hover .trackPage__video {
+  height: 176px;
+}
+.trackPage__video > img {
+  width: 100%;
+}
+.tracksPage__arrow {
+  min-width: 30px;
+}
+.tracksPage__itemdescryption {
+  min-width: 495px;
+  max-width: 395px;
+}
+.tracksPage__itemdescryptiontext {
+  overflow: hidden;
+
+  font-family: "Exo 2", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 150%;
+  letter-spacing: 0;
+
+  color: var(--main-color);
+
+  height: 0;
+  transition: all 0.1s;
+  /* margin-bottom: 38px; */
+}
+.tracksPage__track:hover .tracksPage__itemdescryptiontext {
+  height: min-content;
+  margin-bottom: 38px;
+}
+.tracksPage__more {
+  width: 160px;
+
+  font-family: "Yanone Kaffeesatz", sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 17px;
+  line-height: 50px;
+
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+
+  text-align: center;
+
+  cursor: pointer;
+
+  padding-top: 4px;
+
+  color: var(--accent-color);
+}
+.tracksPage__more:hover {
+  opacity: 0.8;
+}
+.tracksPage__more:active {
+  opacity: 0.9;
+}
+.tracksPage__getTrial {
+  width: 230px;
+
+  font-family: "Yanone Kaffeesatz", sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 17px;
+  line-height: 50px;
+  display: inline-block;
+  vertical-align: middle;
+
+  text-align: center;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+
+  /* Основной текст */
+
+  color: var(--main-color);
+
+  /* margin-top: 40px; */
+  padding-top: 4px;
+}
+.enter__container {
+  width: 471px;
+  margin: 0 auto;
+
+  text-align: center;
+
+  padding: 40px;
+
+  background-color: var(--main-color);
+
+  position: relative;
+}
+.enter__paint {
+  background-image: url("../img/enter_backPaint.png"),
+    url("../img/enter_backPaint.png");
+  background-repeat: no-repeat;
+  background-position: 71% -119px, 32% 112px;
+
+  padding-top: 40px;
+  padding-bottom: 142px;
+}
+.enter__header {
+  font-family: "Yanone Kaffeesatz", sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 25px;
+  line-height: 100%;
+  letter-spacing: 0;
+
+  text-transform: uppercase;
+
+  /* Белый */
+
+  color: #ffffff;
+
+  margin-bottom: 26px;
+}
+.enter__text {
+  font-family: "Yanone Kaffeesatz", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 22px;
+  line-height: 110%;
+
+  text-align: left;
+  letter-spacing: 0.05em;
+  text-transform: capitalize;
+
+  /* Белый */
+
+  color: #ffffff;
+  margin-bottom: 6px;
+}
+
+.enter__input input {
+  font-family: "Exo 2", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 45px;
+  border: none;
+
+  color: #ffffff;
+
+  /* opacity: 0.2; */
+  background-color: #3e3e3e;
+  padding-left: 27px;
+  margin-bottom: 27px;
+}
+.enter__input input:focus {
+  /* outline: none; */
+  outline: 2px solid #3e3e3e;
+}
+.enter__button {
+  cursor: pointer;
+  background-color: var(--accent2-color);
+
+  font-family: "Yanone Kaffeesatz", sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 17px;
+  line-height: 45px;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+
+  color: var(--main-color);
+  padding-top: 4px;
+
+  margin-bottom: 12px;
+}
+.enter__button:hover {
+  background-color: #d6f418;
+}
+.enter__button:active {
+  background-color: #c2de13;
+}
+.enter__alternate {
+  font-family: "Exo 2", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 100%;
+  letter-spacing: 0;
+
+  color: #ffffff;
+}
+.enter__create {
+  font-family: "Yanone Kaffeesatz", sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 17px;
+  line-height: 45px;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+
+  /* Белый */
+
+  color: #ffffff;
+
+  padding-top: 4px;
+  margin-top: 15px;
+  border: 2px solid #ffffff;
+}
+.getTrialPage__container {
+  width: 471px;
+  margin: 0 auto;
+
+  text-align: center;
+
+  padding: 40px;
+
+  background-color: var(--main-color);
+
+  position: relative;
+}
+.getTrialPage__paint {
+  background-image: url("../img/enter_backPaint.png"),
+    url("../img/enter_backPaint.png");
+  background-repeat: no-repeat;
+  background-position: 71% -119px, 32% -40px;
+
+  padding-top: 40px;
+  padding-bottom: 244px;
+}
+.getTrialPage__header {
+  font-family: "Yanone Kaffeesatz", sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 25px;
+  line-height: 100%;
+  letter-spacing: 0;
+
+  text-transform: uppercase;
+
+  /* Белый */
+
+  color: #ffffff;
+
+  margin-bottom: 26px;
+}
+
+.getTrialPage__button {
+  cursor: pointer;
+  background-color: var(--accent2-color);
+
+  font-family: "Yanone Kaffeesatz", sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 17px;
+  line-height: 45px;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+
+  color: var(--main-color);
+  padding-top: 4px;
+
+  margin-bottom: 12px;
+}
+.getTrialPage__button:hover {
+  background-color: #d6f418;
+}
+.getTrialPage__button:active {
+  background-color: #c2de13;
+}
+
+.getTrialPage__text {
+  margin-bottom: 30px;
+
+  font-family: "Exo 2", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 150%;
+  letter-spacing: 0;
+
+  text-align: center;
+
+  color: #ffffff;
+}
+
+.getTrial_confirmedPage__container {
+  width: 471px;
+  margin: 0 auto;
+
+  text-align: center;
+
+  padding: 40px;
+
+  background-color: var(--main-color);
+
+  position: relative;
+}
+.getTrial_confirmedPage__paint {
+  background-image: url("../img/enter_backPaint.png"),
+    url("../img/enter_backPaint.png");
+  background-repeat: no-repeat;
+  background-position: 71% -119px, 32% -40px;
+
+  padding-top: 40px;
+  padding-bottom: 244px;
+}
+.getTrial_confirmedPage__header {
+  font-family: "Yanone Kaffeesatz", sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 25px;
+  line-height: 100%;
+  letter-spacing: 0;
+
+  text-transform: uppercase;
+
+  /* Белый */
+
+  color: #ffffff;
+
+  margin-bottom: 26px;
+}
+
+.getTrial_confirmedPage__button {
+  cursor: pointer;
+  background-color: var(--accent2-color);
+
+  font-family: "Yanone Kaffeesatz", sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 17px;
+  line-height: 45px;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+
+  color: var(--main-color);
+  padding-top: 4px;
+
+  margin-bottom: 12px;
+}
+.getTrial_confirmedPage__button:hover {
+  background-color: #d6f418;
+}
+.getTrialPage__button:active {
+  background-color: #c2de13;
+}
+
+.getTrial_confirmedPage__text {
+  margin-bottom: 30px;
+
+  font-family: "Exo 2", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 150%;
+  letter-spacing: 0;
+
+  text-align: center;
+
+  color: #ffffff;
+}
+.getTrial_confirmedPage__ok {
+  margin-bottom: 33px;
+}
+
+.register__checkbox {
+  text-align: left;
+}
+.register__checkbox input {
+  width: 0;
+  height: 0;
+}
+.register__checkbox label {
+  padding-left: 25px;
+  position: relative;
+
+  font-style: normal;
+  font-weight: 100;
+  font-size: 12px;
+  line-height: 155%;
+
+  color: #ffffff;
+
+  opacity: 0.7;
+}
+.register__checkbox label::before {
+  content: "";
+
+  display: inline-block;
+  width: 15px;
+  font-size: 30px;
+  height: 15px;
+
+  position: absolute;
+  top: 0;
+  left: -4px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+}
+.register__checkbox input:checked + label::before {
+  content: url("../icons/agreement_checked.png");
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: flex-end;
+  justify-content: center;
+
+  color: #ffffff;
+}
+.register__white {
+  color: #ffffff;
+  font-weight: normal;
+  margin-bottom: 40px;
+  margin-top: -20px;
+}
+.register__paint {
+  background-image: url("../img/enter_backPaint.png"),
+    url("../img/enter_backPaint.png");
+  background-repeat: no-repeat;
+  background-position: 71% -119px, 32% 463px;
+
+  padding-top: 40px;
+  padding-bottom: 142px;
+}
+
+.teachersPage__container {
+  padding: 20px 0 60px;
+}
+.teachersPage__header {
+  align-items: flex-end;
+  margin-bottom: 35px;
+}
+.teachersPage__headerName {
+  /* Заголовок 55 */
+
+  font-family: "Yanone Kaffeesatz", sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 55px;
+  line-height: 100%;
+
+  text-transform: uppercase;
+
+  color: var(--main-color);
+}
+.teachersPage__headerText {
+  font-family: "Yanone Kaffeesatz", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 40px;
+  line-height: 100%;
+
+  text-transform: uppercase;
+
+  color: var(--accent-color);
+
+  padding-left: 105px;
+  position: relative;
+}
+.teachersPage__headerText::after {
+  content: url("../icons/reviews_excl.png");
+
+  position: absolute;
+  top: 20px;
+  left: 110%;
+
+  transform: rotate(20deg);
+}
+.teachersPage__headerInfo {
+  margin-left: auto;
+
+  font-family: "Roboto", sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 150%;
+  letter-spacing: 0;
+
+  color: var(--accent-color);
+}
+.teachersPage__teachers {
+  justify-content: space-between;
+  flex-flow: row wrap;
+}
+.teachersPage__teacher {
+  width: 290px;
+  padding: 22px;
+  border: 1px solid var(--borders-color);
+
+  margin-bottom: 24px;
+  transition: all 0.3s;
+}
+.teachersPage__teacher:hover {
+  transform: rotate(-2deg) scale(1.1);
+}
+.teachersPage__teacherPhoto {
+  height: 168px;
+  overflow: hidden;
+  margin-bottom: 13px;
+}
+.teachersPage__teacherPhoto img {
+  width: 100%;
+}
+.teachersPage__teacherDescryption {
+  align-items: flex-end;
+  justify-content: space-between;
+}
+.teachersPage__teacherName {
+  font-family: "Yanone Kaffeesatz", sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 22px;
+  line-height: 100%;
+  letter-spacing: 0;
+
+  text-transform: uppercase;
+
+  color: var(--main-color);
+}
+.teachersPage__teacherMore {
+  font-family: "Yanone Kaffeesatz", sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 100%;
+  letter-spacing: 0;
+
+  color: var(--accent-color);
+
+  cursor: pointer;
+}
+.teachersPage__button {
+  width: 229px;
+  height: 50px;
+  padding-top: 17px;
+  text-align: center;
+  font-size: 17px;
+  background: repeating-linear-gradient(
+    90deg,
+    var(--accent2-color),
+    var(--accent2-color) 50px,
+    transparent 50px,
+    transparent 100%
+  );
+  cursor: pointer;
+
+  transition: all 0.2s;
+
+  margin-top: 35px;
+}
+
+.aboutPage__container {
+  padding: 20px 0 60px 0;
+}
+
+.aboutPage__header {
+  padding-bottom: 40px;
+}
+.aboutPage__headerName {
+  min-width: 104px;
+
+  font-family: "Yanone Kaffeesatz", sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 55px;
+  line-height: 100%;
+
+  text-transform: uppercase;
+
+  color: var(--main-color);
+}
+.aboutPage__headerDescryption {
+  font-family: "Yanone Kaffeesatz", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 40px;
+  line-height: 100%;
+  letter-spacing: 0;
+
+  text-transform: uppercase;
+
+  color: var(--accent-color);
+}
+.aboutPage__headerText {
+  min-width: 495px;
+  margin-left: auto;
+  align-self: flex-end;
+
+  font-family: "Exo 2", sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 125%;
+  letter-spacing: 0;
+
+  color: var(--accent-color);
+
+  position: relative;
+}
+.aboutPage__headerText::after {
+  content: url("../icons/aboutPage_arrowToVideo.png");
+
+  position: absolute;
+
+  top: 100%;
+
+  left: 38%;
+}
+.aboutPage__history {
+  padding: 20px 0 25px 0;
+  padding-right: 10000px;
+  margin-right: -10000px;
+  border-top: 1px solid var(--borders-color);
+}
+.aboutPage__historyHeader {
+  margin-bottom: 20px;
+
+  font-family: "Exo 2", sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 150%;
+  letter-spacing: 0;
+
+  color: var(--main-color);
+}
+.aboutPage__historyRow {
+  padding-left: 104px;
+}
+.aboutPage__historyText {
+  width: 287px;
+  max-width: 287px;
+  min-width: 287px;
+
+  font-family: "Exo 2", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 150%;
+
+  color: var(--main-color);
+
+  margin-right: 27px;
+}
+.aboutPage__historyPhotoContainer {
+  min-width: 495px;
+  min-width: 495px;
+
+  margin-left: auto;
+}
+.aboutPage__historyPhoto {
+  width: 392px;
+  height: 244px;
+  overflow: hidden;
+}
+.aboutPage__historyPhoto img {
+  width: 100%;
+}
+.aboutPage__mission {
+  padding: 20px 0 25px 0;
+  padding-right: 10000px;
+  margin-right: -10000px;
+  border-top: 1px solid var(--borders-color);
+}
+.aboutPage__missionHeader {
+  margin-bottom: 20px;
+
+  font-family: "Exo 2", sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 150%;
+  letter-spacing: 0;
+
+  color: var(--main-color);
+}
+.aboutPage__missionRow {
+  padding-left: 104px;
+}
+.aboutPage__missionText {
+  min-width: 408px;
+  width: 408px;
+
+  font-family: "Exo 2", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 150%;
+  letter-spacing: 0;
+
+  color: var(--main-color);
+}
+.aboutPage__getTrial {
+  width: 230px;
+
+  font-family: "Yanone Kaffeesatz", sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 17px;
+  line-height: 50px;
+  display: inline-block;
+  vertical-align: middle;
+
+  text-align: center;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+
+  /* Основной текст */
+
+  color: var(--main-color);
+
+  margin-top: 137px;
+
+  padding-top: 4px;
+
+  cursor: pointer;
+}
+.aboutPage__missionPhotoContainer {
+  margin-left: auto;
+  position: relative;
+  transform: translateX(-20px) rotate(4deg);
+}
+.aboutPage__missionStick {
+  position: absolute;
+  top: -20px;
+  left: 30%;
+}
+.aboutPage__missionPage {
+  transform: translateX(30px) rotate(-90deg);
+  transform-origin: bottom left;
+  position: absolute;
+  bottom: 20px;
+  left: 0;
+}
+.aboutPage__opportunities {
+  padding: 20px 0 25px 0;
+  padding-right: 10000px;
+  margin-right: -10000px;
+  border-top: 1px solid var(--borders-color);
+}
+.aboutPage__opportunitiesHeader {
+  margin-bottom: 20px;
+
+  font-family: "Exo 2", sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 150%;
+  letter-spacing: 0;
+
+  color: var(--main-color);
+}
+.aboutPage__opportunityLastOfRow {
+  min-width: 495px;
+  width: 495px;
+}
+.aboutPage__opportunitiesRow {
+  justify-content: space-between;
+  flex-flow: row nowrap;
+  margin-bottom: 40px;
+  padding-left: 104px;
+}
+.aboutPage__opportunityHeader {
+  font-family: "Yanone Kaffeesatz", sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 60px;
+  line-height: 100%;
+
+  text-transform: uppercase;
+
+  color: var(--main-color);
+}
+.aboutPage__opportunityHeader_force {
+  background-image: url("../icons/firstScreen_polygon.png");
+  background-repeat: no-repeat;
+  background-size: 10px 26px;
+  background-position: 77px 10px;
+}
+.aboutPage__opportunityHeader_health {
+  background-image: url("../icons/firstScreen_circle.png");
+  background-repeat: no-repeat;
+  background-size: 10px 30px;
+  background-position: 104px 10px;
+}
+.aboutPage__opportunityHeader_confidence {
+  background-image: url("../icons/firstScreen_circle.png");
+  background-repeat: no-repeat;
+  background-size: 10px 30px;
+  background-position: 162px 10px;
+}
+.aboutPage__opportunityHeader_freedom {
+  background-image: url("../icons/firstScreen_circle.png");
+  background-repeat: no-repeat;
+  background-size: 10px 30px;
+  background-position: 100px 10px;
+}
+.aboutPage__opportunityHeader_beauty {
+  background-image: url("../icons/firstScreen_circle.png");
+  background-repeat: no-repeat;
+  background-size: 10px 30px;
+  background-position: 98px 10px;
+}
+.aboutPage__opportunityHeader_happyness {
+  background-image: url("../icons/firstScreen_circle.png");
+  background-repeat: no-repeat;
+  background-size: 10px 18px;
+  background-position: 116px 23px;
+}
+
+.aboutPage__opportunityText {
+  font-family: "Exo 2", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 150%;
+  letter-spacing: 0;
+
+  color: var(--main-color);
+}
+
+.aboutPage__achieve {
+  padding: 20px 0 25px 0;
+  padding-right: 10000px;
+  margin-right: -10000px;
+  border-top: 1px solid var(--borders-color);
+}
+.aboutPage__achieveHeader {
+  margin-bottom: 20px;
+
+  font-family: "Exo 2", sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 150%;
+  letter-spacing: 0;
+
+  color: var(--main-color);
+}
+.aboutPage__achieveButtons {
+  min-width: 104px;
+}
+.aboutPage__achievesContainer {
+  width: 200%;
+  overflow: hidden;
+
+  display: flex;
+  flex-flow: row nowrap;
+}
+.aboutPage__achieveText {
+  font-family: "Exo 2", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 125%;
+
+  color: var(--main-color);
+}
+.aboutPage__achieveItem + .aboutPage__achieveItem {
+  margin-left: 24px;
+}
+.aboutPage__achievePhoto {
+  width: 184px;
+  height: 256px;
+  overflow: hidden;
+  margin-bottom: 25px;
+  background-color: var(--accent-color);
+}
+[data-target="photoContainer"] img {
+  max-width: 90vw;
+  max-height: 90vh;
+
+  transform: translate(-50%, -50%);
+}
+.aboutPage__achievePhoto img {
+  width: 100%;
+  height: 100%;
+  opacity: 0.8;
+  cursor: zoom-in;
+  -webkit-filter: grayscale(100%);
+  -moz-filter: grayscale(100%);
+  -ms-filter: grayscale(100%);
+  -o-filter: grayscale(100%);
+  filter: grayscale(100%);
+
+  transition: all 0.2s;
+}
+.aboutPage__achievePhoto:hover img {
+  opacity: 1;
+}
+.aboutPage__achieveButtons {
+  display: flex;
+  height: 30px;
+
+  margin-top: 230px;
+}
+.aboutPage__achieveButton {
+  cursor: pointer;
+}
+.aboutPage__achieveButton + .aboutPage__achieveButton {
+  margin-left: 20px;
+}
+.aboutPage__achieveButton::after {
+  content: url("../icons/achieve_arrow.png");
+
+  display: inline-block;
+}
+.aboutPage__achieveButton.left::after {
+  transform: scaleX(-1);
+}
+
+.aboutPage__docs {
+  padding: 20px 0 25px 0;
+  padding-right: 10000px;
+  margin-right: -10000px;
+  /* border-top: 1px solid var(--borders-color); */
+}
+.aboutPage__docsHeader {
+  margin-bottom: 20px;
+
+  font-family: "Exo 2", sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 150%;
+  letter-spacing: 0;
+
+  color: var(--main-color);
+}
+.aboutPage__docsItem {
+  padding-left: 104px;
+
+  font-family: "Exo 2", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 150%;
+
+  color: var(--main-color);
+}
+
+.trackPage__container {
+  padding: 20px 0 60px 0;
+}
+.trackPage__header {
+  margin-bottom: 40px;
+}
+.trackPage__headerName {
+  font-family: "Yanone Kaffeesatz", sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 55px;
+  line-height: 100%;
+
+  text-transform: uppercase;
+
+  color: var(--main-color);
+}
+.trackPage__headerText {
+  width: 495px;
+  min-width: 495px;
+
+  font-family: "Roboto", sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 125%;
+  letter-spacing: 0;
+}
+.trackPage__about {
+  padding: 20px 0 50px 0;
+  border-top: 1px solid var(--borders-color);
+  padding-right: 10000px;
+  margin-right: -10000px;
+}
+.trackPage__aboutHeader {
+  font-family: "Exo 2", sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 150%;
+  letter-spacing: 0;
+
+  color: var(--main-color);
+
+  margin-bottom: 20px;
+}
+.trackPage__aboutInfo {
+  padding-left: 104px;
+}
+.trackPage__aboutInfoText1 {
+  font-family: "Exo 2", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 150%;
+  letter-spacing: 0;
+
+  color: var(--main-color);
+}
+.trackPage__aboutInfoText1 > div {
+  /* max-width: 287px; */
+  /* margin-right: 23px; */
+  margin-bottom: 35px;
+}
+.trackPage__aboutInfoText1 > div + div {
+  /* max-width: 287px; */
+  margin-left: 23px;
+  /* margin-bottom: 35px; */
+}
+.trackPage__aboutVideo {
+  height: 309px;
+}
+.trackPage__aboutVideo img {
+  height: 100%;
+}
+.trackPage__firstColumn {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+  min-width: 575px;
+}
+.trackPage__aboutSecondColumn {
+  width: 495px;
+  min-width: 495px;
+
+  margin-left: auto;
+
+  font-family: "Exo 2", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 150%;
+  letter-spacing: 0;
+
+  color: var(--main-color);
+}
+.trackPage__aboutPhoto {
+  width: 391px;
+  margin-bottom: 20px;
+}
+.trackPage__aboutPhoto img {
+  width: 100%;
+}
+.trackPage__getTrial {
+  margin: 50px 0 20px 0;
+
+  width: 229px;
+
+  text-align: center;
+
+  font-family: "Yanone Kaffeesatz", sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 17px;
+  line-height: 45px;
+
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+
+  padding-top: 5px;
+  cursor: pointer;
+}
+.trackPage__getCourse {
+  border: 2px solid var(--accent2-color);
+
+  width: 229px;
+
+  font-family: "Yanone Kaffeesatz", sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 17px;
+  line-height: 45px;
+
+  text-align: center;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+
+  padding-top: 5px;
+
+  cursor: pointer;
+}
+.trackPage__getCourse:hover {
+  border: 2px solid #d6f418;
+}
+.trackPage__getCourse:active {
+  border: 2px solid #c2de13;
+}
+
+.trackPage__teachers {
+  padding-top: 20px;
+  border-top: 1px solid var(--borders-color);
+  padding-right: 10000px;
+  margin-right: -10000px;
+}
+.trackPage__teachersHeader {
+  font-family: "Exo 2", sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 150%;
+  letter-spacing: 0;
+
+  color: var(--main-color);
+
+  margin-bottom: 20px;
+}
+.trackPage__teachersContainer {
+  padding-left: 104px;
+}
+.trackPage__teacherCard {
+  border: 1px solid var(--borders-color);
+
+  min-width: 288px;
+  width: 288px;
+  padding: 20px;
+}
+.trackPage__teacherCard_two {
+  padding: 0;
+  border: none;
+}
+.trackPage__teacherCard .trackPage__teachersViewAll {
+  margin-top: 0;
+}
+.trackPage__teacherCard:last-of-type {
+  margin-right: 207px;
+}
+.trackPage__teacherPhoto {
+  height: 168px;
+  overflow: hidden;
+
+  margin-bottom: 13px;
+}
+.trackPage__teacherPhoto img {
+  width: 100%;
+}
+.trackPage__teacherRow {
+  align-items: baseline;
+}
+.trackPage__teacherName {
+  font-family: "Yanone Kaffeesatz", sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 22px;
+  line-height: 100%;
+  letter-spacing: 0;
+
+  text-transform: uppercase;
+
+  color: var(--main-color);
+}
+.trackPage__teacherMore {
+  font-family: "Yanone Kaffeesatz", sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 17px;
+
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+
+  color: var(--accent-color);
+
+  cursor: pointer;
+}
+.trackPage__teachersViewAll {
+  width: 183px;
+  margin: 39px 312px 0 auto;
+
+  font-family: "Yanone Kaffeesatz", sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 17px;
+  line-height: 45px;
+
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+
+  color: var(--main-color);
+  padding-top: 5px;
+
+  text-align: center;
+  cursor: pointer;
+}
+
+.pricePage__rates {
+  background-color: var(--main-color);
+
+  padding: 20px 0 98px 0;
+  color: #ffffff;
+}
+.pricePage__navigation {
+  font-family: "Exo 2", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 125%;
+  letter-spacing: 0;
+
+  color: #ffffff;
+
+  display: flex;
+  align-items: center;
+
+  margin-bottom: 22px;
+}
+.pricePage__navigation_unactive {
+  opacity: 0.8;
+}
+.Page__navigation_unactive {
+  opacity: 0.8;
+}
+.pricePage__navigation .Page__navigation_arrow {
+  filter: brightness(300%);
+}
+.pricePage__ratesRow {
+  display: flex;
+  flex-flow: row nowrap;
+}
+.pricePage__rateCard {
+  background-color: var(--navigation-color);
+  padding: 30px;
+
+  width: 288px;
+  min-width: 288px;
+}
+.pricePage__rateCard + .pricePage__rateCard {
+  margin-left: 24px;
+}
+.pricePage__rateCardHeader {
+  font-family: "Yanone Kaffeesatz", sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 30px;
+  line-height: 100%;
+  letter-spacing: 0;
+
+  text-align: center;
+  text-transform: uppercase;
+
+  color: #ffffff;
+  margin-bottom: 43px;
+}
+.pricePage__rateCardHeader::first-line {
+  font-weight: normal;
+}
+.pricePage__rateCardCost {
+  font-family: "Exo 2", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 100%;
+  letter-spacing: 0;
+
+  color: #ffffff;
+
+  text-align: center;
+  margin-bottom: 55px;
+}
+.pricePage__rateCardCost span {
+  font-weight: 600;
+  font-size: 25px;
+}
+.pricePage__rateCardConditions {
+  height: 100px;
+  font-family: "Exo 2", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 150%;
+  letter-spacing: 0;
+
+  color: #ffffff;
+
+  list-style: none;
+
+  margin-bottom: 20px;
+}
+.pricePage__rateCardConditions li::before {
+  content: "-";
+}
+
+.pricePage__rateCardBuy {
+  font-family: "Yanone Kaffeesatz", sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 17px;
+  line-height: 45px;
+
+  text-align: center;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+
+  color: #1e1d1d;
+
+  background-color: var(--accent2-color);
+
+  padding-top: 5px;
+
+  cursor: pointer;
+}
+.pricePage__rateCardBuy:hover {
+  background-color: #d6f418;
+}
+.pricePage__rateCardBuy:active {
+  background-color: #c2de13;
+}
+.pricePage__rateCardAdditional {
+  height: 40px;
+  font-family: "Exo 2", sans-serif;
+  font-style: normal;
+  font-weight: 100;
+  font-size: 13px;
+  line-height: 125%;
+  letter-spacing: 0;
+
+  color: #ffffff;
+
+  opacity: 0.55;
+  margin: 36px -20px -76px -10px;
+
+  position: relative;
+}
+.pricePage__rateCardAdditional:not(:empty)::before {
+  content: "*";
+  display: block;
+  height: 100%;
+
+  position: absolute;
+  top: 0;
+  left: -10px;
+}
+.pricePage__rateText {
+  min-width: 495px;
+  max-width: 495px;
+
+  margin-left: auto;
+
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+}
+.pricePage__rateHeader {
+  font-family: "Yanone Kaffeesatz", sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 55px;
+  line-height: 100%;
+  letter-spacing: 0;
+
+  text-transform: uppercase;
+
+  color: #ffffff;
+
+  margin-bottom: 15px;
+}
+.pricePage__rateInfo {
+  font-family: "Exo 2", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 150%;
+  letter-spacing: 0;
+
+  color: #ffffff;
+}
+.pricePage__getTrial {
+  width: 229px;
+
+  font-family: "Yanone Kaffeesatz", sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 17px;
+  line-height: 45px;
+
+  text-align: center;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+
+  color: #ffffff;
+
+  padding-top: 5px;
+  margin-top: 35px;
+}
+
+/* .pricePage__ask {
+  background-color: var(--accent2-color);
+} */
+.pricePage__ask__container {
+  padding: 93px 0 96px 105px;
+  display: flex;
+}
+.pricePage__ask__form {
+  background-color: #242424;
+  padding: 50px;
+  min-width: 546px;
+  width: 546px;
+  position: relative;
+  /* margin-right: 78px; */
+}
+
+.pricePage__ask__form form {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.pricePage__ask__form .input {
+  position: relative;
+  width: 214px;
+  height: 45px;
+  line-height: 45px;
+
+  font-weight: normal;
+  font-size: 14px;
+
+  cursor: pointer;
+
+  color: #242424;
+}
+.pricePage__ask__form .input input,
+.pricePage__ask__form .input textarea {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+  padding: 10px;
+
+  cursor: pointer;
+
+  resize: none;
+}
+.pricePage__ask__form .input input:focus,
+.pricePage__ask__form .input textarea:focus {
+  /* outline: none;*/
+  outline: 2px solid var(--accent-color);
+}
+.pricePage__ask__form .input input.ask__input_name {
+  width: 214px;
+}
+.pricePage__ask__form .input label {
+  position: absolute;
+  top: 0;
+  left: 10px;
+  border: none;
+
+  position: absolute;
+  top: 0;
+  left: 10px;
+  border: none;
+
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+
+  color: #242424;
+
+  cursor: pointer;
+
+  opacity: 0.5;
+}
+
+.pricePage__ask__form .input__textarea {
+  margin-top: 20px;
+  width: 100%;
+  height: 182px;
+}
+.pricePage__ask__form .input textarea {
+  padding-top: 15px;
+}
+
+.pricePage__ask__checkbox input {
+  width: 0;
+  height: 0;
+}
+.pricePage__ask__checkbox label {
+  padding-left: 25px;
+  position: relative;
+
+  font-style: normal;
+  font-weight: 100;
+  font-size: 12px;
+  line-height: 155%;
+
+  color: #ffffff;
+
+  opacity: 0.7;
+}
+.pricePage__ask__checkbox label::before {
+  content: "";
+
+  display: inline-block;
+  width: 15px;
+  font-size: 30px;
+  height: 15px;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+}
+.pricePage__ask__checkbox input:checked + label::before {
+  content: url("../icons/agreement_checked.png");
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: flex-end;
+  justify-content: center;
+
+  color: #ffffff;
+}
+
+.pricePage__ask__text {
+  width: 495px;
+
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+  margin-left: auto;
+}
+.pricePage__ask__white {
+  color: #ffffff;
+  font-weight: normal;
+  margin-top: 20px;
+}
+
+.pricePage__ask__submitContainer {
+  margin-top: 31px;
+  display: flex;
+  width: 100%;
+}
+.pricePage__ask__button {
+  width: 150px;
+  height: 50px;
+  padding-top: 18px;
+  text-align: center;
+  font-size: 17px;
+  /* background: repeating-linear-gradient(
+    90deg,
+    var(--accent-color),
+    var(--accent-color) 50px,
+    transparent 50px,
+    transparent 100%
+  ); */
+  background: var(--accent-color);
+  cursor: pointer;
+
+  transition: all 0.2s;
+}
+.pricePage__ask__button:hover {
+  opacity: 0.8;
+}
+.pricePage__ask__button:active {
+  opacity: 0.9;
+}
+.pricePage__ask__button .button {
+  background-color: transparent;
+  border: none;
+  color: #ffffff;
+  letter-spacing: 0.05em;
+}
+.pricePage__ask__comeOn {
+  margin-left: auto;
+
+  font-weight: normal;
+  font-size: 40px;
+  line-height: 58px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+
+  transform: rotate(6.03deg);
+}
+
+.pricePage__ask__page {
+  position: absolute;
+  width: 75%;
+  bottom: -30px;
+  left: 0;
+}
+
+.pricePage__ask__stick {
+  position: absolute;
+  width: 38.28px;
+  height: 141.83px;
+  left: 40%;
+  top: -15px;
+
+  transform: rotate(-5deg);
+}
+
+.pricePage__ask__header {
+  width: 352px;
+
+  font-weight: bold;
+  font-size: 60px;
+  line-height: 60px;
+
+  text-transform: uppercase;
+
+  color: var(--main-color);
+}
+.pricePage__ask__setQuestion {
+  cursor: pointer;
+
+  color: #242424;
+}
+
+.pricePage__ask__alternate {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+
+  color: #242424;
+
+  cursor: pointer;
+}
+
+.offersPage__container {
+  padding: 20px 0 170px 0;
+  letter-spacing: 0;
+}
+.offersPage__header {
+  margin-bottom: 51px;
+}
+.offersPage__headerName {
+  font-family: "Yanone Kaffeesatz", sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 55px;
+  line-height: 100%;
+
+  text-transform: uppercase;
+
+  color: var(--main-color);
+}
+.offersPage__headerText {
+  min-width: 669px;
+
+  font-family: "Exo 2", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 125%;
+}
+@media (max-width: 1700px) {
+  .offersPage__headerText {
+    min-width: 47%;
+  }
+}
+@media (max-width: 1600px) {
+  .offersPage__headerText {
+    min-width: 48%;
+  }
+}
+@media (max-width: 1500px) {
+  .offersPage__headerText {
+    min-width: 49%;
+  }
+}
+@media (max-width: 1300px) {
+  .offersPage__headerText {
+    min-width: 46%;
+  }
+}
+.offersPage__offers {
+  /* padding-left: 102px; */
+  margin-bottom: 86px;
+
+  position: relative;
+}
+.offersPage__additional {
+  position: absolute;
+  left: 0;
+  top: 105%;
+  color: var(--main-color);
+  white-space: nowrap;
+
+  font-family: "Exo 2", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 125%;
+
+  color: #3e3e3e;
+}
+.offersPage__paint {
+  position: absolute;
+  top: 0;
+  right: 80px;
+
+  width: 300px;
+}
+@media (min-width: 1270px) {
+  .offersPage__paint {
+    right: 12%;
+  }
+}
+.offersPage__paint2 {
+  top: -110px;
+  left: 8%;
+  z-index: 19;
+}
+.offersPage__paint img {
+  width: 100%;
+
+  filter: hue-rotate(5deg);
+}
+
+.offersPage__offerCard {
+  padding: 0 0 20px 0;
+  background-color: var(--main-color);
+
+  min-width: 288px;
+
+  color: #ffffff;
+  position: relative;
+  z-index: 20;
+
+  mix-blend-mode: normal;
+}
+/* .offersPage__offerCard:nth-child(3) {
+  z-index: 18;
+} */
+.offersPage__offerCard + .offersPage__offerCard {
+  margin-left: 10px;
+}
+.offersPage__offerHeader {
+  font-family: "Yanone Kaffeesatz", sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 90px;
+  line-height: 100%;
+
+  text-transform: uppercase;
+
+  transform: translate(-15px, -5px);
+}
+.offersPage__offerCard_painted {
+  font-family: "Yanone Kaffeesatz", sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 90px;
+  line-height: 86%;
+  /* mix-blend-mode: multiply; */
+
+  text-indent: -3px;
+}
+.offersPage__offerCard_painted * {
+  text-indent: 0px;
+}
+.offersPage__offerText {
+  font-family: "Exo 2", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 125%;
+
+  mix-blend-mode: normal;
+
+  padding: 0 13px;
+
+  margin-top: 20px;
+}
+.offersPage__offerCard_last {
+  max-width: 288px;
+  /* margin-right: 207px; */
+  position: relative;
+  z-index: 21;
+}
+
+.offersPage__getTrial {
+  width: 229px;
+
+  font-family: "Yanone Kaffeesatz", sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 17px;
+  line-height: 45px;
+
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  text-align: center;
+
+  color: var(--main-color);
+
+  padding-top: 5px;
+  /* margin-left: 102px; */
+
+  cursor: pointer;
+}
+.reviewsPage__container {
+  padding: 20px 0 62px;
+  letter-spacing: 0;
+}
+.reviewsPage__name {
+  /* Заголовок 55 */
+
+  font-family: "Yanone Kaffeesatz", sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 55px;
+  line-height: 100%;
+
+  text-transform: uppercase;
+
+  color: var(--main-color);
+
+  margin-right: 13px;
+}
+.reviewsPage__info {
+  font-family: "Yanone Kaffeesatz", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 40px;
+  line-height: 90%;
+
+  text-transform: uppercase;
+
+  margin-bottom: 10px;
+}
+.reviewsPage__info_under {
+  font-family: "Yanone Kaffeesatz", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 105%;
+
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+
+  color: var(--navigation-color);
+
+  margin-left: 4px;
+  margin-bottom: 40px;
+}
+.reviewsPage__reviewCard {
+  margin-left: -10000px;
+  padding-left: 10100px;
+
+  margin-right: -10000px;
+  padding-right: 10000px;
+
+  border-top: 1px solid var(--borders-color);
+  padding-top: 18px;
+  padding-bottom: 16px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  color: var(--main-color);
+}
+.reviewsPage__reviewNumber {
+  font-family: "Yanone Kaffeesatz", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 25px;
+  line-height: 105%;
+
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+
+  width: 35px;
+  min-width: 35px;
+}
+.reviewsPage__reviewName {
+  white-space: nowrap;
+
+  font-family: "Yanone Kaffeesatz", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 22px;
+  line-height: 105%;
+
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  min-width: 200px;
+  width: 200px;
+}
+.reviewsPage__reviewText {
+  font-family: "Exo 2", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 150%;
+
+  width: 495px;
+  max-width: 495px;
+  min-width: 495px;
+}
+.reviewsPage__reviewText .accent {
+  cursor: pointer;
+}
+.reviewsPage__reviewCard_last {
+  border-bottom: 1px solid var(--borders-color);
+}
+.reviewsPage__showMore {
+  font-family: "Yanone Kaffeesatz", sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 100%;
+
+  text-align: right;
+
+  margin-top: 25px;
+
+  cursor: pointer;
+}
+.reviewsPage__slider {
+  justify-content: center;
+  align-items: center;
+
+  font-family: "Exo 2", sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 125%;
+
+  color: var(--main-color);
+}
+.reviewsPage__sliderButton {
+  margin: 0 16px;
+}
+.reviewsPage__sliderButton.clickable {
+  cursor: pointer;
+}
+.reviewsPage__sliderButton.clickable:hover {
+  opacity: 0.5;
+}
+.reviewsPage__sliderButton.clickable:active {
+  opacity: 0.8;
+}
+.reviewsPage__sliderButton:not(.clickable) {
+  opacity: 0.3;
+}
+.reviewsPage__sliderButton_left {
+  transform: scaleX(-1);
+}
+.reviewsPage__sliderCurrent {
+  font-size: 18px;
+}
+.bonusPage__container {
+  padding-top: 20px;
+  letter-spacing: 0;
+}
+.bonusPage__header {
+  font-family: "Yanone Kaffeesatz", sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 55px;
+  line-height: 100%;
+
+  text-transform: uppercase;
+
+  margin-bottom: -10px;
+}
+.bonusPage__underHeader {
+  font-family: "Yanone Kaffeesatz", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 40px;
+  line-height: 100%;
+
+  text-transform: uppercase;
+  margin-left: 104px;
+}
+.bonusPage__opportunities {
+  min-width: 10495px;
+  max-width: 10495px;
+
+  background-color: var(--accent2-color);
+
+  margin-right: -10000px;
+  padding-right: 10000px;
+
+  padding-top: 10000px;
+  margin-top: -10000px;
+
+  padding-bottom: 60px;
+}
+.bonusPage__opportunities .flexed {
+  align-items: flex-start;
+}
+.bonusPage__opportunityname {
+  font-family: "Yanone Kaffeesatz", sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 60px;
+  line-height: 100%;
+
+  text-transform: uppercase;
+
+  color: #ffffff;
+}
+.bonusPage__opportunityDescryption {
+  font-family: "Exo 2", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 116%;
+
+  color: #3e3e3e;
+
+  margin-left: 10px;
+}
+.bonusPage__steps {
+  border-top: 1px solid var(--borders-color);
+  border-bottom: 1px solid var(--borders-color);
+
+  padding-left: 104px;
+
+  padding-right: 10000px;
+  margin-right: -10000px;
+}
+.bonusPage__stepCard {
+  font-family: "Yanone Kaffeesatz", sans-serif;
+
+  align-items: center;
+
+  color: var(--main-color);
+  padding-top: 18px;
+  padding-bottom: 16px;
+
+  padding-right: 10000px;
+  margin-right: -10000px;
+}
+.bonusPage__stepCard:not(:last-of-type) {
+  border-bottom: 1px solid var(--borders-color);
+}
+.bonusPage__stepNumver {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 25px;
+  line-height: 105%;
+
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+.bonusPage__stepText {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 22px;
+  line-height: 105%;
+
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  max-width: 200px;
+  min-width: 200px;
+}
+.bonusPage__stepDescryption {
+  font-family: "Exo 2", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 150%;
+
+  max-width: 495px;
+  min-width: 495px;
+}
+
+.contactsPage__container {
+  padding-top: 21px;
+  letter-spacing: 0;
+}
+.contactsPage__header {
+  font-family: "Yanone Kaffeesatz", sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 55px;
+  line-height: 100%;
+
+  text-transform: uppercase;
+
+  color: var(--main-color);
+}
+.contactsPage__underHeader {
+  font-family: "Yanone Kaffeesatz", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 40px;
+  line-height: 100%;
+
+  text-transform: uppercase;
+
+  margin-left: 104px;
+  margin-top: -10px;
+  margin-bottom: 59px;
+}
+.contactsPage__item {
+  position: relative;
+  font-family: "Exo 2", sans-serif;
+
+  font-style: normal;
+
+  color: var(--main-color);
+  margin-bottom: 60px;
+}
+.contactsPage__item::before {
+  position: absolute;
+  top: 0;
+  left: -104px;
+}
+.contactsPage__item.write {
+  margin-left: 104px;
+}
+.contactsPage__item.write::before {
+  content: url("../icons/contacts_write.png");
+}
+.contactsPage__item.call::before {
+  content: url("../icons/contacts_phone.png");
+}
+.contactsPage__item.contactsPage__itemCallback::before {
+  content: url("../icons/contacts_pen.png");
+}
+.contactsPage__itemHeader {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 125%;
+  margin-bottom: 20px;
+}
+.contactsPage__itemLink {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 125%;
+  display: inline-block;
+
+  margin-bottom: 10px;
+}
+.contactsPage__itemCallback {
+  max-width: 495px;
+  min-width: 495px;
+}
+.contactsPage__item .footer__form {
+  width: 290px;
+}
+.contactsPage__item .footer__input {
+  border: 1px solid var(--borders-color);
+}
+.contactsPage__isAgree input {
+  display: none;
+}
+.contactsPage__isAgree {
+  /* очень мелкие согласия 12 */
+
+  font-family: "Exo 2", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 125%;
+  letter-spacing: 0;
+
+  color: var(--main-color);
+}
+.contactsPage__isAgree label {
+  margin-left: 25px;
+  position: relative;
+}
+.contactsPage__isAgree label::before {
+  content: "";
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+
+  font-size: 15px;
+  border: 1px solid var(--borders-color);
+  margin-right: 5px;
+  position: absolute;
+  bottom: -2px;
+  left: -25px;
+
+  text-align: center;
+}
+.contactsPage__isAgree input:checked + label::before {
+  content: url("../icons/agreement_checked.png");
+}
+.contactsPage__isAgree .incorrectAgreement + label {
+  font-weight: normal;
+}
+.contactsPage__container ~ .ask .ask__header {
+  line-height: 60px;
+  position: relative;
+}
+.contactsPage__container ~ .ask .ask__header::after {
+  content: url("../icons/contacts_arrow.png");
+
+  position: absolute;
+  top: 90%;
+  left: -45px;
+}
+.buyPage__container {
+  padding-top: 60px;
+  padding-bottom: 131px;
+  padding-right: 10000px;
+  padding-left: 10000px;
+  margin-right: -10000px;
+  margin-left: -10000px;
+
+  letter-spacing: 0;
+
+  background-color: var(--main-color);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.55);
+
+  background-image: url("../img/enter_backPaint.png"),
+    url("../img/enter_backPaint.png");
+  background-repeat: no-repeat;
+
+  background-size: 430px 430px;
+  background-position: 49% 246px, 50.6% 43px;
+}
+.buyPage__header {
+  font-family: "Yanone Kaffeesatz", sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 55px;
+  line-height: 100%;
+
+  text-transform: uppercase;
+
+  color: #ffffff;
+
+  margin-bottom: 40px;
+}
+.buyPage__form {
+  display: flex;
+  flex-flow: row nowrap;
+
+  justify-content: space-between;
+
+  width: 100%;
+
+  color: #ffffff;
+}
+.buyPage__options {
+  min-width: 210px;
+}
+.buyPage__option {
+  margin-bottom: 25px;
+}
+.buyPage__option__header {
+  font-family: "Yanone Kaffeesatz", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 110%;
+
+  letter-spacing: 0.05em;
+
+  margin-bottom: 10px;
+}
+.buyPage__option select,
+.buyPage__option option,
+.buyPage__option__promo input {
+  height: 45px;
+  width: 210px;
+  line-height: 42px;
+
+  padding-left: 18px;
+
+  padding-top: 2px;
+
+  font-family: "Exo 2", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+
+  color: #1e1d1d;
+}
+.buyPage__option select {
+  -webkit-appearance: none;
+
+  background-image: url("../icons/select_arrow.png");
+
+  background-repeat: no-repeat;
+
+  background-position: 175px 18px;
+}
+.buyPage__option__promo {
+  position: relative;
+}
+.buyPage__option__promo_add {
+  position: absolute;
+
+  top: 110%;
+  left: 0;
+
+  display: none;
+}
+.buyPage__option__promo_mini {
+  position: absolute;
+  left: 0;
+  top: 110%;
+
+  font-family: "Exo 2", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 125%;
+
+  color: #ffffff;
+
+  cursor: pointer;
+}
+#buyPage__result {
+  font-family: "Exo 2", sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 25px;
+  line-height: 100%;
+  text-transform: uppercase;
+
+  color: #ffffff;
+}
+.buyPage__result {
+  min-width: 315px;
+  display: flex;
+  flex-flow: column nowrap;
+
+  justify-content: space-between;
+}
+.buyPage__result__header {
+  font-family: "Yanone Kaffeesatz", sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 25px;
+  line-height: 110%;
+
+  letter-spacing: 0.05em;
+
+  color: #ffffff;
+
+  margin-top: 26px;
+}
+.buyPage__result__header span {
+  display: inline-block;
+
+  margin-left: 70px;
+}
+.buyPage__result__aim {
+  font-family: "Exo 2", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 125%;
+
+  color: #ffffff;
+}
+.buyPage__result__agreement {
+  font-family: "Exo 2", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 125%;
+
+  color: #c7c7c7;
+  white-space: nowrap;
+}
+.buyPage__result__button button {
+  width: 230px;
+
+  text-align: center;
+
+  font-family: "Yanone Kaffeesatz", sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 17px;
+  line-height: 45px;
+  padding-top: 5px;
+
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+
+  color: var(--main-color);
+
+  background-color: var(--accent2-color);
+  cursor: pointer;
+}
+.buyPage__result__button button:hover {
+  background-color: #d6f418;
+}
+.buyPage__result__button button:active {
+  background-color: #c2de13;
+}
+.buyPage__cart__header {
+  font-family: "Yanone Kaffeesatz", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 110%;
+
+  letter-spacing: 0.05em;
+
+  color: #ffffff;
+
+  margin-bottom: 10px;
+}
+.buyPage__cart__card {
+  background-color: #ffffff;
+  padding: 37px 40px 40px;
+
+  min-width: 496px;
+  min-height: 350px;
+
+  max-width: 496px;
+  max-height: 350px;
+
+  display: flex;
+  flex-flow: column nowrap;
+
+  justify-content: space-between;
+
+  font-family: "Yanone Kaffeesatz", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 110%;
+
+  letter-spacing: 0.05em;
+
+  color: #4d4d4d;
+}
+.buyPage__cart__card input {
+  border: 1px solid #c7c7c7;
+
+  height: 42px;
+  padding-top: 3px;
+
+  padding-left: 20px;
+
+  font-family: "Exo 2", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 120%;
+
+  letter-spacing: 0.05em;
+
+  color: var(--main-color);
+}
+.buyPage__cart__card input::placeholder {
+  color: #c7c7c7;
+}
+.card__header {
+  margin-bottom: 8px;
+}
+#cardName {
+  min-width: 326px;
+  max-width: 326px;
+}
+#cardCVV {
+  min-width: 75px;
+  max-width: 75px;
+}
+.card__input option,
+.card__input select {
+  line-height: 42px;
+  padding-top: 3px;
+
+  height: 45px;
+  padding-left: 20px;
+}
+.card__input select {
+  font-family: "Exo 2", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 125%;
+  border: 1px solid #c7c7c7;
+
+  -webkit-appearance: none;
+
+  background-image: url("../icons/select_arrow.png");
+
+  background-repeat: no-repeat;
+}
+.buyPage__container *:focus {
+  outline: none;
+  border: 1px solid #6f6f6f;
+}
+#month {
+  min-width: 115px;
+
+  background-position: 89px 18px;
+}
+#year {
+  min-width: 80px;
+
+  background-position: 55px 18px;
+}
+.cart__footer {
+  align-items: flex-end;
+}
+
+.buyConfirmPage__container_center {
+  padding: 40px;
+
+  max-width: 480px;
+  min-height: 370px;
+
+  margin: 0 auto;
+
+  background: #ffffff;
+  text-align: center;
+  /* 
+  display: flex;
+  flex-flow: column nowrap; */
+  color: var(--main-color);
+}
+.buyConfirmPage__header {
+  font-family: "Yanone Kaffeesatz", sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 25px;
+  line-height: 100%;
+
+  text-align: center;
+  text-transform: uppercase;
+
+  margin-bottom: 40px;
+}
+.buyConfirmPage__text {
+  font-family: "Exo 2", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 150%;
+
+  margin-bottom: 25px;
+}
+.buyConfirmPage__button button {
+  width: 100%;
+  background-color: var(--accent2-color);
+  border: none;
+
+  font-family: "Yanone Kaffeesatz", sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 17px;
+  line-height: 45px;
+
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  padding-top: 5px;
+
+  margin-top: 33px;
+
+  cursor: pointer;
+}
+.buyConfirmPage__button button:hover {
+  background-color: #d6f418;
+}
+.buyConfirmPage__button button:active {
+  background-color: #c2de13;
+}
+.buyConfirmPage__container {
+  padding-top: 60px;
+  padding-bottom: 131px;
+  padding-right: 10000px;
+  padding-left: 10000px;
+  margin-right: -10000px;
+  margin-left: -10000px;
+  letter-spacing: 0;
+  background-color: var(--main-color);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.55);
+  background-image: url(../img/enter_backPaint.png),
+    url(../img/enter_backPaint.png);
+  background-repeat: no-repeat;
+  background-size: 430px 430px;
+  background-position: 49.1% 247px, 51% 8px;
+}
+
+/* ОТОБРАЖЕНИЕ HEADER */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 30;
+  background-color: #ffffff;
+  overflow: hidden;
+  min-width: 1225px;
+  white-space: nowrap;
+}
+.header__logo,
+.header__contacts {
+  padding-top: 3px;
+}
+.content__container {
+  transition: 1s;
+}
+.header__scrollAction {
+  overflow: hidden;
+}
+.header__scrollAction_transition {
+  transition: all 1s;
+}
+.header__scrollAction.minimized {
+  height: 0;
+}
+.header__row {
+  display: flex;
+  align-items: center;
+  min-height: 40px;
+  /* overflow: hidden; */
+}
+.header__buttonBuy {
+  width: 154px;
+  height: 44px;
+
+  text-align: center;
+  font-size: 17px;
+
+  /* border: 2px solid var(--accent2-color); */
+  background-color: var(--accent2-color);
+
+  cursor: pointer;
+
+  margin-left: auto;
+  margin-top: 13px;
+  margin-bottom: 13px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 4px;
+}
+.header__buttonBuy:hover,
+.footer__button:hover {
+  background-color: #d6f418;
+}
+.header__buttonBuy:active,
+.footer__button:active {
+  background-color: #c2de13;
+}
+
+.header__contacts {
+  margin-left: 25px;
+
+  font-family: "Yanone Kaffeesatz";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 24px;
+  text-align: right;
+  letter-spacing: 0.05em;
+  text-transform: lowercase;
+
+  color: #242424;
+
+  /* display: flex;
+  flex-flow: row nowrap; */
+}
+
+.header__mail,
+.header__tel {
+  opacity: 0.55;
+  margin-left: 27px;
+  display: flex;
+  align-items: flex-start;
+}
+.header__mail::before,
+.header__tel::before {
+  margin-right: 8px;
+  transform: translateY(2px);
+}
+.header__mail::before {
+  content: url("../icons/header_mail.png");
+}
+.header__tel::before {
+  content: url("../icons/header_tel.png");
+}
+.header__login {
+  margin-left: auto;
+  border-left: 1px solid var(--headerBorders-color);
+  padding-left: 25px;
+  padding-right: 25px;
+  padding-top: 4px;
+
+  font-size: 15px;
+
+  opacity: 0.95;
+}
+.header__callback {
+  padding-left: 29px;
+  border-left: 1px solid var(--headerBorders-color);
+
+  padding-top: 4px;
+
+  font-size: 15px;
+}
+
+.logo {
+  font-size: 26px;
+}
+.logo span:first-of-type {
+  font-size: 16px;
+}
+
+nav {
+  border-top: 1px solid var(--headerBorders-color);
+  border-bottom: 1px solid var(--headerBorders-color);
+}
+nav .container {
+  justify-content: flex-end;
+  /* height: 41px; */
+  line-height: 41px;
+}
+.header__nav {
+  padding-top: 4px;
+
+  font-size: 15px;
+}
+.header__nav span {
+  opacity: 0.55;
+  letter-spacing: 0.05;
+}
+.header__nav + .header__nav {
+  margin-left: 70px;
+}
+.header__arrow {
+  position: relative;
+}
+.header__arrow span {
+  display: inline-block;
+  height: 100%;
+}
+.header__arrow::after {
+  content: url("../icons/header_arrow.png");
+  margin-left: 5px;
+  opacity: 0.6;
+}
+.header__arrow:hover::after {
+  opacity: 0.45;
+}
+
+.header__arrowDown {
+  position: fixed;
+  background-color: #ffffff;
+  border: none;
+
+  padding: 0;
+  margin-left: -13px;
+  overflow: hidden;
+  height: 0;
+
+  transition: 0s all;
+  transition-delay: 0.2s;
+  margin-top: 5px;
+
+  /* border: 1px solid rgba(30, 29, 29, 0.15); */
+}
+
+.header__nav:hover .header__arrowDown {
+  height: 80px;
+
+  transition-delay: 0s;
+}
+.header__arrowDown > div {
+  padding: 13px 13px 10px 13px;
+
+  background-color: #ffffff;
+
+  font-family: "Yanone Kaffeesatz";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 15px;
+  line-height: 100%;
+
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+
+  color: var(--main-color);
+
+  opacity: 0.75;
+
+  border: 1px solid rgba(30, 29, 29, 0.15);
+}
+.header__arrowDown > div + div {
+  border-top: none;
+}
+
+/* ПЕРВЫЙ ЭКРАН */
+/* .overflowHide {
+  overflow: hidden;
+}
+.firstScreen {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  height: 597px;
+}
+.firstScreen__header {
+  font-size: 90px;
+  max-width: 763px;
+  position: absolute;
+  top: 71px;
+  left: 0;
+  line-height: normal;
+}
+.firstScreen__info {
+  max-width: 344px;
+  letter-spacing: normal;
+  line-height: 22px;
+  margin-bottom: 44px;
+}
+.firstScreen__side {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-end;
+  align-items: center;
+  width: 50%;
+}
+.firstScreen__actionButton {
+  width: 231px;
+  height: 60px;
+  text-align: center;
+  line-height: 60px;
+  background: repeating-linear-gradient(
+    90deg,
+    var(--accent2-color),
+    var(--accent2-color) 50px,
+    transparent 50px,
+    transparent 100%
+  );
+  margin-bottom: 56px;
+}
+
+img {
+  position: relative;
+  top: -30px;
+}
+.firstScreen__danceText {
+  font-size: 90px;
+  max-width: 763px;
+  position: absolute;
+  top: 71px;
+  left: 0;
+  line-height: normal;
+} */
+
+.firstScreen {
+  min-height: 597px;
+  overflow: hidden;
+  padding-bottom: 56px;
+
+  position: relative;
+  z-index: 20;
+}
+.firstScreen__row {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  background-image: url("../img/firstScreen_back.png");
+  background-repeat: no-repeat;
+  background-position: 50% -50px;
+}
+.firstScreen__header {
+  position: relative;
+  z-index: 21;
+  /* font-weight: bold;
+  font-size: 90px;
+  line-height: 90px;
+  text-transform: uppercase; */
+  max-width: 763px;
+  margin-top: 71px;
+
+  font-family: "Yanone Kaffeesatz";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 64px;
+  line-height: 100%;
+  letter-spacing: 0.02em;
+
+  text-transform: uppercase;
+  /* text-shadow: 1px 1px 2px #ffffff, 1px -1px 2px #ffffff, -1px 1px 2px #ffffff,
+    -1px -1px 2px #ffffff; */
+}
+.firstScreen__header .boldBig {
+  font-weight: bold;
+  font-size: 142px;
+  line-height: 67%;
+  position: relative;
+  z-index: 20;
+  letter-spacing: 0.02em;
+}
+.firstScreen__header .firstscreen__textAccent {
+  display: inline-block;
+  padding-top: 20px;
+
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 30px,
+    var(--accent2-color) 30px,
+    var(--accent2-color) 100%
+  );
+  transform: translateY(-39px);
+}
+.firstScreen__header .offset {
+  display: inline-block;
+  padding-left: 80px;
+}
+.firstScreen__online {
+  background-image: url("../icons/firstScreen_polygon.png");
+  background-repeat: no-repeat;
+  background-size: 18px 27px;
+  background-position: 170px 7px;
+}
+.firstScreen__header::before {
+  content: "СОВРЕМЕННОГО";
+  position: absolute;
+  height: 28px;
+  z-index: 21;
+  left: 241px;
+  top: 122px;
+  font-family: "Yanone Kaffeesatz";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 40px;
+  line-height: 89%;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  text-shadow: none;
+  background-color: var(--accent2-color);
+  color: var(--main-color);
+  width: 191px;
+}
+.firstScreen__header span.accent {
+  font-family: "Yanone Kaffeesatz";
+  font-style: normal;
+  font-weight: bold;
+
+  padding-left: 103px;
+}
+/* .firstScreen__centeredText {
+  padding-left: 105px;
+} */
+.firstScreen__info {
+  max-width: 344px;
+  margin-left: 85px;
+  letter-spacing: 0;
+  line-height: 125%;
+  position: relative;
+  z-index: 21;
+  /* text-shadow: 1px 1px 2px #ffffff, 1px -1px 2px #ffffff, -1px 1px 2px #ffffff,
+    -1px -1px 2px #ffffff; */
+}
+.firstScreen__buttonContainer {
+  display: flex;
+}
+.firstScreen__buttonBuy {
+  width: 154px;
+  height: 50px;
+  padding-top: 16px;
+  text-align: center;
+  font-size: 17px;
+
+  border: 2px solid var(--accent2-color);
+
+  cursor: pointer;
+
+  transition: all 0.2s;
+
+  margin-left: 9px;
+}
+
+.firstScreen__button,
+.about__button,
+.pros__button,
+.steps__button,
+.teachers__button,
+.reviews__button {
+  width: 229px;
+  padding-top: 5px;
+  line-height: 45px;
+  text-align: center;
+  font-size: 17px;
+  background: repeating-linear-gradient(
+    90deg,
+    var(--accent2-color),
+    var(--accent2-color) 50px,
+    transparent 50px,
+    transparent 100%
+  );
+  cursor: pointer;
+
+  transition: all 0.2s;
+
+  /* display: flex;
+  align-items: center;
+  justify-content: center; */
+}
+.firstScreen__slider {
+  position: relative;
+  z-index: 20;
+  position: relative;
+  width: 398px;
+  height: 418px;
+  margin-right: 96px;
+}
+.firstScreen__backImage {
+  position: absolute;
+  top: 0;
+  left: -190px;
+  transform: rotate(3deg);
+
+  /*Если захочет вернуть - закоментить следующие строки*/
+  display: none;
+}
+.firstscreen__selectContainer input {
+  display: none;
+}
+.firstscreen__selectContainer label {
+  width: 5px;
+  height: 5px;
+
+  border-radius: 50%;
+
+  background-color: var(--main-color);
+  opacity: 0.1;
+  display: inline-block;
+}
+.firstscreen__selectContainer label:not(:first-of-type) {
+  margin-left: 8px;
+}
+.firstscreen__selectContainer input:checked + label,
+.firstscreen__selectContainer input[checked="checked"] + label {
+  transform: scale(1.8);
+  opacity: 0.8;
+}
+
+.firstScreen__cart {
+  position: relative;
+  min-width: 398px;
+  min-height: 366px;
+  margin-right: 100px;
+  margin-top: 67px;
+  background-color: white;
+  text-align: center;
+  padding: 21px 40px 0 40px;
+}
+.firstScreen__cart::before {
+  content: url("../icons/firstScreen_pointer.png");
+  position: absolute;
+  top: 80%;
+  left: -120px;
+  filter: blur(1px);
+  transform: rotate(25deg);
+}
+.firstScreen__cartRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  position: relative;
+  z-index: 21;
+}
+.firstscreen__array {
+  min-width: 24px;
+  min-height: 24px;
+  background-color: var(--accent2-color);
+  position: absolute;
+  z-index: 20;
+  bottom: -50px;
+  left: 0;
+  transform: scaleX(-1);
+  cursor: pointer;
+}
+.firstscreen__array_right {
+  left: 50px;
+  transform: scaleX(1);
+}
+.firstscreen__array:after {
+  content: url("../icons/firstScreen_arrowRight.png");
+
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100%;
+}
+.firstscreen__array:hover:after {
+  filter: brightness(20%);
+}
+.firstscreen__array:active:after {
+  filter: brightness(0%);
+}
+/* .firstscreen__array:hover::after {
+  content: url("../icons/firstScreen_arrowRightHover.png");
+}
+.firstscreen__array:active::after {
+  content: url("../icons/firstScreen_arrowRightActive.png");
+} */
+
+/* .firstscreen__array:first-of-type {
+  transform: scaleX(-1);
+} */
+.firstScreen__page {
+  width: 100%;
+  height: 200px;
+  position: absolute;
+  z-index: 20;
+  background-image: url("../img/firstScreen_page.png");
+  bottom: -50px;
+  left: 0;
+  bottom: -50px;
+  background-size: 110% 100%;
+}
+.firstScreen__typeName {
+  font-weight: bold;
+  font-size: 28px;
+  line-height: 29px;
+  letter-spacing: 0;
+
+  text-transform: uppercase;
+  margin-top: 16px;
+  margin-left: 0;
+  color: var(--main-color);
+}
+.firstScreen__cartNum {
+  margin-top: 34px;
+  margin-right: 42px;
+  width: 32px;
+  height: 21.82px;
+  font-size: 14px;
+  line-height: 14px;
+  text-transform: uppercase;
+
+  opacity: 0.8;
+
+  color: #242424;
+}
+.firstScreen__cartNum span {
+  font-size: 25px;
+  line-height: 25px;
+}
+.firstScreen__cartPhotoContainer {
+  margin-top: 30px;
+  justify-content: space-around;
+  align-items: center;
+}
+.firstScreen__cartPhoto {
+  width: 100%;
+  height: 226px;
+  overflow: hidden;
+  margin-top: 12px;
+}
+.firstScreen__cartPhoto > * {
+  width: 100%;
+  height: 100%;
+}
+.firstScreen__cartMore {
+  text-indent: 20px; /* ????????? */
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 21px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin-top: 30px;
+  cursor: pointer;
+  text-align: center;
+  position: relative;
+  z-index: 21;
+}
+
+.about__container {
+  padding: 110px 0 60px 0;
+  display: flex;
+}
+
+.about__photo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  top: -50px;
+}
+.about__photo__container {
+  position: relative;
+  text-align: center;
+}
+.about__stick {
+  top: -30px;
+  left: 30%;
+  position: absolute;
+  z-index: 21;
+}
+.about__page {
+  position: absolute;
+  right: 95%;
+  z-index: 21;
+  top: 0;
+  bottom: 0;
+}
+.about__page img {
+  height: 100%;
+}
+
+.about__paint {
+  position: absolute;
+  z-index: 19;
+}
+.about__paint img {
+  height: 100%;
+}
+.about__paint3 {
+  height: 533px;
+  top: -10%;
+  left: 55%;
+}
+.about__paint31 {
+  height: 533px;
+  top: 0;
+  right: 0;
+  transform: rotate(90deg);
+}
+.about__paint2 {
+  z-index: 19;
+  height: 367px;
+  top: 45%;
+  left: 5%;
+
+  transform: rotate(92.92deg);
+}
+.about__paint1 {
+  z-index: 19;
+  height: 367px;
+  top: 45%;
+  left: -10%;
+}
+.about__paint21 {
+  z-index: 19;
+  height: 367px;
+  top: 40%;
+  left: 25%;
+
+  transform: rotate(92.92deg);
+}
+.about__paint22 {
+  z-index: 19;
+  height: 367px;
+  top: 35%;
+  left: 45%;
+
+  transform: rotate(92.92deg);
+}
+.about__photo__container img {
+  transform: rotate(-2deg);
+  position: relative;
+  z-index: 20;
+}
+.comeOn {
+  position: absolute;
+  bottom: -70px;
+  width: 100%;
+  z-index: 20;
+}
+.comeOn__text {
+  /* position: absolute;
+
+  top: 90px;
+  left: 0; */
+  width: 100%;
+
+  font-size: 50px;
+  line-height: 73px;
+  text-align: center;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+
+  transform: rotate(-3deg);
+}
+
+.about__text {
+  margin-left: auto;
+  padding-right: 14px;
+  max-width: 495px;
+}
+.about__header {
+  color: var(--main-color);
+  position: relative;
+  z-index: 12;
+
+  font-family: "Yanone Kaffeesatz", sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 60px;
+  line-height: 90%;
+
+  text-transform: uppercase;
+}
+.about__headerBig {
+  font-size: 142px;
+  line-height: 85%;
+}
+.greatBox {
+  width: 10000px;
+  height: 10000px;
+  margin-top: -10067px;
+  margin-right: -10000px;
+  margin-left: -67px;
+
+  background-color: transparent;
+  z-index: 0;
+  background-color: var(--accent2-color);
+
+  /* display: none; */
+}
+.about__info {
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 24px;
+  color: #242424;
+  margin-top: 160px;
+  margin-bottom: 35px;
+
+  width: 481px;
+
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 150%;
+  letter-spacing: 0;
+
+  color: #242424;
+}
+.about__logo {
+  font-weight: 600;
+}
+.about__button {
+  width: 176px;
+}
+
+.pros {
+  background-color: var(--accent-color);
+}
+.pros__container {
+  padding: 60px 0 85px 105px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+/* @media (max-width: 1500px) {
+  .pros__container {
+    width: 100%;
+  }
+}
+@media (max-width: 1300px) {
+  .pros__container {
+    width: 100%;
+    padding-left: 100px;
+    padding-right: 160px;
+  }
+} */
+.pros__numbers {
+  max-width: 450px;
+  display: flex;
+  justify-content: space-between;
+  flex-flow: row wrap;
+  font-size: 90px;
+  line-height: 94px;
+
+  letter-spacing: -0.05em;
+  text-transform: uppercase;
+  color: #ffffff;
+}
+.pros__number {
+  font-weight: 600;
+  text-transform: lowercase;
+}
+.pros__numContainer {
+  margin-top: 27px;
+  margin-left: 0px;
+  width: 50%;
+}
+.pros__numContainer:nth-child(2n) {
+  margin-left: auto;
+  width: 20%;
+}
+.pros__text {
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 16px;
+  letter-spacing: 0;
+  text-transform: lowercase;
+  padding-left: 10px;
+  color: #ffffff;
+}
+.pros__more {
+  position: relative;
+}
+.pros__more::before {
+  content: ">";
+  position: absolute;
+  font-weight: 400;
+  font-size: 50px;
+  left: -25px;
+  bottom: -10px;
+}
+.pros__action {
+  width: 495px;
+}
+.pros__header {
+  font-family: "Yanone Kaffeesatz", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 60px;
+  line-height: 50%;
+
+  text-transform: uppercase;
+
+  color: #ffffff;
+  margin-bottom: 40px;
+}
+.pros__header::first-line {
+  height: 10px;
+  display: inline-block;
+}
+.pros__header::first-line {
+  font-family: "Yanone Kaffeesatz", sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 142px;
+  line-height: 80%;
+
+  text-transform: uppercase;
+
+  color: #1e1d1d;
+}
+
+.pros__header span {
+  font-family: "Yanone Kaffeesatz", sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 60px;
+  line-height: 98%;
+
+  background-color: var(--accent2-color);
+  height: 46px;
+  display: inline-block;
+
+  text-transform: uppercase;
+
+  color: #1e1d1d;
+}
+
+/* .pros__button {
+  color: #ffffff;
+} */
+
+.tracks {
+  background-color: #242424;
+  position: relative;
+}
+.tracks__blured {
+  position: absolute;
+  width: 338px;
+  height: 338px;
+  left: 60%;
+  top: 20%;
+
+  /* Акцентный */
+
+  background: var(--accent-color);
+  opacity: 0.8;
+  filter: blur(200px);
+}
+.tracks__blured_2 {
+  position: absolute;
+  width: 338px;
+  height: 338px;
+  left: 25%;
+  bottom: 10%;
+
+  /* Акцентный 2 */
+
+  background: var(--accent2-color);
+  opacity: 0.5;
+  filter: blur(274px);
+}
+
+.tracks__container {
+  padding: 110px 316px 60px 183px;
+  position: relative;
+  width: 100%;
+  position: relative;
+}
+@media (max-width: 1430px) {
+  .tracks__container {
+    box-sizing: content-box;
+    width: 911px;
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+.tracks__text {
+  display: flex;
+  padding: 0 0 42px 5px;
+}
+.tracks__shortText {
+  width: 317px;
+
+  font-family: "Exo 2";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  letter-spacing: 0;
+
+  color: #ffffff;
+}
+.tracks__header {
+  font-weight: bold;
+  font-size: 60px;
+  line-height: 60px;
+
+  text-transform: uppercase;
+
+  color: #ffffff;
+  margin-left: auto;
+  position: relative;
+  width: 288px;
+}
+.tracks__header::before {
+  content: url("../icons/tracks_pointer.png");
+
+  position: absolute;
+
+  top: 0;
+  left: -150px;
+
+  filter: blur(1px);
+  transform: rotate(10deg);
+}
+.tracks__header::after {
+  content: "";
+
+  position: absolute;
+  width: 90%;
+  height: 100%;
+
+  top: 0;
+  left: -16px;
+
+  background-color: var(--accent2-color);
+  transform: translate(45px, 25px);
+}
+.tracks__header span {
+  position: relative;
+  z-index: 21;
+}
+.tracks__items {
+  width: 100%;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+}
+.tracks__item {
+  width: 288px;
+  height: 252px;
+  padding: 22px;
+  background-color: #ffffff;
+  margin-bottom: 27px;
+  position: relative;
+  z-index: 20;
+
+  transition: 0.2s;
+}
+.tracks__item:hover {
+  transform: rotate(-2deg) scale(1.1);
+}
+
+.track__row {
+  display: flex;
+  align-items: flex-end;
+  margin-top: 12px;
+}
+.track__name {
+  font-weight: bold;
+  font-size: 22px;
+  line-height: 23px;
+
+  text-transform: uppercase;
+
+  color: #242424;
+
+  font-family: "Yanone Kaffeesatz";
+  font-style: normal;
+}
+.track__more {
+  margin-left: auto;
+
+  font-family: "Yanone Kaffeesatz";
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 17px;
+
+  text-align: right;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+.tracks__buttonContainer {
+  width: 288px;
+  margin-left: auto;
+}
+.tracks__button {
+  width: 146px;
+  height: 50px;
+  padding-top: 18px;
+  text-align: center;
+  font-size: 17px;
+  background: repeating-linear-gradient(
+    90deg,
+    var(--accent-color),
+    var(--accent-color) 50px,
+    transparent 50px,
+    transparent 100%
+  );
+  cursor: pointer;
+  border: none;
+  color: #ffffff;
+
+  transition: all 0.2s;
+}
+
+.steps {
+  padding: 110px 0 60px 0;
+}
+.steps__header {
+  margin-bottom: 50px;
+
+  font-family: "Yanone Kaffeesatz", sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 60px;
+  line-height: 90%;
+
+  text-transform: uppercase;
+
+  color: var(--main-color);
+}
+.steps__headerBig {
+  font-size: 142px;
+  line-height: 87%;
+}
+.steps__row {
+  display: flex;
+  margin-bottom: 30px;
+}
+.steps__info {
+  /* width: 481px; */
+
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0;
+
+  color: #242424;
+
+  font-style: normal;
+  font-weight: 500;
+}
+.steps__shortInfoContainer {
+  width: 495px;
+  margin-left: auto;
+}
+.steps__shortInfo {
+  width: 317px;
+}
+
+.steps__item {
+  border-top: 1px solid var(--headerBorders-color);
+}
+.steps__item:last-of-type {
+  border-bottom: 1px solid var(--headerBorders-color);
+}
+.step__container {
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  height: 106px;
+  /* width: 85%;
+  min-width: 1224px; */
+}
+.step__container > .flexed {
+  align-items: center;
+}
+.step__number {
+  margin-left: 105px;
+  text-align: right;
+
+  font-weight: bold;
+  font-size: 38.7097px;
+  line-height: 41px;
+
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+
+  color: #242424;
+}
+
+.step__description {
+  width: 211px;
+  margin-left: 69px;
+
+  font-weight: normal;
+  font-size: 22px;
+  line-height: 26px;
+
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+
+  color: #242424;
+  position: relative;
+}
+.step__description::after {
+  content: url("../icons/steps_arrow.png");
+
+  position: absolute;
+  right: -151px;
+  top: 10px;
+
+  transform: rotate(90deg);
+}
+.step__textDescription {
+  width: 495px;
+  margin-left: auto;
+
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0;
+
+  color: #242424;
+}
+
+.steps__buttonContainer,
+.reviews__buttonContainer {
+  margin-top: 45px;
+  width: 496px;
+  margin-left: auto;
+}
+
+/* .teachers {
+  background-color: var(--accent-color);
+}
+.teachers__container {
+  padding: 110px 0 60px 90px;
+  border-right: 2px solid var(--accent-color);
+  width: 100%;
+}
+.teachers__header {
+  font-weight: bold;
+  font-size: 60px;
+  line-height: 72px;
+
+  text-transform: uppercase;
+
+  color: #242424;
+
+  margin-bottom: 50px;
+
+  position: relative;
+
+  color: #ffffff;
+}
+.teachers__headerText {
+  position: relative;
+}
+.teachers__headerText::after {
+  content: url("../icons/tracks_pointer.png");
+  position: absolute;
+  top: 0;
+  left: 110%;
+  filter: blur(1px);
+  transform: rotate(-17deg) scaleX(-1);
+}
+.teachers__row {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: flex-end;
+  overflow: hidden;
+}
+.teachers__buttonChange {
+  cursor: pointer;
+  min-width: 26px;
+
+  height: 36px;
+  position: relative;
+}
+.teachers__buttonChange:after {
+  content: url("../icons/firstScreen_arrowRight.png");
+
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100%;
+}
+.teachers__buttonChange:hover::after {
+  content: url("../icons/firstScreen_arrowRightHover.png");
+}
+.teachers__buttonChange:active::after {
+  content: url("../icons/firstScreen_arrowRightActive.png");
+}
+
+.teachers__toLeft {
+  transform: scaleX(-1);
+}
+.teachers__toRight {
+  margin-left: 32px;
+}
+.teachers__list {
+  display: flex;
+  flex-flow: row nowrap;
+  transform-origin: left bottom;
+  padding-top: 20px;
+  padding-bottom: 20px;
+
+  margin-left: 20px;
+
+  overflow: hidden;
+}
+@media (max-width: 1439px) {
+  .teachers__list {
+    transform: scale(0.82);
+  }
+  .teachers__header {
+    margin-bottom: 0;
+  }
+}
+.teacher__cart {
+  width: 288px;
+  height: 244px;
+  background-color: #ffffff;
+  padding: 22px;
+  transition: 0.2s;
+}
+.teacher__cart:hover {
+  transform: rotate(-2deg) scale(1.1);
+}
+.teacher__cart + .teacher__cart {
+  margin-left: 23px;
+}
+.teacher__name {
+  font-weight: normal;
+  font-size: 22px;
+  line-height: 22px;
+
+  text-transform: uppercase;
+
+  color: #242424;
+
+  margin-top: 14px;
+  text-align: center;
+}
+
+.teachers__button {
+  margin-top: 46px;
+  margin-left: 104px;
+}
+ */
+
+.teachers {
+  background-color: var(--accent-color);
+  position: relative;
+}
+.teachers__blured {
+  position: absolute;
+  width: 338px;
+  height: 338px;
+  left: 60%;
+  top: 20%;
+
+  /* Акцентный */
+
+  background: var(--accent-color);
+  opacity: 0.8;
+  filter: blur(200px);
+}
+.teachers__blured_2 {
+  position: absolute;
+  width: 338px;
+  height: 338px;
+  left: 25%;
+  bottom: 10%;
+
+  /* Акцентный 2 */
+
+  background: var(--accent2-color);
+  opacity: 0.5;
+  filter: blur(274px);
+}
+
+.teachers__container {
+  padding: 110px 316px 60px 183px;
+  position: relative;
+  width: 100%;
+  position: relative;
+}
+@media (max-width: 1430px) {
+  .teachers__container {
+    box-sizing: content-box;
+    width: 911px;
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+.teachers__text {
+  display: flex;
+  padding: 0 0 42px 5px;
+}
+.teachers__shortText {
+  width: 317px;
+
+  font-family: "Exo 2";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  letter-spacing: 0;
+
+  color: #ffffff;
+}
+.teachers__header {
+  font-weight: bold;
+  font-size: 60px;
+  line-height: 60px;
+
+  text-transform: uppercase;
+
+  color: #ffffff;
+  margin-left: auto;
+  position: relative;
+  width: 288px;
+
+  letter-spacing: 0;
+}
+.teachers__header::before {
+  content: url("../icons/tracks_pointer.png");
+
+  position: absolute;
+
+  top: 0;
+  left: -150px;
+
+  filter: blur(1px);
+  transform: rotate(10deg);
+}
+.teachers__items {
+  width: 100%;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+}
+.teachers__item {
+  width: 288px;
+  height: 252px;
+  padding: 22px;
+  background-color: #ffffff;
+  margin-bottom: 27px;
+  position: relative;
+  z-index: 20;
+
+  transition: 0.2s;
+}
+.teachers__item:hover {
+  transform: rotate(-2deg) scale(1.1);
+}
+
+.teachers__row {
+  display: flex;
+  align-items: flex-end;
+  margin-top: 12px;
+}
+.teachers__name {
+  font-weight: bold;
+  font-size: 22px;
+  line-height: 23px;
+
+  text-transform: uppercase;
+
+  color: #242424;
+
+  font-family: "Yanone Kaffeesatz";
+  font-style: normal;
+}
+.teachers__more {
+  margin-left: auto;
+
+  font-family: "Yanone Kaffeesatz";
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 17px;
+
+  text-align: right;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+.teachers__buttonContainer {
+  width: 288px;
+  margin-left: auto;
+}
+.teachers__button {
+  width: 225px;
+  height: 50px;
+  text-align: center;
+  font-size: 17px;
+  font-weight: bold;
+  background: repeating-linear-gradient(
+    90deg,
+    var(--accent2-color),
+    var(--accent2-color) 50px,
+    transparent 50px,
+    transparent 100%
+  );
+  cursor: pointer;
+  border: none;
+  color: var(--main-color);
+
+  transition: all 0.2s;
+}
+
+.reviews {
+  padding: 110px 0 60px 0;
+  position: relative;
+  overflow: hidden;
+}
+.reviews__blured {
+  position: absolute;
+  width: 338px;
+  height: 338px;
+  left: 85%;
+  bottom: -180px;
+
+  background: var(--accent2-color);
+  opacity: 0.5;
+  filter: blur(274px);
+}
+.reviews__header {
+  font-family: "Yanone Kaffeesatz", sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 60px;
+  line-height: 90%;
+
+  text-transform: uppercase;
+
+  /* Основной текст */
+
+  color: var(--main-color);
+}
+.reviews__headerBig {
+  font-size: 142px;
+  line-height: 87%;
+
+  margin-right: 8px;
+}
+
+.reviews__excl {
+  position: relative;
+}
+.reviews__excl::after {
+  content: url("../icons/reviews_excl.png");
+  position: absolute;
+  top: -70px;
+  right: -120px;
+  transform: rotate(19.84deg);
+}
+.reviews__underHeader {
+  font-style: normal;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 105%;
+
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+
+  color: var(--accent-color);
+  position: relative;
+  left: 4px;
+  top: -20px;
+}
+
+.reviews__item {
+  border-top: 1px solid var(--headerBorders-color);
+}
+.reviews__item:last-of-type {
+  border-bottom: 1px solid var(--headerBorders-color);
+}
+.reviews__container {
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+
+  min-height: 106px;
+  /* width: 85%;
+  min-width: 1224px; */
+}
+.reviews__container > .flexed {
+  align-items: center;
+}
+.reviews__number {
+  /* width: 105px; */
+  margin-left: 105px;
+
+  text-align: right;
+
+  font-family: "Yanone Kaffeesatz";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 25px;
+  line-height: 105%;
+
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+
+  color: var(--main-color);
+}
+
+.reviews__description {
+  width: 211px;
+  margin-left: 69px;
+
+  position: relative;
+
+  font-family: "Yanone Kaffeesatz";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 22px;
+  line-height: 105%;
+
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+
+  color: var(--main-color);
+}
+.reviews__description::after {
+  content: url("../icons/reviews_arrow.png");
+
+  position: absolute;
+  right: -151px;
+  top: 0;
+}
+.reviews__textDescription {
+  width: 495px;
+  margin-left: auto;
+  margin-top: 10px;
+  margin-bottom: 10px;
+
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0;
+
+  color: #242424;
+}
+.reviews__textDescription .accent {
+  cursor: pointer;
+}
+.reviews__button {
+  width: 183px;
+}
+
+.ask {
+  background-color: var(--accent2-color);
+}
+.ask__container {
+  padding: 93px 0 96px 105px;
+  display: flex;
+}
+.ask__form {
+  background-color: #242424;
+  padding: 50px;
+  min-width: 546px;
+  width: 546px;
+  position: relative;
+  /* margin-right: 78px; */
+}
+
+.ask__form form {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.ask__form .input {
+  position: relative;
+  width: 214px;
+  height: 45px;
+  line-height: 45px;
+
+  font-weight: normal;
+  font-size: 14px;
+
+  cursor: pointer;
+
+  color: #242424;
+}
+.ask__form .input input,
+.ask__form .input textarea {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+  padding: 10px;
+
+  cursor: pointer;
+
+  resize: none;
+}
+.ask__form .input input:focus,
+.ask__form .input textarea:focus {
+  /* outline: none; */
+  outline: 2px solid var(--accent-color);
+}
+.ask__form .input input.ask__input_name {
+  width: 214px;
+}
+.ask__form .input label {
+  position: absolute;
+  top: 0;
+  left: 10px;
+  border: none;
+
+  position: absolute;
+  top: 0;
+  left: 10px;
+  border: none;
+
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+
+  color: #242424;
+
+  cursor: pointer;
+
+  opacity: 0.5;
+}
+
+.ask__form .input__textarea {
+  margin-top: 20px;
+  width: 100%;
+  height: 182px;
+}
+.ask__form .input textarea {
+  padding-top: 15px;
+}
+
+.ask__checkbox input {
+  width: 0;
+  height: 0;
+}
+.ask__checkbox label {
+  padding-left: 25px;
+  position: relative;
+
+  font-style: normal;
+  font-weight: 100;
+  font-size: 12px;
+  line-height: 155%;
+
+  color: #ffffff;
+
+  opacity: 0.7;
+}
+.ask__checkbox label::before {
+  content: "";
+
+  display: inline-block;
+  width: 15px;
+  font-size: 15px;
+  height: 15px;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+}
+.ask__checkbox input:checked + label::before {
+  content: url("../icons/agreement_checked.png");
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: flex-end;
+  justify-content: center;
+
+  color: #ffffff;
+}
+
+.ask__text {
+  width: 495px;
+
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+  margin-left: auto;
+}
+.ask__white {
+  color: #ffffff;
+  font-weight: normal;
+  margin-top: 20px;
+}
+
+.ask__submitContainer {
+  margin-top: 31px;
+  display: flex;
+  width: 100%;
+}
+.ask__button {
+  width: 150px;
+  height: 50px;
+  padding-top: 18px;
+  text-align: center;
+  font-size: 17px;
+  /* background: repeating-linear-gradient(
+    90deg,
+    var(--accent-color),
+    var(--accent-color) 50px,
+    transparent 50px,
+    transparent 100%
+  ); */
+  background: var(--accent-color);
+  cursor: pointer;
+
+  transition: all 0.2s;
+
+  text-transform: uppercase;
+}
+.ask__button:hover {
+  opacity: 0.8;
+}
+
+.ask__button:active {
+  opacity: 0.9;
+}
+
+.ask__button .button {
+  background-color: transparent;
+  border: none;
+  color: #ffffff;
+}
+.ask__comeOn {
+  margin-left: auto;
+
+  font-weight: normal;
+  font-size: 40px;
+  line-height: 58px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+
+  transform: rotate(6.03deg);
+}
+
+.ask__page {
+  position: absolute;
+  width: 75%;
+  bottom: -30px;
+  left: 0;
+}
+
+.ask__stick {
+  position: absolute;
+  width: 38.28px;
+  height: 141.83px;
+  left: 40%;
+  top: -15px;
+
+  transform: rotate(-5deg);
+}
+
+.ask__header {
+  width: 352px;
+
+  font-weight: bold;
+  font-size: 60px;
+  line-height: 60px;
+
+  text-transform: uppercase;
+
+  color: #ffffff;
+}
+.ask__setQuestion {
+  cursor: pointer;
+
+  color: #242424;
+}
+
+.ask__alternate {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+
+  color: #242424;
+
+  cursor: pointer;
+}
+
+.footer {
+  padding: 73px 0 36px 0;
+  background-color: #242424;
+  color: #ffffff;
+  width: 100%;
+  margin: 0 auto;
+}
+.footer__container {
+  display: flex;
+  flex-wrap: wrap;
+  /* width: 86%; */
+}
+.footer__container > .flexed {
+  justify-content: space-between;
+}
+
+.footer__logo {
+  margin-bottom: 22px;
+  display: inline-block;
+}
+.footer__phonesContainer {
+  display: flex;
+  flex-flow: column nowrap;
+
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 28px;
+
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+}
+
+.footer__socialContainer {
+  margin-top: 20px;
+  display: flex;
+}
+.footer__socialLinks {
+  width: 24px;
+  height: 24px;
+  opacity: 0.75;
+}
+.footer__socialLinks + .footer__socialLinks {
+  margin-left: 10px;
+}
+.footer__socialLinks img {
+  width: 100%;
+  height: 100%;
+}
+
+.footer__info {
+  display: flex;
+  list-style-type: none;
+  margin-left: 113px;
+}
+.footer__infoColumnContainer {
+  padding: 0 119px 0 25px;
+  border-left: 1px solid rgba(255, 255, 255, 0.2);
+}
+@media (max-width: 1439px) {
+  .footer__info {
+    margin-left: 80px;
+  }
+  .footer__infoColumnContainer {
+    padding-right: 60px;
+  }
+}
+.footer__infoColumn {
+  list-style-type: none;
+}
+.footer__infoHeader {
+  font-weight: bold;
+  font-size: 15px;
+  line-height: 18px;
+
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+
+  color: #ffffff;
+
+  margin-bottom: 30px;
+  cursor: pointer;
+}
+.footer__infoItem {
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 17px;
+
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+
+  color: #ffffff;
+  cursor: pointer;
+
+  /* padding-left: 5px; */
+}
+.footer__infoItem:hover:not(:active) {
+  opacity: 0.85;
+}
+
+.footer__infoItem + .footer__infoItem {
+  margin-top: 30px;
+}
+
+.footer__form {
+  width: 280px;
+  /* margin-left: auto; */
+  position: relative;
+  z-index: 21;
+}
+/* отключено для страниц личного кабинета*/
+.main + .footer .footer__form::before {
+  content: url("../icons/footer_pointer.png");
+
+  bottom: 106%;
+  left: -30px;
+  position: absolute;
+  z-index: 21;
+  filter: blur(1px);
+  transform: translate(-142px, 35px) rotate(-72deg);
+}
+@media (max-width: 1730px) {
+  .footer__form::before {
+    transform: translate(-210px, 10px) rotate(-71deg);
+  }
+}
+@media (max-width: 1670px) {
+  .footer__form::before {
+    transform: translate(-170px, 10px) rotate(-71deg);
+  }
+}
+@media (max-width: 1620px) {
+  .footer__form::before {
+    transform: translate(-120px, 10px) rotate(-71deg);
+  }
+}
+@media (max-width: 1560px) {
+  .footer__form::before {
+    transform: translate(-63px, 10px) rotate(-71deg);
+  }
+}
+@media (max-width: 1500px) {
+  .footer__form::before {
+    transform: translate(-5px, 10px) rotate(-71deg);
+  }
+}
+@media (max-width: 1420px) {
+  .footer__form::before {
+    transform: translate(-86px, 10px) rotate(-67deg);
+  }
+}
+@media (max-width: 1340px) {
+  .footer__form::before {
+    transform: translate(-8px, 10px) rotate(-67deg);
+  }
+}
+@media (max-width: 1265px) {
+  .footer__form::before {
+    transform: translate(-91px, 42px) rotate(-40deg);
+  }
+}
+@media (max-width: 1265px) {
+  .footer__form::before {
+    transform: translate(-91px, 42px) rotate(-40deg);
+  }
+}
+@media (max-width: 1230px) {
+  .footer__form::before {
+    transform: translate(-55px, 42px) rotate(-40deg);
+  }
+}
+
+.footer__formRow {
+  display: flex;
+  width: 100%;
+  margin-bottom: 15px;
+}
+.footer__formHeader {
+  font-weight: bold;
+  font-size: 15px;
+  line-height: 18px;
+
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+
+  margin-bottom: 22px;
+}
+.footer__input {
+  height: 37px;
+  line-height: 37px;
+  background-color: #ffffff;
+  width: 48%;
+
+  /* overflow: hidden; */
+  position: relative;
+
+  font-family: "Exo 2", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+}
+
+.footer__input > * {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  border: none;
+  padding-left: 10px;
+
+  font-weight: normal;
+  font-size: 14px;
+
+  color: #242424;
+}
+.footer__input > label {
+  font-family: "Exo 2", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  letter-spacing: 0;
+
+  color: #242424;
+
+  opacity: 0.25;
+}
+.footer__input input:focus {
+  /* outline: none; */
+  outline: 2px solid #6f6f6f;
+}
+.footer__formPhone {
+  width: 50%;
+  margin-left: auto;
+}
+.footer__button {
+  width: 155px;
+  line-height: 40px;
+  height: 37px;
+  text-align: center;
+  background: var(--accent2-color);
+  cursor: pointer;
+
+  font-weight: bold;
+  font-size: 14px;
+
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+
+  color: #242424;
+
+  margin-bottom: 15px;
+}
+.footer__isAgree {
+  font-weight: normal;
+  font-size: 11px;
+  line-height: 17px;
+
+  letter-spacing: 0;
+
+  color: #ffffff;
+
+  cursor: pointer;
+}
+.footer__isAgree input {
+  width: 0;
+  height: 0;
+}
+.footer__isAgree label {
+  padding-left: 25px;
+  font-style: normal;
+  font-weight: 100;
+  font-size: 11px;
+  line-height: 155%;
+
+  color: #ffffff;
+
+  opacity: 0.8;
+
+  position: relative;
+}
+.footer__isAgree label::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+
+  background-color: #242424;
+}
+.footer__isAgree input:checked + label::before {
+  content: url("../icons/agreement_checked.png");
+  font-size: 16px;
+  color: #ffffff;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+
+  /* border: none; */
+}
+
+.footer__base {
+  display: flex;
+  width: 100%;
+  margin-top: 50px;
+
+  font-family: "Exo 2";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 11px;
+  line-height: 15px;
+  letter-spacing: 0;
+
+  text-transform: uppercase;
+
+  color: #ffffff;
+
+  opacity: 0.7;
+}
+.footer__politics {
+  width: 280px;
+  /* margin-left: auto; */
+  cursor: pointer;
+}
+
+/* АНИМАЦИИ ПРИ НАВЕДЕНИИ И НАЖАТИИ */
+.header_hoverHard:hover {
+  opacity: 0.7;
+}
+.header_hoverLight:hover {
+  opacity: 0.8;
+}
+.header_hover:hover {
+  opacity: 0.55;
+}
+
+.button_hover_fill:not(:hover) {
+  animation: buttonHoverFill_back 0.3s forwards;
+}
+.button_hover_fill:hover {
+  animation: buttonHoverFill 0.3s forwards;
+}
+.button_hover_fill_simple:not(:hover) {
+  animation: buttonHoverFill_back 0.1s forwards;
+}
+.button_hover_fill_simple:hover {
+  animation: buttonHoverFill 0.1s forwards;
+}
+@keyframes buttonHoverFill {
+  from {
+    background: repeating-linear-gradient(
+      90deg,
+      var(--accent2-color),
+      var(--accent2-color) 50px,
+      transparent 50px,
+      transparent 100%
+    );
+  }
+  5% {
+    background: repeating-linear-gradient(
+      90deg,
+      var(--accent2-color),
+      var(--accent2-color) 60px,
+      transparent 60px,
+      transparent 100%
+    );
+  }
+  10% {
+    background: repeating-linear-gradient(
+      90deg,
+      var(--accent2-color),
+      var(--accent2-color) 70px,
+      transparent 70px,
+      transparent 100%
+    );
+  }
+  15% {
+    background: repeating-linear-gradient(
+      90deg,
+      var(--accent2-color),
+      var(--accent2-color) 80px,
+      transparent 80px,
+      transparent 100%
+    );
+  }
+  20% {
+    background: repeating-linear-gradient(
+      90deg,
+      var(--accent2-color),
+      var(--accent2-color) 90px,
+      transparent 90px,
+      transparent 100%
+    );
+  }
+  25% {
+    background: repeating-linear-gradient(
+      90deg,
+      var(--accent2-color),
+      var(--accent2-color) 100px,
+      transparent 100px,
+      transparent 100%
+    );
+  }
+  30% {
+    background: repeating-linear-gradient(
+      90deg,
+      var(--accent2-color),
+      var(--accent2-color) 110px,
+      transparent 110px,
+      transparent 100%
+    );
+  }
+  35% {
+    background: repeating-linear-gradient(
+      90deg,
+      var(--accent2-color),
+      var(--accent2-color) 120px,
+      transparent 120px,
+      transparent 100%
+    );
+  }
+  40% {
+    background: repeating-linear-gradient(
+      90deg,
+      var(--accent2-color),
+      var(--accent2-color) 130px,
+      transparent 130px,
+      transparent 100%
+    );
+  }
+  45% {
+    background: repeating-linear-gradient(
+      90deg,
+      var(--accent2-color),
+      var(--accent2-color) 140px,
+      transparent 140px,
+      transparent 100%
+    );
+  }
+  50% {
+    background: repeating-linear-gradient(
+      90deg,
+      var(--accent2-color),
+      var(--accent2-color) 150px,
+      transparent 150px,
+      transparent 100%
+    );
+  }
+  55% {
+    background: repeating-linear-gradient(
+      90deg,
+      var(--accent2-color),
+      var(--accent2-color) 160px,
+      transparent 160px,
+      transparent 100%
+    );
+  }
+  60% {
+    background: repeating-linear-gradient(
+      90deg,
+      var(--accent2-color),
+      var(--accent2-color) 170px,
+      transparent 170px,
+      transparent 100%
+    );
+  }
+  65% {
+    background: repeating-linear-gradient(
+      90deg,
+      var(--accent2-color),
+      var(--accent2-color) 180px,
+      transparent 180px,
+      transparent 100%
+    );
+  }
+  70% {
+    background: repeating-linear-gradient(
+      90deg,
+      var(--accent2-color),
+      var(--accent2-color) 190px,
+      transparent 190px,
+      transparent 100%
+    );
+  }
+  75% {
+    background: repeating-linear-gradient(
+      90deg,
+      var(--accent2-color),
+      var(--accent2-color) 200px,
+      transparent 200px,
+      transparent 100%
+    );
+  }
+  80% {
+    background: repeating-linear-gradient(
+      90deg,
+      var(--accent2-color),
+      var(--accent2-color) 210px,
+      transparent 210px,
+      transparent 100%
+    );
+  }
+  85% {
+    background: repeating-linear-gradient(
+      90deg,
+      var(--accent2-color),
+      var(--accent2-color) 220px,
+      transparent 220px,
+      transparent 100%
+    );
+  }
+  90% {
+    background: repeating-linear-gradient(
+      90deg,
+      var(--accent2-color),
+      var(--accent2-color) 230px,
+      transparent 230px,
+      transparent 100%
+    );
+  }
+  95% {
+    background: repeating-linear-gradient(
+      90deg,
+      var(--accent2-color),
+      var(--accent2-color) 240px,
+      transparent 240px,
+      transparent 100%
+    );
+  }
+  to {
+    background: repeating-linear-gradient(
+      90deg,
+      var(--accent2-color),
+      var(--accent2-color) 100%,
+      transparent 100%,
+      transparent 100%
+    );
+  }
+}
+@keyframes buttonHoverFill_back {
+  from {
+    background: repeating-linear-gradient(
+      90deg,
+      var(--accent2-color),
+      var(--accent2-color) 100%,
+      transparent 100%,
+      transparent 100%
+    );
+  }
+  5% {
+    background: repeating-linear-gradient(
+      90deg,
+      var(--accent2-color),
+      var(--accent2-color) 240px,
+      transparent 240px,
+      transparent 100%
+    );
+  }
+  10% {
+    background: repeating-linear-gradient(
+      90deg,
+      var(--accent2-color),
+      var(--accent2-color) 230px,
+      transparent 230px,
+      transparent 100%
+    );
+  }
+  15% {
+    background: repeating-linear-gradient(
+      90deg,
+      var(--accent2-color),
+      var(--accent2-color) 220px,
+      transparent 220px,
+      transparent 100%
+    );
+  }
+  20% {
+    background: repeating-linear-gradient(
+      90deg,
+      var(--accent2-color),
+      var(--accent2-color) 210px,
+      transparent 210px,
+      transparent 100%
+    );
+  }
+  25% {
+    background: repeating-linear-gradient(
+      90deg,
+      var(--accent2-color),
+      var(--accent2-color) 200px,
+      transparent 200px,
+      transparent 100%
+    );
+  }
+  30% {
+    background: repeating-linear-gradient(
+      90deg,
+      var(--accent2-color),
+      var(--accent2-color) 190px,
+      transparent 190px,
+      transparent 100%
+    );
+  }
+  35% {
+    background: repeating-linear-gradient(
+      90deg,
+      var(--accent2-color),
+      var(--accent2-color) 180px,
+      transparent 180px,
+      transparent 100%
+    );
+  }
+  40% {
+    background: repeating-linear-gradient(
+      90deg,
+      var(--accent2-color),
+      var(--accent2-color) 170px,
+      transparent 170px,
+      transparent 100%
+    );
+  }
+  45% {
+    background: repeating-linear-gradient(
+      90deg,
+      var(--accent2-color),
+      var(--accent2-color) 160px,
+      transparent 160px,
+      transparent 100%
+    );
+  }
+  50% {
+    background: repeating-linear-gradient(
+      90deg,
+      var(--accent2-color),
+      var(--accent2-color) 150px,
+      transparent 150px,
+      transparent 100%
+    );
+  }
+  55% {
+    background: repeating-linear-gradient(
+      90deg,
+      var(--accent2-color),
+      var(--accent2-color) 140px,
+      transparent 140px,
+      transparent 100%
+    );
+  }
+  60% {
+    background: repeating-linear-gradient(
+      90deg,
+      var(--accent2-color),
+      var(--accent2-color) 130px,
+      transparent 130px,
+      transparent 100%
+    );
+  }
+  65% {
+    background: repeating-linear-gradient(
+      90deg,
+      var(--accent2-color),
+      var(--accent2-color) 120px,
+      transparent 120px,
+      transparent 100%
+    );
+  }
+  70% {
+    background: repeating-linear-gradient(
+      90deg,
+      var(--accent2-color),
+      var(--accent2-color) 110px,
+      transparent 110px,
+      transparent 100%
+    );
+  }
+  75% {
+    background: repeating-linear-gradient(
+      90deg,
+      var(--accent2-color),
+      var(--accent2-color) 100px,
+      transparent 100px,
+      transparent 100%
+    );
+  }
+  80% {
+    background: repeating-linear-gradient(
+      90deg,
+      var(--accent2-color),
+      var(--accent2-color) 90px,
+      transparent 90px,
+      transparent 100%
+    );
+  }
+  85% {
+    background: repeating-linear-gradient(
+      90deg,
+      var(--accent2-color),
+      var(--accent2-color) 80px,
+      transparent 80px,
+      transparent 100%
+    );
+  }
+  90% {
+    background: repeating-linear-gradient(
+      90deg,
+      var(--accent2-color),
+      var(--accent2-color) 70px,
+      transparent 70px,
+      transparent 100%
+    );
+  }
+  95% {
+    background: repeating-linear-gradient(
+      90deg,
+      var(--accent2-color),
+      var(--accent2-color) 60px,
+      transparent 60px,
+      transparent 100%
+    );
+  }
+  to {
+    background: repeating-linear-gradient(
+      90deg,
+      var(--accent2-color),
+      var(--accent2-color) 50px,
+      transparent 50px,
+      transparent 100%
+    );
+  }
+}
+.button_hover_fill:active {
+  background: #b2ce03 !important;
+  transition: 0.2s;
+}
+
+.button_hover_fill_accent:not(:hover) {
+  animation: buttonHoverFillAccent_back 0.3s forwards;
+}
+.button_hover_fill_accent:hover {
+  animation: buttonHoverFillAccent 0.3s forwards;
+}
+.button_hover_fill_accent_simple:not(:hover) {
+  animation: buttonHoverFillAccent_back 0.1s forwards;
+}
+.button_hover_fill_accent_simple:hover {
+  animation: buttonHoverFillAccent 0.1s forwards;
+}
+@keyframes buttonHoverFillAccent {
+  from {
+    background: repeating-linear-gradient(
+      90deg,
+      var(--accent-color),
+      var(--accent-color) 50px,
+      transparent 50px,
+      transparent 100%
+    );
+  }
+  5% {
+    background: repeating-linear-gradient(
+      90deg,
+      var(--accent-color),
+      var(--accent-color) 60px,
+      transparent 60px,
+      transparent 100%
+    );
+  }
+  10% {
+    background: repeating-linear-gradient(
+      90deg,
+      var(--accent-color),
+      var(--accent-color) 70px,
+      transparent 70px,
+      transparent 100%
+    );
+  }
+  15% {
+    background: repeating-linear-gradient(
+      90deg,
+      var(--accent-color),
+      var(--accent-color) 80px,
+      transparent 80px,
+      transparent 100%
+    );
+  }
+  20% {
+    background: repeating-linear-gradient(
+      90deg,
+      var(--accent-color),
+      var(--accent-color) 90px,
+      transparent 90px,
+      transparent 100%
+    );
+  }
+  25% {
+    background: repeating-linear-gradient(
+      90deg,
+      var(--accent-color),
+      var(--accent-color) 100px,
+      transparent 100px,
+      transparent 100%
+    );
+  }
+  30% {
+    background: repeating-linear-gradient(
+      90deg,
+      var(--accent-color),
+      var(--accent-color) 110px,
+      transparent 110px,
+      transparent 100%
+    );
+  }
+  35% {
+    background: repeating-linear-gradient(
+      90deg,
+      var(--accent-color),
+      var(--accent-color) 120px,
+      transparent 120px,
+      transparent 100%
+    );
+  }
+  40% {
+    background: repeating-linear-gradient(
+      90deg,
+      var(--accent-color),
+      var(--accent-color) 130px,
+      transparent 130px,
+      transparent 100%
+    );
+  }
+  45% {
+    background: repeating-linear-gradient(
+      90deg,
+      var(--accent-color),
+      var(--accent-color) 140px,
+      transparent 140px,
+      transparent 100%
+    );
+  }
+  50% {
+    background: repeating-linear-gradient(
+      90deg,
+      var(--accent-color),
+      var(--accent-color) 150px,
+      transparent 150px,
+      transparent 100%
+    );
+  }
+  55% {
+    background: repeating-linear-gradient(
+      90deg,
+      var(--accent-color),
+      var(--accent-color) 160px,
+      transparent 160px,
+      transparent 100%
+    );
+  }
+  60% {
+    background: repeating-linear-gradient(
+      90deg,
+      var(--accent-color),
+      var(--accent-color) 170px,
+      transparent 170px,
+      transparent 100%
+    );
+  }
+  65% {
+    background: repeating-linear-gradient(
+      90deg,
+      var(--accent-color),
+      var(--accent-color) 180px,
+      transparent 180px,
+      transparent 100%
+    );
+  }
+  70% {
+    background: repeating-linear-gradient(
+      90deg,
+      var(--accent-color),
+      var(--accent-color) 190px,
+      transparent 190px,
+      transparent 100%
+    );
+  }
+  75% {
+    background: repeating-linear-gradient(
+      90deg,
+      var(--accent-color),
+      var(--accent-color) 200px,
+      transparent 200px,
+      transparent 100%
+    );
+  }
+  80% {
+    background: repeating-linear-gradient(
+      90deg,
+      var(--accent-color),
+      var(--accent-color) 210px,
+      transparent 210px,
+      transparent 100%
+    );
+  }
+  85% {
+    background: repeating-linear-gradient(
+      90deg,
+      var(--accent-color),
+      var(--accent-color) 220px,
+      transparent 220px,
+      transparent 100%
+    );
+  }
+  90% {
+    background: repeating-linear-gradient(
+      90deg,
+      var(--accent-color),
+      var(--accent-color) 230px,
+      transparent 230px,
+      transparent 100%
+    );
+  }
+  95% {
+    background: repeating-linear-gradient(
+      90deg,
+      var(--accent-color),
+      var(--accent-color) 240px,
+      transparent 240px,
+      transparent 100%
+    );
+  }
+  to {
+    background: repeating-linear-gradient(
+      90deg,
+      var(--accent-color),
+      var(--accent-color) 100%,
+      transparent 100%,
+      transparent 100%
+    );
+  }
+}
+@keyframes buttonHoverFillAccent_back {
+  from {
+    background: repeating-linear-gradient(
+      90deg,
+      var(--accent-color),
+      var(--accent-color) 100%,
+      transparent 100%,
+      transparent 100%
+    );
+  }
+  5% {
+    background: repeating-linear-gradient(
+      90deg,
+      var(--accent-color),
+      var(--accent-color) 240px,
+      transparent 240px,
+      transparent 100%
+    );
+  }
+  10% {
+    background: repeating-linear-gradient(
+      90deg,
+      var(--accent-color),
+      var(--accent-color) 230px,
+      transparent 230px,
+      transparent 100%
+    );
+  }
+  15% {
+    background: repeating-linear-gradient(
+      90deg,
+      var(--accent-color),
+      var(--accent-color) 220px,
+      transparent 220px,
+      transparent 100%
+    );
+  }
+  20% {
+    background: repeating-linear-gradient(
+      90deg,
+      var(--accent-color),
+      var(--accent-color) 210px,
+      transparent 210px,
+      transparent 100%
+    );
+  }
+  25% {
+    background: repeating-linear-gradient(
+      90deg,
+      var(--accent-color),
+      var(--accent-color) 200px,
+      transparent 200px,
+      transparent 100%
+    );
+  }
+  30% {
+    background: repeating-linear-gradient(
+      90deg,
+      var(--accent-color),
+      var(--accent-color) 190px,
+      transparent 190px,
+      transparent 100%
+    );
+  }
+  35% {
+    background: repeating-linear-gradient(
+      90deg,
+      var(--accent-color),
+      var(--accent-color) 180px,
+      transparent 180px,
+      transparent 100%
+    );
+  }
+  40% {
+    background: repeating-linear-gradient(
+      90deg,
+      var(--accent-color),
+      var(--accent-color) 170px,
+      transparent 170px,
+      transparent 100%
+    );
+  }
+  45% {
+    background: repeating-linear-gradient(
+      90deg,
+      var(--accent-color),
+      var(--accent-color) 160px,
+      transparent 160px,
+      transparent 100%
+    );
+  }
+  50% {
+    background: repeating-linear-gradient(
+      90deg,
+      var(--accent-color),
+      var(--accent-color) 150px,
+      transparent 150px,
+      transparent 100%
+    );
+  }
+  55% {
+    background: repeating-linear-gradient(
+      90deg,
+      var(--accent-color),
+      var(--accent-color) 140px,
+      transparent 140px,
+      transparent 100%
+    );
+  }
+  60% {
+    background: repeating-linear-gradient(
+      90deg,
+      var(--accent-color),
+      var(--accent-color) 130px,
+      transparent 130px,
+      transparent 100%
+    );
+  }
+  65% {
+    background: repeating-linear-gradient(
+      90deg,
+      var(--accent-color),
+      var(--accent-color) 120px,
+      transparent 120px,
+      transparent 100%
+    );
+  }
+  70% {
+    background: repeating-linear-gradient(
+      90deg,
+      var(--accent-color),
+      var(--accent-color) 110px,
+      transparent 110px,
+      transparent 100%
+    );
+  }
+  75% {
+    background: repeating-linear-gradient(
+      90deg,
+      var(--accent-color),
+      var(--accent-color) 100px,
+      transparent 100px,
+      transparent 100%
+    );
+  }
+  80% {
+    background: repeating-linear-gradient(
+      90deg,
+      var(--accent-color),
+      var(--accent-color) 90px,
+      transparent 90px,
+      transparent 100%
+    );
+  }
+  85% {
+    background: repeating-linear-gradient(
+      90deg,
+      var(--accent-color),
+      var(--accent-color) 80px,
+      transparent 80px,
+      transparent 100%
+    );
+  }
+  90% {
+    background: repeating-linear-gradient(
+      90deg,
+      var(--accent-color),
+      var(--accent-color) 70px,
+      transparent 70px,
+      transparent 100%
+    );
+  }
+  95% {
+    background: repeating-linear-gradient(
+      90deg,
+      var(--accent-color),
+      var(--accent-color) 60px,
+      transparent 60px,
+      transparent 100%
+    );
+  }
+  to {
+    background: repeating-linear-gradient(
+      90deg,
+      var(--accent-color),
+      var(--accent-color) 50px,
+      transparent 50px,
+      transparent 100%
+    );
+  }
+}
+.button_hover_fill_accent:active {
+  background: #e60b67 !important;
+  transition: 0.2s;
+}
+
+.hover_text {
+  cursor: pointer;
+}
+.hover_text:hover:not(:active) {
+  opacity: 0.85;
+}
+
+/* НЕКОРРЕКТНЫЕ ДАННЫЕ */
+.incorrectInput {
+  color: var(--warnind-color);
+  border: 1px solid var(--warnind-color);
+}
+.incorrectInput * {
+  color: var(--warnind-color) !important;
+  opacity: 1 !important;
+}
+.incorrectInput::before {
+  content: "Неверный формат";
+
+  color: var(--warnind-color);
+  position: absolute;
+  height: 16px;
+  right: 0;
+  bottom: -16px;
+
+  font-family: "Exo 2";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 13px;
+  line-height: 125%;
+  letter-spacing: 0;
+  /* or 16px */
+}
+
+.incorrectInput::after {
+  content: url("../icons/warning.png");
+
+  position: absolute;
+  height: 20px;
+  width: 20px;
+  right: 8px;
+  top: 22%;
+  font-family: "Exo 2";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 13px;
+  line-height: 125%;
+  letter-spacing: 0;
+  /* or 16px */
+}
+.incorrectAgreement + label {
+  color: var(--warnind-color);
+  /* font-weight: 700;
+  letter-spacing: 0; */
+  opacity: 1;
+}
+.incorrectAgreement + label::before {
+  border: 1px solid var(--warnind-color);
+}
+.modal {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  padding-left: 50vw;
+  padding-top: 50vh;
+
+  background-color: rgba(0, 0, 0, 0.1);
+  z-index: 30;
+  cursor: pointer;
+
+  display: none;
+}
+.modal__container {
+  width: 486px;
+  min-height: 427px;
+  background-color: #ffffff;
+
+  margin-left: -243px;
+  margin-top: -218px;
+
+  padding: 40px 40px 27px 40px;
+
+  position: relative;
+
+  cursor: default;
+}
+.modal__close {
+  position: absolute;
+  top: 13px;
+  right: 15px;
+
+  cursor: pointer;
+}
+.modalTeacher__info {
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 25px;
+}
+
+.modalTeacher__name {
+  font-family: "Yanone Kaffeesatz", sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 22px;
+  line-height: 100%;
+
+  text-transform: uppercase;
+
+  color: var(--main-color);
+
+  margin-bottom: 5px;
+}
+.modalTeacher__age {
+  font-family: "Exo 2", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 125%;
+  letter-spacing: 0;
+
+  color: var(--main-color);
+
+  opacity: 0.55;
+
+  margin-bottom: 25px;
+}
+
+.modalTeacher__course {
+  font-family: "Exo 2", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 100%;
+  letter-spacing: 0;
+
+  color: var(--accent-color);
+}
+.modalTeacher__education {
+  font-family: "Exo 2", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 125%;
+  letter-spacing: 0;
+
+  color: var(--main-color);
+
+  opacity: 0.55;
+
+  max-width: 160px;
+}
+.modalTeacher__text {
+  font-family: "Exo 2", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 125%;
+  letter-spacing: 0;
+
+  color: var(--main-color);
+}
+.more_arrow {
+  white-space: nowrap;
+}
+.more_arrow::after {
+  content: url("../icons/more_arrow.png");
+
+  margin-left: 5px;
+
+  display: inline-block;
+  transform: translateY(0px);
+}
+.firstScreen__cartMore.more_arrow::after {
+  display: inline;
+  margin-left: 0px;
+}
