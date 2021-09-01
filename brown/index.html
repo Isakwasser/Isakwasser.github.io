@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Андрей Браун</title>
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <!--font-family: 'Nanum Gothic Coding', monospace;-->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nanum+Gothic+Coding&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <!--font-family: 'Roboto Mono', monospace;-->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+
+  <body>
+    <header>
+      <nav>
+        <div class="nav__logo nav__item_active">
+          <a href="#hi" class="active">Андрей Браун</a>
+        </div>
+        <div class="nav__modal">
+          <label for="showMiniMenu"><i class="fas fa-bars"></i></label>
+        </div>
+        <input type="checkbox" id="showMiniMenu" />
+        <div class="nav__menu">
+          <div class="nav__item nav__item_active">
+            <a href="#about-me">Обо мне</a>
+          </div>
+          <div class="nav__item nav__item_active">
+            <a href="#skills">Услуги</a>
+          </div>
+          <div class="nav__item nav__item_active">
+            <a href="#cases">Кейсы</a>
+          </div>
+          <div class="nav__item nav__item_active">
+            <a href="#cost">Прайс</a>
+          </div>
+          <div class="nav__item nav__item_active">
+            <a href="#reviews">Отзывы</a>
+          </div>
+          <div class="nav__item nav__item_active">
+            <a href="#contacts">Контакты</a>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <div class="hi section" id="hi">
+      <div class="hi__container">
+        <div class="hi__content">
+          <h1 class="hi__welcome">Привет<br />Я Андрей Браун</h1>
+          <h4 class="hi__post">
+            Фулл стек веб - разработчик и Android - разработчик
+          </h4>
+          <div class="hi__btns">
+            <input type="button" class="hi__btn" value="Обо мне" />
+            <input type="button" class="hi__btn" value="Мои работы" />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="about-me section" id="about-me">
+      <h2>ОБО МНЕ</h2>
+      <img
+        src="img/about-photo.png"
+        alt="Ой, фотография не загрузилась"
+        width="200"
+      />
+      <p>
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aliquam
+        doloribus at quos eum, ducimus magni explicabo. Illum itaque at, est
+        cumque numquam animi incidunt voluptates quas alias aperiam, ipsam a.
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos
+        nesciunt asperiores doloremque quos facilis eos nam nisi officiis,
+        eligendi voluptatibus quod eveniet dolore quidem assumenda at quaerat
+        atque, sunt dolorum.
+      </p>
+      <button>
+        <i class="fa fa-download" aria-hidden="true"></i>
+        Скачать резюме
+      </button>
+    </div>
+
+    <div class="skills section" id="skills">
+      <h2>ЧТО Я УМЕЮ</h2>
+      <ul class="skills__row">
+        <li>
+          <i class="fas fa-laptop"></i>
+          <h4>Веб-дизайн</h4>
+          <p>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Rerum
+            veniam sequi sed. Veritatis, sunt labore.
+          </p>
+        </li>
+        <li>
+          <i class="fas fa-code"></i>
+          <h4>Разработка</h4>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque
+            itaque rem maiores odio!
+          </p>
+        </li>
+        <li>
+          <i class="fas fa-rocket"></i>
+          <h4>CEO-оптимизация</h4>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus
+            perspiciatis natus consectetur praesentium, sapiente at vel?
+          </p>
+        </li>
+        <li>
+          <i class="fas fa-bullhorn"></i>
+          <h4>Маркетинг</h4>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti
+            totam perferendis velit numquam, esse repellat?
+          </p>
+        </li>
+      </ul>
+    </div>
+
+    <div class="cases section" id="cases">
+      <h2>КЕЙСЫ</h2>
+      <p class="cases__under-title">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur vero
+        nesciunt deserunt totam amet a ea sed id in numquam.
+      </p>
+      <div class="cases__content">
+        <img
+          src="img/cases-photo.png"
+          alt="Наверно фотография не прогрузится("
+        />
+      </div>
+      <div class="cases__content">
+        <div class="cases__links">
+          <h3>CLIENT:</h3>
+          <p>Какая-то компания</p>
+          <h3>WEBSITE:</h3>
+          <p>
+            <a href="#" title="Ссылка недействительна">http://somedomain.com</a>
+          </p>
+          <input type="button" value="Перейти на сайт" />
+        </div>
+        <div class="cases__project">
+          <h3>Название проекта</h3>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta
+            cumque voluptatem nemo? Expedita aspernatur, beatae necessitatibus
+            incidunt, possimus nulla sit, sunt iste officia qui perferendis ab
+            ea cum laborum. Quia dicta a molestiae pariatur laboriosam
+            voluptates aliquam, et dolorem voluptatem rerum nisi exercitationem
+            magnam quidem unde sunt, vitae dolores velit.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="cost section" id="cost">
+      <h2>Расчет стоимости</h2>
+      <ul>
+        <li>
+          <h3>ТИП САЙТА</h3>
+          <div class="cost__select-container">
+            <select name="site-type" id="site-type">
+              <option value="not-selected">Выберите пункт...</option>
+              <option value="value1">Значение 1</option>
+              <option value="value2">Значение 2</option>
+              <option value="value3">Значение 3</option>
+            </select>
+          </div>
+        </li>
+        <li>
+          <h3>ДИЗАЙН</h3>
+          <div class="cost__select-container">
+            <select name="design" id="design">
+              <option value="not-selected">Выберите пункт...</option>
+              <option value="value1">Значение 1</option>
+              <option value="value2">Значение 2</option>
+              <option value="value3">Значение 3</option>
+            </select>
+          </div>
+        </li>
+        <li>
+          <h3>АДАПТИВНОСТЬ</h3>
+          <div class="cost__select-container">
+            <select name="adapted" id="adapted">
+              <option value="not-selected">Выберите пункт...</option>
+              <option value="value1">Значение 1</option>
+              <option value="value2">Значение 2</option>
+              <option value="value3">Значение 3</option>
+            </select>
+          </div>
+        </li>
+      </ul>
+      <div class="cost__result">
+        <div class="cost__item">
+          <div class="cost__item_name">Сроки</div>
+          <div class="cost__item_name-num">0</div>
+        </div>
+        <div class="cost__item">
+          <div class="cost__item_name">Стоимость</div>
+          <div class="cost__item_name-num">0</div>
+        </div>
+      </div>
+      <div class="cost__send-container">
+        <input type="button" class="cost__send" value="Оставить заявку" />
+      </div>
+    </div>
+
+    <div class="statistics section">
+      <h2>НЕМНОГО СТАТИСТИКИ</h2>
+      <ul>
+        <li>
+          <i class="far fa-smile"></i><br />
+          <span class="statistics__number element_animation">120</span><br />
+          <span>СЧАСТЛИВЫХ КЛИЕНТОВ</span>
+        </li>
+        <li>
+          <i class="fas fa-code"></i><br />
+          <span class="statistics__number element_animation">4600</span><br />
+          <span>ЧАСОВ РАБОТЫ</span>
+        </li>
+        <li>
+          <i class="far fa-check-square"></i><br />
+          <span class="statistics__number element_animation">340</span><br />
+          <span>ПРОЕКТОВ ЗАВЕРШЕНО</span>
+        </li>
+        <li>
+          <i class="fas fa-trophy"></i><br />
+          <span class="statistics__number element_animation">23</span><br />
+          <span>НАГРАД ПОЛУЧЕНО</span>
+        </li>
+      </ul>
+    </div>
+
+    <div class="reviews section" id="reviews">
+      <h2>ОТЗЫВЫ</h2>
+      <div class="reviews__container">
+        <input type="radio" name="choose-review" checked />
+        <input type="radio" name="choose-review" />
+        <input type="radio" name="choose-review" />
+        <div class="reviews__items">
+          <div class="reviews__item">
+            <img
+              src="#"
+              data-src="img/reviews-photo1.png"
+              alt="Ой, фотография не загрузилась"
+              width="200"
+            />
+            <p>
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aliquam
+              doloribus at quos eum, ducimus magni explicabo. Illum itaque at,
+              est cumque numquam animi incidunt voluptates quas alias aperiam,
+              ipsam a.
+            </p>
+            <p>Михаил1, Ген-директор ПАО "Газпром"</p>
+          </div>
+          <div class="reviews__item">
+            <img
+              src="img/reviews-photo1.png"
+              data-src="img/reviews-photo1.png"
+              alt="Ой, фотография не загрузилась"
+              width="200"
+            />
+            <p>
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aliquam
+              doloribus at quos eum, ducimus magni explicabo. Illum itaque at,
+              est cumque numquam animi incidunt voluptates quas alias aperiam,
+              ipsam a.
+            </p>
+            <p>Михаил2, Ген-директор ПАО "Газпром"</p>
+          </div>
+          <div class="reviews__item">
+            <img
+              src="img/reviews-photo1.png"
+              data-src="img/reviews-photo1.png"
+              alt="Ой, фотография не загрузилась"
+              width="200"
+            />
+            <p>
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aliquam
+              doloribus at quos eum, ducimus magni explicabo. Illum itaque at,
+              est cumque numquam animi incidunt voluptates quas alias aperiam,
+              ipsam a.
+            </p>
+            <p>Михаил3, Ген-директор ПАО "Газпром"</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="contacts section" id="contacts">
+      <h2>МОИ КОНТАКТЫ</h2>
+      <p class="contacts__under-header">
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+        Exercitationem, quaerat esse odit veritatis aliquid quia?
+      </p>
+      <ul>
+        <li>
+          <i class="fas fa-map-marker-alt"></i
+          ><span><br />Санкт-петербург<br />Невский проспект 11</span>
+        </li>
+        <li>
+          <i class="far fa-envelope"></i><span><br />info@companyname.com</span>
+        </li>
+        <li>
+          <i class="fas fa-phone-alt"></i><span><br />+7 999 999-99-99</span>
+        </li>
+      </ul>
+      <h3>ОСТАВЬТЕ МНЕ СООБЩЕНИЕ</h3>
+      <form action="#">
+        <input type="text" name="name" placeholder="Имя" />
+        <input type="email" name="email" placeholder="email" />
+        <input type="textarea" cols="100" rows="12" placeholder="Сообщение" />
+        <input type="button" value="Отправить" onclick="checkContactsForm()" />
+      </form>
+    </div>
+
+    <div class="map section"></div>
+
+    <footer>
+      <span>Copyright &copy;2021 Андрей Браун. Designed by web</span>
+    </footer>
+
+    <script
+      src="https://kit.fontawesome.com/51a5cdb231.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>
