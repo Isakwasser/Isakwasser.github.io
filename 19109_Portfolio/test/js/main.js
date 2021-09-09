@@ -25,13 +25,14 @@ class Input extends React.Component {
 
     save() {
         var value = this.refs.newEmail.value;
+        if (isLocalStorageSupported) {
+            localStorage.setItem('startEmail', value);
+        }
         this.setState({
             edit: false,
             email: value
         });
-        if (isLocalStorageSupported) {
-            localStorage.setItem('startEmail', this.state.email);
-        }
+        
     }
 
 
