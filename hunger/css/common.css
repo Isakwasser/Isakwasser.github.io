@@ -1,0 +1,88 @@
+.top {
+  z-index: 9;
+}
+
+html,
+body {
+  font-family: "Open Sans", sans-serif;
+  min-width: 450px;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+h2 {
+  font-family: "Banny Round";
+  font-size: 36px;
+  line-height: 48px;
+}
+h3 {
+  font-family: "Open Sans", sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 14px;
+
+  letter-spacing: 0.5em;
+  margin-bottom: 40px;
+}
+h5 {
+  font-style: normal;
+  font-weight: bolder;
+  font-size: 18px;
+  line-height: 28px;
+  margin-top: 20px;
+}
+p {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 24px;
+}
+
+.team,
+.booking {
+  padding: 50px 0;
+}
+.aboutUs,
+.menu,
+.contact {
+  padding: 100px 0;
+}
+.rounded {
+  border-radius: 5px !important;
+  text-shadow: var(--shadow);
+}
+button {
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 20px;
+  color: #ffffff !important;
+}
+.colored-button {
+  background-color: var(--yellow-color);
+}
+footer {
+  background-color: rgba(0, 0, 0, 0.9);
+  color: rgba(255, 255, 255, 0.5);
+  text-align: center;
+  padding: 45px 0;
+}
+
+.io-hidden {
+  transform-origin: center bottom;
+  opacity: 0;
+}
+.io-show {
+  animation: io-show linear 0.8s forwards;
+}
+@keyframes io-show {
+  from {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}

@@ -1,0 +1,38 @@
+.contact .form-group {
+  margin-bottom: 10px;
+}
+.contact form {
+  margin-top: 50px;
+}
+.contact .form-group input,
+.contact .form-group textarea {
+  background-color: #e5e5e5;
+  border: var(--border);
+  height: 60px;
+  padding-left: 20px;
+
+  font-family: "Open Sans", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 19px;
+}
+.contact .text-nowrap {
+  font-style: normal;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 12px;
+
+  color: rgba(51, 51, 51, 0.5);
+}
+.contact button {
+  font-style: normal;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 20px;
+  height: 60px;
+}
+.contact .fas {
+  color: var(--yellow-color);
+  margin-right: 5px;
+}

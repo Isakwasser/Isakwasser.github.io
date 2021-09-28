@@ -1,0 +1,41 @@
+.menu h5 {
+  font-weight: bolder;
+}
+.menu__categories button {
+  margin-top: 20px;
+  margin-bottom: 50px;
+  height: 50px;
+
+  font-style: normal;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 18px;
+
+  color: #333333 !important;
+}
+.menu__categories button + button {
+  border-left: 1px solid rgba(51, 51, 51, 0.3);
+}
+.menu__items {
+  font-family: "Bonny Round";
+
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 18px;
+
+  color: #333333;
+  white-space: nowrap;
+}
+.menu__items > div {
+  margin-bottom: 20px;
+}
+.menu__items small {
+  font-family: "Open Sans", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 18px;
+
+  color: rgba(51, 51, 51, 0.5);
+}

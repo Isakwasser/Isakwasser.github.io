@@ -1,0 +1,35 @@
+section.team {
+  background-image: url("../img/team-bg.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  color: white;
+  overflow: hidden;
+  background-attachment: fixed;
+}
+.team__rect {
+  position: absolute;
+  left: 5px;
+  top: 25%;
+  -webkit-filter: drop-shadow(var(--shadow));
+  filter: drop-shadow(var(--shadow));
+}
+
+.team__line {
+  position: absolute;
+  height: 5000px;
+  top: -1000px;
+  border-left: var(--border);
+}
+.team__line-left {
+  left: 16%;
+}
+.team__line-right {
+  left: 84%;
+}
+.team__line-center {
+  left: 50%;
+}
+.team p {
+  opacity: 0.8;
+}

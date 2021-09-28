@@ -1,0 +1,40 @@
+.specialties__descryp {
+  position: absolute;
+  background-color: #000;
+  writing-mode: vertical-lr;
+  top: 0;
+  right: 0;
+  padding: 35px 30px;
+  height: 100%;
+  text-align: left;
+  margin: 0;
+}
+.specialties__descryp-right {
+  transform: rotate(180deg);
+  left: 0;
+  right: auto;
+}
+.specialties__radio {
+  margin-top: 45px;
+}
+.specialties__radio input {
+  display: none;
+}
+
+.specialties__radio label {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #ffffff;
+  opacity: 0.5;
+  cursor: pointer;
+}
+.specialties__radio label ~ label {
+  margin-left: 20px;
+}
+.specialties__radio input:checked + label {
+  opacity: 1;
+}
+.specialties-bg {
+  background-image: url("../img/specialties-bg.jpg") !important;
+}

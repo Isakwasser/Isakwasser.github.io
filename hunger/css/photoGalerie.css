@@ -1,0 +1,10 @@
+.photoGalerie {
+  max-width: 2000px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+.galerie-img {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}

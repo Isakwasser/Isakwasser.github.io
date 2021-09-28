@@ -1,0 +1,7 @@
+.about__rect {
+  position: absolute;
+  right: 5px;
+  top: 25%;
+  -webkit-filter: drop-shadow(var(--shadow));
+  filter: drop-shadow(var(--shadow));
+}

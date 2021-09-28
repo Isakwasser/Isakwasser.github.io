@@ -1,0 +1,6 @@
+:root {
+  --yellow-color: #e8c300;
+  --border-color: rgba(255, 255, 255, 0.2);
+  --border: 1px solid var(--border-color);
+  --shadow: 0 0 15px #333333;
+}
