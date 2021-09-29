@@ -1,0 +1,120 @@
+.chats__container {
+  background-color: rgba(37, 39, 42, 0.75);
+  font-size: 12px;
+}
+@media (max-width: 767px) {
+  .chats__container {
+    position: fixed;
+    z-index: 2;
+    top: 5%;
+    left: 10%;
+    width: max-content;
+    max-width: 80vw;
+
+    height: max-content;
+    max-height: 90vh;
+    transition: all 0.3s;
+    background-color: rgba(37, 39, 42, 0.99);
+  }
+}
+.chats__drop .dropdown-toggle {
+  color: #ffffff;
+}
+.chats__settings {
+  transition: 0.5s;
+  cursor: pointer;
+}
+.chats__settings:hover {
+  opacity: 1;
+  transform-origin: center;
+  transform: scale(2) rotate(360deg);
+}
+
+.chats__all {
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+.chats__all:hover {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.chats__chanals__header {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px 0;
+}
+
+.chats__chanal {
+  padding: 5px 10px;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: 0.5s;
+  display: block;
+}
+.chats__chanal:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+  color: rgba(255, 255, 255, 0.75);
+}
+.chats__chanal.active {
+  background-color: rgba(255, 255, 255, 0.3);
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.chats__friend {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  margin: 10px 0;
+  overflow: hidden;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: 0.5s;
+  padding: 2px;
+}
+
+.chats__friend:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+  color: rgba(255, 255, 255, 0.75);
+}
+.chats__friend.active {
+  background-color: rgba(255, 255, 255, 0.3);
+  color: rgba(255, 255, 255, 0.75);
+}
+.chats__friend .state {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+
+  background-color: rgba(255, 255, 255, 0.3);
+}
+.chats__friend .state.online {
+  background-color: green;
+}
+.chats__friend .img {
+  width: 30px;
+  height: 30px;
+  border-radius: 3px;
+  overflow: hidden;
+  margin: 0 12px 0 7px;
+}
+.chats__friend .img img {
+  width: 100%;
+}
+
+.show_chats {
+  top: 100%;
+  left: 0px;
+  z-index: 2;
+}
+
+.show_chats button {
+  transform-origin: 0 100%;
+  transform: rotate(90deg);
+  font-size: 10px;
+  transition: all 0.3s;
+}
+
+.show_chats button:hover {
+  transform: rotate(90deg) scale(1.2) translateY(-0px);
+}

@@ -1,0 +1,76 @@
+.person {
+  background-color: #e8e8e8;
+}
+@media (max-width: 1199px) {
+  .person {
+    position: fixed;
+    top: 10%;
+    right: 10%;
+    width: max-content;
+    max-width: 80vw;
+
+    height: max-content;
+    max-height: 80vh;
+    transition: all 0.3s;
+  }
+}
+
+.person_social {
+  min-width: 22px;
+  min-height: 22px;
+  border-radius: 50%;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  color: rgba(0, 0, 0, 0.5);
+  background-color: #ffffff;
+  font-size: 14px;
+
+  overflow: hidden;
+
+  margin-right: 5px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.person_social:hover {
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  color: rgba(0, 0, 0, 0.7);
+}
+
+.person__infoHeader {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 14px;
+
+  color: #5f6164;
+  margin-top: 15px;
+}
+.person__infoContent {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 17px;
+
+  color: #000000;
+  margin-top: 3px;
+}
+
+.show_chanals {
+  top: 100%;
+  right: 25px;
+  z-index: 2;
+}
+
+.show_chanals button {
+  transform-origin: 100%;
+  transform: rotate(-90deg) translate(0, 10px);
+  font-size: 10px;
+  transition: all 0.3s;
+}
+
+.show_chanals button:hover {
+  transform: rotate(-90deg) scale(1.2) translate(0, 5px);
+}
