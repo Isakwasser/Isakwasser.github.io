@@ -103,7 +103,7 @@
 }
 
 .show_chats {
-  top: 100%;
+  top: 10%;
   left: 0px;
   z-index: 2;
 }

@@ -84,6 +84,7 @@
                   py-4
                   overflow-auto
                   h-100
+                  collapse
                 "
               >
                 <div class="row align-items-center">
@@ -245,9 +246,9 @@
                   <div class="chats__friend">
                     <div class="state"></div>
                     <div class="img">
-                      <img src="img/chats/friends/OrlandoDiggs.jpg" alt="OD" />
+                      <img src="img/chats/friends/Unknown.jpg" alt="OD" />
                     </div>
-                    <div class="name">Orlando Diggs</div>
+                    <div class="name">Unknown person</div>
                   </div>
 
                   <div class="chats__friend">
@@ -501,31 +502,6 @@
                           </div>
                         </div>
                       </div>
-                    </div>
-                    <div class="show_chanals position-absolute d-xl-none">
-                      <button
-                        class="btn btn-secondary btn-sm"
-                        type="button"
-                        data-bs-toggle="collapse"
-                        data-bs-target="#person"
-                        aria-expanded="false"
-                        aria-controls="person"
-                      >
-                        Показать/скрыть информацию о пользователе
-                      </button>
-                    </div>
-
-                    <div class="show_chats position-absolute d-md-none">
-                      <button
-                        class="btn btn-secondary btn-sm"
-                        type="button"
-                        data-bs-toggle="collapse"
-                        data-bs-target="#chats"
-                        aria-expanded="false"
-                        aria-controls="chats"
-                      >
-                        Показать/скрыть чаты
-                      </button>
                     </div>
                   </div>
 
@@ -992,6 +968,32 @@
 
                 <input type="radio" name="chanal" id="radio__not-made" />
                 <div>Похоже, эта вкладка еще не готова :(</div>
+
+                <div class="show_chanals position-absolute d-xl-none">
+                  <button
+                    class="btn btn-secondary btn-sm"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#person"
+                    aria-expanded="false"
+                    aria-controls="person"
+                  >
+                    Показать/скрыть информацию о пользователе
+                  </button>
+                </div>
+
+                <div class="show_chats position-absolute d-md-none">
+                  <button
+                    class="btn btn-secondary btn-sm"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#chats"
+                    aria-expanded="false"
+                    aria-controls="chats"
+                  >
+                    Показать/скрыть чаты
+                  </button>
+                </div>
               </div>
 
               <div id="person" class="col-xl-2 d-xl-block person p-0 collapse">
@@ -1074,6 +1076,7 @@
       crossorigin="anonymous"
     ></script>
 
+    <script src="js/onloadChatalsRect.js"></script>
     <script src="js/onload-scroll.js"></script>
     <script src="js/onChangeChanal.js"></script>
   </body>

@@ -19,7 +19,8 @@
 }
 .chanals__item {
   width: 60%;
-  aspect-ratio: 1/1;
+  /* aspect-ratio: 1/1; */
+
   border-radius: 50%;
 
   display: flex;
