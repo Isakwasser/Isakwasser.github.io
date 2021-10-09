@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-uWxY/CJNBR+1zjPWmfnSnVxwRheevXITnMqoEIeG1LJrdI0GlVs/9cVSyPYXdcSF"
+      crossorigin="anonymous"
+    />
+
+    <title>Bootstrap works!</title>
+  </head>
+  <body
+    style="
+      min-height: 100vh;
+      background-image: url('https://phonoteka.org/uploads/posts/2021-04/thumbs/1617680375_22-p-fon-goluboi-gradient-22.jpg');
+      background-size: cover;
+      background-position: bottom;
+    "
+  >
+    <ul class="nav nav-tabs justify-content-center" id="myTab" role="tablist">
+      <li class="nav-item" role="presentation">
+        <button
+          class="nav-link active"
+          id="modal-tab"
+          data-bs-toggle="tab"
+          data-bs-target="#modal"
+          type="button"
+          role="tab"
+          aria-controls="modal"
+          aria-selected="true"
+        >
+          Модалка
+        </button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button
+          class="nav-link"
+          id="collapse-tab"
+          data-bs-toggle="tab"
+          data-bs-target="#collapse"
+          type="button"
+          role="tab"
+          aria-controls="collapse"
+          aria-selected="false"
+        >
+          Элемент-коллапс
+        </button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button
+          class="nav-link"
+          id="slider-tab"
+          data-bs-toggle="tab"
+          data-bs-target="#slider"
+          type="button"
+          role="tab"
+          aria-controls="slider"
+          aria-selected="false"
+        >
+          Слайдер
+        </button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button
+          class="nav-link"
+          id="card-tab"
+          data-bs-toggle="tab"
+          data-bs-target="#card"
+          type="button"
+          role="tab"
+          aria-controls="card"
+          aria-selected="false"
+        >
+          Карточки
+        </button>
+      </li>
+    </ul>
+
+    <div class="tab-content container pt-2" id="myTabContent">
+      <div
+        class="tab-pane fade show active"
+        id="modal"
+        role="tabpanel"
+        aria-labelledby="modal-tab"
+      >
+        <!-- Button trigger modal -->
+        <button
+          type="button"
+          class="btn btn-primary btn-block col-12"
+          data-bs-toggle="modal"
+          data-bs-target="#exampleModal"
+        >
+          Открыть модальное окно
+        </button>
+      </div>
+      <div
+        class="tab-pane fade"
+        id="collapse"
+        role="tabpanel"
+        aria-labelledby="collapse-tab"
+      >
+        <p class="row justify-content-center">
+          <a
+            class="btn btn-primary col-md-3 m-1"
+            data-bs-toggle="collapse"
+            href="#multiCollapseExample1"
+            role="button"
+            aria-expanded="false"
+            aria-controls="multiCollapseExample1"
+            >Toggle first element</a
+          >
+          <button
+            class="btn btn-primary col-md-3 m-1"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#multiCollapseExample2"
+            aria-expanded="false"
+            aria-controls="multiCollapseExample2"
+          >
+            Toggle second element
+          </button>
+          <button
+            class="btn btn-primary col-md-3 m-1"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target=".multi-collapse"
+            aria-expanded="false"
+            aria-controls="multiCollapseExample1 multiCollapseExample2"
+          >
+            Toggle both elements
+          </button>
+        </p>
+        <div class="row">
+          <div class="col">
+            <div class="collapse multi-collapse" id="multiCollapseExample1">
+              <div class="card card-body">
+                Some placeholder content for the first collapse component of
+                this multi-collapse example. This panel is hidden by default but
+                revealed when the user activates the relevant trigger.
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="collapse multi-collapse" id="multiCollapseExample2">
+              <div class="card card-body">
+                Some placeholder content for the second collapse component of
+                this multi-collapse example. This panel is hidden by default but
+                revealed when the user activates the relevant trigger.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="tab-pane fade"
+        id="slider"
+        role="tabpanel"
+        aria-labelledby="slider-tab"
+      >
+        <div
+          id="carouselExampleCaptions"
+          class="carousel slide"
+          data-bs-ride="carousel"
+        >
+          <div class="carousel-indicators">
+            <button
+              type="button"
+              data-bs-target="#carouselExampleCaptions"
+              data-bs-slide-to="0"
+              class="active"
+              aria-current="true"
+              aria-label="Slide 1"
+            ></button>
+            <button
+              type="button"
+              data-bs-target="#carouselExampleCaptions"
+              data-bs-slide-to="1"
+              aria-label="Slide 2"
+            ></button>
+            <button
+              type="button"
+              data-bs-target="#carouselExampleCaptions"
+              data-bs-slide-to="2"
+              aria-label="Slide 3"
+            ></button>
+            <button
+              type="button"
+              data-bs-target="#carouselExampleCaptions"
+              data-bs-slide-to="3"
+              aria-label="Slide 4"
+            ></button>
+          </div>
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <div style="height: 200px; background-color: #666"></div>
+              <div class="carousel-caption d-none d-md-block">
+                <h5>Первый элемент слайдера</h5>
+                <p>
+                  Some representative placeholder content for the first slide.
+                </p>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div style="height: 200px; background-color: #666"></div>
+              <div class="carousel-caption d-none d-md-block">
+                <h5>Второй элемент слайдера</h5>
+                <p>
+                  Some representative placeholder content for the second slide.
+                </p>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div style="height: 200px; background-color: #666"></div>
+              <div class="carousel-caption d-none d-md-block">
+                <h5>Третий элемент слайдера</h5>
+                <p>
+                  Some representative placeholder content for the third slide.
+                </p>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div style="height: 200px; background-color: #666"></div>
+              <div class="carousel-caption d-none d-md-block">
+                <h5>Четвертый элемент слайдера</h5>
+                <p>
+                  Some representative placeholder content for the third slide.
+                </p>
+              </div>
+            </div>
+          </div>
+          <button
+            class="carousel-control-prev"
+            type="button"
+            data-bs-target="#carouselExampleCaptions"
+            data-bs-slide="prev"
+          >
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button
+            class="carousel-control-next"
+            type="button"
+            data-bs-target="#carouselExampleCaptions"
+            data-bs-slide="next"
+          >
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+      </div>
+      <div
+        class="tab-pane fade"
+        id="card"
+        role="tabpanel"
+        aria-labelledby="card-tab"
+      >
+        <div class="row justify-content-center">
+          <div class="card col-md-4 p-0 mx-1">
+            <div style="height: 100px; background-color: aqua"></div>
+
+            <div class="card-body">
+              <h5 class="card-title">Карточка элемента</h5>
+              <p class="card-text">
+                Очень крутое описание карточки элемента находится именно здесь))
+              </p>
+              <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+          </div>
+
+          <div class="card col-md-4 p-0 mx-1" aria-hidden="true">
+            <div style="height: 100px; background-color: aqua"></div>
+            <div class="card-body">
+              <h5 class="card-title placeholder-glow">
+                <span class="placeholder col-6"></span>
+              </h5>
+              <p class="card-text placeholder-glow">
+                <span class="placeholder col-7"></span>
+                <span class="placeholder col-4"></span>
+                <span class="placeholder col-4"></span>
+                <span class="placeholder col-6"></span>
+                <span class="placeholder col-8"></span>
+              </p>
+              <a
+                href="#"
+                tabindex="-1"
+                class="btn btn-primary disabled placeholder col-6"
+              ></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal -->
+    <div
+      class="modal fade"
+      id="exampleModal"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">
+              Смотри-ка! Модалка работает!!
+            </h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">...</div>
+          <div class="modal-footer">
+            <div class="row text-nowrap justify-content-between">
+              <button
+                type="button"
+                class="btn btn-secondary col-md-6"
+                data-bs-dismiss="modal"
+              >
+                Хочешь закрыть модалку?<br />Жми сюда)
+              </button>
+              <button type="button" class="btn btn-primary col-md-6">
+                На кнопке нет обработчика...<br />Но зато есть кнопка!
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal exit -->
+    <div
+      class="modal fade"
+      id="exitModal"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Уже уходишь?</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            Подожди! Посмотри все повнимательнее. Может быть, ты заметишь
+            какую-нибудь интересную фичу. Или баг. Лучше, конечно, первый
+            вариант)
+          </div>
+          <div class="modal-footer">
+            <div class="row text-nowrap">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-bs-dismiss="modal"
+              >
+                Закрыть
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-kQtW33rZJAHjgefvhyyzcGF3C5TFyBQBA13V1RKPf4uH+bwyzQxZ6CmMZHmNBEfJ"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      var wasExitModalOpened = false;
+      var myModal = new bootstrap.Modal(document.getElementById("exitModal"));
+      document.querySelector("body").addEventListener("mouseleave", () => {
+        if (!wasExitModalOpened) {
+          myModal.toggle();
+          wasExitModalOpened = !wasExitModalOpened;
+        }
+      });
+    </script>
+  </body>
+</html>
