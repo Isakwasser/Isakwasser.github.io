@@ -9,8 +9,9 @@
       :disabled="!wasClicked.length"
       class="btn btn-success"
     >
-      Играть мелодию
+      Воспроизвести сигналы
     </button>
+    <div id="graph"></div>
   </div>
 </template>
 
@@ -19,15 +20,23 @@
 import sound from "./sound";
 // function to sound melody
 import soundAllMelody from "./soundAllMelody";
+// function to draw graph
+import graph from "./graph";
 
 export default {
   props: ["wasClicked"],
   data() {
-    return {};
+    return {
+      previousAllTime: undefined,
+    };
   },
   methods: {
     soundAll() {
-      if (this.wasClicked.length) {
+      if (
+        (!this.previousAllTime || Date.now() - this.previousAllTime > 1000) &&
+        this.wasClicked.length
+      ) {
+        this.previousAllTime = Date.now();
         soundAllMelody(this.wasClicked);
       }
     },
@@ -36,6 +45,7 @@ export default {
     wasClicked() {
       if (this.wasClicked.length) {
         sound(this.wasClicked[this.wasClicked.length - 1] + "");
+        graph(this.wasClicked[this.wasClicked.length - 1] + "");
       }
     },
   },

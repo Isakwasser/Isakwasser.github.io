@@ -27,7 +27,10 @@ export default {
   methods: {
     click(value) {
       let currentTime = Date.now();
-      if (!this.lastClick || currentTime - this.lastClick >= 100) {
+      if (
+        (!this.lastClick || currentTime - this.lastClick >= 400) &&
+        value !== ""
+      ) {
         this.$emit("wasClicked", value);
         this.lastClick = currentTime;
       }
