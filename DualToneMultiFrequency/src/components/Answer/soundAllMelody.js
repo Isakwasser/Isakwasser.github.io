@@ -1,12 +1,14 @@
 import sound from "./sound";
 
 function soundAllMelody(values, current = 0) {
+    sound(values[current]);
 
-    if (current < values.length) {
+    let next = current + 1;
+
+    if (next < values.length) {
         setTimeout(() => {
-            sound(values[current]);
-            soundAllMelody(values, ++current);
-        }, 500);
+            soundAllMelody(values, next);
+        }, 510);
     }
 }
 

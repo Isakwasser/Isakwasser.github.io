@@ -4,7 +4,11 @@
     <h2 class="clicked">
       <span v-for="(el, i) in wasClicked" :key="i">{{ el }}</span>
     </h2>
-    <button @click="soundAll" :disabled="!wasClicked.length">
+    <button
+      @click="soundAll"
+      :disabled="!wasClicked.length"
+      class="btn btn-success"
+    >
       Играть мелодию
     </button>
   </div>
