@@ -54,7 +54,7 @@ function graph(value, animationDuration = 400) {
             categories: time
         },
         series: [{
-            name: 'Значения',
+            name: 'Сигнал при символе: ' + value,
             data: signal
         }]
     });
