@@ -3,7 +3,7 @@ import graph from "./graph";
 
 function soundAllMelody(values, current = 0) {
     let value = values[current];
-    graph(value);
+    graph(value,0);
     console.log(`Играю звук ${value}`);
     let freq = {
         0: [941, 1336],

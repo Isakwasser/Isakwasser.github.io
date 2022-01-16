@@ -11,6 +11,9 @@
     >
       Воспроизвести сигналы
     </button>
+    <button @click="$emit('clearHistory')" class="btn btn-warning">
+      Очистить
+    </button>
     <div id="graph"></div>
   </div>
 </template>

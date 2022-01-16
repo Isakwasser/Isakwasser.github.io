@@ -18,10 +18,19 @@ function graph(value, animationDuration = 400) {
 
     let time = getTimeZones(maxTime);
 
-    let signal = [];
-    
+    let signal = [];    
     for (let i = 0; i < time.length; i++) {
         signal.push(Math.sin(2*Math.PI*currentFreq[0]*time[i]) + Math.sin(2*Math.PI*currentFreq[1]*time[i]));
+    }
+
+    let signal1 = [];    
+    for (let i = 0; i < time.length; i++) {
+        signal1.push(Math.sin(2*Math.PI*currentFreq[0]*time[i]));
+    }
+
+    let signal2 = [];    
+    for (let i = 0; i < time.length; i++) {
+        signal2.push(Math.sin(2*Math.PI*currentFreq[1]*time[i]));
     }
 
     Highcharts.chart('graph', {
@@ -55,7 +64,18 @@ function graph(value, animationDuration = 400) {
         },
         series: [{
             name: 'Сигнал при символе: ' + value,
-            data: signal
+            data: signal,
+            zIndex: 10,
+            lineWidth: 5,
+            color: "#000",
+        },{
+            name: currentFreq[0] + " Гц",
+            data: signal1,
+            color: "#aaf",
+        },{
+            name: currentFreq[1] + " Гц",
+            data: signal2,
+            color: "#afa",
         }]
     });
 }

@@ -2,7 +2,10 @@
   <div id="app">
     <app-interaction :datatable="datatable" v-on:wasClicked="clickButton">
     </app-interaction>
-    <app-answer :wasClicked="wasClicked"></app-answer>
+    <app-answer
+      :wasClicked="wasClicked"
+      @clearHistory="clearClickHistory"
+    ></app-answer>
   </div>
 </template>
 
@@ -30,6 +33,10 @@ export default {
       if (value >= 0 && value <= 9) {
         this.wasClicked.push(value);
       }
+    },
+    clearClickHistory() {
+      this.wasClicked.splice(0, this.wasClicked.length);
+      document.getElementById("graph").innerHTML = "";
     },
   },
 };
