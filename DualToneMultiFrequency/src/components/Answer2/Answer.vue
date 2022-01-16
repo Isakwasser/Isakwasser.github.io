@@ -10,7 +10,7 @@
           aria-label="Default select example"
           v-model="sampleRate"
         >
-          <option value="3000">3000</option>
+          <option value="5909">5910</option>
           <option value="10000">10000</option>
           <option value="44000">44000</option>
         </select>

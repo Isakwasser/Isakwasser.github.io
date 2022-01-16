@@ -25,14 +25,14 @@ function soundAllMelody(values, current = 0, options = {}) {
     osc.connect(gainNode);
     gainNode.connect(context.destination);
     osc.type = "sine"; // this is the default - also square, sawtooth, triangle
-    osc.frequency.value = currentFreq[0]; // Hz
+    osc.frequency.value = currentFreq[0] * 2; // Hz
     let context2 = new (window.AudioContext || window.webkitAudioContext)(options);
     let osc2 = context2.createOscillator(); // instantiate an oscillator
     let gainNode2 = context2.createGain();
     osc2.connect(gainNode2);
     gainNode2.connect(context2.destination);
     osc2.type = "sine"; // this is the default - also square, sawtooth, triangle
-    osc2.frequency.value = currentFreq[1]; // Hz
+    osc2.frequency.value = currentFreq[1] * 2; // Hz
 
     osc.start(); // start the oscillator
     osc2.start();
@@ -44,13 +44,12 @@ function soundAllMelody(values, current = 0, options = {}) {
             
             let next = current + 1;
 
-            setTimeout(() => {
-                if (next < values.length) {
-                    soundAllMelody(values, next, options);
-                }
-            }, 500);
+            if (next < values.length) {
+                soundAllMelody(values, next, options);
+            }
+
         },
-        500
+        1000
     );
 }
 

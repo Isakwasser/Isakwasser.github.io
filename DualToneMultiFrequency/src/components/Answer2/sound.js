@@ -19,7 +19,7 @@ function sound(value, options = {}) {
     let context = new (window.AudioContext || window.webkitAudioContext)(options);
     let osc = context.createOscillator(); // instantiate an oscillator
     osc.type = "sine"; // this is the default - also square, sawtooth, triangle
-    osc.frequency.value = currentFreq[i]; // Hz
+    osc.frequency.value = currentFreq[i] * 2; // Hz
     osc.connect(context.destination); // connect it to the destination
     osc.start(); // start the oscillator
     osc.stop(context.currentTime + 0.5); // stop 0.5 seconds after the current time
