@@ -11,3 +11,12 @@ export default {
 };
 </script>
 
+<style lang="scss">
+.app-snow {
+  color: blue;
+  a {
+    color: red;
+    font-weight: bold;
+  }
+}
+</style>
