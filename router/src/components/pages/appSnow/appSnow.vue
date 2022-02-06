@@ -12,6 +12,7 @@
         left: `${el.positionX}px`,
         transform: `rotate(${el.rotateAngle}deg)`,
         transition: el.transition,
+        opacity: el.opacity,
       }"
     ></div>
   </div>

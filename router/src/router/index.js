@@ -1,8 +1,8 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Main from '@/components/Main'
-import appSnow from '@/components/pages/appSnow/appSnow.vue'
-import app404 from '@/components/pages/app404/app404'
+const Main = () => import('@/components/Main')
+const appSnow = () => import('@/components/pages/appSnow/appSnow.vue')
+const app404 = () => import('@/components/pages/app404/app404')
 
 Vue.use(Router)
 

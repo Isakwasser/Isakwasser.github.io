@@ -108,9 +108,26 @@ export default {
         }, time);
       }
     },
+    fadeSnowflakes(timer) {
+      if (this.Snowflake.isActive) {
+        let i = Math.floor(Math.random() * this.Snowflake.number);
+        Vue.set(this.Snowflake.items[i], "opacity", 0);
+
+        setTimeout(() => {
+          Vue.set(this.Snowflake.items, i, this.initSnowflake());
+        }, 1000);
+        setTimeout(() => {
+          this.fadeSnowflakes(timer);
+        }, timer);
+      }
+    },
   },
   created() {
     this.changeBg();
+    
+    if (this.$route.query.snowflakes) {
+      this.Snowflake.number = this.$route.query.snowflakes;
+    }
   },
   mounted() {
     for (let i = 0; i < this.Snowflake.number; i++) {
@@ -119,5 +136,6 @@ export default {
     this.rotateSnowflakes();
     this.fallSnowflakes();
     this.moveXSnowflakes();
+    this.fadeSnowflakes(100);
   },
 };
