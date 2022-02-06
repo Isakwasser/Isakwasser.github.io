@@ -1,0 +1,2 @@
+webpackJsonp([2],{"/8ch":function(t,e){},"s6+2":function(t,e,n){"use strict";Object.defineProperty(e,"__esModule",{value:!0});var s={render:function(){var t=this.$createElement,e=this._self._c||t;return e("div",{staticClass:"main"},[e("h1",[this._v("Главная страница")]),this._v(" "),e("router-link",{attrs:{to:{name:"appSnow"}}},[this._v("Перейти на страницу снега")])],1)},staticRenderFns:[]};var i=n("VU/8")({name:"Main"},s,!1,function(t){n("/8ch")},null,null);e.default=i.exports}});
+//# sourceMappingURL=2.5f184fe9bd8fea70ea85.js.map
