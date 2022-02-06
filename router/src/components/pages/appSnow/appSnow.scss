@@ -4,9 +4,11 @@
   background-color: #cdf;
   background: linear-gradient(to bottom, #cdf, #fff);
   background-size: cover;
+  overflow: hidden;
+  position: relative;
 
   .snowflake {
-    position: fixed;
+    position: absolute;
     top: 100px;
     left: 50px;
     transform-origin: center;

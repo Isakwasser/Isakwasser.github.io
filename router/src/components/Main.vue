@@ -23,5 +23,6 @@ export default {
   box-shadow: 0 0 25px #fff inset;
   border-radius: 10px;
   display: inline-block;
+  overflow: hidden;
 }
 </style>

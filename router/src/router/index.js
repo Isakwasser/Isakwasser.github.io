@@ -14,10 +14,11 @@ export default new Router({
       component: Main
     },
     {
-      path: '/snow',
+      path: '/app/snow',
       name: 'appSnow',
       component: appSnow
-    }, {
+    },
+    {
       path: '*',
       name: 'app404',
       component: app404
