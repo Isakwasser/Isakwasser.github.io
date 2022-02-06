@@ -14,5 +14,14 @@ export default {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
+<style lang="scss">
+.goToMain {
+  padding: 10px 20px;
+  color: #fff;
+  text-decoration: none;
+  background-color: blue;
+  box-shadow: 0 0 25px #fff inset;
+  border-radius: 10px;
+  display: inline-block;
+}
 </style>

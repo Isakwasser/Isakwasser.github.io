@@ -1,22 +1,24 @@
 <template>
-  <div class="app-snow">
-    <h1>Страница appSnow</h1>
-    <router-link :to="{ name: 'Main' }">Перейти на главную</router-link>
+  <div class="app-snow" :style="{ backgroundImage: `url(${currentBgUrl})` }">
+    <router-link :to="{ name: 'Main' }" class="goToMain"
+      >Перейти на главную</router-link
+    >
+    <div
+      class="snowflake"
+      v-for="(el, i) in Snowflake.items"
+      v-bind:key="i"
+      :style="{
+        top: `${el.positionY}px`,
+        left: `${el.positionX}px`,
+        transform: `rotate(${el.rotateAngle}deg)`,
+        transition: el.transition,
+      }"
+    ></div>
   </div>
 </template>
 
-<script>
-export default {
-  name: "appSnow",
-};
+<script src="./appSnow.js">
 </script>
 
-<style lang="scss">
-.app-snow {
-  color: blue;
-  a {
-    color: red;
-    font-weight: bold;
-  }
-}
+<style lang="scss" src="./appSnow.scss">
 </style>

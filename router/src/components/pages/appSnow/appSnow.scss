@@ -1,0 +1,19 @@
+.app-snow {
+  width: 100vw;
+  height: 100vh;
+  background-color: #cdf;
+  background: linear-gradient(to bottom, #cdf, #fff);
+  background-size: cover;
+
+  .snowflake {
+    position: fixed;
+    top: 100px;
+    left: 50px;
+    transform-origin: center;
+    width: 100px;
+    height: 100px;
+    background-image: url("./snowflakes-blue.png");
+    background-size: cover;
+    background-position: center;
+  }
+}
