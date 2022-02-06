@@ -1,4 +1,5 @@
 import Vue from "vue";
+import snowflakeImage from "@/assets/snowflakes-blue.png";
 
 export default {
   name: "appSnow",
@@ -54,6 +55,7 @@ export default {
         rotateSpeed: rotateSpeed,
         opacity: opacity,
         transition: "none",
+        image: snowflakeImage,
       };
     },
     rotateSnowflakes() {

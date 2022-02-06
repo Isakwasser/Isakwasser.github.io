@@ -13,6 +13,7 @@
         transform: `rotate(${el.rotateAngle}deg)`,
         transition: el.transition,
         opacity: el.opacity,
+        backgroundImage: `url(${el.image})`,
       }"
     ></div>
   </div>
