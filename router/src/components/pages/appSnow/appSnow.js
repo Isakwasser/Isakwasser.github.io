@@ -80,11 +80,10 @@ export default {
 
           Vue.set(this.Snowflake.items[i], "positionY", nextY);
           if (nextY - 100 > window.innerHeight) {
-            console.log(1);
             Vue.set(this.Snowflake.items, i, {});
             Vue.set(this.Snowflake.items, i, this.initSnowflake());
           } else {
-            Vue.set(this.Snowflake.items[i], "transition", "all 0.5s");
+            Vue.set(this.Snowflake.items[i], "transition", "all 1s linear");
           }
         }
         setTimeout(() => {

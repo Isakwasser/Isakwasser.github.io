@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Main from '@/components/Main'
-import appSnow from '@/components/pages/appSnow/appSnow'
+import appSnow from '@/components/pages/appSnow/appSnow.vue'
 
 Vue.use(Router)
 
