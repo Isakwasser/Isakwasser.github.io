@@ -117,7 +117,7 @@ export default {
 
         setTimeout(() => {
           Vue.set(this.Snowflake.items, i, this.initSnowflake());
-        }, 1000);
+        }, 2000);
         setTimeout(() => {
           this.fadeSnowflakes(timer);
         }, timer);
