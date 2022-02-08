@@ -85,7 +85,7 @@ export default {
             Vue.set(this.Snowflake.items, i, {});
             Vue.set(this.Snowflake.items, i, this.initSnowflake());
           } else {
-            Vue.set(this.Snowflake.items[i], "transition", "all 1s linear");
+            Vue.set(this.Snowflake.items[i], "transition", "all 0.9s linear");
           }
         }
         setTimeout(() => {
