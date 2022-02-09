@@ -10,7 +10,7 @@
       :style="{
         top: `${el.positionY}px`,
         left: `${el.positionX}px`,
-        transform: `rotate(${el.rotateAngle}deg)`,
+        transform: `rotate(${el.rotateAngle}deg) scaleX(${el.scaleX})`,
         transition: el.transition,
         opacity: el.opacity,
         backgroundImage: `url(${el.image})`,

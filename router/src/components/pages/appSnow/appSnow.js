@@ -21,7 +21,7 @@ export default {
   methods: {
     changeBg() {
       fetch(
-        `https://pixabay.com/api/?key=23909248-46987dab904e15ddebe9addff&q=${this.findPhoto}&image_type=photo`
+        `https://pixabay.com/api/?key=23909248-46987dab904e15ddebe9addff&q=${this.findPhoto}&image_type=photo&per_page=200`
       )
         .then((data) => {
           return data.json();
@@ -56,6 +56,7 @@ export default {
         opacity: opacity,
         transition: "none",
         image: snowflakeImage,
+        scaleX: 1,
       };
     },
     rotateSnowflakes() {
@@ -67,9 +68,6 @@ export default {
             (this.Snowflake.items[i].rotateSpeed * time) / 100;
           Vue.set(this.Snowflake.items[i], "rotateAngle", nextAngle);
         }
-        setTimeout(() => {
-          this.rotateSnowflakes();
-        }, time);
       }
     },
     fallSnowflakes() {
@@ -82,15 +80,11 @@ export default {
 
           Vue.set(this.Snowflake.items[i], "positionY", nextY);
           if (nextY - 100 > window.innerHeight) {
-            Vue.set(this.Snowflake.items, i, {});
             Vue.set(this.Snowflake.items, i, this.initSnowflake());
           } else {
-            Vue.set(this.Snowflake.items[i], "transition", "all 0.9s linear");
+            Vue.set(this.Snowflake.items[i], "transition", "all 1s linear");
           }
         }
-        setTimeout(() => {
-          this.fallSnowflakes();
-        }, time);
       }
     },
     moveXSnowflakes() {
@@ -105,24 +99,34 @@ export default {
             if (this.Snowflake.items[i].speedX < -0.8 * this.Snowflake.maxSpeedX) this.Snowflake.items[i].speedX += 0.3 * this.Snowflake.maxSpeedX;
             Vue.set(this.Snowflake.items[i], "positionX", nextX);
         }
-        setTimeout(() => {
-          this.moveXSnowflakes();
-        }, time);
       }
     },
-    fadeSnowflakes(timer) {
+    fadeSnowflakes() {
       if (this.Snowflake.isActive) {
         let i = Math.floor(Math.random() * this.Snowflake.number);
         Vue.set(this.Snowflake.items[i], "opacity", 0);
-
-        setTimeout(() => {
-          Vue.set(this.Snowflake.items, i, this.initSnowflake());
-        }, 2000);
-        setTimeout(() => {
-          this.fadeSnowflakes(timer);
-        }, timer);
       }
     },
+    parkourSnowflakes() {
+      if (this.Snowflake.isActive) {
+        let i = Math.floor(Math.random() * this.Snowflake.number);
+        Vue.set(this.Snowflake.items[i], "scaleX", -1);
+      }
+    },
+    animateOnTimer(time, i = 1, changeOpacityPerCycle = Math.floor(200/this.Snowflake.number)+1) {
+      this.rotateSnowflakes();
+      this.fallSnowflakes();
+      this.moveXSnowflakes();
+      if (i % changeOpacityPerCycle == 0) {
+        this.fadeSnowflakes();
+      }
+      if (i % changeOpacityPerCycle == 0 || true) {
+        this.parkourSnowflakes();
+      }
+      setTimeout(() => {
+        this.animateOnTimer(time, ++i, changeOpacityPerCycle);
+      }, time);
+    }
   },
   created() {
     this.changeBg();
@@ -135,9 +139,6 @@ export default {
     for (let i = 0; i < this.Snowflake.number; i++) {
       this.Snowflake.items.push(this.initSnowflake());
     }
-    this.rotateSnowflakes();
-    this.fallSnowflakes();
-    this.moveXSnowflakes();
-    this.fadeSnowflakes(100);
+    this.animateOnTimer(this.Snowflake.time);
   },
 };
