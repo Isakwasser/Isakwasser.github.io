@@ -2,4 +2,14 @@
   width: 100vw;
   height: 100vh;
   background-color: rgb(100, 100, 100);
+  .quection__container {
+    color: white;
+    .question__options {
+      .question__option {
+        cursor: pointer;
+        user-select: none;
+      }
+      @import "./scss/chooseOption/chooseOption";
+    }
+  }
 }

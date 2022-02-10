@@ -29,13 +29,22 @@ export default {
 @import "./scss/variables/_variables.scss";
 .goToMain {
   padding: 10px 20px;
-  color: #fff;
+  color: #fff !important;
   text-decoration: none;
   background-color: blue;
   box-shadow: 0 0 25px #fff inset;
   border-radius: 10px;
   display: inline-block;
   overflow: hidden;
+  z-index: 10;
+  opacity: 0.5;
+  transition: $transitionStandart;
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  &:hover {
+    opacity: 1;
+  }
 }
 .hrefs__container {
   max-width: max-content;

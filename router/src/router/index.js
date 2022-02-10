@@ -20,7 +20,7 @@ export default new Router({
       component: appSnow,
     },
     {
-      path: '/app/snow',
+      path: '/app/test',
       name: 'appTest',
       component: appTest,
     },

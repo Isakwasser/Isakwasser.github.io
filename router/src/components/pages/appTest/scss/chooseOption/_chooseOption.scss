@@ -1,0 +1,13 @@
+@import "./variables";
+@import "./mixin/mixin";
+
+.fail-choose {
+  @include choise($color: red, $scale: $failScale, $duration: $failDuration);
+}
+.success-choose {
+  @include choise(
+    $color: $successColor,
+    $scale: $successScale,
+    $duration: $successDuration
+  );
+}

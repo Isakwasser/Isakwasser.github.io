@@ -1,0 +1,19 @@
+@mixin choise($color, $scale, $duration) {
+  animation: keys $duration 2 forwards;
+  color: $color;
+
+  @keyframes keys {
+    0% {
+      transform: unset;
+      color: unset;
+    }
+    50% {
+      transform: scale($scale);
+      color: #{$color};
+    }
+    100% {
+      transform: unset;
+      color: unset;
+    }
+  }
+}
