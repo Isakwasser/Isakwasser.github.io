@@ -12,4 +12,47 @@
       @import "./scss/chooseOption/chooseOption";
     }
   }
+
+  .trans {
+    &-enter-active,
+    &-leave-active {
+      transition: all 1s;
+    }
+    &-enter-active {
+      transform: translateX(110%);
+      opacity: 0;
+    }
+    &-enter-to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+    &-leave-active {
+      position: absolute;
+    }
+    &-leave-to {
+      transform: translateX(-110%);
+      opacity: 0;
+    }
+  }
+  .transToBottom {
+    &-enter-active,
+    &-leave-active {
+      transition: all 1s;
+    }
+    &-enter-active {
+      transform: translateY(-100%);
+      opacity: 0;
+    }
+    &-enter-to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+    &-leave-active {
+      position: absolute;
+    }
+    &-leave-to {
+      transform: translateY(100%);
+      opacity: 0;
+    }
+  }
 }

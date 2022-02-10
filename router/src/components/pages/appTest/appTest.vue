@@ -4,9 +4,13 @@
       Перейти на главную
     </router-link>
     <div class="quection__container container text-center" v-if="questions">
-      <h2 class="question__title mb-5">
-        {{ questions[currentQuestionIndex].question }}
-      </h2>
+      <div class="d-flex justify-content-center">
+        <transition name="trans">
+          <h2 class="question__title mb-5" :key="currentQuestionIndex">
+            {{ questions[currentQuestionIndex].question }}
+          </h2>
+        </transition>
+      </div>
       <div class="question__options d-flex flex-wrap justify-content-between">
         <div
           v-for="(el, i) in questions[currentQuestionIndex].options"
@@ -23,7 +27,11 @@
           ref="options"
           @click="chooseOption(i)"
         >
-          {{ el.text }}
+          <div class="d-flex justify-content-center">
+            <transition name="transToBottom">
+              <span :key="currentQuestionIndex">{{ el.text }}</span>
+            </transition>
+          </div>
         </div>
       </div>
       <div
