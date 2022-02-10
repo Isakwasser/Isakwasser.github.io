@@ -25,6 +25,11 @@ export default {
 </script>
 
 <style>
+html,
+body,
+#app {
+  font-size: 16px;
+}
 /* начало анимации появления элемента */
 .slide-left-enter {
   opacity: 1;
