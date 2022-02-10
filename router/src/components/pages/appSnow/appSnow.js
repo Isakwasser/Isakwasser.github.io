@@ -113,19 +113,21 @@ export default {
         Vue.set(this.Snowflake.items[i], "scaleX", -1);
       }
     },
-    animateOnTimer(time, i = 1, changeOpacityPerCycle = Math.floor(200/this.Snowflake.number)+1) {
-      this.rotateSnowflakes();
-      this.fallSnowflakes();
-      this.moveXSnowflakes();
-      if (i % changeOpacityPerCycle == 0) {
-        this.fadeSnowflakes();
+    animateOnTimer(time, i = 1, changeOpacityPerCycle = Math.floor(200 / this.Snowflake.number) + 1) {
+      if (this.Snowflake.isActive) {
+        this.rotateSnowflakes();
+        this.fallSnowflakes();
+        this.moveXSnowflakes();
+        if (i % changeOpacityPerCycle == 0) {
+          this.fadeSnowflakes();
+        }
+        if (i % changeOpacityPerCycle == 0 || true) {
+          this.parkourSnowflakes();
+        }
+        setTimeout(() => {
+          this.animateOnTimer(time, ++i, changeOpacityPerCycle);
+        }, time);
       }
-      if (i % changeOpacityPerCycle == 0 || true) {
-        this.parkourSnowflakes();
-      }
-      setTimeout(() => {
-        this.animateOnTimer(time, ++i, changeOpacityPerCycle);
-      }, time);
     }
   },
   created() {
@@ -133,6 +135,14 @@ export default {
     
     if (this.$route.query.snowflakes) {
       this.Snowflake.number = this.$route.query.snowflakes;
+    }
+    window.onblur = () => {
+      this.Snowflake.isActive = false;
+    }
+    window.onfocus = () => {
+      this.Snowflake.isActive = true;
+      this.animateOnTimer(this.Snowflake.time);
+
     }
   },
   mounted() {
