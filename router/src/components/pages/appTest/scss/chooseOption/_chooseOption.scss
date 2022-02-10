@@ -1,13 +1,19 @@
 @import "./variables";
 @import "./mixin/mixin";
 
-.fail-choose {
-  @include choise($color: red, $scale: $failScale, $duration: $failDuration);
+.wasClicked.fail-choose {
+  @include choise(
+    $color: $failColor,
+    $scale: $failScale,
+    $duration: $failDuration,
+    $name: "fail"
+  );
 }
-.success-choose {
+.wasClicked.success-choose {
   @include choise(
     $color: $successColor,
     $scale: $successScale,
-    $duration: $successDuration
+    $duration: $successDuration,
+    $name: "success"
   );
 }

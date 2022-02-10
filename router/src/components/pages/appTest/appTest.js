@@ -15,16 +15,45 @@ export default {
       this.isQuestionShowed = true;
     },
     chooseOption(answerIndex) {
-      if (this.questions[this.currentQuestionIndex].options[answerIndex].isCorrect) {
-        alert('Верно!');
-      } else {
-        this.actionOnFail(answerIndex);
+      if (!this.questions[this.currentQuestionIndex].options[answerIndex].wasClicked) {
+        Vue.set(this.questions[this.currentQuestionIndex].options[answerIndex], 'wasClicked', true)
       }
     },
-    actionOnFail(i) {
-      this.$refs.options[i].classList.remove('fail-choose');
-      this.$refs.options[i].offsetHeight;
-      this.$refs.options[i].classList.add('fail-choose');
+    goBackQuestion() {
+      this.resetAnimationDuration();
+      if (this.currentQuestionIndex) {
+        this.currentQuestionIndex--;
+        this.$refs.goForward.removeAttribute('disabled');
+      }
+      this.updateButtons();      
+    },
+    goForwardQuestion() {
+      this.resetAnimationDuration();
+      if (this.currentQuestionIndex < this.questions.length - 1) {
+        this.currentQuestionIndex++;
+        this.$refs.goBack.removeAttribute('disabled');
+      }
+      this.updateButtons();
+    },
+    updateButtons() {
+      if (this.questions.length > 1) {
+          this.$refs.goForward.removeAttribute('disabled');
+          this.$refs.goBack.removeAttribute('disabled');
+
+        if (this.currentQuestionIndex == this.questions.length - 1) {
+          this.$refs.goForward.setAttribute('disabled', 'disabled');
+        }
+        if (this.currentQuestionIndex == 0) {
+          this.$refs.goBack.setAttribute('disabled', 'disabled');
+        }
+      }
+    },
+    resetAnimationDuration() {
+      this.questions[this.currentQuestionIndex].options.forEach(el => {
+        if (el.wasClicked) {
+          el.animationDuration = '0s';
+        }
+      });
     },
     fetchData() {
       let callback = (answer) => {
@@ -41,4 +70,7 @@ export default {
     this.fetchData();
     this.currentQuestionIndex = 0;
   },
+  mounted() {
+      this.updateButtons();
+  }
 };
