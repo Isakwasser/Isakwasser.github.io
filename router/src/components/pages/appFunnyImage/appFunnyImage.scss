@@ -1,0 +1,15 @@
+.app-funnyImage {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background-color: #efe;
+  img {
+    image-rendering: optimizeSpeed; /*                     */
+    image-rendering: -moz-crisp-edges; /* Firefox             */
+    image-rendering: -o-crisp-edges; /* Opera               */
+    image-rendering: -webkit-optimize-contrast; /* Chrome (and Safari) */
+    image-rendering: pixelated; /* Chrome as of 2019   */
+    image-rendering: optimize-contrast; /* CSS3 Proposed       */
+    -ms-interpolation-mode: nearest-neighbor; /* IE8+                */
+  }
+}

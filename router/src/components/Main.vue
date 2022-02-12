@@ -13,6 +13,16 @@
             Перейти на страницу теста
           </router-link>
         </div>
+        <div class="hrefs__item">
+          <router-link :to="{ name: 'appBuffer' }" class="href w-100">
+            Перейти на страницу буфера
+          </router-link>
+        </div>
+        <div class="hrefs__item">
+          <router-link :to="{ name: 'appFunnyImage' }" class="href w-100">
+            Перейти на страницу картинки
+          </router-link>
+        </div>
       </div>
     </div>
   </div>

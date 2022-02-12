@@ -1,27 +1,27 @@
 <template>
-  <div class="app404">
+  <div class="appOnProduction">
     <router-link :to="{ name: 'Main' }" class="goToMain"
       >Перейти на главную</router-link
     >
     <div class="box text-center">
-      <h1 class="title">ОШИБКА 404</h1>
-      <h5 class="undertitle">Страницы не существует</h5>
+      <h1 class="title">Страница в разработке</h1>
+      <h5 class="undertitle">Возможно она появится в ближайшем будущем?</h5>
     </div>
   </div>
 </template>
 
 <script>
 export default {
-  name: "app404",
+  name: "appOnProduction",
 };
 </script>
 
 <style lang="scss">
-.app404 {
+.appOnProduction {
   width: 100vw;
   height: 100vh;
-  background-color: #fbb;
-  background: radial-gradient(#f99, #f99fff);
+  background-color: #bbf;
+  background: radial-gradient(#bbf, #9ffff9);
   .box {
     position: absolute;
     top: 50vh;
