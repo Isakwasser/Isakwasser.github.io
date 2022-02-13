@@ -28,7 +28,21 @@ export default {
         })
         .then((data) => {
           let i = Math.floor(data.hits.length * Math.random());
-          this.currentBgUrl = data.hits[i].largeImageURL;
+          console.log(data.hits[i]);
+          // this.currentBgUrl = data.hits[i].largeImageURL;
+          this.currentBgUrl = data.hits[i].previewURL;
+
+          let img = document.createElement('img');
+          img.src = data.hits[i].largeImageURL;
+
+          img.onload = () => {
+            console.log("Установлено большое изображение");
+            this.currentBgUrl = data.hits[i].largeImageURL;
+          };
+
+          img.onerror = () => {
+            console.log("Ошибка во время загрузки изображения с высоким разрешением");
+          };
         })
         .catch((e) => {
           console.log(e);
