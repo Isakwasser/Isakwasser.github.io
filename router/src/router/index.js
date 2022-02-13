@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
+const Init = () => import('@/components/pages/appInit/appInit')
 const Main = () => import('@/components/Main')
 const appSnow = () => import('@/components/pages/appSnow/appSnow.vue')
 const appTest = () => import('@/components/pages/appTest/appTest.vue')
@@ -14,6 +15,11 @@ export default new Router({
   routes: [
     {
       path: '/',
+      name: 'Init',
+      component: Init,
+    },
+    {
+      path: '/main',
       name: 'Main',
       component: Main,
     },
