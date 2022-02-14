@@ -1,8 +1,8 @@
 <template>
   <div class="app-init">
     <div class="form">
-      <h3 class="form__title d-flex align-items-center justify-content-center">
-        Выберите цвет
+      <h3 class="form__title text-center">
+        Покажите, что вы не робот. Выберите
         <span
           class="check_btn form__item"
           :style="{ backgroundColor: correctOption }"
@@ -28,7 +28,7 @@ export default {
   name: "appInit",
   data() {
     return {
-      numOfOptions: 3,
+      numOfOptions: 10,
       options: [],
       correctOption: "",
     };
@@ -77,12 +77,32 @@ export default {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    .form__title {
+      vertical-align: middle;
+      .check_btn {
+        margin: 0;
+      }
+    }
     .form__item {
       width: 30px;
       height: 30px;
       margin: 5px;
       border-radius: 5px;
       border: 1px solid #555;
+      display: inline-block;
+      transition: all 0.3s;
+
+      &:not(.check_btn) {
+        cursor: pointer;
+
+        &:hover {
+          transform: scale(1.1);
+        }
+        &:active {
+          transition: unset;
+          border-color: #000;
+        }
+      }
     }
   }
 }

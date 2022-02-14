@@ -36,23 +36,27 @@ body,
   position: absolute;
   top: 0;
   left: 100vw;
+  width: 100vw;
 }
 .slide-left-enter-to,
 .slide-left-leave {
   position: absolute;
   top: 0;
   left: 0;
+  width: 100vw;
 }
 /* анимация появления элемента активна */
 .slide-left-enter-active,
 .slide-left-leave-active {
   transition: all 0.5s;
   opacity: 1;
+  width: 100vw;
 }
 .slide-left-leave-to {
   position: absolute;
   top: 0;
   left: -100vw;
+  width: 100vw;
 }
 
 .slide-right-enter {
@@ -60,22 +64,26 @@ body,
   position: absolute;
   top: 0;
   left: -100vw;
+  width: 100vw;
 }
 .slide-right-enter-to,
 .slide-right-leave {
   position: absolute;
   top: 0;
   left: 0;
+  width: 100vw;
 }
 /* анимация появления элемента активна */
 .slide-right-enter-active,
 .slide-right-leave-active {
   transition: all 0.5s;
   opacity: 1;
+  width: 100vw;
 }
 .slide-right-leave-to {
   position: absolute;
   top: 0;
   left: 100vw;
+  width: 100vw;
 }
 </style>
