@@ -23,6 +23,11 @@
             Перейти на страницу картинки
           </router-link>
         </div>
+        <div class="hrefs__item">
+          <router-link :to="{ name: 'appGames' }" class="href w-100">
+            Перейти на страницу игр
+          </router-link>
+        </div>
       </div>
     </div>
   </div>

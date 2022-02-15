@@ -1,0 +1,35 @@
+.app-games {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  display: flex;
+  .linker {
+    width: 50px;
+    padding: 20px 0;
+    margin-right: -10px;
+    background-color: #000;
+    color: #fff;
+    border-radius: 0 10px 10px 0;
+    overflow: hidden;
+    overflow-y: auto;
+
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    .oneHref {
+      color: blue;
+      display: flex;
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      align-items: center;
+      justify-content: center;
+      background-color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+    }
+  }
+}
