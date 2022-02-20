@@ -11,6 +11,7 @@ const appOnProduction = () => import('@/components/pages/appOnProduction/appOnPr
 const appGames = () => import('@/components/pages/appGames/appGames.vue')
 const appGames_init = () => import('@/components/pages/appGames/appInit/appInit.vue')
 const appGames_shooting = () => import('@/components/pages/appGames/appShooting/appShooting.vue')
+const appPlace = () => import('@/components/pages/appPlace/appPlace.vue')
 
 Vue.use(Router)
 
@@ -62,6 +63,11 @@ export default new Router({
           component: appGames_shooting,
         },
       ]
+    },
+    {
+      path: '/app/place',
+      name: 'appPlace',
+      component: appPlace,
     },
     {
       path: '*',

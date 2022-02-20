@@ -28,6 +28,11 @@
             Перейти на страницу игр
           </router-link>
         </div>
+        <div class="hrefs__item">
+          <router-link :to="{ name: 'appPlace' }" class="href w-100">
+            Узнать местоположение
+          </router-link>
+        </div>
       </div>
     </div>
   </div>
