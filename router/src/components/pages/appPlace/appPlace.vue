@@ -3,7 +3,12 @@
     <router-link :to="{ name: 'Main' }" class="goToMain"
       >Перейти на главную</router-link
     >
-    <div class="bg"></div>
+    <div
+      class="bg"
+      :style="{
+        backgroundImage: 'url(' + require('@/assets/img/earth.jpg') + ')',
+      }"
+    ></div>
     <div class="content">
       <div
         class="

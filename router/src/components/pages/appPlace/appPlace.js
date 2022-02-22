@@ -1,3 +1,5 @@
+let bgImage = import('./img/earth.jpg');
+
 export default {
   name: "appPlace",
   data() {
@@ -5,6 +7,7 @@ export default {
       navigator: undefined,
       ipwhois: undefined,
       ipwhois__more: false,
+      bgImage: bgImage,
     };
   },
   methods: {
