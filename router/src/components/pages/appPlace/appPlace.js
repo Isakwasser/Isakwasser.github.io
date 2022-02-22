@@ -15,7 +15,7 @@ export default {
       });
     },
     getIpPosition() {
-      fetch('http://ipwhois.app/json/')
+      fetch('https://ipwhois.app/json/')
         .then(dataResponse => {
           return dataResponse.json();
         })
