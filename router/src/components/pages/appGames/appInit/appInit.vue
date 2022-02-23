@@ -14,21 +14,66 @@
       <div class="row">
         <router-link
           :to="{ name: 'appGames_shooting' }"
-          class="
-            item
-            col-sm-6 col-md-4 col-xl-3 col-xxl-2
-            d-flex
-            flex-column
-            justify-content-between
-            position-relative
-            overflow-hidden
-          "
-          :style="{
-            backgroundImage: `url(${bgImage[0]})`,
-          }"
+          class="col-sm-6 col-md-4 col-xl-3 col-xxl-2"
         >
-          <div class="shadow position-absolute top-0 start-0 w-100 h-100"></div>
-          <span></span><span class="item__name">Shooter</span><span></span>
+          <div class="position-relative overflow-hidden h-100 w-100 item">
+            <div
+              class="position-absolute top-0 start-0 w-100 h-100"
+              :style="{
+                backgroundImage:
+                  'url(' +
+                  require('@/assets/img/appShootingPreview.jpeg') +
+                  ')',
+              }"
+              style="background-size: cover; background-position: center"
+            ></div>
+            <div
+              class="
+                position-relative
+                d-flex
+                flex-column
+                justify-content-between
+                h-100
+              "
+            >
+              <span></span><span class="item__name">Shooting</span><span></span>
+            </div>
+            <div
+              class="shadow position-absolute top-0 start-0 w-100 h-100"
+            ></div>
+          </div>
+        </router-link>
+        <router-link
+          :to="{ name: 'appGames_ticTacToe' }"
+          class="col-sm-6 col-md-4 col-xl-3 col-xxl-2"
+        >
+          <div class="position-relative overflow-hidden h-100 w-100 item">
+            <div
+              class="position-absolute top-0 start-0 w-100 h-100"
+              :style="{
+                backgroundImage:
+                  'url(' +
+                  require('@/assets/img/appTicTacToePreview.jpg') +
+                  ')',
+              }"
+              style="background-size: cover; background-position: center"
+            ></div>
+            <div
+              class="
+                position-relative
+                d-flex
+                flex-column
+                justify-content-between
+                h-100
+              "
+            >
+              <span></span><span class="item__name">Крестики-нолики</span
+              ><span></span>
+            </div>
+            <div
+              class="shadow position-absolute top-0 start-0 w-100 h-100"
+            ></div>
+          </div>
         </router-link>
       </div>
     </div>
@@ -38,7 +83,7 @@
 <style lang="scss">
 .appGamesInit {
   .item {
-    height: 100px;
+    min-height: 100px;
     border-radius: 10px;
     background-color: rgba(255, 0, 0, 0.1);
     background-repeat: no-repeat;

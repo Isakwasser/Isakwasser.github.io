@@ -3,7 +3,7 @@
     <div class="linker">
       <div class="link">
         <router-link
-          :to="{ name: 'Main' }"
+          :to="{ name: $route.name == 'appGames_init' ? 'Main' : 'appGames' }"
           title="Назад на главную"
           class="oneHref"
           >Н</router-link

@@ -1,0 +1,54 @@
+.app-TicTacToe {
+  .gameTable {
+    width: 154px;
+    .item {
+      width: 50px;
+      height: 50px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      background-size: cover;
+      border: 1px solid black;
+    }
+  }
+  .whoIsNext {
+    &__option,
+    &__arrow {
+      height: 30px;
+    }
+    &__arrow {
+      transition: all 0.3s linear;
+      &-rotate {
+        transform: rotate(180deg);
+      }
+    }
+  }
+  .win_counter {
+    width: 100px;
+    height: 150px;
+    overflow: auto;
+    img {
+      height: 25px;
+    }
+
+    scrollbar-width: thin;
+    scrollbar-color: transparent transparent;
+
+    &::-webkit-scrollbar {
+      height: 0;
+      width: 0;
+    }
+    &::-webkit-scrollbar-track {
+      background: transparent;
+    }
+    &::-webkit-scrollbar-thumb {
+      background-color: transparent;
+      border-radius: 0;
+    }
+  }
+  button {
+    box-shadow: none !important;
+  }
+}
