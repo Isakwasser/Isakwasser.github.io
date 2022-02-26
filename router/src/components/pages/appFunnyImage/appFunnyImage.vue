@@ -5,7 +5,9 @@
     >
     <div class="container p-5">
       <div class="input-group mb-3">
-        <label class="input-group-text" for="inputGroupFile01">Upload</label>
+        <button class="input-group-text" @click="useDefaultImage">
+          Использовать встроенное изображение
+        </button>
         <input
           type="file"
           class="form-control"
@@ -14,15 +16,26 @@
           ref="fileIn"
         />
       </div>
-      <div class="row">
+      <div class="row images" v-show="isImagesShowed">
         <div class="col-6">
-          <img class="w-100" ref="showImage" />
+          <div class="ratio ratio-1x1" ref="showImage"></div>
         </div>
         <div class="col-6">
-          <img class="w-100" ref="showChangedImage" />
+          <div class="ratio ratio-1x1 bg-overlay" ref="showOverlayImage"></div>
+        </div>
+        <div class="col-6">
+          <div class="ratio ratio-1x1 bg-overlay" ref="showCanvasImage"></div>
+        </div>
+        <div class="col-6">
+          <div class="ratio ratio-1x1 bg-retro" ref="showRetroImage"></div>
+        </div>
+        <div class="col-6">
+          <div class="ratio ratio-1x1 bg-meshed" ref="showMeshedImage"></div>
+        </div>
+        <div class="col-6">
+          <div class="ratio ratio-1x1 bg-diff" ref="showDiffImage"></div>
         </div>
       </div>
-      <input type="number" v-model="currentDeleted" />
     </div>
   </div>
 </template>

@@ -1,15 +1,29 @@
 .app-funnyImage {
   width: 100vw;
   height: 100vh;
-  overflow: hidden;
+  overflow-x: hidden;
   background-color: #efe;
-  img {
-    image-rendering: optimizeSpeed; /*                     */
-    image-rendering: -moz-crisp-edges; /* Firefox             */
-    image-rendering: -o-crisp-edges; /* Opera               */
-    image-rendering: -webkit-optimize-contrast; /* Chrome (and Safari) */
-    image-rendering: pixelated; /* Chrome as of 2019   */
-    image-rendering: optimize-contrast; /* CSS3 Proposed       */
-    -ms-interpolation-mode: nearest-neighbor; /* IE8+                */
+  .images {
+    .ratio {
+      background-size: cover, auto;
+      background-position: center;
+      &.bg-overlay {
+        background-blend-mode: overlay;
+      }
+      &.bg-retro {
+        background-blend-mode: overlay;
+        background-size: cover, 60px 60px;
+        background-position: center, 5px 5px;
+        background-blend-mode: hard-light;
+      }
+      &.bg-meshed {
+        background-size: cover, 4px 4px;
+        background-blend-mode: darken;
+      }
+      &.bg-diff {
+        background-blend-mode: difference;
+        background-size: cover, cover;
+      }
+    }
   }
 }
