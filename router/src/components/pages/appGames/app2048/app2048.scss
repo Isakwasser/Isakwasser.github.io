@@ -1,0 +1,26 @@
+.app-2048 {
+  .game {
+    &__square {
+      max-width: 300px;
+      line-height: 0;
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+    &__cell {
+      width: 18%;
+      border: 1px solid black;
+      border-radius: 4px;
+      margin: 1%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      > * {
+        position: relative;
+        width: auto;
+      }
+      font-weight: bold;
+    }
+  }
+}

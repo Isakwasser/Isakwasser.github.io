@@ -12,6 +12,7 @@ const appGames = () => import('@/components/pages/appGames/appGames.vue')
 const appGames_init = () => import('@/components/pages/appGames/appInit/appInit.vue')
 const appGames_shooting = () => import('@/components/pages/appGames/appShooting/appShooting.vue')
 const appGames_ticTacToe = () => import('@/components/pages/appGames/appTicTacToe/appTicTacToe.vue')
+const appGames_2048 = () => import('@/components/pages/appGames/app2048/app2048.vue')
 const appPlace = () => import('@/components/pages/appPlace/appPlace.vue')
 
 Vue.use(Router)
@@ -67,6 +68,11 @@ export default new Router({
           path: 'tic-tac-toe',
           name: 'appGames_ticTacToe',
           component: appGames_ticTacToe,
+        },
+        {
+          path: '2048',
+          name: 'appGames_2048',
+          component: appGames_2048,
         },
       ]
     },

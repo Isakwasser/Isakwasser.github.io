@@ -4,7 +4,9 @@ import 'bootstrap/dist/css/bootstrap.css';
 import Vue from 'vue'
 import App from './App'
 import router from './router'
-window.$ = window.jQuery = import('jquery');
+import('jquery').then(data => {
+  window.$ = window.jQuery = data;
+});
 
 Vue.config.productionTip = false
 
