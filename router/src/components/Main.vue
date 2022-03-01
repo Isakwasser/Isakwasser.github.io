@@ -33,6 +33,11 @@
             Узнать местоположение
           </router-link>
         </div>
+        <div class="hrefs__item">
+          <router-link :to="{ name: 'appNews' }" class="href w-100">
+            Новости
+          </router-link>
+        </div>
       </div>
     </div>
   </div>

@@ -14,6 +14,7 @@ const appGames_shooting = () => import('@/components/pages/appGames/appShooting/
 const appGames_ticTacToe = () => import('@/components/pages/appGames/appTicTacToe/appTicTacToe.vue')
 const appGames_2048 = () => import('@/components/pages/appGames/app2048/app2048.vue')
 const appPlace = () => import('@/components/pages/appPlace/appPlace.vue')
+const appNews = () => import('@/components/pages/appNews/appNews.vue')
 
 Vue.use(Router)
 
@@ -80,6 +81,11 @@ export default new Router({
       path: '/app/place',
       name: 'appPlace',
       component: appPlace,
+    },
+    {
+      path: '/app/news',
+      name: 'appNews',
+      component: appNews,
     },
     {
       path: '*',
