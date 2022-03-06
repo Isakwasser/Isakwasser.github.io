@@ -19,6 +19,12 @@
         <div v-if="decoded">
           Декодированная последовательность: {{ decoded }}
         </div>
+        <div class="d-flex">
+          <label class="col-2">Время для второго сигнала:</label>
+          <div class="">
+            <input type="text" class="" v-model="timeForSecondSignal" />
+          </div>
+        </div>
         <button @click="calculateForSecond">
           Рассчитать спектр по алгоритму Герцеля сигнала со второго задания
         </button>

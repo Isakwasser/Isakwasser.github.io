@@ -1,4 +1,4 @@
-function getCodedSignal2(time = 0.01, fs = 10000) {
+function getCodedSignal2(time = 0.002, fs = 100000) {
     /*
     * Функция для получения закодированного тональным набором сигнала
     * nums - массив чисел
@@ -12,7 +12,6 @@ function getCodedSignal2(time = 0.01, fs = 10000) {
     let currentTime = 0,
         f1 = 30000,
         f2 = 2250;
-    time = 0.002;
 
     while (currentTime <= time) {
         ans.signal.push(Math.sin(2 * Math.PI * f1 * currentTime) * (1 + 0.8 * Math.sin(2 * Math.PI * f2 * currentTime)) );

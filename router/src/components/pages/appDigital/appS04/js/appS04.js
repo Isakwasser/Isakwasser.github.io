@@ -13,6 +13,7 @@ export default {
             inputArray: "8",
             fs: 10000,
             decoded: '',
+            timeForSecondSignal: 0.01,
         }
     },
     methods: {
@@ -46,7 +47,7 @@ export default {
         },
         calculateForSecond() {
             let fs = 100000;
-            let data = getCodedSignal2(1, fs);
+            let data = getCodedSignal2(this.timeForSecondSignal, fs);
             this.$refs.appDigital__initialSignal2.style.display = 'block';
             showGraph('appDigital__initialSignal2', data.time, data.signal);
 
@@ -58,7 +59,7 @@ export default {
             // добавление шума к сигналу
             let signal = [];
             for (let i = 0; i < data.signal.length; i++) {
-                signal.push(data.signal[i]+0.8*randn_bm());
+                signal.push(data.signal[i]+randn_bm());
             }
             this.$refs.appDigital__initialSignal2_noise.style.display = 'block';
             showGraph('appDigital__initialSignal2_noise', data.time, signal);
