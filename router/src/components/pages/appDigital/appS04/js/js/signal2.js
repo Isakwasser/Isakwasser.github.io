@@ -15,7 +15,7 @@ function getCodedSignal2(time = 0.01, fs = 10000) {
     time = 0.002;
 
     while (currentTime <= time) {
-        ans.signal.push(Math.sin(2 * Math.PI * f1 * currentTime) * (1 + 0.5 * Math.sin(2 * Math.PI * f2 * currentTime)) + randn_bm());
+        ans.signal.push(Math.sin(2 * Math.PI * f1 * currentTime) * (1 + 0.8 * Math.sin(2 * Math.PI * f2 * currentTime)) );
         ans.time.push(currentTime);
 
         currentTime += 1 / fs;

@@ -20,15 +20,19 @@ export default {
             this.$refs.appDigital__initialSignal__fft.style.display = 'none';
             this.$refs.appDigital__initialSignal__gercel.style.display = 'none';
             this.$refs.spinner.style.display = 'none';
+            this.$refs.appDigital__initialSignal2.style.display = 'none';
+            this.$refs.appDigital__initialSignal2_fft.style.display = 'none';
+            this.$refs.appDigital__initialSignal2_noise.style.display = 'none';
+            this.$refs.appDigital__initialSignal2_noise_fft.style.display = 'none';
         },
         initSignal() {
             let data = getCodedSignal(this.inputArray, this.fs);
             showGraph('appDigital__initialSignal', data.time, data.signal);
 
             // БПФ
-            let data_fft = fft(data.signal, this.fs);
-            this.$refs.appDigital__initialSignal__fft.style.display = 'block';
-            showGraph('appDigital__initialSignal__fft', data_fft.frequency, data_fft.amplitude);
+            // let data_fft = fft(data.signal, this.fs);
+            // this.$refs.appDigital__initialSignal__fft.style.display = 'block';
+            // showGraph('appDigital__initialSignal__fft', data_fft.frequency, data_fft.amplitude);
 
             // алгоритм Герцеля
             let data_gercel = gercel(data.signal, this.fs);
@@ -41,11 +45,35 @@ export default {
             this.decoded = data_gercel_decoded;
         },
         calculateForSecond() {
-            console.log('Начало')
-            let data = getCodedSignal2(1, 100000);
-            console.log(data)
+            let fs = 100000;
+            let data = getCodedSignal2(1, fs);
+            this.$refs.appDigital__initialSignal2.style.display = 'block';
             showGraph('appDigital__initialSignal2', data.time, data.signal);
-            console.log('Конец')
+
+            // алгоритм Герцеля
+            let data_gercel1 = gercel(data.signal, fs);
+            this.$refs.appDigital__initialSignal2_fft.style.display = 'block';
+            showGraph('appDigital__initialSignal2_fft', data_gercel1.frequency, data_gercel1.amplitude);
+
+            // добавление шума к сигналу
+            let signal = [];
+            for (let i = 0; i < data.signal.length; i++) {
+                signal.push(data.signal[i]+0.8*randn_bm());
+            }
+            this.$refs.appDigital__initialSignal2_noise.style.display = 'block';
+            showGraph('appDigital__initialSignal2_noise', data.time, signal);
+
+            // алгоритм Герцеля
+            let data_gercel = gercel(signal, fs);
+            this.$refs.appDigital__initialSignal2_noise_fft.style.display = 'block';
+            showGraph('appDigital__initialSignal2_noise_fft', data_gercel.frequency, data_gercel.amplitude);
+
+            function randn_bm() {
+                var u = 0, v = 0;
+                while(u === 0) u = Math.random(); //Converting [0,1) to (0,1)
+                while(v === 0) v = Math.random();
+                return Math.sqrt( -2.0 * Math.log( u ) ) * Math.cos( 2.0 * Math.PI * v );
+            }
         },
         calculate() {
             console.log('wait');

@@ -40,9 +40,22 @@
           <h5>Спектр исходного сигнала Герцель</h5>
           <div id="appDigital__initialSignal__gercel"></div>
         </div>
-        <div class="col-lg-6" ref="appDigital__initialSignal__gercel">
-          <h5>Сигнал из второго задания</h5>
+        <div class="col-12"><hr /></div>
+        <div class="col-lg-6" ref="appDigital__initialSignal2">
+          <h5>Сигнал из второго задания без шума</h5>
           <div id="appDigital__initialSignal2"></div>
+        </div>
+        <div class="col-lg-6" ref="appDigital__initialSignal2_fft">
+          <h5>Спектр сигнала из второго задания без шума</h5>
+          <div id="appDigital__initialSignal2_fft"></div>
+        </div>
+        <div class="col-lg-6" ref="appDigital__initialSignal2_noise">
+          <h5>Сигнал из второго задания с шумом</h5>
+          <div id="appDigital__initialSignal2_noise"></div>
+        </div>
+        <div class="col-lg-6" ref="appDigital__initialSignal2_noise_fft">
+          <h5>Алгоритм Герцеля для сигнала с шумом из второго задания</h5>
+          <div id="appDigital__initialSignal2_noise_fft"></div>
         </div>
       </div>
     </div>
