@@ -24,7 +24,7 @@
           </router-link>
         </div>
         <div class="hrefs__item">
-          <router-link :to="{ name: 'appGames' }" class="href w-100">
+          <router-link :to="{ name: 'appGames_init' }" class="href w-100">
             Перейти на страницу игр
           </router-link>
         </div>
