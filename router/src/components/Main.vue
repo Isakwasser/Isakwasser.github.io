@@ -38,6 +38,11 @@
             Новости
           </router-link>
         </div>
+        <div class="hrefs__item">
+          <router-link :to="{ name: 'appDigital_init' }" class="href w-100">
+            Цифровая обработка сигналов
+          </router-link>
+        </div>
       </div>
     </div>
   </div>

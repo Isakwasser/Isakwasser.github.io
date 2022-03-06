@@ -15,6 +15,9 @@ const appGames_ticTacToe = () => import('@/components/pages/appGames/appTicTacTo
 const appGames_2048 = () => import('@/components/pages/appGames/app2048/app2048.vue')
 const appPlace = () => import('@/components/pages/appPlace/appPlace.vue')
 const appNews = () => import('@/components/pages/appNews/appNews.vue')
+const appDigital = () => import('@/components/pages/appDigital/appDigital.vue')
+const appDigital_init = () => import('@/components/pages/appDigital/appInit/appInit.vue')
+const appDigital_s04 = () => import('@/components/pages/appDigital/appS04/appS04.vue')
 
 Vue.use(Router)
 
@@ -86,6 +89,23 @@ export default new Router({
       path: '/app/news',
       name: 'appNews',
       component: appNews,
+    },
+    {
+      path: '/digital',
+      name: 'appDigital',
+      component: appDigital,
+      children: [
+        {
+          path: '',
+          name: 'appDigital_init',
+          component: appDigital_init,
+        },
+        {
+          path: 's-04',
+          name: 'appDigital_s04',
+          component: appDigital_s04,
+        },
+      ]
     },
     {
       path: '*',

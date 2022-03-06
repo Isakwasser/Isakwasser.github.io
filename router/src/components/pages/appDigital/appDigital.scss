@@ -1,0 +1,31 @@
+.app-digital {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  display: flex;
+  .linker {
+    background: #000;
+    color: white;
+    font-weight: bold;
+    .link {
+      a {
+        display: block;
+        padding: 5px 30px;
+        color: inherit;
+        text-decoration: none;
+        transition: all 0.2s;
+        white-space: nowrap;
+        &:hover {
+          background-color: rgba(255, 255, 255, 0.5);
+        }
+      }
+    }
+  }
+  &_content {
+    flex-grow: 1;
+    box-shadow: black 0px 0px 10px inset;
+  }
+}
