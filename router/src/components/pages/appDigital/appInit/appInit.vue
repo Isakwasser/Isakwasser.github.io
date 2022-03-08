@@ -15,6 +15,18 @@
             >
           </div>
         </div>
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+          <div class="appDigitalInit__link">
+            <router-link
+              :to="{
+                name: 'appDigital_s05',
+              }"
+              title="Назад на главную"
+              class="link"
+              >Самостоятельная работа №5</router-link
+            >
+          </div>
+        </div>
       </div>
     </div>
   </div>
