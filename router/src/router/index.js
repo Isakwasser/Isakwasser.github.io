@@ -19,6 +19,8 @@ const appDigital = () => import('@/components/pages/appDigital/appDigital.vue')
 const appDigital_init = () => import('@/components/pages/appDigital/appInit/appInit.vue')
 const appDigital_s04 = () => import('@/components/pages/appDigital/appS04/appS04.vue')
 const appDigital_s05 = () => import('@/components/pages/appDigital/appS05/appS05.vue')
+const appDigital_s06 = () => import('@/components/pages/appDigital/appS06/appS06.vue')
+const appDigital_s07 = () => import('@/components/pages/appDigital/appS07/appS07.vue')
 
 Vue.use(Router)
 
@@ -56,7 +58,6 @@ export default new Router({
     },
     {
       path: '/games',
-      name: 'appGames',
       component: appGames,
       children: [
         {
@@ -93,7 +94,6 @@ export default new Router({
     },
     {
       path: '/digital',
-      name: 'appDigital',
       component: appDigital,
       children: [
         {
@@ -110,6 +110,16 @@ export default new Router({
           path: 's-05',
           name: 'appDigital_s05',
           component: appDigital_s05,
+        },
+        {
+          path: 's-06',
+          name: 'appDigital_s06',
+          component: appOnProduction,
+        },
+        {
+          path: 's-07',
+          name: 'appDigital_s07',
+          component: appDigital_s07,
         },
       ]
     },
