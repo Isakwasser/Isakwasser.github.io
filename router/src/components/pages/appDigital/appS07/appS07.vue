@@ -27,7 +27,24 @@
         </div>
         <div class="step__content">
           <div class="step__descryption">
-            <button @click="getSpectrogram">Получить спектрограмму</button>
+            <button @click="step1">Получить спектрограмму</button>
+            <button @click="test">Test</button>
+            <button ref="stop">Stop</button>
+          </div>
+          <div class="step__action" style="background: #3b4652">
+            <canvas id="spectrogram"></canvas>
+          </div>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step__num">
+          <div class="num">3</div>
+        </div>
+        <div class="step__content">
+          <div class="step__descryption">
+            <button @click="filter">Фильтр</button>
+            <button ref="filter_stop">Stop</button>
           </div>
           <div class="step__action"></div>
         </div>

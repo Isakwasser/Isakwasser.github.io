@@ -1,116 +1,206 @@
+import fft from "./js/fft";
+import gercel from './js/gercel';
+
 export default {
     data() {
         return {
-           
+            initAudioBuffer: undefined,
         }
     },
     methods: {
-        getSpectrogram() {
-            console.log(1);
+        step1() {
             // create the audio context (chrome only for now)
-            var context = new (AudioContext||webkitAudioContext)();
-            var audioBuffer;
-            var sourceNode;
-        
-            // load the sound
-            setupAudioNodes();
-            loadSound(this.$refs.audio.src);
+            let context = new (AudioContext || webkitAudioContext)();
 
+            let request = new XMLHttpRequest();
+            request.open('GET', this.$refs.audio.src, true);
+            request.responseType = 'arraybuffer';
+    
+            // When loaded decode the data
+            request.onload = ()=> {
+                // decode the data
+                context.decodeAudioData(request.response, (buffer) => {
+                    this.initAudioBuffer = buffer;
+                    let float32Array = buffer.getChannelData(0);
+                    console.log('float32Array', float32Array)
+
+                    // this.playFloat32Array(buffer);
+
+                    this.getSpectrogram();
+
+                }, (err)=>{console.log(`Decode error: ${err}`)});
+            }
+            request.send();
+        },
+        getSpectrogram() {
+            console.log(this.initAudioBuffer);
+            let context = new (AudioContext || webkitAudioContext)();
             let analyser = context.createAnalyser();
-            analyser.smoothingTimeConstant = 0;
-            analyser.fftSize = 1024;
+            // analyser.smoothingTimeConstant = 0;
+            
+            console.log(this.initAudioBuffer);
+            analyser.fftSize = 256;
+            let realAudioInput = context.createMediaElementSource(this.$refs.audio)
+            
 
-            // create a temp canvas we use for copying and scrolling
-            var tempCanvas = document.createElement("canvas"),
-                tempCtx = tempCanvas.getContext("2d");
-            tempCanvas.width=800;
-            tempCanvas.height=512;
-        
-            // used for color distribution
-            var hot = new chroma.ColorScale({
-                colors:['#000000', '#ff0000', '#ffff00', '#ffffff'],
-                positions:[0, .25, .75, 1],
-                mode:'rgb',
-                limits:[0, 300]
-            });
-        
-        
-            // when the javascript node is called
-            // we use information from the analyzer node
-            // to draw the volume
-            javascriptNode.onaudioprocess = function () {
-        
-                // get the average for the first channel
-                var array = new Uint8Array(analyser.frequencyBinCount);
-                analyser.getByteFrequencyData(array);
-        
-                // draw the spectrogram
-                if (sourceNode.playbackState == sourceNode.PLAYING_STATE) {
-                    drawSpectrogram(array);
+            let bufferLength = analyser.frequencyBinCount;
+            let frequencyData = new Uint8Array(bufferLength);
+            let canvas = document.getElementById('spectrogram');
+            realAudioInput.connect(analyser);
+            analyser.connect(context.destination);
+            canvas.width = bufferLength;
+            canvas.height = window.innerHeight;
+
+            console.log(1)
+
+            let canvasCtx = canvas.getContext('2d');
+
+            function draw() {
+                let imageData = canvasCtx.getImageData(
+                    0,
+                    0,
+                    canvas.width,
+                    canvas.height + 1
+                );
+                analyser.getByteFrequencyData(frequencyData);
+
+                let y = canvas.height - 1;
+                for (let x = 0; x < bufferLength; x++) {
+                    let offset = (y * imageData.width + x) * 4;
+                    imageData.data[offset] = 255; // Red
+                    imageData.data[offset + 1] = 255; // Green
+                    imageData.data[offset + 2] = 255; // Blue
+                    imageData.data[offset + 3] = frequencyData[x]; // Alpha
                 }
+
+                canvasCtx.putImageData(imageData, 0, -1);
+
+                requestAnimationFrame(draw);
             }
-        
-            function drawSpectrogram(array) {
-        
-                // copy the current canvas onto the temp canvas
-                var canvas = document.getElementById("canvas");
-        
-                tempCtx.drawImage(canvas, 0, 0, 800, 512);
-        
-                // iterate over the elements from the array
-                for (var i = 0; i < array.length; i++) {
-                    // draw each pixel with the specific color
-                    var value = array[i];
-                    ctx.fillStyle = hot.getColor(value).hex();
-        
-                    // draw the line at the right side of the canvas
-                    ctx.fillRect(800 - 1, 512 - i, 1, 1);
+
+            draw();
+        },
+        playFloat32Array(myArrayBuffer) {
+            let audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+
+            // just random values between -1.0 and 1.0
+            // This gives us the actual array that contains the data
+            let nowBuffering = myArrayBuffer.getChannelData(0);
+            for (var i = 0; i < myArrayBuffer.length; i++) {
+                // Math.random() is in [0; 1.0]
+                // audio needs to be in [-1.0; 1.0]
+                // nowBuffering[i] = Math.random()*2-1;
+            }
+                
+            
+
+            // Get an AudioBufferSourceNode.
+            // This is the AudioNode to use when we want to play an AudioBuffer
+            let source = audioCtx.createBufferSource();
+
+            // set the buffer in the AudioBufferSourceNode
+            source.buffer = myArrayBuffer;
+
+            // connect the AudioBufferSourceNode to the
+            // destination so we can hear the sound
+            source.connect(audioCtx.destination);
+
+            // start the source playing
+            source.start();
+            this.$refs.stop.onclick = () => {
+                source.stop();
+            }
+
+        },
+        test() {
+            const audioCtx = new AudioContext();
+
+            //Create audio source
+            //Here, we use an audio file, but this could also be e.g. microphone input
+            const audioEle = new Audio();
+            audioEle.src = '/static/media/44100music.91d7798.wav';//insert file name here
+            audioEle.autoplay = true;
+            audioEle.preload = 'auto';
+            const audioSourceNode = audioCtx.createMediaElementSource(audioEle);
+
+            //Create analyser node
+            const analyserNode = audioCtx.createAnalyser();
+            analyserNode.fftSize = 8192;
+            const bufferLength = analyserNode.frequencyBinCount;
+            // const dataArray = new Float32Array(bufferLength);
+            const dataArray = new Uint8Array(bufferLength);
+
+            //Set up audio node network
+            audioSourceNode.connect(analyserNode);
+            analyserNode.connect(audioCtx.destination);
+
+            //Create 2D canvas
+            const canvas = document.getElementById('spectrogram');
+            // canvas.style.position = 'absolute';
+            canvas.style.position = 'relative';
+            // canvas.style.top = 0;
+            // canvas.style.left = 0;
+            canvas.width = window.innerWidth;
+            canvas.height = bufferLength;
+            // document.body.appendChild(canvas);
+            const canvasCtx = canvas.getContext('2d');
+            canvasCtx.clearRect(0, 0, canvas.width, canvas.height);
+            // let max = -10000,min=10000;
+            canvasCtx.fillStyle = 'rgb(0, 0, 0)';
+            canvasCtx.fillRect(0, 0, canvas.width, canvas.height);
+            function draw() {
+                let imageData = canvasCtx.getImageData(
+                    0,
+                    0,
+                    canvas.width,
+                    canvas.height,
+                );
+
+                //Get spectrum data
+                analyserNode.getByteFrequencyData(dataArray);
+
+                //Draw black background
+                canvasCtx.fillStyle = 'rgb(0, 0, 0)';
+                canvasCtx.fillRect(0, 0, canvas.width, canvas.height);
+                canvasCtx.putImageData(imageData, 2, 0);
+
+                //Draw spectrum
+                // const barHeight = (canvas.height / bufferLength) * 2.5;
+                let posY = canvas.height;
+                for (let i = 0; i < bufferLength; i++) {
+                    // const barOpacity = (dataArray[i]) * 2;
+                    // max = dataArray[i] > max ? dataArray[i] : max;
+                    // min = dataArray[i]+140 < min ? dataArray[i]+140 : min;
+                    // console.log(min,max)
+                    const barOpacity = dataArray[i]/255;
+                    canvasCtx.fillStyle = 'rgba(255, 255, 255,'+barOpacity+')';
+                    // canvasCtx.fillRect(posY, canvas.height - barHeight / 2, barWidth, barHeight / 2);
+                    canvasCtx.fillRect(0, posY, 4, 1);
+                    posY -= 1;
                 }
-        
-                // set translate on the canvas
-                ctx.translate(-1, 0);
-                // draw the copied image
-                ctx.drawImage(tempCanvas, 0, 0, 800, 512, 0, 0, 800, 512);
-        
-                // reset the transformation matrix
-                ctx.setTransform(1, 0, 0, 1, 0, 0);
-            }
-        
-            function setupAudioNodes() {
-                // create a buffer source node
-                sourceNode = context.createBufferSource();
-                // and connect to destination
-                sourceNode.connect(context.destination);
-            }
-        
-            // load the specified sound
-            function loadSound(url) {
-                var request = new XMLHttpRequest();
-                request.open('GET', url, true);
-                request.responseType = 'arraybuffer';
-        
-                // When loaded decode the data
-                request.onload = function() {
-        
-                    // decode the data
-                    context.decodeAudioData(request.response, function(buffer) {
-                        // when the audio is decoded play the sound
-                        // playSound(buffer);
-                    }, onError);
-                }
-                request.send();
-            }
-        
-        
-            function playSound(buffer) {
-                sourceNode.buffer = buffer;
-                sourceNode.noteOn(0);
-            }
-        
-            // log if an error occurs
-            function onError(e) {
-                console.log(e);
-            }
+                //Schedule next redraw
+                requestAnimationFrame(draw);
+            };
+
+            draw();
+        },
+        filter() {
+            let context = new (AudioContext || webkitAudioContext)();
+            let source = context.createMediaElementSource(this.$refs.audio);
+            let filter = context.createBiquadFilter();
+
+            source.connect(filter);
+            filter.connect(context.destination);
+
+            filter.frequency.value = 10000;
+            filter.gain.value = 30;
+            // "lowpass", "highpass", "bandpass", "lowshelf", "highshelf", "peaking", "notch", "allpass"
+            filter.type = "highpass";
+
+            filter.frequency.setValueAtTime(0.0, context.currentTime);
+            filter.frequency.linearRampToValueAtTime(120.0, context.currentTime + 10);
+            
+            console.log('filter end')
         },
     },
     mounted() {
