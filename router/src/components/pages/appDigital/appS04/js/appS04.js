@@ -30,11 +30,6 @@ export default {
             let data = getCodedSignal(this.inputArray, this.fs);
             showGraph('appDigital__initialSignal', data.time, data.signal);
 
-            // БПФ
-            // let data_fft = fft(data.signal, this.fs);
-            // this.$refs.appDigital__initialSignal__fft.style.display = 'block';
-            // showGraph('appDigital__initialSignal__fft', data_fft.frequency, data_fft.amplitude);
-
             // алгоритм Герцеля
             let data_gercel = gercel(data.signal, this.fs);
             this.$refs.appDigital__initialSignal__gercel.style.display = 'block';
@@ -69,9 +64,10 @@ export default {
             this.$refs.appDigital__initialSignal2_noise_fft.style.display = 'block';
             showGraph('appDigital__initialSignal2_noise_fft', data_gercel.frequency, data_gercel.amplitude);
 
+            // Преобразование Бокса-Мюллера
             function randn_bm() {
                 var u = 0, v = 0;
-                while(u === 0) u = Math.random(); //Converting [0,1) to (0,1)
+                while(u === 0) u = Math.random();
                 while(v === 0) v = Math.random();
                 return Math.sqrt( -2.0 * Math.log( u ) ) * Math.cos( 2.0 * Math.PI * v );
             }
