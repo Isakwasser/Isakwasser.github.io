@@ -25,7 +25,7 @@
             <input type="text" class="" v-model="timeForSecondSignal" />
           </div>
         </div>
-        <button @click="calculateForSecond">
+        <button @click="calculateForSecond" ref="secondBtn" disabled>
           Рассчитать спектр по алгоритму Герцеля сигнала со второго задания
         </button>
         <div class="spinner-border" role="status" ref="spinner" id="spinner">

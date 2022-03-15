@@ -75,6 +75,7 @@ export default {
         calculate() {
             console.log('wait');
             this.initSignal();
+            this.$refs.secondBtn.disabled = false;
             console.log('OK!');
         }
     },
