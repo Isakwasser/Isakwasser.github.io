@@ -4,7 +4,9 @@ import showGraph from "./js/showGraph";
 import fft from "./js/fft";
 import gercel from "./js/gercel";
 import gercel_decoder from "./js/gercel_decoder";
+import gercel_decoder2 from "./js/gercel_decoder2";
 import getCodedSignal2 from "./js/signal2";
+import conv_gercel from "./js/conv_gercel";
 
 
 export default {
@@ -20,11 +22,11 @@ export default {
         hideElems() {
             this.$refs.appDigital__initialSignal__fft.style.display = 'none';
             this.$refs.appDigital__initialSignal__gercel.style.display = 'none';
-            this.$refs.spinner.style.display = 'none';
             this.$refs.appDigital__initialSignal2.style.display = 'none';
             this.$refs.appDigital__initialSignal2_fft.style.display = 'none';
             this.$refs.appDigital__initialSignal2_noise.style.display = 'none';
             this.$refs.appDigital__initialSignal2_noise_fft.style.display = 'none';
+            this.$refs.appDigital__convSignal.style.display = 'none';
         },
         initSignal() {
             let data = getCodedSignal(this.inputArray, this.fs);
@@ -37,7 +39,7 @@ export default {
 
             // декодирование алгоритмом Герцеля
             console.log('Начало работы декодировщика');
-            let data_gercel_decoded = gercel_decoder(data.signal, this.fs);
+            let data_gercel_decoded = gercel_decoder2(data.signal, this.fs);
             this.decoded = data_gercel_decoded;
         },
         calculateForSecond() {
@@ -77,7 +79,16 @@ export default {
             this.initSignal();
             this.$refs.secondBtn.disabled = false;
             console.log('OK!');
-        }
+        },
+        conv() {
+            let data = getCodedSignal(this.inputArray, this.fs);
+            showGraph('appDigital__initialSignal', data.time, data.signal);
+
+            // свертка
+            let data_conved = conv_gercel(data.signal, this.fs);
+            this.$refs.appDigital__convSignal.style.display = 'block';
+            showGraph('appDigital__convSignal', data_conved.frequency, data_conved.amplitude);
+        },
     },
     mounted() {
         this.hideElems();

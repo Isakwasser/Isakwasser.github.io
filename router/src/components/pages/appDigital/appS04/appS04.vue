@@ -28,9 +28,7 @@
         <button @click="calculateForSecond" ref="secondBtn" disabled>
           Рассчитать спектр по алгоритму Герцеля сигнала со второго задания
         </button>
-        <div class="spinner-border" role="status" ref="spinner" id="spinner">
-          <span class="visually-hidden">Loading...</span>
-        </div>
+        <button @click="conv">Рассчитать свертку</button>
       </div>
 
       <div class="row g-2 text-center">
@@ -62,6 +60,11 @@
         <div class="col-lg-6" ref="appDigital__initialSignal2_noise_fft">
           <h5>Алгоритм Герцеля для сигнала с шумом из второго задания</h5>
           <div id="appDigital__initialSignal2_noise_fft"></div>
+        </div>
+        <div class="col-12"><hr /></div>
+        <div class="col-lg-6" ref="appDigital__convSignal">
+          <h5>Используя операцию свертки результат основного задания</h5>
+          <div id="appDigital__convSignal"></div>
         </div>
       </div>
     </div>
