@@ -21,6 +21,7 @@ const appDigital_s04 = () => import('@/components/pages/appDigital/appS04/appS04
 const appDigital_s05 = () => import('@/components/pages/appDigital/appS05/appS05.vue')
 const appDigital_s06 = () => import('@/components/pages/appDigital/appS06/appS06.vue')
 const appDigital_s07 = () => import('@/components/pages/appDigital/appS07/appS07.vue')
+const appDigital_sTest = () => import('@/components/pages/appDigital/appSTest/appSTest.vue')
 
 Vue.use(Router)
 
@@ -120,6 +121,11 @@ export default new Router({
           path: 's-07',
           name: 'appDigital_s07',
           component: appDigital_s07,
+        },
+        {
+          path: 's-test',
+          name: 'appDigital_sTest',
+          component: appDigital_sTest,
         },
       ]
     },

@@ -1,7 +1,7 @@
 <template>
   <div class="appDigitalInit">
     <div class="appDigitalInit_content">
-      <h2 class="text-center">Самостоятельная работа №5</h2>
+      <h2 class="text-center">Страница для тестирования алгоритмов</h2>
       <div class="">
         <div class="d-flex">
           <label for="staticEmail" class="col-2">Время, [с]</label>
@@ -22,8 +22,16 @@
 
       <div class="row g-2 text-center">
         <div class="col-lg-6" ref="appDigital__initialSignal">
-          <h5>Исходный сигнал</h5>
+          <h5>Исходный сигнал 1</h5>
           <div id="appDigital__initialSignal"></div>
+        </div>
+        <div class="col-lg-6" ref="appDigital__initialSignal2">
+          <h5>Исходный сигнал 2</h5>
+          <div id="appDigital__initialSignal2"></div>
+        </div>
+        <div class="col-lg-6" ref="appDigital__conv">
+          <h5>Свертка</h5>
+          <div id="appDigital__conv"></div>
         </div>
         <div class="col-lg-6" ref="appDigital__initialSignal_positive">
           <h5>Исходный сигнал при t>=0</h5>
@@ -54,5 +62,5 @@
 }
 </style>
 
-<script src="./js/appS04.js">
+<script src="./js/appStest.js">
 </script>

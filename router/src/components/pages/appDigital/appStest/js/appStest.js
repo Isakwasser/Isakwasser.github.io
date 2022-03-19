@@ -3,6 +3,8 @@ import getSignal from "./js/signal";
 import showGraph from './js/showGraph';
 import show3D from "./js/show3D";
 import laplasD from "./js/laplasD";
+import getRectSignal from "./js/signal_Rect";
+import conv from "./js/conv";
 
 export default {
     data() {
@@ -20,19 +22,23 @@ export default {
             this.$refs.appDigital__initialSignal__3D.style.display = 'none';
             this.$refs.appDigital__initialSignal__Hs.style.display = 'none';
             this.$refs.appDigital__initialSignal__Hz.style.display = 'none';
+            this.$refs.appDigital__conv.style.display = 'none';
+
         },
         initSignal() {
-            let data = getSignal(this.time, this.fs);
+            let data1 = getRectSignal(-0.5,0, this.fs, [-2, 2]);
             this.$refs.appDigital__initialSignal.style.display = 'block';
-            showGraph('appDigital__initialSignal', data.time, data.signal);
-            this.$refs.appDigital__initialSignal_positive.style.display = 'block';
-            showGraph('appDigital__initialSignal_positive', data.time.slice(Math.floor(-data.time.length / 2)), data.signal.slice(Math.floor(-data.signal.length / 2)));
-            // let data3D = laplasD(data.signal, this.fs, [-10,10], [-10,10], 1);
-            // // console.log(data3D.plot)
-            // this.$refs.appDigital__initialSignal__3D.style.display = 'block';
-            // show3D('appDigital__initialSignal__3D', data3D.plot);
-            // this.showHs();
-            // this.showHz();
+            showGraph('appDigital__initialSignal', data1.time, data1.amplitude);
+
+            let data2 = getRectSignal(0, 0.5, this.fs, [-2, 2]);
+            this.$refs.appDigital__initialSignal.style.display = 'block';
+            showGraph('appDigital__initialSignal2', data2.time, data2.amplitude);
+
+            let convdata = conv(data1, data2);
+            this.$refs.appDigital__conv.style.display = 'block';
+            showGraph('appDigital__conv', convdata.time, convdata.amplitude);
+            console.log(convdata);
+
         },
         showHs() {
             let hs = [];
