@@ -1,4 +1,4 @@
-function getSignal(time = 1, fs = 10000) {
+function getSignal(time = 1, fs = 10000, initTime) {
     /*
     * Функция для получения закодированного тональным набором сигнала
     * time - время отсчета
@@ -9,7 +9,7 @@ function getSignal(time = 1, fs = 10000) {
         signal: [],
         time: [],
     };
-    let zeroTime = -time; // инициализация текущего времени
+    let zeroTime = typeof(initTime) == 'number' ? initTime : -time; // инициализация текущего времени
     let numberTime = 0;
     let N = 15; // номер в списке группе
     let f = 0.25 * N; // частота

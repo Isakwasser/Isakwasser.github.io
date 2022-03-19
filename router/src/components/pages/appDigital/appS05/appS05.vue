@@ -29,17 +29,19 @@
           <h5>Исходный сигнал при t>=0</h5>
           <div id="appDigital__initialSignal_positive"></div>
         </div>
-        <div class="col-lg-6" ref="appDigital__initialSignal__Hs">
-          <h5>H(s)</h5>
-          <div id="appDigital__initialSignal__Hs"></div>
+        <div class="col-lg-12" ref="appDigital__initialSignal__formula">
+          <h5>
+            Формула передаточной функции для данной импульсной характеристики.
+          </h5>
+          <div id="appDigital__initialSignal__formula"></div>
         </div>
-        <div class="col-lg-6" ref="appDigital__initialSignal__Hz">
-          <h5>Z(s)</h5>
-          <div id="appDigital__initialSignal__Hz"></div>
+        <div class="col-lg-6" ref="appDigital__initialSignal_kroneker">
+          <h5>Вход системы - дельта-функция Кронекера</h5>
+          <div id="appDigital__initialSignal_kroneker"></div>
         </div>
-        <div class="col-12" ref="appDigital__initialSignal__3D">
-          <h5>3D</h5>
-          <div id="appDigital__initialSignal__3D"></div>
+        <div class="col-lg-6" ref="appDigital__initialSignal_answer">
+          <h5>Выход системы - импульсная характеристика</h5>
+          <div id="appDigital__initialSignal_answer"></div>
         </div>
       </div>
     </div>
@@ -51,6 +53,12 @@
   padding: 20px;
   height: 100%;
   overflow-y: auto;
+  #appDigital__initialSignal__formula {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    max-width: 1000px;
+  }
 }
 </style>
 

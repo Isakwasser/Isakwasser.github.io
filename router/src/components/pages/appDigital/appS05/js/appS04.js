@@ -17,66 +17,67 @@ export default {
         hideElems() {
             this.$refs.appDigital__initialSignal.style.display = 'none';
             this.$refs.appDigital__initialSignal_positive.style.display = 'none';
-            this.$refs.appDigital__initialSignal__3D.style.display = 'none';
-            this.$refs.appDigital__initialSignal__Hs.style.display = 'none';
-            this.$refs.appDigital__initialSignal__Hz.style.display = 'none';
+            this.$refs.appDigital__initialSignal__formula.style.display = 'none';
+            this.$refs.appDigital__initialSignal_kroneker.style.display = 'none';
+            this.$refs.appDigital__initialSignal_answer.style.display = 'none';
         },
         initSignal() {
+            /**
+             * Вывод исходного графика на экран
+             */
             let data = getSignal(this.time, this.fs);
             this.$refs.appDigital__initialSignal.style.display = 'block';
             showGraph('appDigital__initialSignal', data.time, data.signal);
+            let imResp = getSignal(this.time, this.fs, 0);
             this.$refs.appDigital__initialSignal_positive.style.display = 'block';
-            showGraph('appDigital__initialSignal_positive', data.time.slice(Math.floor(-data.time.length / 2)), data.signal.slice(Math.floor(-data.signal.length / 2)));
-            // let data3D = laplasD(data.signal, this.fs, [-10,10], [-10,10], 1);
-            // // console.log(data3D.plot)
-            // this.$refs.appDigital__initialSignal__3D.style.display = 'block';
-            // show3D('appDigital__initialSignal__3D', data3D.plot);
-            // this.showHs();
-            // this.showHz();
-        },
-        showHs() {
-            let hs = [];
-            let values = [];
-            let step = 0.01;
-            let max = 10;
-            let currentS = -10;
-            while (currentS <= max) {
-                hs.push(currentS);
-                let numerator = 0;
-                for (let i = 0; i < this.koefsForHs[0].length; i++) {
-                    numerator += this.koefsForHs[0][i] * Math.pow(currentS, i);
-                }
-                let denominator = 0;
-                for (let i = 0; i < this.koefsForHs[1].length; i++) {
-                    denominator += this.koefsForHs[1][i] * Math.pow(currentS, i);
-                }
-                values.push(numerator/denominator);
-                currentS += step;
+            showGraph('appDigital__initialSignal_positive', imResp.time, imResp.signal);
+            
+            
+            let formula = "H(z) =";
+            for (let i = 0; i < 100; i++) {
+                formula += ` + ${Math.floor(imResp.signal[i]*100)/100}z^(-${i})`;
             }
-            this.$refs.appDigital__initialSignal__Hs.style.display = 'block';
-            showGraph('appDigital__initialSignal__Hs', hs, values);
-        },
-        showHz() {
-            let hs = [];
-            let values = [];
-            let step = 0.01;
-            let max = 100;
-            let currentS = -100;
-            while (currentS <= max) {
-                hs.push(currentS);
-                let numerator = 0;
-                for (let i = 0; i < this.koefsForHz[0].length; i++) {
-                    numerator += this.koefsForHz[0][i] * Math.pow(currentS, i);
-                }
-                let denominator = 0;
-                for (let i = 0; i < this.koefsForHz[1].length; i++) {
-                    denominator += this.koefsForHz[1][i] * Math.pow(currentS, i);
-                }
-                values.push(numerator/denominator);
-                currentS += step;
+            document.getElementById('appDigital__initialSignal__formula').innerHTML = formula;
+            this.$refs.appDigital__initialSignal__formula.style.display = 'block';
+
+            /**
+             * inputSignal - формирование дельта-функции Кронекера
+             */
+            let inputSignal = {
+                data: [],
+                time: [],
+            };
+            for (let i = 0; i < this.fs * this.time * 2; i++) {
+                inputSignal.data.push(0);
+                inputSignal.time.push(i / this.fs);
             }
-            this.$refs.appDigital__initialSignal__Hz.style.display = 'block';
-            showGraph('appDigital__initialSignal__Hz', hs, values);
+            inputSignal.data[Math.floor(inputSignal.data.length / 2)] = 1;
+            // inputSignal.data[500] = 1;
+            this.$refs.appDigital__initialSignal_kroneker.style.display = 'block';
+            showGraph('appDigital__initialSignal_kroneker', inputSignal.time, inputSignal.data);
+
+
+            let outputSignal = {
+                data: [],
+                time: [],
+            };
+
+            for (let i = 0; i < inputSignal.time.length; i++) {
+                let sumValue = 0;
+                for (let j = 0; j < imResp.signal.length; j++) {
+                    if (i - j >= 0) {
+                        // если точка в пределах входного сигнала
+                        sumValue += inputSignal.data[i - j] * imResp.signal[j];
+                    }
+                }
+                outputSignal.data.push(sumValue);
+                outputSignal.time.push(inputSignal.time[i]);
+            }
+            console.log(imResp.signal)
+            console.log(outputSignal.data)
+            this.$refs.appDigital__initialSignal_answer.style.display = 'block';
+            showGraph('appDigital__initialSignal_answer', outputSignal.time, outputSignal.data);
+
         },
         calculate() {
             console.log('wait');
