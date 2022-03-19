@@ -12,7 +12,7 @@
           <div class="step__action">
             <audio
               controls
-              :src="require('@/assets/audio/app07/44100music.wav')"
+              :src="require('@/assets/audio/app07/sound.wav')"
               ref="audio"
             >
               Тег audio не поддерживается вашим браузером.
@@ -28,11 +28,12 @@
         <div class="step__content">
           <div class="step__descryption">
             <button @click="step1">Получить спектрограмму</button>
-            <button @click="test">Test</button>
-            <button ref="stop">Stop</button>
+            <!-- <button @click="test">Test</button>
+            <button ref="stop">Stop</button> -->
           </div>
           <div class="step__action" style="background: #3b4652">
             <canvas id="spectrogram"></canvas>
+            <div id="fft"></div>
           </div>
         </div>
       </div>

@@ -15,7 +15,7 @@ export default function fft(signal, fs) {
         fjIm = [];
     for(let j=0; j<N; j++)
     {
-        console.log(j);
+        // console.log(j);
         let sumre = 0,sumim = 0;
         for(let k=0;k<N;k++)
         {

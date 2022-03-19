@@ -1,14 +1,72 @@
 import fft from "./js/fft";
 import gercel from './js/gercel';
+import showGraph from "./js/showGraph";
 
 export default {
     data() {
         return {
-            initAudioBuffer: undefined,
+            windowWidth: 0.01,
+            fs: undefined,
         }
     },
     methods: {
         step1() {
+            // create the audio context (chrome only for now)
+            let context = new (AudioContext || webkitAudioContext)();
+
+            let request = new XMLHttpRequest();
+            request.open('GET', this.$refs.audio.src, true);
+            request.responseType = 'arraybuffer';
+    
+            // When loaded decode the data
+            request.onload = ()=> {
+                // decode the data
+                context.decodeAudioData(request.response, (buffer) => {
+                    let float32Array = buffer.getChannelData(0); // получили массив байтов
+                    this.showSpectrogramByBytes(float32Array, buffer.sampleRate);
+                }, (err)=>{console.log(`Decode error: ${err}`)});
+            }
+            request.send();
+        },
+        showSpectrogramByBytes(float32Array, fs) {
+            let currentIndex = 0;
+            const canvas = document.getElementById('spectrogram'); // прикрепили окно рисования
+            canvas.style.position = 'relative';
+            canvas.width = float32Array.length/fs/this.windowWidth*2;
+            canvas.height = fs * this.windowWidth;
+            const canvasCtx = canvas.getContext('2d');
+            canvasCtx.clearRect(0, 0, canvas.width, canvas.height);
+            canvasCtx.fillStyle = 'rgb(0, 0, 0)';
+            canvasCtx.fillRect(0, 0, canvas.width, canvas.height);
+
+            let drawPiece = (currentIndex) => {
+                console.log(currentIndex)
+                let datafft = fft(float32Array.slice(currentIndex * fs * this.windowWidth, (currentIndex + 1) * fs * this.windowWidth), fs)
+                let arr = [];
+                let arrf = [];
+                for (let i = 0; i < datafft.amplitude.length / 2; i++) {
+                    arr.push(Math.log(datafft.amplitude[i]*100)/8);
+                    arrf.push(datafft.frequency[i]);
+                }
+                // console.log(Math.min(...arr), Math.max(...arr));
+
+                //Draw spectrum
+                let posX = currentIndex*2;
+                let posY = canvas.height;
+                for (let i = 0; i < arrf.length; i++) {
+                    canvasCtx.fillStyle = 'rgba(255, 255, 255,'+arr[i]+')';
+                    canvasCtx.fillRect(posX, posY, 3, 2);
+                    posY -= 2;
+                }
+                if ((currentIndex + 1) * fs * this.windowWidth < float32Array.length) {
+                    setTimeout(drawPiece, 0, currentIndex + 1)
+                }
+                
+            }
+
+            drawPiece(currentIndex);
+        },
+        getSpectrogram() {
             // create the audio context (chrome only for now)
             let context = new (AudioContext || webkitAudioContext)();
 
@@ -26,59 +84,9 @@ export default {
 
                     // this.playFloat32Array(buffer);
 
-                    this.getSpectrogram();
-
                 }, (err)=>{console.log(`Decode error: ${err}`)});
             }
             request.send();
-        },
-        getSpectrogram() {
-            console.log(this.initAudioBuffer);
-            let context = new (AudioContext || webkitAudioContext)();
-            let analyser = context.createAnalyser();
-            // analyser.smoothingTimeConstant = 0;
-            
-            console.log(this.initAudioBuffer);
-            analyser.fftSize = 256;
-            let realAudioInput = context.createMediaElementSource(this.$refs.audio)
-            
-
-            let bufferLength = analyser.frequencyBinCount;
-            let frequencyData = new Uint8Array(bufferLength);
-            let canvas = document.getElementById('spectrogram');
-            realAudioInput.connect(analyser);
-            analyser.connect(context.destination);
-            canvas.width = bufferLength;
-            canvas.height = window.innerHeight;
-
-            console.log(1)
-
-            let canvasCtx = canvas.getContext('2d');
-
-            function draw() {
-                let imageData = canvasCtx.getImageData(
-                    0,
-                    0,
-                    canvas.width,
-                    canvas.height + 1
-                );
-                analyser.getByteFrequencyData(frequencyData);
-
-                let y = canvas.height - 1;
-                for (let x = 0; x < bufferLength; x++) {
-                    let offset = (y * imageData.width + x) * 4;
-                    imageData.data[offset] = 255; // Red
-                    imageData.data[offset + 1] = 255; // Green
-                    imageData.data[offset + 2] = 255; // Blue
-                    imageData.data[offset + 3] = frequencyData[x]; // Alpha
-                }
-
-                canvasCtx.putImageData(imageData, 0, -1);
-
-                requestAnimationFrame(draw);
-            }
-
-            draw();
         },
         playFloat32Array(myArrayBuffer) {
             let audioCtx = new (window.AudioContext || window.webkitAudioContext)();
@@ -118,7 +126,7 @@ export default {
             //Create audio source
             //Here, we use an audio file, but this could also be e.g. microphone input
             const audioEle = new Audio();
-            audioEle.src = '/static/media/44100music.91d7798.wav';//insert file name here
+            audioEle.src = '/static/media/sound.wav';//insert file name here
             audioEle.autoplay = true;
             audioEle.preload = 'auto';
             const audioSourceNode = audioCtx.createMediaElementSource(audioEle);
