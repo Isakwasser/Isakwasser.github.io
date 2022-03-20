@@ -63,6 +63,13 @@
         </div>
         <div class="step__content">
           <div class="step__descryption">
+            <h4>Фильтр Баттерворта. ФНЧ</h4>
+            <div class="d-flex">
+              <label class="col-2">Частота среза, Гц:</label>
+              <div class="">
+                <input type="text" class="" v-model="cutoffF" />
+              </div>
+            </div>
             <button @click="step2">
               Фильтр, спектрограмма, воспроизведение
             </button>

@@ -7,6 +7,7 @@ export default {
         return {
             windowWidth: 0.01,
             fs: undefined,
+            cutoffF: 100,
         }
     },
     methods: {
@@ -39,18 +40,28 @@ export default {
             canvasCtx.clearRect(0, 0, canvas.width, canvas.height);
             canvasCtx.fillStyle = 'rgb(0, 0, 0)';
             canvasCtx.fillRect(0, 0, canvas.width, canvas.height);
-            // let min = 100, max = 0;
+            let min = 100, max = 0;
 
             let drawPiece = (currentIndex) => {
                 // console.log(currentIndex)
                 let datafft = fft(float32Array.slice(currentIndex * fs * this.windowWidth, (currentIndex + 1) * fs * this.windowWidth), fs)
                 let arr = [];
                 let arrf = [];
+                // console.log(datafft.frequency[Math.floor(datafft.amplitude.length / 2)]); // вывести частоту Найквиста
                 for (let i = 0; i < datafft.amplitude.length / 2; i++) {
-                    let currentOpacity = (Math.log(datafft.amplitude[i])+10)/20;
-                    // min = min > currentOpacity ? currentOpacity : min;
-                    // max = max < currentOpacity ? currentOpacity : max;
-                    // console.log(min,max)
+                    /**
+                     * Варианты расчета значений спектрограммы
+                     */
+                    let currentOpacity = Math.log(datafft.amplitude[i]) / 10 + 1;
+                    currentOpacity = datafft.amplitude[i] / 5;
+                    currentOpacity = Math.log(datafft.amplitude[i] + 1) / 2;
+                    
+                    if (min > currentOpacity) min = currentOpacity;
+                    if (max < currentOpacity) max = currentOpacity;
+
+                    if (currentOpacity < 0) currentOpacity = 0;
+                    if (currentOpacity > 1) currentOpacity = 1;
+                    
                     arr.push(currentOpacity);
                     arrf.push(datafft.frequency[i]);
                 }
@@ -58,7 +69,7 @@ export default {
 
                 //Draw spectrum
                 let posX = currentIndex*2;
-                let posY = canvas.height;
+                let posY = canvas.height-2;
                 for (let i = 0; i < arrf.length; i++) {
                     canvasCtx.fillStyle = 'rgba(255, 255, 255,'+arr[i]+')';
                     canvasCtx.fillRect(posX, posY, 3, 2);
@@ -67,6 +78,7 @@ export default {
                 if ((currentIndex + 1) * fs * this.windowWidth < float32Array.length) {
                     setTimeout(drawPiece, 0, currentIndex + 1)
                 }
+                // console.log(min,max,max-min)
                 
             }
 
@@ -240,27 +252,53 @@ export default {
             let power = 3;
             let inputSignal = float32Array.slice(0);
             let sum;
-            let a = [1, 3, 3, 1];
-            let b = [960001, -1343997, 576003, -191999];
-            for (let k = 0; k < float32Array.length; k++) {
-                sum = 0;
-                for (let m = 0; m <= power; m++) {
-                    if (k - m >= 0) {
-                        sum += b[m] * inputSignal[k - m];
-                    }
-                }
-                for (let m = 1; m <= power; m++) {
-                    if (k - m >= 0) {
-                        sum -= a[m] * float32Array[k - m];
-                    }
-                }
+            // let a = [1, 3, 3, 1];
+            // let b = [960001, -1343997, 576003, -191999];
+            // for (let k = 0; k < float32Array.length; k++) {
+            //     sum = 0;
+            //     for (let m = 0; m <= power; m++) {
+            //         if (k - m >= 0) {
+            //             sum += b[m] * inputSignal[k - m];
+            //         }
+            //     }
+            //     for (let m = 1; m <= power; m++) {
+            //         if (k - m >= 0) {
+            //             sum -= a[m] * float32Array[k - m];
+            //         }
+            //     }
                 
 
 
-                float32Array[k] = sum/960001;
-                // float32Array[k] = 32;
+            //     float32Array[k] = sum/960001;
+            //     // float32Array[k] = 32;
+            // }
+            let cutoffW = 2 * Math.PI * this.cutoffF;
+            let fs = 48000;
+            let wp = Math.tan(Math.PI * cutoffW / fs);
+
+            let normalizeKoef = 1 + wp * Math.sqrt(2) + wp * wp;
+
+            let b = [wp*wp/normalizeKoef, 2*wp*wp/normalizeKoef, wp*wp/normalizeKoef];
+            let a = [1, 2 * (wp * wp - 1) / normalizeKoef, (1 - wp * Math.sqrt(2) + wp * wp) / normalizeKoef];
+            // console.log(a,b)
+            for (let k = 0; k < float32Array.length; k++) {
+                sum = 0;
+                for (let i = 0; i < b.length; i++) {
+                    if (k - i >= 0) {
+                        sum += b[i] * inputSignal[k - i];
+                    }
+                }
+                for (let i = 1; i < a.length; i++) {
+                    if (k - i >= 0) {
+                        sum -= a[i] * float32Array[k - i];
+                    }
+                }
+                if (Number.isNaN(sum)) {
+                    console.log(k);
+                }
+                float32Array[k] = sum;
             }
-            console.log(float32Array);
+            // console.log(float32Array);
             return float32Array;
         }
     },
