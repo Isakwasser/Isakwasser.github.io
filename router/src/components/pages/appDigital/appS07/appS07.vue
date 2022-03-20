@@ -12,7 +12,7 @@
           <div class="step__action">
             <audio
               controls
-              :src="require('@/assets/audio/app07/sound_sm.wav')"
+              :src="require('@/assets/audio/app07/sound.wav')"
               ref="audio"
             >
               Тег audio не поддерживается вашим браузером.
@@ -44,24 +44,14 @@
           <div class="num">3</div>
         </div>
         <div class="step__content">
-          <div class="step__descryption">Аудиофайл</div>
-          <div class="step__action">
-            <audio
-              controls
-              :src="require('@/assets/audio/app07/sound_sm.wav')"
-              ref="audio2"
-            >
-              Тег audio не поддерживается вашим браузером.
-            </audio>
-          </div>
-        </div>
-      </div>
-
-      <div class="step">
-        <div class="step__num">
-          <div class="num">4</div>
-        </div>
-        <div class="step__content">
+          <audio
+            controls
+            :src="require('@/assets/audio/app07/sound.wav')"
+            ref="audio2"
+            class="d-none"
+          >
+            Тег audio не поддерживается вашим браузером.
+          </audio>
           <div class="step__descryption">
             <h4>Фильтр Баттерворта. ФНЧ</h4>
             <div class="d-flex">
@@ -77,6 +67,76 @@
           </div>
           <div class="step__action" style="">
             <canvas id="spectrogram2"></canvas>
+          </div>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step__num">
+          <div class="num">4</div>
+        </div>
+        <div class="step__content">
+          <div class="step__descryption">
+            <audio
+              controls
+              :src="require('@/assets/audio/app07/sound.wav')"
+              ref="audio3"
+              class="d-none"
+            >
+              Тег audio не поддерживается вашим браузером.
+            </audio>
+            <h4>Фильтр Баттерворта. ФВЧ</h4>
+            <div class="d-flex">
+              <label class="col-2">Частота среза:</label>
+              <div class="">
+                <input type="text" class="" v-model="cutoffF_high" />
+              </div>
+            </div>
+            <button @click="step3">
+              Фильтр, спектрограмма, воспроизведение
+            </button>
+            <button ref="stop">Остановить воспроизведение</button>
+          </div>
+          <div class="step__action" style="">
+            <canvas id="spectrogram2_high"></canvas>
+          </div>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step__num">
+          <div class="num">5</div>
+        </div>
+        <div class="step__content">
+          <div class="step__descryption">
+            <audio
+              controls
+              :src="require('@/assets/audio/app07/sound.wav')"
+              ref="audio4"
+              class="d-none"
+            >
+              Тег audio не поддерживается вашим браузером.
+            </audio>
+            <h4>Фильтр Баттерворта. Полосовой</h4>
+            <div class="d-flex">
+              <label class="col-2">Частота среза нижняя:</label>
+              <div class="">
+                <input type="number" class="" v-model="cutoffF_band_low" />
+              </div>
+            </div>
+            <div class="d-flex">
+              <label class="col-2">Частота среза верхняя:</label>
+              <div class="">
+                <input type="number" class="" v-model="cutoffF_band_high" />
+              </div>
+            </div>
+            <button @click="step4">
+              Фильтр, спектрограмма, воспроизведение
+            </button>
+            <button ref="stop">Остановить воспроизведение</button>
+          </div>
+          <div class="step__action" style="">
+            <canvas id="spectrogram2_band"></canvas>
           </div>
         </div>
       </div>
