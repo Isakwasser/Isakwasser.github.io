@@ -28,9 +28,10 @@ export default {
             }
             request.send();
         },
-        showSpectrogramByBytes(float32Array, fs) {
+        showSpectrogramByBytes(float32Array, fs, canvasID = 'spectrogram') {
+            console.log(fs)
             let currentIndex = 0;
-            const canvas = document.getElementById('spectrogram'); // прикрепили окно рисования
+            const canvas = document.getElementById(canvasID); // прикрепили окно рисования
             canvas.style.position = 'relative';
             canvas.width = float32Array.length/fs/this.windowWidth*2;
             canvas.height = fs * this.windowWidth;
@@ -38,14 +39,19 @@ export default {
             canvasCtx.clearRect(0, 0, canvas.width, canvas.height);
             canvasCtx.fillStyle = 'rgb(0, 0, 0)';
             canvasCtx.fillRect(0, 0, canvas.width, canvas.height);
+            // let min = 100, max = 0;
 
             let drawPiece = (currentIndex) => {
-                console.log(currentIndex)
+                // console.log(currentIndex)
                 let datafft = fft(float32Array.slice(currentIndex * fs * this.windowWidth, (currentIndex + 1) * fs * this.windowWidth), fs)
                 let arr = [];
                 let arrf = [];
                 for (let i = 0; i < datafft.amplitude.length / 2; i++) {
-                    arr.push(Math.log(datafft.amplitude[i]*100)/8);
+                    let currentOpacity = (Math.log(datafft.amplitude[i])+10)/20;
+                    // min = min > currentOpacity ? currentOpacity : min;
+                    // max = max < currentOpacity ? currentOpacity : max;
+                    // console.log(min,max)
+                    arr.push(currentOpacity);
                     arrf.push(datafft.frequency[i]);
                 }
                 // console.log(Math.min(...arr), Math.max(...arr));
@@ -210,8 +216,58 @@ export default {
             
             console.log('filter end')
         },
+        step2() {
+            // create the audio context (chrome only for now)
+            let context = new (AudioContext || webkitAudioContext)();
+
+            let request = new XMLHttpRequest();
+            request.open('GET', this.$refs.audio2.src, true);
+            request.responseType = 'arraybuffer';
+    
+            // When loaded decode the data
+            request.onload = ()=> {
+                // decode the data
+                context.decodeAudioData(request.response, (buffer) => {
+                    let float32Array = buffer.getChannelData(0); // получили массив байтов
+                    this.filterButterworth(float32Array);
+                    this.showSpectrogramByBytes(float32Array, buffer.sampleRate,'spectrogram2');
+                    this.playFloat32Array(buffer);
+                }, (err)=>{console.log(`Decode error: ${err}`)});
+            }
+            request.send();
+        },
+        filterButterworth (float32Array) {
+            let power = 3;
+            let inputSignal = float32Array.slice(0);
+            let sum;
+            let a = [1, 3, 3, 1];
+            let b = [960001, -1343997, 576003, -191999];
+            for (let k = 0; k < float32Array.length; k++) {
+                sum = 0;
+                for (let m = 0; m <= power; m++) {
+                    if (k - m >= 0) {
+                        sum += b[m] * inputSignal[k - m];
+                    }
+                }
+                for (let m = 1; m <= power; m++) {
+                    if (k - m >= 0) {
+                        sum -= a[m] * float32Array[k - m];
+                    }
+                }
+                
+
+
+                float32Array[k] = sum/960001;
+                // float32Array[k] = 32;
+            }
+            console.log(float32Array);
+            return float32Array;
+        }
     },
     mounted() {
         // this.doWaveform();
+        // this.step1();
+        // this.step2();
+
     },
 }

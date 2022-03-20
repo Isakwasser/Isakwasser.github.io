@@ -1,7 +1,7 @@
 <template>
   <div class="appDigitalInit">
     <div class="appDigital_S07">
-      <h2 class="text-center">Самостоятельная работа №7 123</h2>
+      <h2 class="text-center">Самостоятельная работа №7</h2>
 
       <div class="step">
         <div class="step__num">
@@ -12,7 +12,7 @@
           <div class="step__action">
             <audio
               controls
-              :src="require('@/assets/audio/app07/sound.wav')"
+              :src="require('@/assets/audio/app07/sound_sm.wav')"
               ref="audio"
             >
               Тег audio не поддерживается вашим браузером.
@@ -27,13 +27,14 @@
         </div>
         <div class="step__content">
           <div class="step__descryption">
-            <button @click="step1">Получить спектрограмму</button>
+            <button @click="step1">
+              Получить спектрограмму c временным разрешением {{ windowWidth }}с
+            </button>
             <!-- <button @click="test">Test</button>
             <button ref="stop">Stop</button> -->
           </div>
-          <div class="step__action" style="background: #3b4652">
+          <div class="step__action" style="">
             <canvas id="spectrogram"></canvas>
-            <div id="fft"></div>
           </div>
         </div>
       </div>
@@ -43,11 +44,33 @@
           <div class="num">3</div>
         </div>
         <div class="step__content">
-          <div class="step__descryption">
-            <button @click="filter">Фильтр</button>
-            <button ref="filter_stop">Stop</button>
+          <div class="step__descryption">Аудиофайл</div>
+          <div class="step__action">
+            <audio
+              controls
+              :src="require('@/assets/audio/app07/sound_sm.wav')"
+              ref="audio2"
+            >
+              Тег audio не поддерживается вашим браузером.
+            </audio>
           </div>
-          <div class="step__action"></div>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step__num">
+          <div class="num">4</div>
+        </div>
+        <div class="step__content">
+          <div class="step__descryption">
+            <button @click="step2">
+              Фильтр, спектрограмма, воспроизведение
+            </button>
+            <button ref="stop">Остановить воспроизведение</button>
+          </div>
+          <div class="step__action" style="">
+            <canvas id="spectrogram2"></canvas>
+          </div>
         </div>
       </div>
     </div>
