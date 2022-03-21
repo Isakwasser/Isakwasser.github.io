@@ -38,17 +38,40 @@
           <div id="appDigital__initialSignal_answer_zero"></div>
         </div>
         <div class="col-lg-6" ref="appDigital__initialSignal_kroneker">
-          <h5>
-            Вход системы - дельта-функция Кронекера для импульсной характеритики
-            выше
-          </h5>
+          <h5>Вход системы - дельта-функция Кронекера в ненулевое время</h5>
           <div id="appDigital__initialSignal_kroneker"></div>
         </div>
+        <div class="col-lg-6" ref="appDigital__initialSignal_kroneker_zero">
+          <h5>Вход системы - дельта-функция Кронекера в нуле</h5>
+          <div id="appDigital__initialSignal_kroneker_zero"></div>
+        </div>
         <div class="col-12" ref="appDigital__initialSignal__formula">
-          <h5>
-            Формула передаточной функции для данной импульсной характеристики.
-          </h5>
+          <h5>Формула H(z) для данной импульсной характеристики.</h5>
           <div id="appDigital__initialSignal__formula"></div>
+        </div>
+        <div class="col-12" ref="appDigital__initialSignal__formula">
+          <h5>Частотный отклик исходного сигнала.</h5>
+          <div id="appDigital__initialSignal__formula"></div>
+        </div>
+        <div class="col-lg-6" ref="appDigital__initialSignal_freq_afr">
+          <h5>АЧХ</h5>
+          <div id="appDigital__initialSignal_freq_afr"></div>
+        </div>
+        <div class="col-lg-6" ref="appDigital__initialSignal_freq_pfr">
+          <h5>ФЧХ</h5>
+          <div id="appDigital__initialSignal_freq_pfr"></div>
+        </div>
+        <div class="col-12" ref="appDigital__initialSignal__formula">
+          <h5>Частотный отклик после H(z).</h5>
+          <div id="appDigital__initialSignal__formula"></div>
+        </div>
+        <div class="col-lg-6" ref="appDigital__initialSignal_freq_afr_digit">
+          <h5>АЧХ</h5>
+          <div id="appDigital__initialSignal_freq_afr_digit"></div>
+        </div>
+        <div class="col-lg-6" ref="appDigital__initialSignal_freq_pfr_digit">
+          <h5>ФЧХ</h5>
+          <div id="appDigital__initialSignal_freq_pfr_digit"></div>
         </div>
       </div>
     </div>

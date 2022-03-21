@@ -3,6 +3,7 @@ import getSignal from "./js/signal";
 import showGraph from './js/showGraph';
 import show3D from "./js/show3D";
 import laplasD from "./js/laplasD";
+import fft from './js/fft';
 
 export default {
     data() {
@@ -56,14 +57,19 @@ export default {
                 time: [],
             };
 
+            /**
+             * Рассчет коэффициентов 
+             */
             let T = 1 / this.fs;
             let w = 2 * Math.PI * 0.25 * 15; // те самые 556,...
             let s_a2 = 1 + w * w;
             let normalizeKoef = 4 + 4 * T + s_a2 * T * T;
-            // let b = [(2 * T - T * T)/normalizeKoef, -2 * T * T/normalizeKoef, (T * T - 2 * T)/normalizeKoef];
             let b = [(2 * T - T * T) / normalizeKoef, 2 * T * T / normalizeKoef, (T * T - 2 * T) / normalizeKoef];
             let a = [1, (2 * s_a2 * T * T - 8) / normalizeKoef, (4 - 4 * T + s_a2 * T * T) / normalizeKoef];
             
+            /**
+             * Вывод формулы на экран
+             */
             let formula = "H(z) = (";
             for (let i = 0; i < b.length; i++) {
                 formula += ` + ${Math.floor(b[i] * 10000) / 10000}z^(-${i})`;
@@ -76,6 +82,9 @@ export default {
             document.getElementById('appDigital__initialSignal__formula').innerHTML = formula;
             this.$refs.appDigital__initialSignal__formula.style.display = 'block';
 
+            /**
+             * Расчет ИХ при ненудевом начале импульса
+             */
             let sum;
             for (let n = 0; n < inputSignal.time.length; n++) {
                 sum = 0;
@@ -102,6 +111,17 @@ export default {
             /**
              * Расчет импульсной характеристики с импульсом при нуле
              */
+            let inputSignal_zero = {
+                data: [],
+                time: [],
+            };;
+            for (let n = 0; n < this.fs * this.time; n++) {
+                inputSignal_zero.data[n] = 0;
+                inputSignal_zero.time[n] = n / this.fs;
+            }
+            inputSignal_zero.data[0] = 1;
+            this.$refs.appDigital__initialSignal_kroneker_zero.style.display = 'block';
+            showGraph('appDigital__initialSignal_kroneker_zero', inputSignal_zero.time, inputSignal_zero.data);
             let outputSignal1 = {
                 data: [],
                 time: [],
@@ -128,6 +148,28 @@ export default {
 
             this.$refs.appDigital__initialSignal_answer_zero.style.display = 'block';
             showGraph('appDigital__initialSignal_answer_zero', outputSignal1.time, outputSignal1.data);
+
+            /**
+             * Поиск частотного отклика для аналогового
+             */
+            let datafft = fft(data.signal, this.fs);
+            showGraph('appDigital__initialSignal_freq_afr', datafft.frequency, datafft.amplitude); // АЧХ
+            let phase = [];
+            for (let i = 0; i < datafft.frequency.length; i++) {
+                phase[i] = Math.atan(datafft.Im[i] / datafft.Re[i]);
+            }
+            showGraph('appDigital__initialSignal_freq_pfr', datafft.frequency, phase); // ФЧХ
+
+            /**
+             * Поиск частотного отклика для цифрового
+             */
+            let datafft_digit = fft(outputSignal.data, this.fs);
+            showGraph('appDigital__initialSignal_freq_afr_digit', datafft.frequency, datafft.amplitude); // АЧХ
+            let phase_digit = [];
+            for (let i = 0; i < datafft_digit.frequency.length; i++) {
+                phase_digit[i] = Math.atan(datafft_digit.Im[i] / datafft_digit.Re[i]);
+            }
+            showGraph('appDigital__initialSignal_freq_pfr_digit', datafft_digit.frequency, phase_digit); // ФЧХ
 
         },
         calculate() {
