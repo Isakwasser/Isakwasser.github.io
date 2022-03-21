@@ -49,9 +49,9 @@
           <h5>Формула H(z) для данной импульсной характеристики.</h5>
           <div id="appDigital__initialSignal__formula"></div>
         </div>
-        <div class="col-12" ref="appDigital__initialSignal__formula">
+        <div class="col-12" ref="appDigital__initialSignal__fr">
           <h5>Частотный отклик исходного сигнала.</h5>
-          <div id="appDigital__initialSignal__formula"></div>
+          <div id="appDigital__initialSignal__fr"></div>
         </div>
         <div class="col-lg-6" ref="appDigital__initialSignal_freq_afr">
           <h5>АЧХ</h5>
@@ -61,9 +61,9 @@
           <h5>ФЧХ</h5>
           <div id="appDigital__initialSignal_freq_pfr"></div>
         </div>
-        <div class="col-12" ref="appDigital__initialSignal__formula">
+        <div class="col-12" ref="appDigital__initialSignal__fr_digit">
           <h5>Частотный отклик после H(z).</h5>
-          <div id="appDigital__initialSignal__formula"></div>
+          <div id="appDigital__initialSignal__f"></div>
         </div>
         <div class="col-lg-6" ref="appDigital__initialSignal_freq_afr_digit">
           <h5>АЧХ</h5>

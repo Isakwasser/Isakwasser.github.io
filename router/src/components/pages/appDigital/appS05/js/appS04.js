@@ -20,16 +20,22 @@ export default {
             this.$refs.appDigital__initialSignal_kroneker.style.display = 'none';
             this.$refs.appDigital__initialSignal_answer.style.display = 'none';
             this.$refs.appDigital__initialSignal_answer_zero.style.display = 'none';
+            this.$refs.appDigital__initialSignal_kroneker_zero.style.display = 'none';
+            this.$refs.appDigital__initialSignal__fr.style.display = 'none';
+            this.$refs.appDigital__initialSignal_freq_afr.style.display = 'none';
+            this.$refs.appDigital__initialSignal_freq_pfr.style.display = 'none';
+            this.$refs.appDigital__initialSignal__fr_digit.style.display = 'none';
+            this.$refs.appDigital__initialSignal_freq_afr_digit.style.display = 'none';
+            this.$refs.appDigital__initialSignal_freq_pfr_digit.style.display = 'none';
+            
         },
         initSignal() {
             /**
              * Вывод исходного графика на экран
              */
             let data = getSignal(this.time, this.fs);
-            this.$refs.appDigital__initialSignal.style.display = 'block';
             showGraph('appDigital__initialSignal', data.time, data.signal);
             let imResp = getSignal(this.time, this.fs, 0);
-            this.$refs.appDigital__initialSignal_positive.style.display = 'block';
             showGraph('appDigital__initialSignal_positive', imResp.time, imResp.signal);
             
             
@@ -48,7 +54,6 @@ export default {
             }
             inputSignal.data[Math.floor(inputSignal.data.length / 2)] = 1;
             // inputSignal.data[500] = 1;
-            this.$refs.appDigital__initialSignal_kroneker.style.display = 'block';
             showGraph('appDigital__initialSignal_kroneker', inputSignal.time, inputSignal.data);
 
 
@@ -80,7 +85,6 @@ export default {
             }
             formula += ')';
             document.getElementById('appDigital__initialSignal__formula').innerHTML = formula;
-            this.$refs.appDigital__initialSignal__formula.style.display = 'block';
 
             /**
              * Расчет ИХ при ненудевом начале импульса
@@ -105,7 +109,6 @@ export default {
                 outputSignal.time.push(inputSignal.time[n]);
             }
 
-            this.$refs.appDigital__initialSignal_answer.style.display = 'block';
             showGraph('appDigital__initialSignal_answer', outputSignal.time, outputSignal.data);
 
             /**
@@ -120,7 +123,6 @@ export default {
                 inputSignal_zero.time[n] = n / this.fs;
             }
             inputSignal_zero.data[0] = 1;
-            this.$refs.appDigital__initialSignal_kroneker_zero.style.display = 'block';
             showGraph('appDigital__initialSignal_kroneker_zero', inputSignal_zero.time, inputSignal_zero.data);
             let outputSignal1 = {
                 data: [],
@@ -146,7 +148,6 @@ export default {
                 outputSignal1.time.push(n / this.fs);
             }
 
-            this.$refs.appDigital__initialSignal_answer_zero.style.display = 'block';
             showGraph('appDigital__initialSignal_answer_zero', outputSignal1.time, outputSignal1.data);
 
             /**
@@ -171,6 +172,19 @@ export default {
             }
             showGraph('appDigital__initialSignal_freq_pfr_digit', datafft_digit.frequency, phase_digit); // ФЧХ
 
+            this.$refs.appDigital__initialSignal.style.display = 'block';
+            this.$refs.appDigital__initialSignal_positive.style.display = 'block';
+            this.$refs.appDigital__initialSignal__formula.style.display = 'block';
+            this.$refs.appDigital__initialSignal_kroneker.style.display = 'block';
+            this.$refs.appDigital__initialSignal_answer.style.display = 'block';
+            this.$refs.appDigital__initialSignal_answer_zero.style.display = 'block';
+            this.$refs.appDigital__initialSignal_kroneker_zero.style.display = 'block';
+            this.$refs.appDigital__initialSignal__fr.style.display = 'block';
+            this.$refs.appDigital__initialSignal_freq_afr.style.display = 'block';
+            this.$refs.appDigital__initialSignal_freq_pfr.style.display = 'block';
+            this.$refs.appDigital__initialSignal__fr_digit.style.display = 'block';
+            this.$refs.appDigital__initialSignal_freq_afr_digit.style.display = 'block';
+            this.$refs.appDigital__initialSignal_freq_pfr_digit.style.display = 'block';
         },
         calculate() {
             console.log('wait');
@@ -180,6 +194,8 @@ export default {
     },
     mounted() {
         this.hideElems();
-        this.calculate();
+        setTimeout(() => {
+            this.calculate();
+        }, 0);
     },
 }
