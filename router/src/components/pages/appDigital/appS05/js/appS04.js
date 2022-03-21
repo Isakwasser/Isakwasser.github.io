@@ -9,8 +9,6 @@ export default {
         return {
             fs: 100,
             time: 10,
-            koefsForHs: [[-1, -1], [556, 1652476, 2, 1]],
-            koefsForHz: [[-0.0404,0.04,-0.0408,0.04,-0.0004],[4.302,-8.08,4.524,-0.08,0.222]],
         }
     },
     methods: {
@@ -20,6 +18,7 @@ export default {
             this.$refs.appDigital__initialSignal__formula.style.display = 'none';
             this.$refs.appDigital__initialSignal_kroneker.style.display = 'none';
             this.$refs.appDigital__initialSignal_answer.style.display = 'none';
+            this.$refs.appDigital__initialSignal_answer_zero.style.display = 'none';
         },
         initSignal() {
             /**
@@ -33,12 +32,7 @@ export default {
             showGraph('appDigital__initialSignal_positive', imResp.time, imResp.signal);
             
             
-            let formula = "H(z) =";
-            for (let i = 0; i < 100; i++) {
-                formula += ` + ${Math.floor(imResp.signal[i]*100)/100}z^(-${i})`;
-            }
-            document.getElementById('appDigital__initialSignal__formula').innerHTML = formula;
-            this.$refs.appDigital__initialSignal__formula.style.display = 'block';
+            
 
             /**
              * inputSignal - формирование дельта-функции Кронекера
@@ -62,21 +56,78 @@ export default {
                 time: [],
             };
 
-            for (let i = 0; i < inputSignal.time.length; i++) {
-                let sumValue = 0;
-                for (let j = 0; j < imResp.signal.length; j++) {
-                    if (i - j >= 0) {
-                        // если точка в пределах входного сигнала
-                        sumValue += inputSignal.data[i - j] * imResp.signal[j];
+            let T = 1 / this.fs;
+            let w = 2 * Math.PI * 0.25 * 15; // те самые 556,...
+            let s_a2 = 1 + w * w;
+            let normalizeKoef = 4 + 4 * T + s_a2 * T * T;
+            // let b = [(2 * T - T * T)/normalizeKoef, -2 * T * T/normalizeKoef, (T * T - 2 * T)/normalizeKoef];
+            let b = [(2 * T - T * T) / normalizeKoef, 2 * T * T / normalizeKoef, (T * T - 2 * T) / normalizeKoef];
+            let a = [1, (2 * s_a2 * T * T - 8) / normalizeKoef, (4 - 4 * T + s_a2 * T * T) / normalizeKoef];
+            
+            let formula = "H(z) = (";
+            for (let i = 0; i < b.length; i++) {
+                formula += ` + ${Math.floor(b[i] * 10000) / 10000}z^(-${i})`;
+            }
+            formula += ') / (';
+            for (let i = 0; i < a.length; i++) {
+                formula += ` + ${Math.floor(a[i] * 10000) / 10000}z^(-${i})`;
+            }
+            formula += ')';
+            document.getElementById('appDigital__initialSignal__formula').innerHTML = formula;
+            this.$refs.appDigital__initialSignal__formula.style.display = 'block';
+
+            let sum;
+            for (let n = 0; n < inputSignal.time.length; n++) {
+                sum = 0;
+                for (let i = 0; i < b.length; i++) {
+                    if (n - i >= 0) {
+                        sum += b[i] * inputSignal.data[n - i];
                     }
                 }
-                outputSignal.data.push(sumValue);
-                outputSignal.time.push(inputSignal.time[i]);
+                for (let i = 1; i < a.length; i++) {
+                    if (n - i >= 0) {
+                        sum -= a[i] * outputSignal.data[n - i];
+                    }
+                }
+                if (Number.isNaN(sum)) {
+                    console.log(n);
+                }
+                outputSignal.data.push(sum);
+                outputSignal.time.push(inputSignal.time[n]);
             }
-            console.log(imResp.signal)
-            console.log(outputSignal.data)
+
             this.$refs.appDigital__initialSignal_answer.style.display = 'block';
             showGraph('appDigital__initialSignal_answer', outputSignal.time, outputSignal.data);
+
+            /**
+             * Расчет импульсной характеристики с импульсом при нуле
+             */
+            let outputSignal1 = {
+                data: [],
+                time: [],
+            };
+            for (let n = 0; n < this.fs * this.time; n++) {
+                sum = 0;
+                for (let i = 0; i < b.length; i++) {
+                    if (n - i == 0) {
+                        // условие считывания импульса в нулевом отсчете
+                        sum += b[i];
+                    }
+                }
+                for (let i = 1; i < a.length; i++) {
+                    if (n - i >= 0) {
+                        sum -= a[i] * outputSignal1.data[n - i];
+                    }
+                }
+                if (Number.isNaN(sum)) {
+                    console.log(n);
+                }
+                outputSignal1.data.push(sum);
+                outputSignal1.time.push(n / this.fs);
+            }
+
+            this.$refs.appDigital__initialSignal_answer_zero.style.display = 'block';
+            showGraph('appDigital__initialSignal_answer_zero', outputSignal1.time, outputSignal1.data);
 
         },
         calculate() {
