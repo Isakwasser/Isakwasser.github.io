@@ -1,7 +1,8 @@
-function getSignal(time = 1, fs = 10000) {
+function getSignal(time = 1, f = 300, fs = 3000) {
     /*
-    * Функция для получения закодированного тональным набором сигнала
-    * time - время отсчета
+    * Функция для получения серии прямоугольных импульсов
+    * time - время 
+    * f - частота импульсов
     * fs - частота дискретизации
     */
     
@@ -9,20 +10,19 @@ function getSignal(time = 1, fs = 10000) {
         signal: [],
         time: [],
     };
-    let currentTime = -time; // инициализация текущего времени
-    let N = 15; // номер в списке группе
-    let f = 0.25 * N; // частота
+    let currentImplement = 0; // инициализация номера отсчета
 
-    while (currentTime <= time) {
+    while (currentImplement / fs <= time) {
+        
         let current = 0;
-        if (currentTime >= 0) {
-            current = Math.cos(2 * Math.PI * f * currentTime)*Math.exp(-currentTime);
+        if (currentImplement % (fs/2) <= f) {
+            current = 1;
         }
         
         ans.signal.push(current);
-        ans.time.push(currentTime);
+        ans.time.push(currentImplement / fs);
 
-        currentTime += 1 / fs;
+        currentImplement++;
     }
     return ans;
 }

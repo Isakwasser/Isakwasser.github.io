@@ -1,7 +1,7 @@
 <template>
-  <div class="appDigitalInit">
-    <div class="appDigitalInit_content">
-      <h2 class="text-center">Самостоятельная работа №6 не готова</h2>
+  <div class="appDigitalS06">
+    <div class="appDigitalS06_content">
+      <h2 class="text-center">Самостоятельная работа №6</h2>
       <button class="btn btn-secondary btn-sm" @click="calculate">
         Начать расчет
       </button>
@@ -33,7 +33,7 @@
 </template>
 
 <style lang="scss">
-.appDigitalInit {
+.appDigitalS06 {
   padding: 20px;
   height: 100%;
   overflow-y: auto;

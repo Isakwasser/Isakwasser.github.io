@@ -22,17 +22,10 @@ export default {
             this.$refs.appDigital__initialSignal__Hz.style.display = 'none';
         },
         initSignal() {
-            let data = getSignal(this.time, this.fs);
+            let data = getSignal(this.time);
             this.$refs.appDigital__initialSignal.style.display = 'block';
             showGraph('appDigital__initialSignal', data.time, data.signal);
-            this.$refs.appDigital__initialSignal_positive.style.display = 'block';
-            showGraph('appDigital__initialSignal_positive', data.time.slice(Math.floor(-data.time.length / 2)), data.signal.slice(Math.floor(-data.signal.length / 2)));
-            // let data3D = laplasD(data.signal, this.fs, [-10,10], [-10,10], 1);
-            // // console.log(data3D.plot)
-            // this.$refs.appDigital__initialSignal__3D.style.display = 'block';
-            // show3D('appDigital__initialSignal__3D', data3D.plot);
-            this.showHs();
-            this.showHz();
+            
         },
         showHs() {
             let hs = [];

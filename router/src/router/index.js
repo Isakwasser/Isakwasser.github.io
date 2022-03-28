@@ -115,7 +115,7 @@ export default new Router({
         {
           path: 's-06',
           name: 'appDigital_s06',
-          component: appOnProduction,
+          component: appDigital_s06,
         },
         {
           path: 's-07',
