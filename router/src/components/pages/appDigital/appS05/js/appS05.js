@@ -34,12 +34,12 @@ export default {
       let w = 2 * Math.PI * 0.25 * 15; // те самые 556,...
       let s_a2 = 1 + w * w;
       let normalizeKoef = 4 + 4 * T + s_a2 * T * T;
-      let dem = [
+      let num = [
         (2 * T - T * T) / normalizeKoef,
         (2 * T * T) / normalizeKoef,
         (T * T - 2 * T) / normalizeKoef
       ];
-      let num = [
+      let dem = [
         1,
         (2 * s_a2 * T * T - 8) / normalizeKoef,
         (4 - 4 * T + s_a2 * T * T) / normalizeKoef
@@ -49,14 +49,14 @@ export default {
        * Вывод формулы на экран
        */
       let formula = "H(z) = (";
-      for (let i = 0; i < dem.length; i++) {
-        if (i) formula += " + ";
-        formula += `${this.formatNumber(dem[i])}z<sup>-${i}</sup>`;
-      }
-      formula += ") / (";
       for (let i = 0; i < num.length; i++) {
         if (i) formula += " + ";
         formula += `${this.formatNumber(num[i])}z<sup>-${i}</sup>`;
+      }
+      formula += ") / (";
+      for (let i = 0; i < dem.length; i++) {
+        if (i) formula += " + ";
+        formula += `${this.formatNumber(dem[i])}z<sup>-${i}</sup>`;
       }
       formula += ")";
       document.getElementById(
@@ -93,18 +93,18 @@ export default {
       let sum;
       for (let n = 0; n < inputSignal.time.length; n++) {
         sum = 0;
-        for (let i = 0; i < dem.length; i++) {
+        for (let i = 0; i < num.length; i++) {
           if (n - i >= 0) {
-            sum += dem[i] * inputSignal.data[n - i];
+            sum += num[i] * inputSignal.data[n - i];
           }
         }
-        for (let i = 1; i < num.length; i++) {
+        for (let i = 1; i < dem.length; i++) {
           if (n - i >= 0) {
-            sum -= num[i] * outputSignal.data[n - i];
+            sum -= dem[i] * outputSignal.data[n - i];
           }
         }
         if (Number.isNaN(sum)) {
-          console.log(n);
+          console.log('isNaN', n);
         }
         outputSignal.data.push(sum);
         outputSignal.time.push(inputSignal.time[n]);
@@ -145,8 +145,8 @@ export default {
       let datafft_digit = fft(outputSignal.data, this.fs);
       showGraph(
         "appDigital__initialSignal_freq_afr_digit",
-        datafft.frequency.slice(0, Math.floor(datafft.frequency.length / 2)),
-        datafft.amplitude.slice(0, Math.floor(datafft.amplitude.length / 2))
+        datafft_digit.frequency.slice(0, Math.floor(datafft_digit.frequency.length / 2)),
+        datafft_digit.amplitude.slice(0, Math.floor(datafft_digit.amplitude.length / 2))
       ); // АЧХ
       let phase_digit = [];
       for (let i = 0; i < datafft_digit.frequency.length; i++) {
@@ -156,9 +156,9 @@ export default {
         "appDigital__initialSignal_freq_pfr_digit",
         datafft_digit.frequency.slice(
           0,
-          Math.floor(datafft.frequency.length / 2)
+          Math.floor(datafft_digit.frequency.length / 2)
         ),
-        phase_digit.slice(0, Math.floor(datafft.frequency.length / 2))
+        phase_digit.slice(0, Math.floor(datafft_digit.frequency.length / 2))
       ); // ФЧХ
 
       this.$refs.appDigital__initialSignal.style.display = "block";
