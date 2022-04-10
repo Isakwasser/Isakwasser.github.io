@@ -15,7 +15,7 @@ function getSignal(time = 1, f = 300, fs = 3000) {
 
   while (currentImplement <= time * fs) {
     let current = 0;
-    if ((currentImplement / fs) % (1 / f) < 1 / f / 2) {
+    if (currentImplement % (fs / f) < fs / f / 2) {
       current = 1;
     }
 
