@@ -7,25 +7,108 @@
       </button>
 
       <div class="row g-2 text-center">
-        <div class="col-lg-6" ref="appDigital__initialSignal">
+        <div class="col-lg-6">
           <h5>Исходный сигнал</h5>
           <div id="appDigital__initialSignal"></div>
         </div>
-        <div class="col-lg-6" ref="appDigital__initialSignal_positive">
-          <h5>Исходный сигнал при t>=0</h5>
-          <div id="appDigital__initialSignal_positive"></div>
+        <div class="col-lg-6">
+          <h5>Спектр исходного сигнала</h5>
+          <div id="appDigital__initialSignal_fft"></div>
         </div>
-        <div class="col-lg-6" ref="appDigital__initialSignal__Hs">
-          <h5>H(s)</h5>
-          <div id="appDigital__initialSignal__Hs"></div>
+        <div class="col-12" :class="{ 'd-none': currentTab != 'ФНЧ' }">
+          <h2>Фильтры низких частот</h2>
+          <div>
+            <label for="lowF">Частота среза: </label>
+            <input type="number" id="lowF" v-model="filterLowF" />
+          </div>
+          <div class="row">
+            <div class="col-lg-6">
+              <h5>Фильтр Баттерворта</h5>
+              <div id="appDigital__butterLow"></div>
+            </div>
+            <div class="col-lg-6">
+              <h5>Спектр сигнала после фильтра</h5>
+              <div id="appDigital__butterLow_fft"></div>
+            </div>
+            <div class="col-lg-6">
+              <h5>АЧХ Баттерворта</h5>
+              <div id="appDigital__butterLow_afr"></div>
+            </div>
+            <div class="col-lg-6">
+              <h5>ФЧХ Баттерворта</h5>
+              <div id="appDigital__butterLow_pfr"></div>
+            </div>
+          </div>
         </div>
-        <div class="col-lg-6" ref="appDigital__initialSignal__Hz">
-          <h5>Z(s)</h5>
-          <div id="appDigital__initialSignal__Hz"></div>
+        <div class="col-12" :class="{ 'd-none': currentTab != 'ФВЧ' }">
+          <h2>Фильтры высоких частот</h2>
+          <div>
+            <label for="highF">Частота среза: </label>
+            <input type="number" id="highF" v-model="filterHighF" />
+          </div>
+          <div class="row">
+            <div class="col-lg-6">
+              <h5>Фильтр Баттерворта</h5>
+              <div id="appDigital__butterHigh"></div>
+            </div>
+            <div class="col-lg-6">
+              <h5>Спектр сигнала после фильтра</h5>
+              <div id="appDigital__butterHigh_fft"></div>
+            </div>
+            <div class="col-lg-6">
+              <h5>АЧХ Баттерворта</h5>
+              <div id="appDigital__butterHigh_afr"></div>
+            </div>
+            <div class="col-lg-6">
+              <h5>ФЧХ Баттерворта</h5>
+              <div id="appDigital__butterHigh_pfr"></div>
+            </div>
+          </div>
         </div>
-        <div class="col-12" ref="appDigital__initialSignal__3D">
-          <h5>3D</h5>
-          <div id="appDigital__initialSignal__3D"></div>
+        <div class="col-12" :class="{ 'd-none': currentTab != 'Полосовой' }">
+          <h2>Полосовой фильтр</h2>
+          <div>
+            <label for="highF">Частота среза 1: </label>
+            <input type="number" id="highF" v-model="filterPassF1" />
+          </div>
+          <div>
+            <label for="highF">Частота среза 2: </label>
+            <input type="number" id="highF" v-model="filterPassF2" />
+          </div>
+          <div class="row">
+            <div class="col-lg-6">
+              <h5>Фильтр Баттерворта</h5>
+              <div id="appDigital__butterPass"></div>
+            </div>
+            <div class="col-lg-6">
+              <h5>Спектр сигнала после фильтра</h5>
+              <div id="appDigital__butterPass_fft"></div>
+            </div>
+            <div class="col-lg-6">
+              <h5>АЧХ Баттерворта</h5>
+              <div id="appDigital__butterPass_afr"></div>
+            </div>
+            <div class="col-lg-6">
+              <h5>ФЧХ Баттерворта</h5>
+              <div id="appDigital__butterPass_pfr"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="position-absolute top-0 end-0">
+      <div class="d-flex">
+        <div>
+          <button @click="currentTab = 'ФНЧ'">ФНЧ</button>
+        </div>
+        <div>
+          <button @click="currentTab = 'ФВЧ'">ФВЧ</button>
+        </div>
+        <div>
+          <button @click="currentTab = 'Полосовой'">Полосовой</button>
+        </div>
+        <div>
+          <button @click="currentTab = 'Режекторный'">Режекторный</button>
         </div>
       </div>
     </div>
