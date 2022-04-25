@@ -371,7 +371,7 @@ export default {
             spectro.start();
         },
 
-        /****************** Группа Режекторных ***********************/
+        /****************** 3 полосы ***********************/
         getCheby2threeSpectrogram() {
             let newAudioBuffer = this.cloneAudioBuffer(this.soundBuffer);
 
@@ -389,6 +389,29 @@ export default {
             !this.soundMusic || this.playMusic(newAudioBuffer);
 
             let spectro = Spectrogram(this.$refs.spectrogram_Cheby2three, {
+                audio: {
+                    enable: false
+                }
+            });
+            let audioContext = new AudioContext();
+            spectro.connectSource(newAudioBuffer, audioContext);
+            spectro.start();
+        },
+
+        /****************** Удаление голоса ***********************/
+        getDeleteVoiceSpectrogram() {
+            let newAudioBuffer = this.cloneAudioBuffer(this.soundBuffer);
+
+            let temp = newAudioBuffer.getChannelData(0);
+
+            temp = this.filter(
+                [0.473241726655620, - 2.78171803915444, 8.31476201663804, - 16.5958616343230, 24.4651902363792, - 27.7379726078321, 24.4651902363792, - 16.5958616343230, 8.31476201663804, - 2.78171803915444, 0.473241726655620],
+                [1, - 5.07003920417589, 12.7835698215704, - 21.5476863900288, 27.1297636317463, - 26.5076747201227, 20.2165039173823, - 11.8698199179507, 5.15269859704992, - 1.49791172250882, 0.223851991596724],
+                temp);
+            // для воспроизведения файла
+            !this.soundMusic || this.playMusic(newAudioBuffer);
+
+            let spectro = Spectrogram(this.$refs.spectrogram_DeleteVoice, {
                 audio: {
                     enable: false
                 }
@@ -435,6 +458,7 @@ export default {
                 if (Number.isNaN(sum)) {
                     console.log(n);
                     alert('Ошибка в фильтре');
+                    return;
                 } else {
                     array[n] = sum;
                 }

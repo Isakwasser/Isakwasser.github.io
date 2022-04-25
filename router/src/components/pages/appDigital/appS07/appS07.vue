@@ -436,6 +436,30 @@
           </div>
         </div>
       </div>
+
+      <!-- ******************* Удаление голоса ********************* -->
+      <div class="step">
+        <div class="step__num"></div>
+        <div class="step__content">
+          <div class="step__descryption">
+            <h4>
+              Удаление голоса, используя фильтры Чебышева 2-го рода.
+              <code>
+                cheby2(5,50,[0.05 0.1],'stop') + cheby2(5,50,[0.2 0.25],'stop')
+              </code>
+            </h4>
+            <button
+              class="btn btn-secondary btn-sm"
+              @click="getDeleteVoiceSpectrogram"
+            >
+              Получить спектрограмму
+            </button>
+          </div>
+          <div class="step__action">
+            <canvas ref="spectrogram_DeleteVoice"></canvas>
+          </div>
+        </div>
+      </div>
     </div>
     <div class="position-absolute top-0 end-0 alert alert-secondary">
       <span>Воспроизводить музыку:</span>
