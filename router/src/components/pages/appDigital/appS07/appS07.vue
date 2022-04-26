@@ -12,7 +12,7 @@
           <div class="step__action">
             <audio
               controls
-              :src="require('@/assets/audio/app07/sound_sm.wav')"
+              :src="require('@/assets/audio/app07/sound.wav')"
               ref="audio"
             >
               Тег audio не поддерживается вашим браузером.

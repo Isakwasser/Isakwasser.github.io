@@ -40,7 +40,7 @@ export default {
                 // decode the data
                 context.decodeAudioData(request.response, (buffer) => {
                     this.soundBuffer = buffer;
-                    console.log('Buffer was installed');
+                    console.log(`Buffer was installed. Sample rate = ${buffer.sampleRate}`);
                 }, (err) => { console.log(`Decode error: ${err}`) });
             }
             request.send();
@@ -580,8 +580,10 @@ export default {
     },
     mounted() {
         let soundMusic = localStorage.getItem('soundMusic');
-        if (soundMusic) {
-            this.soundMusic = soundMusic;
+        if (soundMusic != 'false') {
+            this.soundMusic = true;
+        } else {
+            this.soundMusic = false;
         }
         this.getSoundBytes();
     },
