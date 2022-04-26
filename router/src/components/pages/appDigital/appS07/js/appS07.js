@@ -1,5 +1,23 @@
 import fft from "./js/fft";
 import Spectrogram from "spectrogram";
+import chroma from "chroma-js";
+
+const colors = function (steps) {
+    var baseColors = [[0, 0, 0, 1], [0, 255, 255, 1], [0, 255, 0, 1], [255, 255, 0, 1], [255, 0, 0, 1]];
+    var positions = [0, 0.15, 0.30, 0.50, 0.75];
+
+    var scale = new chroma.scale(baseColors, positions)
+        .domain([0, steps]);
+
+    var colors = [];
+
+    for (var i = 0; i < steps; ++i) {
+        var color = scale(i);
+        colors.push(color.hex());
+    }
+
+    return colors;
+}
 
 export default {
     data() {
@@ -30,8 +48,9 @@ export default {
         getOriginalSpectrogram() {
             let spectro = Spectrogram(this.$refs.spectrogram_original, {
                 audio: {
-                    enable: false
-                }
+                    enable: this.soundMusic
+                },
+                colors: colors,
             });
             let audioContext = new AudioContext();
             spectro.connectSource(this.soundBuffer, audioContext);
@@ -46,14 +65,13 @@ export default {
                 [5.979578036996447e-05, 2.989789018498223e-04, 5.979578036996447e-04, 5.979578036996447e-04, 2.989789018498223e-04, 5.979578036996447e-05],
                 [1, -3.984543119612337, 6.434867090275871, -5.253615170352273, 2.165132909724135, -0.359928245063557],
                 temp);
-            // для воспроизведения файла
-            !this.soundMusic || this.playMusic(newAudioBuffer);
 
             // строим спектрограмму
             let spectro = Spectrogram(this.$refs.spectrogram_ButterLow, {
                 audio: {
-                    enable: false
-                }
+                    enable: this.soundMusic
+                },
+                colors: colors,
             });
             let audioContext = new AudioContext();
             spectro.connectSource(newAudioBuffer, audioContext);
@@ -67,13 +85,12 @@ export default {
                 [3.848904394060382e-06, 1.924452197030191e-05, 3.848904394060382e-05, 3.848904394060382e-05, 1.924452197030191e-05, 3.848904394060382e-06],
                 [1, -4.749422231925750, 9.141175457333913, -8.908980564502240, 4.395734077969244, -0.878383573934557],
                 temp);
-            // для воспроизведения файла
-            !this.soundMusic || this.playMusic(newAudioBuffer);
 
             let spectro = Spectrogram(this.$refs.spectrogram_Cheby1Low, {
                 audio: {
-                    enable: false
-                }
+                    enable: this.soundMusic
+                },
+                colors: colors,
             });
             let audioContext = new AudioContext();
             spectro.connectSource(newAudioBuffer, audioContext);
@@ -87,13 +104,12 @@ export default {
                 [0.002098439541645, -0.005500606106981, 0.003463499608177, 0.003463499608177, -0.005500606106981, 0.002098439541645],
                 [1, -4.452396542051892, 7.956778312988316, -7.131877822880251, 3.205417066812696, -0.577798348783186],
                 temp);
-            // для воспроизведения файла
-            !this.soundMusic || this.playMusic(newAudioBuffer);
 
             let spectro = Spectrogram(this.$refs.spectrogram_Cheby2Low, {
                 audio: {
-                    enable: false
-                }
+                    enable: this.soundMusic
+                },
+                colors: colors,
             });
             let audioContext = new AudioContext();
             spectro.connectSource(newAudioBuffer, audioContext);
@@ -107,13 +123,12 @@ export default {
                 [0.002520291023188, -0.006359925599942, 0.003967856348744, 0.003967856348744, -0.006359925599942, 0.002520291023188],
                 [1, -4.714020073743617, 9.022509396491165, -8.758360663832006, 4.310606501376757, -0.860478716748320],
                 temp);
-            // для воспроизведения файла
-            !this.soundMusic || this.playMusic(newAudioBuffer);
 
             let spectro = Spectrogram(this.$refs.spectrogram_EllipLow, {
                 audio: {
-                    enable: false
-                }
+                    enable: this.soundMusic
+                },
+                colors: colors,
             });
             let audioContext = new AudioContext();
             spectro.connectSource(newAudioBuffer, audioContext);
@@ -129,14 +144,13 @@ export default {
                 [0.354164181093430, -1.770820905467149, 3.541641810934299, -3.541641810934299, 1.770820905467149, -0.354164181093430],
                 [1, -2.975422109745683, 3.806018119320411, -2.545252868330467, 0.881130075437837, -0.125430622155356],
                 temp);
-            // для воспроизведения файла
-            !this.soundMusic || this.playMusic(newAudioBuffer);
 
             // строим спектрограмму
             let spectro = Spectrogram(this.$refs.spectrogram_ButterHigh, {
                 audio: {
-                    enable: false
-                }
+                    enable: this.soundMusic
+                },
+                colors: colors,
             });
             let audioContext = new AudioContext();
             spectro.connectSource(newAudioBuffer, audioContext);
@@ -150,13 +164,12 @@ export default {
                 [0.369633036012404, -1.848165180062019, 3.696330360124038, -3.696330360124038, 1.848165180062019, -0.369633036012404],
                 [1, -3.366529464700689, 4.444055809047855, -2.622246882044077, 0.483941252973048, 0.088516256368747],
                 temp);
-            // для воспроизведения файла
-            !this.soundMusic || this.playMusic(newAudioBuffer);
 
             let spectro = Spectrogram(this.$refs.spectrogram_Cheby1High, {
                 audio: {
-                    enable: false
-                }
+                    enable: this.soundMusic
+                },
+                colors: colors,
             });
             let audioContext = new AudioContext();
             spectro.connectSource(newAudioBuffer, audioContext);
@@ -170,13 +183,12 @@ export default {
                 [0.429230046172937, -2.093304889593839, 4.135073675123997, -4.135073675123999, 2.093304889593842, -0.429230046172938],
                 [1, -3.241464604590933, 4.470898073127938, -3.218791536048310, 1.199825247334598, -0.184237760679781],
                 temp);
-            // для воспроизведения файла
-            !this.soundMusic || this.playMusic(newAudioBuffer);
 
             let spectro = Spectrogram(this.$refs.spectrogram_Cheby2High, {
                 audio: {
-                    enable: false
-                }
+                    enable: this.soundMusic
+                },
+                colors: colors,
             });
             let audioContext = new AudioContext();
             spectro.connectSource(newAudioBuffer, audioContext);
@@ -190,13 +202,12 @@ export default {
                 [0.478417833484107, -2.349905423470592, 4.658451395832947, -4.658451395832950, 2.349905423470596, -0.478417833484108],
                 [1, -3.658429873751053, 5.345709135616499, -3.743053850209734, 1.149379226902617, -0.076977219095400],
                 temp);
-            // для воспроизведения файла
-            !this.soundMusic || this.playMusic(newAudioBuffer);
 
             let spectro = Spectrogram(this.$refs.spectrogram_EllipHigh, {
                 audio: {
-                    enable: false
-                }
+                    enable: this.soundMusic
+                },
+                colors: colors,
             });
             let audioContext = new AudioContext();
             spectro.connectSource(newAudioBuffer, audioContext);
@@ -212,14 +223,13 @@ export default {
                 [5.97957803867614e-05, 0, - 0.000298978901933807, 0, 0.000597957803867614, 0, - 0.000597957803867614, 0, 0.000298978901933807, 0, - 5.97957803867614e-05],
                 [1, - 8.10507344007186, 30.3299792306628, - 68.9102256711755, 105.182373057302, - 112.648403105060, 85.7165190081875, - 45.7659507796685, 16.4177004102881, - 3.57667441849827, 0.359928245063556],
                 temp);
-            // для воспроизведения файла
-            !this.soundMusic || this.playMusic(newAudioBuffer);
 
             // строим спектрограмму
             let spectro = Spectrogram(this.$refs.spectrogram_ButterBand, {
                 audio: {
-                    enable: false
-                }
+                    enable: this.soundMusic
+                },
+                colors: colors,
             });
             let audioContext = new AudioContext();
             spectro.connectSource(newAudioBuffer, audioContext);
@@ -233,13 +243,12 @@ export default {
                 [1.94700038292630e-06, 0, - 9.73500191463151e-06, 0, 1.94700038292630e-05, 0, - 1.94700038292630e-05, 0, 9.73500191463151e-06, 0, - 1.94700038292630e-06],
                 [1, - 8.85099848777198, 36.2441752554191, - 90.2690293589527, 151.276786363869, - 178.146209274021, 149.269867889114, - 87.8903297960065, 34.8216327294487, - 8.39118873753563, 0.935563078000265],
                 temp);
-            // для воспроизведения файла
-            !this.soundMusic || this.playMusic(newAudioBuffer);
 
             let spectro = Spectrogram(this.$refs.spectrogram_Cheby1Band, {
                 audio: {
-                    enable: false
-                }
+                    enable: this.soundMusic
+                },
+                colors: colors,
             });
             let audioContext = new AudioContext();
             spectro.connectSource(newAudioBuffer, audioContext);
@@ -255,13 +264,12 @@ export default {
                 [0.0526296281466914, - 0.361842359812740, 1.08603605738460, - 1.77614578664942, 1.47847483353390, - 5.60933999480803e-16, - 1.47847483353390, 1.77614578664942, - 1.08603605738460, 0.361842359812740, - 0.0526296281466914],
                 [1, - 8.10553969078156, 30.3350004251610, - 68.9285188214196, 105.212022912778, - 112.662711343504, 85.6906785304712, - 45.7142262201815, 16.3762229216602, - 3.55980758863810, 0.357051385838918],
                 temp);
-            // для воспроизведения файла
-            !this.soundMusic || this.playMusic(newAudioBuffer);
 
             let spectro = Spectrogram(this.$refs.spectrogram_Cheby2Band, {
                 audio: {
-                    enable: false
-                }
+                    enable: this.soundMusic
+                },
+                colors: colors,
             });
             let audioContext = new AudioContext();
             spectro.connectSource(newAudioBuffer, audioContext);
@@ -275,13 +283,12 @@ export default {
                 [0.00243911698139108, - 0.0166065077159646, 0.0494496435704944, - 0.0804105304591478, 0.0667057639234973, 8.23221005078355e-17, - 0.0667057639234975, 0.0804105304591479, - 0.0494496435704944, 0.0166065077159646, - 0.00243911698139108],
                 [1, - 8.78140946790457, 35.6891645670574, - 88.2526382394222, 146.899421445358, - 171.890481825214, 143.166870602302, - 83.8248835552702, 33.0375109646428, - 7.92266262692087, 0.879368502069890],
                 temp);
-            // для воспроизведения файла
-            !this.soundMusic || this.playMusic(newAudioBuffer);
 
             let spectro = Spectrogram(this.$refs.spectrogram_EllipBand, {
                 audio: {
-                    enable: false
-                }
+                    enable: this.soundMusic
+                },
+                colors: colors,
             });
             let audioContext = new AudioContext();
             spectro.connectSource(newAudioBuffer, audioContext);
@@ -297,14 +304,13 @@ export default {
                 [0.599940204219770, - 5.41213877001544, 22.5291446955717, - 56.8840863960223, 96.3741650759881, - 114.413877082455, 96.3741650759881, - 56.8840863960224, 22.5291446955717, - 5.41213877001545, 0.599940204219770],
                 [1, - 8.10507344007187, 30.3299792306628, - 68.9102256711756, 105.182373057302, - 112.648403105061, 85.7165190081876, - 45.7659507796686, 16.4177004102881, - 3.57667441849828, 0.359928245063557],
                 temp);
-            // для воспроизведения файла
-            !this.soundMusic || this.playMusic(newAudioBuffer);
 
             // строим спектрограмму
             let spectro = Spectrogram(this.$refs.spectrogram_ButterStop, {
                 audio: {
-                    enable: false
-                }
+                    enable: this.soundMusic
+                },
+                colors: colors,
             });
             let audioContext = new AudioContext();
             spectro.connectSource(newAudioBuffer, audioContext);
@@ -318,13 +324,12 @@ export default {
                 [0.163206989883282, - 1.47231152583543, 6.12880061137268, - 15.4746763888398, 26.2175084682352, - 31.1250093728724, 26.2175084682352, - 15.4746763888398, 6.12880061137268, - 1.47231152583543, 0.163206989883282],
                 [1, - 7.16588129927043, 23.0032850908215, - 42.6258578720444, 48.1925410411270, - 30.2733471744090, 3.34689469985385, 11.2426101474503, - 9.92869652631222, 3.80349099662192, - 0.594992167078993],
                 temp);
-            // для воспроизведения файла
-            !this.soundMusic || this.playMusic(newAudioBuffer);
 
             let spectro = Spectrogram(this.$refs.spectrogram_Cheby1Stop, {
                 audio: {
-                    enable: false
-                }
+                    enable: this.soundMusic
+                },
+                colors: colors,
             });
             let audioContext = new AudioContext();
             spectro.connectSource(newAudioBuffer, audioContext);
@@ -338,13 +343,12 @@ export default {
                 [0.429230046172937, - 3.82446771524734, 15.7657611594391, - 39.5291375772088, 66.6888800194042, - 79.0604121986100, 66.6888800194041, - 39.5291375772087, 15.7657611594390, - 3.82446771524732, 0.429230046172934],
                 [1, - 7.43473262743321, 25.5697144344078, - 53.5928628965071, 75.8272441796704, - 75.6805399651114, 53.9621921042507, - 27.1460928769975, 9.22435397102462, - 1.91339441747386, 0.184237760679782],
                 temp);
-            // для воспроизведения файла
-            !this.soundMusic || this.playMusic(newAudioBuffer);
 
             let spectro = Spectrogram(this.$refs.spectrogram_Cheby2Stop, {
                 audio: {
-                    enable: false
-                }
+                    enable: this.soundMusic
+                },
+                colors: colors,
             });
             let audioContext = new AudioContext();
             spectro.connectSource(newAudioBuffer, audioContext);
@@ -358,13 +362,12 @@ export default {
                 [0.183192949713190, - 1.64461052439895, 6.82002961888313, - 17.1729863279001, 29.0470188747877, - 34.4652371333634, 29.0470188747877, - 17.1729863279001, 6.82002961888314, - 1.64461052439895, 0.183192949713191],
                 [1, - 7.23517644704466, 23.4813533683446, - 44.1201569246089, 50.9852407968192, - 33.7400583264452, 6.34635230291055, 9.40457087247389, - 9.14571803991448, 3.59038998766327, - 0.566745541391713],
                 temp);
-            // для воспроизведения файла
-            !this.soundMusic || this.playMusic(newAudioBuffer);
 
             let spectro = Spectrogram(this.$refs.spectrogram_EllipStop, {
                 audio: {
-                    enable: false
-                }
+                    enable: this.soundMusic
+                },
+                colors: colors,
             });
             let audioContext = new AudioContext();
             spectro.connectSource(newAudioBuffer, audioContext);
@@ -385,13 +388,12 @@ export default {
                 [0.653333073641532, - 4.96798366720834, 18.3689083004518, - 42.8137282857630, 69.2555965264254, - 80.9766601664281, 69.2555965264254, - 42.8137282857630, 18.3689083004518, - 4.96798366720833, 0.653333073641531],
                 [1, - 6.96026987386031, 23.5530049302462, - 50.2800166091317, 74.5667146365713, - 80.0214559490056, 62.8836307632659, - 35.7577957174176, 14.1254813673365, - 3.52054592295518, 0.426844103617112],
                 temp);
-            // для воспроизведения файла
-            !this.soundMusic || this.playMusic(newAudioBuffer);
 
             let spectro = Spectrogram(this.$refs.spectrogram_Cheby2three, {
                 audio: {
-                    enable: false
-                }
+                    enable: this.soundMusic
+                },
+                colors: colors,
             });
             let audioContext = new AudioContext();
             spectro.connectSource(newAudioBuffer, audioContext);
@@ -408,13 +410,12 @@ export default {
                 [0.473241726655620, - 2.78171803915444, 8.31476201663804, - 16.5958616343230, 24.4651902363792, - 27.7379726078321, 24.4651902363792, - 16.5958616343230, 8.31476201663804, - 2.78171803915444, 0.473241726655620],
                 [1, - 5.07003920417589, 12.7835698215704, - 21.5476863900288, 27.1297636317463, - 26.5076747201227, 20.2165039173823, - 11.8698199179507, 5.15269859704992, - 1.49791172250882, 0.223851991596724],
                 temp);
-            // для воспроизведения файла
-            !this.soundMusic || this.playMusic(newAudioBuffer);
 
             let spectro = Spectrogram(this.$refs.spectrogram_DeleteVoice, {
                 audio: {
-                    enable: false
-                }
+                    enable: this.soundMusic
+                },
+                colors: colors,
             });
             let audioContext = new AudioContext();
             spectro.connectSource(newAudioBuffer, audioContext);
