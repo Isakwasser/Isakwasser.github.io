@@ -50,6 +50,10 @@ export default {
                 audio: {
                     enable: this.soundMusic
                 },
+                canvas: {
+                    width: 400,
+                    height: 450,
+                },
                 colors: colors,
             });
             let audioContext = new AudioContext();
@@ -71,6 +75,10 @@ export default {
                 audio: {
                     enable: this.soundMusic
                 },
+                canvas: {
+                    width: 400,
+                    height: 450,
+                },
                 colors: colors,
             });
             let audioContext = new AudioContext();
@@ -89,6 +97,10 @@ export default {
             let spectro = Spectrogram(this.$refs.spectrogram_Cheby1Low, {
                 audio: {
                     enable: this.soundMusic
+                },
+                canvas: {
+                    width: 400,
+                    height: 450,
                 },
                 colors: colors,
             });
@@ -109,6 +121,10 @@ export default {
                 audio: {
                     enable: this.soundMusic
                 },
+                canvas: {
+                    width: 400,
+                    height: 450,
+                },
                 colors: colors,
             });
             let audioContext = new AudioContext();
@@ -127,6 +143,10 @@ export default {
             let spectro = Spectrogram(this.$refs.spectrogram_EllipLow, {
                 audio: {
                     enable: this.soundMusic
+                },
+                canvas: {
+                    width: 400,
+                    height: 450,
                 },
                 colors: colors,
             });
@@ -150,6 +170,10 @@ export default {
                 audio: {
                     enable: this.soundMusic
                 },
+                canvas: {
+                    width: 400,
+                    height: 450,
+                },
                 colors: colors,
             });
             let audioContext = new AudioContext();
@@ -168,6 +192,10 @@ export default {
             let spectro = Spectrogram(this.$refs.spectrogram_Cheby1High, {
                 audio: {
                     enable: this.soundMusic
+                },
+                canvas: {
+                    width: 400,
+                    height: 450,
                 },
                 colors: colors,
             });
@@ -188,6 +216,10 @@ export default {
                 audio: {
                     enable: this.soundMusic
                 },
+                canvas: {
+                    width: 400,
+                    height: 450,
+                },
                 colors: colors,
             });
             let audioContext = new AudioContext();
@@ -206,6 +238,10 @@ export default {
             let spectro = Spectrogram(this.$refs.spectrogram_EllipHigh, {
                 audio: {
                     enable: this.soundMusic
+                },
+                canvas: {
+                    width: 400,
+                    height: 450,
                 },
                 colors: colors,
             });
@@ -229,6 +265,10 @@ export default {
                 audio: {
                     enable: this.soundMusic
                 },
+                canvas: {
+                    width: 400,
+                    height: 450,
+                },
                 colors: colors,
             });
             let audioContext = new AudioContext();
@@ -247,6 +287,10 @@ export default {
             let spectro = Spectrogram(this.$refs.spectrogram_Cheby1Band, {
                 audio: {
                     enable: this.soundMusic
+                },
+                canvas: {
+                    width: 400,
+                    height: 450,
                 },
                 colors: colors,
             });
@@ -269,6 +313,10 @@ export default {
                 audio: {
                     enable: this.soundMusic
                 },
+                canvas: {
+                    width: 400,
+                    height: 450,
+                },
                 colors: colors,
             });
             let audioContext = new AudioContext();
@@ -287,6 +335,10 @@ export default {
             let spectro = Spectrogram(this.$refs.spectrogram_EllipBand, {
                 audio: {
                     enable: this.soundMusic
+                },
+                canvas: {
+                    width: 400,
+                    height: 450,
                 },
                 colors: colors,
             });
@@ -310,6 +362,10 @@ export default {
                 audio: {
                     enable: this.soundMusic
                 },
+                canvas: {
+                    width: 400,
+                    height: 450,
+                },
                 colors: colors,
             });
             let audioContext = new AudioContext();
@@ -328,6 +384,10 @@ export default {
             let spectro = Spectrogram(this.$refs.spectrogram_Cheby1Stop, {
                 audio: {
                     enable: this.soundMusic
+                },
+                canvas: {
+                    width: 400,
+                    height: 450,
                 },
                 colors: colors,
             });
@@ -348,6 +408,10 @@ export default {
                 audio: {
                     enable: this.soundMusic
                 },
+                canvas: {
+                    width: 400,
+                    height: 450,
+                },
                 colors: colors,
             });
             let audioContext = new AudioContext();
@@ -366,6 +430,10 @@ export default {
             let spectro = Spectrogram(this.$refs.spectrogram_EllipStop, {
                 audio: {
                     enable: this.soundMusic
+                },
+                canvas: {
+                    width: 400,
+                    height: 450,
                 },
                 colors: colors,
             });
@@ -393,6 +461,10 @@ export default {
                 audio: {
                     enable: this.soundMusic
                 },
+                canvas: {
+                    width: 400,
+                    height: 450,
+                },
                 colors: colors,
             });
             let audioContext = new AudioContext();
@@ -414,6 +486,10 @@ export default {
             let spectro = Spectrogram(this.$refs.spectrogram_DeleteVoice, {
                 audio: {
                     enable: this.soundMusic
+                },
+                canvas: {
+                    width: 400,
+                    height: 450,
                 },
                 colors: colors,
             });
