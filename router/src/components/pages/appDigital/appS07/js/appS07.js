@@ -478,10 +478,23 @@ export default {
 
             let temp = newAudioBuffer.getChannelData(0);
 
-            temp = this.filter(
-                [0.473241726655620, - 2.78171803915444, 8.31476201663804, - 16.5958616343230, 24.4651902363792, - 27.7379726078321, 24.4651902363792, - 16.5958616343230, 8.31476201663804, - 2.78171803915444, 0.473241726655620],
-                [1, - 5.07003920417589, 12.7835698215704, - 21.5476863900288, 27.1297636317463, - 26.5076747201227, 20.2165039173823, - 11.8698199179507, 5.15269859704992, - 1.49791172250882, 0.223851991596724],
-                temp);
+            let temp1 = temp.slice(0);
+            let temp2 = temp.slice(0);
+
+            // ФНЧ
+            temp1 = this.filter(
+                [9.092865904669623e-10, 4.546432952334811e-09, 9.092865904669623e-09, 9.092865904669623e-09, 4.546432952334811e-09, 9.092865904669623e-10],
+                [1, -4.898337145711600, 9.598497090805598, -9.405307989195734, 4.608476358536906, -0.903328285338000],
+                temp1);
+            // ФВЧ
+            temp2 = this.filter(
+                [0.354164181093430, -1.770820905467149, 3.541641810934299, -3.541641810934299, 1.770820905467149, -0.354164181093430],
+                [1, -2.975422109745683, 3.806018119320411, -2.545252868330467, 0.881130075437837, -0.125430622155356],
+                temp2);
+
+            for (let i = 0; i < temp.length; i++) {
+                temp[i] = (temp1[i] + temp2[i]) / 2;
+            }
 
             let spectro = Spectrogram(this.$refs.spectrogram_DeleteVoice, {
                 audio: {
@@ -518,9 +531,10 @@ export default {
         },
         filter(b, a, array) {
             let inputSignal = array.slice(0);
-            let sum;
+            let sum, prevSum;
 
             for (let n = 0; n < array.length; n++) {
+                prevSum = sum;
                 sum = 0;
                 for (let i = 0; i < b.length; i++) {
                     if (n - i >= 0) {
@@ -534,8 +548,9 @@ export default {
                 }
                 if (Number.isNaN(sum)) {
                     console.log(n);
-                    alert('Ошибка в фильтре');
-                    return;
+                    console.log('Ошибка в фильтре' + prevSum);
+                    // return array;
+                    continue;
                 } else {
                     array[n] = sum;
                 }
@@ -558,7 +573,16 @@ export default {
             return this.soundBuffer.sampleRate ? this.soundBuffer.sampleRate / 2 * 0.3 : false;
         }
     },
+    watch: {
+        soundMusic() {
+            localStorage.setItem('soundMusic', this.soundMusic);
+        }
+    },
     mounted() {
+        let soundMusic = localStorage.getItem('soundMusic');
+        if (soundMusic) {
+            this.soundMusic = soundMusic;
+        }
         this.getSoundBytes();
     },
 }

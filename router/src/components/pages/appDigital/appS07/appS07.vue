@@ -12,7 +12,7 @@
           <div class="step__action">
             <audio
               controls
-              :src="require('@/assets/audio/app07/sound.wav')"
+              :src="require('@/assets/audio/app07/sound_sm.wav')"
               ref="audio"
             >
               Тег audio не поддерживается вашим браузером.
@@ -421,7 +421,7 @@
             <h4>
               3 полосы пропускания, используя фильтры Чебышева 2-го рода.
               <code>
-                cheby2(5,50,[0.05 0.1],'stop') + cheby2(5,50,[0.2 0.25],'stop')
+                cheby2(5,50,[0.05 0.1],'stop') & cheby2(5,50,[0.2 0.25],'stop')
               </code>
             </h4>
             <button
@@ -444,9 +444,7 @@
           <div class="step__descryption">
             <h4>
               Удаление голоса, используя фильтры Чебышева 2-го рода.
-              <code>
-                cheby2(5,50,[0.05 0.1],'stop') + cheby2(5,50,[0.2 0.25],'stop')
-              </code>
+              <code> butter(5,0.01) | butter(5,0.2,'high')</code>
             </h4>
             <button
               class="btn btn-secondary btn-sm"
