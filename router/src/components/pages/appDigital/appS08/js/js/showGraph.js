@@ -21,7 +21,7 @@ export default function showGraph(id, x, y) {
             lineWidth: 0.5,
             name: undefined,
             // type: 'line',
-            
+
         }]
     });
 }
