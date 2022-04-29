@@ -2,14 +2,13 @@
   <div class="appDigitalInit">
     <div class="appDigitalInit_content">
       <h2>Выберите задание</h2>
-      <div class="row">
+      <div class="row g-2">
         <div class="col-12 col-sm-6 col-md-4 col-lg-3">
           <div class="appDigitalInit__link">
             <router-link
               :to="{
                 name: 'appDigital_s04',
               }"
-              title="Назад на главную"
               class="link"
               >Самостоятельная работа №4</router-link
             >
@@ -21,7 +20,6 @@
               :to="{
                 name: 'appDigital_s05',
               }"
-              title="Назад на главную"
               class="link"
               >Самостоятельная работа №5</router-link
             >
@@ -33,7 +31,6 @@
               :to="{
                 name: 'appDigital_s06',
               }"
-              title="Назад на главную"
               class="link"
               >Самостоятельная работа №6</router-link
             >
@@ -45,9 +42,19 @@
               :to="{
                 name: 'appDigital_s07',
               }"
-              title="Назад на главную"
               class="link"
               >Самостоятельная работа №7</router-link
+            >
+          </div>
+        </div>
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+          <div class="appDigitalInit__link">
+            <router-link
+              :to="{
+                name: 'appDigital_s08',
+              }"
+              class="link"
+              >Самостоятельная работа №8</router-link
             >
           </div>
         </div>
