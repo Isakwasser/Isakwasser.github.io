@@ -6,7 +6,7 @@
         <!-- Инициализация переменных -->
         <div class="step">
             <div class="step__num">
-                <div class="num">1</div>
+                <div class="num"></div>
             </div>
             <div class="step__content">
                 <div class="step__descryption">
@@ -26,6 +26,7 @@
                             <input type="range" min="0" max="9" class="" id="sequence" placeholder="Последовательность" v-model="sequence">
                         </div>
                     </div>
+                    <button @click="doAll" class="btn btn-secondary btn-sm">Рассчитать</button>
                 </div>
             </div>
         </div>
@@ -33,9 +34,11 @@
         <!-- Вывод исходного сигнала -->
         <div class="step">
             <div class="step__num">
-                <div class="num">2</div>
+                <div class="num"></div>
             </div>
             <div class="step__content container-fluid">
+                <h4>Исходный сигнал</h4>
+                <button class="btn btn-sm btn-secondary" ref="initSignal__btn">Play</button>
                 <div class="row">
                     <div class="col-md-6">
                         <!-- <button @click="initSignal" class="btn btn-secondary btn-sm">Показать сигнал</button> -->
@@ -48,12 +51,51 @@
             </div>
         </div>
 
-        <!-- Прореживание сигнала -->
+        <!-- Прореживание сигнала и его Интерполяция до частоты {{ interpolateTo }} -->
         <div class="step">
             <div class="step__num">
-                <div class="num">2</div>
+                <div class="num"></div>
             </div>
             <div class="step__content container-fluid">
+                <h4>Коэффициент выброса значений: {{thinning_N_low}}</h4>
+                <button class="btn btn-sm btn-secondary" ref="thinningSignal_low__btn">Play</button>
+                <div class="row">
+                    <div class="col-md-6">
+                        <!-- <button @click="initSignal" class="btn btn-secondary btn-sm">Показать сигнал</button> -->
+                        <div id="thinningSignal_low"></div>
+                    </div>
+                    <div class="col-md-6">
+                        <div id="thinningSignal__fft_low"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="step">
+            <div class="step__num">
+                <div class="num"></div>
+            </div>
+            <div class="step__content container-fluid">
+                <h4>Интерполяция до частоты {{ interpolateTo }}</h4>
+                <button class="btn btn-sm btn-secondary" ref="thinningSignal_low_interpolate__btn">Play</button>
+                <div class="row">
+                    <div class="col-md-6">
+                        <!-- <button @click="initSignal" class="btn btn-secondary btn-sm">Показать сигнал</button> -->
+                        <div id="thinningSignal_low_interpolate"></div>
+                    </div>
+                    <div class="col-md-6">
+                        <div id="thinningSignal__fft_low_interpolate"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="step">
+            <div class="step__num">
+                <div class="num"></div>
+            </div>
+            <div class="step__content container-fluid">
+                <h4>Коэффициент выброса значений: {{thinning_N}}</h4>
+                <button class="btn btn-sm btn-secondary" ref="thinningSignal__btn">Play</button>
                 <div class="row">
                     <div class="col-md-6">
                         <!-- <button @click="initSignal" class="btn btn-secondary btn-sm">Показать сигнал</button> -->
@@ -61,6 +103,97 @@
                     </div>
                     <div class="col-md-6">
                         <div id="thinningSignal__fft"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="step">
+            <div class="step__num">
+                <div class="num"></div>
+            </div>
+            <div class="step__content container-fluid">
+                <h4>Интерполяция до частоты {{ interpolateTo }}</h4>
+                <button class="btn btn-sm btn-secondary" ref="thinningSignal_interpolate__btn">Play</button>
+                <div class="row">
+                    <div class="col-md-6">
+                        <!-- <button @click="initSignal" class="btn btn-secondary btn-sm">Показать сигнал</button> -->
+                        <div id="thinningSignal_interpolate"></div>
+                    </div>
+                    <div class="col-md-6">
+                        <div id="thinningSignal__fft_interpolate"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="step">
+            <div class="step__num">
+                <div class="num"></div>
+            </div>
+            <div class="step__content container-fluid">
+                <h4>Коэффициент выброса значений: {{thinning_N_high}}</h4>
+                <button class="btn btn-sm btn-secondary" ref="thinningSignal_high__btn">Play</button>
+                <div class="row">
+                    <div class="col-md-6">
+                        <!-- <button @click="initSignal" class="btn btn-secondary btn-sm">Показать сигнал</button> -->
+                        <div id="thinningSignal_high"></div>
+                    </div>
+                    <div class="col-md-6">
+                        <div id="thinningSignal__fft_high"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="step">
+            <div class="step__num">
+                <div class="num"></div>
+            </div>
+            <div class="step__content container-fluid">
+                <h4>Интерполяция до частоты {{ interpolateTo }}</h4>
+                <button class="btn btn-sm btn-secondary" ref="thinningSignal_high_interpolate__btn">Play</button>
+                <div class="row">
+                    <div class="col-md-6">
+                        <!-- <button @click="initSignal" class="btn btn-secondary btn-sm">Показать сигнал</button> -->
+                        <div id="thinningSignal_high_interpolate"></div>
+                    </div>
+                    <div class="col-md-6">
+                        <div id="thinningSignal__fft_high_interpolate"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Анимации -->
+        <div class="step">
+            <div class="step__num">
+                <div class="num"></div>
+            </div>
+            <div class="step__content container-fluid">
+                <h4>Коэффициент выброса значений: {{animation_N}}</h4>
+                <button class="btn btn-sm btn-secondary" @click="animate(1)">Start</button>
+                <div class="row">
+                    <div class="col-md-6">
+                        <!-- <button @click="initSignal" class="btn btn-secondary btn-sm">Показать сигнал</button> -->
+                        <div id="thinningSignal__animation"></div>
+                    </div>
+                    <div class="col-md-6">
+                        <div id="thinningSignal__animation__fft"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="step">
+            <div class="step__num">
+                <div class="num"></div>
+            </div>
+            <div class="step__content container-fluid">
+                <h4>Интерполяция</h4>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div id="thinningSignal__animation__interpolate"></div>
+                    </div>
+                    <div class="col-md-6">
+                        <div id="thinningSignal__animation__fft__interpolate"></div>
                     </div>
                 </div>
             </div>
@@ -74,6 +207,12 @@
     padding: 20px;
     height: 100%;
     overflow-y: auto;
+    counter-reset: section; // Установка счетчика
+
+    .step__num .num::before {
+        counter-increment: section; // Инкрементирует счётчик
+        content: counter(section); // Отображает текущее
+    }
 
     .appDigital_S08 {
         .step {
