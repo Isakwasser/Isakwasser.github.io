@@ -12,7 +12,7 @@
     <div class="container text-center">
       <h2>Выберите игру</h2>
       <div class="row">
-        <router-link
+        <!-- <router-link
           :to="{ name: 'appGames_shooting' }"
           class="col-sm-6 col-md-4 col-xl-3 col-xxl-2"
         >
@@ -42,7 +42,7 @@
               class="shadow position-absolute top-0 start-0 w-100 h-100"
             ></div>
           </div>
-        </router-link>
+        </router-link> -->
         <router-link
           :to="{ name: 'appGames_ticTacToe' }"
           class="col-sm-6 col-md-4 col-xl-3 col-xxl-2"
