@@ -1,0 +1,25 @@
+.app-Sudoku {
+    table {
+        tr:nth-child(3n):not(:last-child) td {
+            border-bottom: 2px solid black;
+        }
+        td {
+            padding: 0;
+            max-width: 10%;
+            border: 1px solid black;
+            &:nth-child(3n):not(:last-child) {
+                border-right: 2px solid black;
+            }
+        }
+        input {
+            height: 100%;
+            border: none;
+            width: 100%;
+            text-align: center;
+            aspect-ratio: 1;
+            &::-webkit-inner-spin-button {
+                display: none;
+            }
+        }
+    }
+}
