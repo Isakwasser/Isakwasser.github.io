@@ -1,0 +1,22 @@
+.appLanding {
+    display: flex;
+    flex-flow: column nowrap;
+    min-height: 100vh;
+    header {
+        background: #ffffff;
+        a,
+        label {
+            font-family: 'Yanone Kaffeesatz';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 15px;
+            line-height: 100%;
+            display: flex;
+            align-items: center;
+            text-align: right;
+            letter-spacing: 0.05em;
+            color: #1E1D1D;
+            text-decoration: none;
+        }
+    }
+}

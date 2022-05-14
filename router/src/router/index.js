@@ -48,6 +48,8 @@ const appDigital_s08 = () =>
     import ('@/components/pages/appDigital/appS08/appS08.vue')
 const appDigital_sTest = () =>
     import ('@/components/pages/appDigital/appSTest/appSTest.vue')
+const appLanding = () =>
+    import ('@/components/pages/appLanding/appLanding.vue')
 
 Vue.use(Router)
 
@@ -81,6 +83,11 @@ export default new Router({
             path: '/app/funny-image',
             name: 'appFunnyImage',
             component: appFunnyImage,
+        },
+        {
+            path: '/landing/picomeon',
+            name: 'picomeon',
+            component: appLanding,
         },
         {
             path: '/games',
