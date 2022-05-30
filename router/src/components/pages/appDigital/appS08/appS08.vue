@@ -75,7 +75,7 @@
                 <div class="num"></div>
             </div>
             <div class="step__content container-fluid">
-                <h4>Интерполяция до частоты {{ interpolateTo }}</h4>
+                <h4>Интерполяция до частоты {{ interpolateTo }} Гц</h4>
                 <button class="btn btn-sm btn-secondary" ref="thinningSignal_low_interpolate__btn">Play</button>
                 <div class="row">
                     <div class="col-md-6">
@@ -112,7 +112,7 @@
                 <div class="num"></div>
             </div>
             <div class="step__content container-fluid">
-                <h4>Интерполяция до частоты {{ interpolateTo }}</h4>
+                <h4>Интерполяция до частоты {{ interpolateTo }} Гц</h4>
                 <button class="btn btn-sm btn-secondary" ref="thinningSignal_interpolate__btn">Play</button>
                 <div class="row">
                     <div class="col-md-6">
@@ -149,7 +149,7 @@
                 <div class="num"></div>
             </div>
             <div class="step__content container-fluid">
-                <h4>Интерполяция до частоты {{ interpolateTo }}</h4>
+                <h4>Интерполяция до частоты {{ interpolateTo }} Гц</h4>
                 <button class="btn btn-sm btn-secondary" ref="thinningSignal_high_interpolate__btn">Play</button>
                 <div class="row">
                     <div class="col-md-6">

@@ -2,7 +2,7 @@ import fft from "./js/fft";
 import showGraph from './js/showGraph';
 
 const N = 15;
-const NumOfPeriod = 5;
+const NumOfPeriod = 10;
 
 export default {
     data() {

@@ -13,7 +13,7 @@ export default function fft(signal, fs) {
     let a = 1 / Math.sqrt(N);
     let fjRe = [],
         fjIm = [];
-    for (let j = 0; j < N / 2; j++) {
+    for (let j = 0; j < N; j++) {
         // console.log(j);
         let sumre = 0,
             sumim = 0;
@@ -28,7 +28,7 @@ export default function fft(signal, fs) {
     ans.Im = fjIm;
     for (let i = 0; i < ans.Im.length; i++) {
         ans.amplitude.push(Math.sqrt(ans.Re[i] * ans.Re[i] + ans.Im[i] * ans.Im[i]));
-        ans.frequency.push(i * fs / 2 / ans.Im.length);
+        ans.frequency.push(i * fs / ans.Im.length);
     }
     // let toc = (new Date()).getTime();
     // console.log(`Алгоритм Фурье занял ${toc - tic}мс`);
