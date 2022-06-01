@@ -104,7 +104,7 @@
             ></div>
           </div>
         </router-link>
-        <!-- <router-link
+        <router-link
           :to="{ name: 'appGames_sudoku' }"
           class="col-sm-6 col-md-4 col-xl-3 col-xxl-2"
         >
@@ -114,7 +114,7 @@
               :style="{
                 backgroundImage:
                   'url(' +
-                  require('@/assets/img/appTicTacToePreview.jpg') +
+                  require('@/assets/img/appSudokuPreview.jpg') +
                   ')',
               }"
               style="background-size: cover; background-position: center"
@@ -128,14 +128,14 @@
                 h-100
               "
             >
-              <span></span><span class="item__name">Судоку</span
+              <span></span><span class="item__name text-dark">Судоку</span
               ><span></span>
             </div>
             <div
               class="shadow position-absolute top-0 start-0 w-100 h-100"
             ></div>
           </div>
-        </router-link> -->
+        </router-link>
       </div>
     </div>
   </div>
