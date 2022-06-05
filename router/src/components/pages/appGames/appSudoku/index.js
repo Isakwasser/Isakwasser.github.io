@@ -52,7 +52,18 @@ export default {
         },
         /****** Решение полностью ******/
         solve() {
-            if (!this.solve_lastUsed()) {
+            let isFull = false;
+            for (let i = 0; i < 25; i++) {
+                isFull = this.solve_lastUsed() ||
+                    this.solve_onlyHere_row() ||
+                    this.solve_onlyHere_column() ||
+                    this.solve_onlyHere_square();
+                console.log(i);
+                if (isFull) {
+                    break;
+                }
+            }
+            if (!isFull) {
                 alert('Алгоритм неполный, остались пустые ячейки. Попробуйте заполнить одну ячейку и решите еще раз');
             }
         },
@@ -72,6 +83,116 @@ export default {
                         }
                         if (variants[i][j].length) {
                             isFull = false;
+                        }
+                    }
+                }
+            }
+            return isFull;
+        },
+        /****** Решение - только здесь в строке ******/
+        solve_onlyHere_row() {
+            let isFull = true;
+            let flag = true;
+            while (flag) {
+                flag = false;
+                isFull = true;
+                let variants = this.canUseTable;
+                for (let i = 0; i < 9; i++) {
+                    let temp_row = [];
+                    for (let j = 0; j < 9; j++) {
+                        if (variants[i][j].length) {
+                            temp_row = [...temp_row, ...variants[i][j]]
+                        }
+                    }
+                    temp_row = temp_row.reduce((acc, el) => {
+                        acc[el] = (acc[el] || 0) + 1;
+                        return acc;
+                    }, {});
+                    for (let el in temp_row) {
+                        if (temp_row[el] == 1) {
+                            flag = true;
+                            for (let j = 0; j < 9; j++) {
+                                if (variants[i][j].includes(Number(el))) {
+                                    this.currentTable[i].splice(j, 1, String(el));
+                                }
+                            }
+                        } else {
+                            isFull = false;
+                        }
+                    }
+                }
+            }
+            return isFull;
+        },
+        /****** Решение - только здесь в колонке ******/
+        solve_onlyHere_column() {
+            let isFull = true;
+            let flag = true;
+            while (flag) {
+                flag = false;
+                isFull = true;
+                let variants = this.canUseTable;
+                for (let i = 0; i < 9; i++) {
+                    let temp_row = [];
+                    for (let j = 0; j < 9; j++) {
+                        if (variants[j][i].length) {
+                            temp_row = [...temp_row, ...variants[j][i]]
+                        }
+                    }
+                    temp_row = temp_row.reduce((acc, el) => {
+                        acc[el] = (acc[el] || 0) + 1;
+                        return acc;
+                    }, {});
+                    for (let el in temp_row) {
+                        if (temp_row[el] == 1) {
+                            flag = true;
+                            for (let j = 0; j < 9; j++) {
+                                if (variants[j][i].includes(Number(el))) {
+                                    this.currentTable[j].splice(i, 1, String(el));
+                                }
+                            }
+                        } else {
+                            isFull = false;
+                        }
+                    }
+                }
+            }
+            return isFull;
+        },
+        /****** Решение - только здесь в квадрате ******/
+        solve_onlyHere_square() {
+            let isFull = true;
+            let flag = true;
+            while (flag) {
+                flag = false;
+                isFull = true;
+                let variants = this.canUseTable;
+                for (let row = 0; row < 9; row += 3) {
+                    for (let column = 0; column < 9; column += 3) {
+                        let temp = [];
+                        for (let i = 0; i < 3; i++) {
+                            for (let j = 0; j < 3; j++) {
+                                if (variants[row + i][column + j].length) {
+                                    temp = [...temp, ...variants[row + i][column + j]]
+                                }
+                            }
+                        }
+                        temp = temp.reduce((acc, el) => {
+                            acc[el] = (acc[el] || 0) + 1;
+                            return acc;
+                        }, {});
+                        for (let el in temp) {
+                            if (temp[el] == 1) {
+                                flag = true;
+                                for (let i = row; i < row + 3; i++) {
+                                    for (let j = column; j < column + 3; j++)
+                                        if (variants[i][j].includes(Number(el))) {
+                                            this.currentTable[i].splice(j, 1, String(el));
+                                        }
+                                }
+                            } else {
+                                isFull = false;
+                            }
                         }
                     }
                 }
