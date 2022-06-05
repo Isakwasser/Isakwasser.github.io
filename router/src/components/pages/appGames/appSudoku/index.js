@@ -101,8 +101,17 @@ export default {
             this.clearedTable = true;
         },
         showInit() {
+            let SudokuInitTable = localStorage.getItem('SudokuInitTable');
+            if (SudokuInitTable) {
+                this.initTable = JSON.parse(SudokuInitTable);
+            }
             Vue.set(this, 'currentTable', JSON.parse(JSON.stringify(this.initTable)));
             this.clearedTable = false;
+        },
+        saveInitTable() {
+            let temp = JSON.stringify(this.currentTable);
+            this.initTable = JSON.parse(temp);
+            localStorage.setItem('SudokuInitTable', temp);
         },
     },
     computed: {

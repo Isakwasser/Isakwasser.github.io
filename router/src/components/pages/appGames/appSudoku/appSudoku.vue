@@ -19,6 +19,7 @@
                     <button class="btn btn-sm btn-secondary mt-2" @click="solve">Решить</button>
                     <button class="btn btn-sm btn-secondary mt-2" @click="showHints = !showHints">{{ showHints? 'Скрыть': 'Показать'}} подсказки</button>
                     <button class="btn btn-sm btn-secondary mt-2" @click="showInit">Вернуться к изначальной</button>
+                    <button class="btn btn-sm btn-secondary mt-2" @click="saveInitTable">Сохранить таблицу</button>
                     <button class="btn btn-sm btn-secondary mt-2" @click="resetTable">Очистить таблицу</button>
                 </div>
             </div>
