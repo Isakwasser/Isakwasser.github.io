@@ -52,18 +52,20 @@ export default {
         },
         /****** Решение полностью ******/
         solve() {
-            let isFull = false;
+
             for (let i = 0; i < 25; i++) {
-                isFull = this.solve_lastUsed() ||
-                    this.solve_onlyHere_row() ||
-                    this.solve_onlyHere_column() ||
-                    this.solve_onlyHere_square();
+                this.solve_lastUsed();
+                this.solve_onlyHere_row();
+                this.solve_onlyHere_column();
+                this.solve_onlyHere_square();
                 console.log(i);
-                if (isFull) {
+                if (this.checkWin()) {
                     break;
                 }
             }
-            if (!isFull) {
+            if (this.checkWin()) {
+                alert('Алгоритм справился =)');
+            } else {
                 alert('Алгоритм неполный, остались пустые ячейки. Попробуйте заполнить одну ячейку и решите еще раз');
             }
         },
@@ -234,6 +236,16 @@ export default {
             this.initTable = JSON.parse(temp);
             localStorage.setItem('SudokuInitTable', temp);
         },
+        checkWin() {
+            for (let i = 0; i < 9; i++) {
+                for (let j = 0; j < 9; j++) {
+                    if (this.currentTable[i][j] == '') {
+                        return false;
+                    }
+                }
+            }
+            return true;
+        }
     },
     computed: {
         canUseTable() {
