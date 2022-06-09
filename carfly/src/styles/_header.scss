@@ -1,0 +1,40 @@
+@import 'common';
+.Header {
+    &__postline {
+        height: 3px;
+        background: $green;
+        opacity: 0.2;
+    }
+    &__links {
+        // font-family: 'Proxima Nova';
+        font-style: normal;
+        font-weight: 600;
+        // font-size: 24px;
+        // line-height: 32px;
+        a {
+            color: $graydark;
+            text-decoration: none;
+            transition: all 0.2s;
+            &:hover {
+                color: $graydarkH;
+            }
+        }
+    }
+    &__contacts {
+        // font-family: 'Proxima Nova';
+        font-style: normal;
+        font-weight: 600;
+        // font-size: 24px;
+        // line-height: 32px;
+        a {
+            color: #191919;
+            text-decoration: none;
+            &:hover {
+                color: #27282B;
+            }
+            img {
+                color: $green;
+            }
+        }
+    }
+}

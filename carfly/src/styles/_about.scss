@@ -1,0 +1,109 @@
+@import 'common';
+.About {
+    &__item {
+        background: $light;
+        border-radius: 6px;
+        min-height: 280px;
+        height: 100%;
+        @media (max-width: 767px) {
+            min-height: 150px;
+        }
+        .item {
+            &__title {
+                // font-family: 'Proxima Nova';
+                font-style: normal;
+                font-weight: 800;
+                color: $green;
+            }
+            &__description {
+                // font-family: 'Proxima Nova';
+                font-style: normal;
+                font-weight: 600;
+                color: $graydark;
+            }
+        }
+        &_action {
+            background: $green;
+            border-radius: 6px;
+            background-image: url('../assets/flies.svg');
+            background-size: 300%;
+            background-position: 100%;
+            &:hover {
+                animation: goBg 10s linear infinite;
+            }
+            @keyframes goBg {
+                0% {
+                    background-position: 100%;
+                }
+                100% {
+                    background-position: 0%;
+                }
+            }
+            .item__title {
+                // font-family: 'Proxima Nova';
+                font-style: normal;
+                font-weight: 800;
+                color: #FFFFFF;
+            }
+            button {
+                /* #FFFFFF */
+                background: #FFFFFF;
+                border-radius: 4px;
+                color: $green;
+                font-weight: 700;
+                text-align: center;
+                letter-spacing: 0.05em;
+                text-transform: uppercase;
+                border: none;
+                transition: all $transition;
+                &:hover {
+                    background: $green;
+                    border: 4px solid #ffffff;
+                    color: #ffffff;
+                    margin-bottom: -4px;
+                }
+            }
+        }
+    }
+    &__showMore {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        padding: 18px 40px;
+        background-color: transparent;
+        border: 2px solid $green;
+        border-radius: 4px;
+        // font-family: 'Proxima Nova';
+        font-style: normal;
+        font-weight: 700;
+        text-align: center;
+        color: $green;
+        transition: all $transition;
+        &:hover {
+            color: #ffffff;
+            background: $green;
+            img {
+                filter: brightness(0) invert(1);
+            }
+        }
+        &.showed {
+            img {
+                transform: scaleY(-1);
+            }
+        }
+    }
+    .showDetail {
+        cursor: zoom-in;
+        transition: all $transition;
+        &:hover {
+            filter: contrast(1.1);
+        }
+    }
+    .hideDetail {
+        cursor: zoom-out;
+        .bg {
+            background-color: $green;
+            opacity: 0.5;
+        }
+    }
+}

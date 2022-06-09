@@ -1,0 +1,47 @@
+@import 'common';
+.Footer {
+    background-color: $green;
+    background-image: url('../assets/flies.svg');
+    background-size: 110%;
+    background-position: 100%;
+    &:hover {
+        animation: goBg2 10s linear infinite;
+    }
+    @keyframes goBg2 {
+        0% {
+            background-position: 100%;
+        }
+        100% {
+            background-position: 0%;
+        }
+    }
+    &__line {
+        height: 2px;
+        background: $gray;
+    }
+    &__contact {
+        font-style: normal;
+        font-weight: 600;
+        color: #FFFFFF !important;
+        text-decoration: none;
+    }
+    &__bottom {
+        font-family: 'Segoe UI';
+        font-style: normal;
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 20px;
+        text-align: right;
+        color: $light;
+        @media (max-width: 767px) {
+            font-size: 14px;
+            line-height: 16px;
+        }
+        a {
+            color: $light;
+            &:hover {
+                color: #DEE4EB;
+            }
+        }
+    }
+}

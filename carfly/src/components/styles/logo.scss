@@ -1,0 +1,6 @@
+.logo {
+    &_whatsapp:before {
+        content: url('../../assets/WhatsApp.svg');
+        display: inline-block;
+    }
+}

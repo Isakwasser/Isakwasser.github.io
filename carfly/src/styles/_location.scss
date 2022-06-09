@@ -1,0 +1,48 @@
+@import 'common';
+.Location {
+    h2 {
+        font-style: normal;
+        font-weight: 800;
+        color: $dark;
+    }
+    h3 {
+        font-style: normal;
+        font-weight: 800;
+        color: $dark2;
+    }
+    &__info {
+        font-style: normal;
+        font-weight: 600;
+        color: $graydark;
+    }
+    &__contacts {
+        font-style: normal;
+        font-weight: 600;
+        a {
+            color: $graydark;
+        }
+    }
+    &__action {
+        padding: 18px 40px;
+        border: 2px solid $green;
+        border-radius: 4px;
+        display: inline-block;
+        // font-family: 'Proxima Nova';
+        font-style: normal;
+        font-weight: 700;
+        text-align: center;
+        color: #579D45;
+        text-decoration: none;
+        transition: all $transition;
+        &:hover {
+            color: #ffffff;
+            background: $green;
+        }
+    }
+    &__map {
+        // background-image: url('../assets/map.jpg');
+        background-size: cover;
+        background-position: center;
+        min-height: 300px;
+    }
+}

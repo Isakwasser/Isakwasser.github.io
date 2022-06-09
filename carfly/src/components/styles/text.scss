@@ -1,0 +1,83 @@
+h2 {
+    // font-family: 'Proxima Nova';
+    font-style: normal;
+    font-weight: 800;
+    font-size: 62px;
+    line-height: 74px;
+    color: #191919;
+    @media (max-width: 991px) {
+        font-size: 34px;
+        line-height: 40px;
+    }
+    @media (max-width: 575px) {
+        font-size: 26px;
+        line-height: 30px;
+    }
+}
+
+@font-face {
+    font-family: 'Proxima Nova';
+    src: url('../../assets/fonts/proximanova_regular.ttf');
+}
+
+html,
+body {
+    font-family: 'Proxima Nova';
+}
+
+.semi24-32 {
+    font-size: 24px;
+    line-height: 32px;
+    @media (max-width: 991px) {
+        font-size: 18px;
+        line-height: 22px;
+    }
+    @media (max-width: 575px) {
+        font-size: 14px;
+        line-height: 18px;
+    }
+}
+
+.extra24-32 {
+    font-size: 24px;
+    line-height: 36px;
+    @media (max-width: 991px) {
+        font-size: 18px;
+        line-height: 22px;
+    }
+    @media (max-width: 575px) {
+        font-size: 14px;
+        line-height: 18px;
+    }
+}
+
+.semi16-24 {
+    font-size: 16px;
+    line-height: 22px;
+    @media (max-width: 991px) {
+        font-size: 14px;
+        line-height: 18px;
+    }
+}
+
+.text-button {
+    font-size: 20px;
+    line-height: 20px;
+    @media (max-width: 991px) {
+        font-size: 16px;
+        line-height: 18px;
+    }
+}
+
+.extra32 {
+    font-size: 32px;
+    line-height: 36px;
+    @media (max-width: 1199px) {
+        font-size: 22px;
+        line-height: 24px;
+    }
+    @media (max-width: 991px) {
+        font-size: 20px;
+        line-height: 22px;
+    }
+}

@@ -1,0 +1,15 @@
+.animateOnScroll {
+    opacity: 0;
+    &_show {
+        animation: animation_show 2s linear forwards !important;
+    }
+}
+
+@keyframes animation_show {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
