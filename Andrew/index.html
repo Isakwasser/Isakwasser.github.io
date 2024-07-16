@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>37 - не приговор</title>
+    <style>
+      html,
+      body {
+        background-image: url("./Andrew.jpg");
+        background-position: center;
+        background-size: 20vw;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 10vw;
+        white-space: nowrap;
+        text-align: center;
+        height: 100vh;
+        color: white;
+        text-shadow: 0 1px 0 hsl(174, 5%, 80%), 0 2px 0 hsl(174, 5%, 75%),
+          0 3px 0 hsl(174, 5%, 70%), 0 4px 0 hsl(174, 5%, 66%),
+          0 5px 0 hsl(174, 5%, 64%), 0 6px 0 hsl(174, 5%, 62%),
+          0 7px 0 hsl(174, 5%, 61%), 0 8px 0 hsl(174, 5%, 60%),
+          0 0 5px rgba(0, 0, 0, 0.05), 0 1px 3px rgba(0, 0, 0, 0.2),
+          0 3px 5px rgba(0, 0, 0, 0.2), 0 5px 10px rgba(0, 0, 0, 0.2),
+          0 10px 10px rgba(0, 0, 0, 0.2), 0 20px 20px rgba(0, 0, 0, 0.3);
+      }
+      #baloons {
+        background-image: url("./balloon.png");
+        background-size: 5vw;
+        position: fixed;
+        inset: 0;
+        animation: balloons 50s linear infinite;
+      }
+      @keyframes balloons {
+        0% {
+          transform: scale(1.5) translate(0);
+        }
+        100% {
+          transform: scale(1.5) translate(10vw, -10vw);
+        }
+      }
+      #text {
+        position: relative;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="baloons"></div>
+    <div id="text">С Днем Рождения,<br />Андрюха!</div>
+  </body>
+</html>
