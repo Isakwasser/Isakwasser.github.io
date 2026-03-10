@@ -1,6 +1,13 @@
 import Graph from "react-graph-vis";
+import { DataSet } from "vis-network";
 
 export default function Home() {
+	new DataSet([
+		{
+			id: "123",
+			label: "123",
+		},
+	]);
 	const graph = {
 		nodes: [
 			{ id: 1, label: "Node 1", title: "node 1 tootip text" },
@@ -32,16 +39,5 @@ export default function Home() {
 			var { nodes, edges } = event;
 		},
 	};
-  return <>213</>
-
-	return (
-		<Graph
-			graph={graph}
-			options={options}
-			events={events}
-			getNetwork={(network) => {
-				//  if you want access to vis.js network api you can set the state in a parent component using this property
-			}}
-		/>
-	);
+	return <>213</>;
 }
