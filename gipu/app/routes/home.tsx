@@ -1,5 +1,5 @@
 import Graph from "react-graph-vis";
-import { DataSet } from "vis-network";
+import { DataSet, Network } from "vis-network";
 
 export default function Home() {
 	new DataSet([
@@ -39,5 +39,6 @@ export default function Home() {
 			var { nodes, edges } = event;
 		},
 	};
+	const x = new Network(document.querySelector('')!, )
 	return <>213</>;
 }

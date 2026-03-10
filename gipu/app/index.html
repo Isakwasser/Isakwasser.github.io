@@ -344,7 +344,11 @@
         nodes: nodes,
         edges: edges,
       };
-      var options = {};
+      var options = {
+        layout: {
+          randomSeed: 7,
+        },
+      };
 
       // initialize your network!
       var _network = new vis.Network(container, data, options);
